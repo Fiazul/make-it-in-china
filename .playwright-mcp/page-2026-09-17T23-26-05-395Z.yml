@@ -1,0 +1,39 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - generic [ref=e4]: 27块 · 第1天
+      - generic [ref=e5]: "today: 洗碗 shift at 面馆"
+      - generic [ref=e24]: +8块
+    - button "词本" [active] [ref=e6]
+    - complementary [ref=e25]:
+      - generic [ref=e26]:
+        - heading "词本" [level=2] [ref=e27]
+        - button "Close" [ref=e28]: ×
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - heading "面馆" [level=3] [ref=e31]
+          - generic [ref=e32]: 一 · yī · one — known
+          - generic [ref=e33]: 不 · bù · not; no — shaky
+          - generic [ref=e34]: 个 · gè · general measure word — known
+          - generic [ref=e35]: 二 · èr · two — shaky
+          - generic [ref=e36]: 你 · nǐ · you — known
+          - generic [ref=e37]: 做 · zuò · do; make — shaky
+          - generic [ref=e38]: 几 · jǐ · how many; several — shaky
+          - generic [ref=e39]: 好 · hǎo · good; well — known
+          - generic [ref=e40]: 工作 · gōngzuò · work; job — shaky
+          - generic [ref=e41]: 是 · shì · be — known
+          - generic [ref=e42]: 杯子 · bēizi · cup; glass — known
+          - generic [ref=e43]: 这 · zhè · this — known
+          - generic [ref=e44]: 那 · nà · that — shaky
+        - generic [ref=e45]:
+          - heading "已会 · Starter words" [level=3] [ref=e46]
+          - generic [ref=e47]: 三 · sān · three — met
+          - generic [ref=e48]: 四 · sì · four — met
+          - generic [ref=e49]: 我 · wǒ · I; me — met
+      - generic [ref=e50]: Save string
+      - textbox "Save string" [ref=e51]
+      - generic [ref=e52]:
+        - button "Export" [ref=e53]
+        - button "Import" [ref=e54]
+      - status [ref=e55]
+  - generic: Click or tap the street to walk

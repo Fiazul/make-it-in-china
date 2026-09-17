@@ -1,0 +1,40 @@
+{
+  "phase": 1,
+  "locations": [
+    { "id": "rented_room", "name": "出租屋", "position": [0, 0], "signs": ["家"] },
+    { "id": "noodle_shop", "name": "面馆", "position": [3, 0], "signs": ["饭店", "水", "茶"] },
+    { "id": "fruit_stall", "name": "水果摊", "position": [6, 0], "signs": ["水果", "苹果"] },
+    { "id": "supermarket", "name": "小商店", "position": [9, 0], "signs": ["商店", "买东西"] },
+    { "id": "bus_stop", "name": "车站", "position": [12, 0], "signs": ["火车站", "前面", "后面"] },
+    { "id": "warehouse", "name": "仓库", "position": [15, 0], "signs": ["工作", "大", "小", "多少"] },
+    { "id": "tea_house", "name": "茶馆", "position": [18, 0], "signs": ["茶", "请坐"] },
+    { "id": "phase2_gate", "name": "新区门", "position": [21, 0], "signs": ["前面"] }
+  ],
+  "npcs": [
+    { "id": "landlord", "name": "王先生", "label": "房东", "location": "rented_room", "color": "#526D82", "headwear": "navy cap" },
+    { "id": "mentor", "name": "林老师", "label": "邻居", "location": "tea_house", "color": "#8D6E63", "prop": "book" },
+    { "id": "cook", "name": "陈师傅", "label": "厨师", "location": "noodle_shop", "color": "#C65D3B", "headwear": "white cook cap", "prop": "towel" },
+    { "id": "warehouse_boss", "name": "赵老板", "label": "仓库老板", "location": "warehouse", "color": "#455A64", "prop": "clipboard" },
+    { "id": "delivery_boss", "name": "刘姐", "label": "配送员", "location": "supermarket", "color": "#5B7C4D", "prop": "parcel" },
+    { "id": "fruit_seller", "name": "孙阿姨", "label": "水果摊主", "location": "fruit_stall", "color": "#B56A3D", "headwear": "straw hat" },
+    { "id": "shopkeeper", "name": "周先生", "label": "店员", "location": "supermarket", "color": "#5C6BC0", "prop": "basket" },
+    { "id": "customer", "name": "客人", "label": "顾客", "location": "noodle_shop", "color": "#7E57C2", "prop": "shopping bag" }
+  ],
+  "slotPools": [
+    {
+      "id": "number_1_10",
+      "values": [
+        { "hanzi": "一", "pinyin": "yī", "en": "one", "words": ["一"] },
+        { "hanzi": "二", "pinyin": "èr", "en": "two", "words": ["二"] },
+        { "hanzi": "三", "pinyin": "sān", "en": "three", "words": ["三"] },
+        { "hanzi": "四", "pinyin": "sì", "en": "four", "words": ["四"] },
+        { "hanzi": "五", "pinyin": "wǔ", "en": "five", "words": ["五"] },
+        { "hanzi": "六", "pinyin": "liù", "en": "six", "words": ["六"] },
+        { "hanzi": "七", "pinyin": "qī", "en": "seven", "words": ["七"] },
+        { "hanzi": "八", "pinyin": "bā", "en": "eight", "words": ["八"] },
+        { "hanzi": "九", "pinyin": "jiǔ", "en": "nine", "words": ["九"] },
+        { "hanzi": "十", "pinyin": "shí", "en": "ten", "words": ["十"] }
+      ]
+    }
+  ]
+}

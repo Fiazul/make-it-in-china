@@ -1,0 +1,371 @@
+[
+  {
+    "id": "p1_noodle_dishwasher_01",
+    "phase": 1,
+    "location": "noodle_shop",
+    "npc": "cook",
+    "kind": "job",
+    "requires": ["你", "好", "我", "是", "这", "那", "一", "二", "三", "四"],
+    "introduces": ["工作", "杯子", "碗", "个", "做", "几"],
+    "reward": 8,
+    "exchanges": [
+      {
+        "id": "p1_noodle_dishwasher_01_e1",
+        "line": {
+          "hanzi": "你好，工作。",
+          "pinyin": "Nǐ hǎo, gōngzuò.",
+          "en": "Hello. Time to work.",
+          "audio": "p1_noodle_dishwasher_01_e1",
+          "words": ["你", "好", "工作"]
+        },
+        "replies": [
+          { "hanzi": "好。", "pinyin": "Hǎo.", "en": "Okay.", "words": ["好"], "action": "start_shift", "correct": true },
+          { "hanzi": "不。", "pinyin": "Bù.", "en": "No.", "words": ["不"], "action": "refuse_shift", "correct": false, "next": "p1_noodle_dishwasher_01_e1" }
+        ],
+        "onWrong": "p1_noodle_dishwasher_01_wrong"
+      },
+      {
+        "id": "p1_noodle_dishwasher_01_e2",
+        "line": {
+          "hanzi": "这是杯子。",
+          "pinyin": "Zhè shì bēizi.",
+          "en": "This is a cup.",
+          "audio": "p1_noodle_dishwasher_01_e2",
+          "words": ["这", "是", "杯子"]
+        },
+        "replies": [
+          { "hanzi": "杯子。", "pinyin": "Bēizi.", "en": "A cup.", "words": ["杯子"], "action": "take_cup", "correct": true },
+          { "hanzi": "碗。", "pinyin": "Wǎn.", "en": "A bowl.", "words": ["碗"], "action": "take_bowl", "correct": false, "next": "p1_noodle_dishwasher_01_e2" }
+        ],
+        "onWrong": "p1_noodle_dishwasher_01_wrong"
+      },
+      {
+        "id": "p1_noodle_dishwasher_01_e3",
+        "line": {
+          "hanzi": "那是碗。",
+          "pinyin": "Nà shì wǎn.",
+          "en": "That is a bowl.",
+          "audio": "p1_noodle_dishwasher_01_e3",
+          "words": ["那", "是", "碗"]
+        },
+        "replies": [
+          { "hanzi": "碗。", "pinyin": "Wǎn.", "en": "A bowl.", "words": ["碗"], "action": "take_bowl", "correct": true },
+          { "hanzi": "杯子。", "pinyin": "Bēizi.", "en": "A cup.", "words": ["杯子"], "action": "take_cup", "correct": false, "next": "p1_noodle_dishwasher_01_e3" }
+        ],
+        "onWrong": "p1_noodle_dishwasher_01_wrong"
+      },
+      {
+        "id": "p1_noodle_dishwasher_01_e4",
+        "line": {
+          "hanzi": "{cup_count}个杯子，{bowl_count}个碗。",
+          "pinyin": "{cup_count} gè bēizi, {bowl_count} gè wǎn.",
+          "en": "{cup_count} cups and {bowl_count} bowls.",
+          "audio": "p1_noodle_dishwasher_01_e4",
+          "words": ["个", "杯子", "个", "碗"]
+        },
+        "slots": {
+          "cup_count": "number_1_10",
+          "bowl_count": "number_1_10"
+        },
+        "replies": [
+          { "hanzi": "好。", "pinyin": "Hǎo.", "en": "Okay.", "words": ["好"], "action": "count_dishes", "check": "count_and_table", "correct": true },
+          { "hanzi": "杯子。", "pinyin": "Bēizi.", "en": "Only the cups.", "words": ["杯子"], "action": "count_cups_only", "correct": false, "next": "p1_noodle_dishwasher_01_e4" }
+        ],
+        "onWrong": "p1_noodle_dishwasher_01_wrong"
+      },
+      {
+        "id": "p1_noodle_dishwasher_01_e5",
+        "line": {
+          "hanzi": "你做几个？",
+          "pinyin": "Nǐ zuò jǐ gè?",
+          "en": "How many will you do?",
+          "audio": "p1_noodle_dishwasher_01_e5",
+          "words": ["你", "做", "几", "个"]
+        },
+        "replies": [
+          { "hanzi": "{cup_count}个。", "pinyin": "{cup_count} gè.", "en": "{cup_count}.", "words": ["个"], "action": "answer_count", "correct": true },
+          { "hanzi": "一个。", "pinyin": "Yī gè.", "en": "One.", "words": ["一", "个"], "action": "answer_one", "correct": false, "next": "p1_noodle_dishwasher_01_e5" }
+        ],
+        "onWrong": "p1_noodle_dishwasher_01_wrong"
+      }
+    ]
+  },
+  {
+    "id": "p1_noodle_dishwasher_01_wrong",
+    "phase": 1,
+    "location": "noodle_shop",
+    "npc": "cook",
+    "kind": "consequence",
+    "requires": ["你", "我", "是", "这", "那", "杯子", "碗", "个"],
+    "introduces": [],
+    "cost": 1,
+    "exchanges": [
+      {
+        "id": "p1_noodle_dishwasher_01_wrong_e1",
+        "line": {
+          "hanzi": "这是杯子，不是碗。",
+          "pinyin": "Zhè shì bēizi, bú shì wǎn.",
+          "en": "This is a cup, not a bowl.",
+          "audio": "p1_noodle_dishwasher_01_wrong_e1",
+          "words": ["这", "是", "杯子", "不", "是", "碗"]
+        },
+        "replies": [
+          { "hanzi": "好。", "pinyin": "Hǎo.", "en": "Okay.", "words": ["好"], "action": "retry", "correct": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "p1_noodle_dishwasher_02",
+    "phase": 1,
+    "location": "noodle_shop",
+    "npc": "cook",
+    "kind": "job",
+    "requires": ["你", "好", "我", "是", "这", "个", "杯子"],
+    "introduces": ["请", "水", "茶", "喝", "六", "八"],
+    "reward": 9,
+    "exchanges": [
+      {
+        "id": "p1_noodle_dishwasher_02_e1",
+        "line": {
+          "hanzi": "你好，请。",
+          "pinyin": "Nǐ hǎo, qǐng.",
+          "en": "Hello, please.",
+          "audio": "p1_noodle_dishwasher_02_e1",
+          "words": ["你", "好", "请"]
+        },
+        "replies": [
+          { "hanzi": "好。", "pinyin": "Hǎo.", "en": "Okay.", "words": ["好"], "action": "come_over", "correct": true },
+          { "hanzi": "不。", "pinyin": "Bù.", "en": "No.", "words": ["不"], "action": "stay_back", "correct": false, "next": "p1_noodle_dishwasher_02_e1" }
+        ],
+        "onWrong": "p1_noodle_dishwasher_02_wrong"
+      },
+      {
+        "id": "p1_noodle_dishwasher_02_e2",
+        "line": {
+          "hanzi": "这是水，这是茶。",
+          "pinyin": "Zhè shì shuǐ, zhè shì chá.",
+          "en": "This is water; this is tea.",
+          "audio": "p1_noodle_dishwasher_02_e2",
+          "words": ["这", "是", "水", "这", "是", "茶"]
+        },
+        "replies": [
+          { "hanzi": "水和茶。", "pinyin": "Shuǐ hé chá.", "en": "Water and tea.", "words": ["水", "和", "茶"], "action": "sort_drinks", "correct": true },
+          { "hanzi": "茶和水。", "pinyin": "Chá hé shuǐ.", "en": "Tea and water.", "words": ["茶", "和", "水"], "action": "swap_drinks", "correct": false, "next": "p1_noodle_dishwasher_02_e2" }
+        ],
+        "onWrong": "p1_noodle_dishwasher_02_wrong"
+      },
+      {
+        "id": "p1_noodle_dishwasher_02_e3",
+        "line": {
+          "hanzi": "你喝水。",
+          "pinyin": "Nǐ hē shuǐ.",
+          "en": "You drink water.",
+          "audio": "p1_noodle_dishwasher_02_e3",
+          "words": ["你", "喝", "水"]
+        },
+        "replies": [
+          { "hanzi": "我喝水。", "pinyin": "Wǒ hē shuǐ.", "en": "I drink water.", "words": ["我", "喝", "水"], "action": "choose_water", "correct": true },
+          { "hanzi": "我喝茶。", "pinyin": "Wǒ hē chá.", "en": "I drink tea.", "words": ["我", "喝", "茶"], "action": "choose_tea", "correct": false, "next": "p1_noodle_dishwasher_02_e3" }
+        ],
+        "onWrong": "p1_noodle_dishwasher_02_wrong"
+      },
+      {
+        "id": "p1_noodle_dishwasher_02_e4",
+        "line": {
+          "hanzi": "{cup_count}个杯子，请。",
+          "pinyin": "{cup_count} gè bēizi, qǐng.",
+          "en": "{cup_count} cups, please.",
+          "audio": "p1_noodle_dishwasher_02_e4",
+          "words": ["个", "杯子", "请"]
+        },
+        "slots": {
+          "cup_count": "number_1_10"
+        },
+        "replies": [
+          { "hanzi": "好。", "pinyin": "Hǎo.", "en": "Okay.", "words": ["好"], "action": "fetch_cups", "check": "count_and_table", "correct": true },
+          { "hanzi": "碗。", "pinyin": "Wǎn.", "en": "Bowls.", "words": ["碗"], "action": "fetch_bowls", "correct": false, "next": "p1_noodle_dishwasher_02_e4" }
+        ],
+        "onWrong": "p1_noodle_dishwasher_02_wrong"
+      },
+      {
+        "id": "p1_noodle_dishwasher_02_e5",
+        "line": {
+          "hanzi": "六个杯子，八个碗。",
+          "pinyin": "Liù gè bēizi, bā gè wǎn.",
+          "en": "Six cups and eight bowls.",
+          "audio": "p1_noodle_dishwasher_02_e5",
+          "words": ["六", "个", "杯子", "八", "个", "碗"]
+        },
+        "replies": [
+          { "hanzi": "六个。", "pinyin": "Liù gè.", "en": "Six.", "words": ["六", "个"], "action": "confirm_six", "correct": true },
+          { "hanzi": "四个。", "pinyin": "Sì gè.", "en": "Four.", "words": ["四", "个"], "action": "confirm_four", "correct": false, "next": "p1_noodle_dishwasher_02_e5" }
+        ],
+        "onWrong": "p1_noodle_dishwasher_02_wrong"
+      }
+    ]
+  },
+  {
+    "id": "p1_noodle_dishwasher_02_wrong",
+    "phase": 1,
+    "location": "noodle_shop",
+    "npc": "cook",
+    "kind": "consequence",
+    "requires": ["这", "是", "水", "茶", "杯子", "碗"],
+    "introduces": [],
+    "cost": 1,
+    "exchanges": [
+      {
+        "id": "p1_noodle_dishwasher_02_wrong_e1",
+        "line": {
+          "hanzi": "这是茶，不是水。",
+          "pinyin": "Zhè shì chá, bú shì shuǐ.",
+          "en": "This is tea, not water.",
+          "audio": "p1_noodle_dishwasher_02_wrong_e1",
+          "words": ["这", "是", "茶", "不", "是", "水"]
+        },
+        "replies": [
+          { "hanzi": "好。", "pinyin": "Hǎo.", "en": "Okay.", "words": ["好"], "action": "retry", "correct": true }
+        ]
+      },
+      {
+        "id": "p1_noodle_dishwasher_02_wrong_e2",
+        "line": {
+          "hanzi": "杯子，请。",
+          "pinyin": "Bēizi, qǐng.",
+          "en": "Cups, please.",
+          "audio": "p1_noodle_dishwasher_02_wrong_e2",
+          "words": ["杯子", "请"]
+        },
+        "replies": [
+          { "hanzi": "杯子。", "pinyin": "Bēizi.", "en": "Cups.", "words": ["杯子"], "action": "retry", "correct": true }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "p1_noodle_dishwasher_03",
+    "phase": 1,
+    "location": "noodle_shop",
+    "npc": "cook",
+    "kind": "job",
+    "requires": ["你", "我", "水", "茶", "喝", "好"],
+    "introduces": ["有", "米饭", "菜", "没有", "不", "吃"],
+    "reward": 10,
+    "exchanges": [
+      {
+        "id": "p1_noodle_dishwasher_03_e1",
+        "line": {
+          "hanzi": "有米饭。",
+          "pinyin": "Yǒu mǐfàn.",
+          "en": "There is rice.",
+          "audio": "p1_noodle_dishwasher_03_e1",
+          "words": ["有", "米饭"]
+        },
+        "replies": [
+          { "hanzi": "有。", "pinyin": "Yǒu.", "en": "There is.", "words": ["有"], "action": "stock_rice", "correct": true },
+          { "hanzi": "有茶。", "pinyin": "Yǒu chá.", "en": "There is tea.", "words": ["有", "茶"], "action": "stock_tea", "correct": false, "next": "p1_noodle_dishwasher_03_e1" }
+        ],
+        "onWrong": "p1_noodle_dishwasher_03_wrong"
+      },
+      {
+        "id": "p1_noodle_dishwasher_03_e2",
+        "line": {
+          "hanzi": "有菜。",
+          "pinyin": "Yǒu cài.",
+          "en": "There are dishes.",
+          "audio": "p1_noodle_dishwasher_03_e2",
+          "words": ["有", "菜"]
+        },
+        "replies": [
+          { "hanzi": "有菜。", "pinyin": "Yǒu cài.", "en": "There are dishes.", "words": ["有", "菜"], "action": "stock_dishes", "correct": true },
+          { "hanzi": "有米饭。", "pinyin": "Yǒu mǐfàn.", "en": "There is rice.", "words": ["有", "米饭"], "action": "stock_rice", "correct": false, "next": "p1_noodle_dishwasher_03_e2" }
+        ],
+        "onWrong": "p1_noodle_dishwasher_03_wrong"
+      },
+      {
+        "id": "p1_noodle_dishwasher_03_e3",
+        "line": {
+          "hanzi": "没有茶。",
+          "pinyin": "Méiyǒu chá.",
+          "en": "There is no tea.",
+          "audio": "p1_noodle_dishwasher_03_e3",
+          "words": ["没有", "茶"]
+        },
+        "replies": [
+          { "hanzi": "没有茶。", "pinyin": "Méiyǒu chá.", "en": "No tea.", "words": ["没有", "茶"], "action": "mark_no_tea", "correct": true },
+          { "hanzi": "没有水。", "pinyin": "Méiyǒu shuǐ.", "en": "No water.", "words": ["没有", "水"], "action": "mark_no_water", "correct": false, "next": "p1_noodle_dishwasher_03_e3" }
+        ],
+        "onWrong": "p1_noodle_dishwasher_03_wrong"
+      },
+      {
+        "id": "p1_noodle_dishwasher_03_e4",
+        "line": {
+          "hanzi": "我不喝茶。",
+          "pinyin": "Wǒ bù hē chá.",
+          "en": "I don't drink tea.",
+          "audio": "p1_noodle_dishwasher_03_e4",
+          "words": ["我", "不", "喝", "茶"]
+        },
+        "replies": [
+          { "hanzi": "不喝茶。", "pinyin": "Bù hē chá.", "en": "Don't drink tea.", "words": ["不", "喝", "茶"], "action": "remove_tea", "correct": true },
+          { "hanzi": "不喝水。", "pinyin": "Bù hē shuǐ.", "en": "Don't drink water.", "words": ["不", "喝", "水"], "action": "remove_water", "correct": false, "next": "p1_noodle_dishwasher_03_e4" }
+        ],
+        "onWrong": "p1_noodle_dishwasher_03_wrong"
+      },
+      {
+        "id": "p1_noodle_dishwasher_03_e5",
+        "line": {
+          "hanzi": "你吃米饭。",
+          "pinyin": "Nǐ chī mǐfàn.",
+          "en": "You eat rice.",
+          "audio": "p1_noodle_dishwasher_03_e5",
+          "words": ["你", "吃", "米饭"]
+        },
+        "replies": [
+          { "hanzi": "我吃米饭。", "pinyin": "Wǒ chī mǐfàn.", "en": "I eat rice.", "words": ["我", "吃", "米饭"], "action": "choose_rice", "correct": true },
+          { "hanzi": "我吃菜。", "pinyin": "Wǒ chī cài.", "en": "I eat the dish.", "words": ["我", "吃", "菜"], "action": "choose_dish", "correct": false, "next": "p1_noodle_dishwasher_03_e5" }
+        ],
+        "onWrong": "p1_noodle_dishwasher_03_wrong"
+      }
+    ]
+  },
+  {
+    "id": "p1_noodle_dishwasher_03_wrong",
+    "phase": 1,
+    "location": "noodle_shop",
+    "npc": "cook",
+    "kind": "consequence",
+    "requires": ["有", "没有", "不", "水", "茶", "米饭", "菜"],
+    "introduces": [],
+    "cost": 2,
+    "exchanges": [
+      {
+        "id": "p1_noodle_dishwasher_03_wrong_e1",
+        "line": {
+          "hanzi": "有水，没有茶。",
+          "pinyin": "Yǒu shuǐ, méiyǒu chá.",
+          "en": "There is water, but no tea.",
+          "audio": "p1_noodle_dishwasher_03_wrong_e1",
+          "words": ["有", "水", "没有", "茶"]
+        },
+        "replies": [
+          { "hanzi": "好。", "pinyin": "Hǎo.", "en": "Okay.", "words": ["好"], "action": "retry", "correct": true }
+        ]
+      },
+      {
+        "id": "p1_noodle_dishwasher_03_wrong_e2",
+        "line": {
+          "hanzi": "不吃菜。",
+          "pinyin": "Bù chī cài.",
+          "en": "Don't eat the dish.",
+          "audio": "p1_noodle_dishwasher_03_wrong_e2",
+          "words": ["不", "吃", "菜"]
+        },
+        "replies": [
+          { "hanzi": "不吃。", "pinyin": "Bù chī.", "en": "Don't eat.", "words": ["不", "吃"], "action": "retry", "correct": true }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - generic [ref=e4]: 20块 · 第1天
+      - generic [ref=e5]: "today: 洗碗 shift at 面馆"
+    - button "词本" [ref=e6]
+  - generic: Click or tap the street to walk

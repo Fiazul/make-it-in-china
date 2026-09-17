@@ -1,0 +1,30 @@
+import { expect, it } from 'vitest';
+import { createGame, type GameEvents } from '../../src/engine';
+import { phaseOne } from '../fixtures/engine';
+
+it('plays p1_noodle_dishwasher_01 with one wrong reply', () => {
+  const content = phaseOne();
+  const sceneId = 'p1_noodle_dishwasher_01';
+  const scene = content.scenes.find(item => item.id === sceneId)!;
+  const initialWords = Object.fromEntries(scene.requires.map(word => [word, 'met' as const]));
+  const game = createGame(content, { seed: 7, wallet: 20, initialWords });
+  const replies: GameEvents['reply'][] = [];
+  game.on('reply', event => replies.push(event));
+  game.start(sceneId);
+  expect(game.state().actionSlots).toBe(3);
+  expect(game.reply(1)).toBe(false);
+  expect(game.state().dialogue!.sceneId).toBe(`${sceneId}_wrong`);
+  expect(game.state().wallet).toBe(19);
+  game.reply(0);
+  expect(game.state().dialogue!.sceneId).toBe(sceneId);
+  while (game.state().dialogue) game.reply(0);
+  expect(game.state().wallet).toBe(27);
+  expect(game.state().actionSlots).toBe(3);
+  expect(game.state().words['杯子'].state).toBe('known');
+  expect(game.state().words['碗'].state).toBe('known');
+  expect(game.state().words['工作'].state).toBe('shaky');
+  expect(replies.filter(reply => !reply.correct)).toHaveLength(1);
+  expect(replies.flatMap(reply => reply.check ?? [])).toEqual(scene.exchanges.flatMap(ex => ex.replies.filter(reply => reply.correct && reply.check).map(reply => reply.check)));
+  expect(game.state().dialogue).toBeNull();
+  expect(game.state().events.at(-1)?.type).toBe('sceneEnd');
+});
