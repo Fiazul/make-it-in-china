@@ -39,8 +39,15 @@ body,
 #app {
   width: 100%;
   height: 100%;
+  height: 100dvh;
+  max-height: 100dvh;
   margin: 0;
   overflow: hidden;
+  overscroll-behavior: none;
+}
+
+#app {
+  touch-action: none;
 }
 
 body {
@@ -174,6 +181,7 @@ button:disabled {
 
 #joystick-base {
   pointer-events: auto;
+  touch-action: none;
   position: absolute;
   left: calc(80px + env(safe-area-inset-left, 0px));
   bottom: calc(96px + env(safe-area-inset-bottom, 0px));
@@ -186,6 +194,8 @@ button:disabled {
 }
 
 #joystick-thumb {
+  pointer-events: none;
+  touch-action: none;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -223,7 +233,7 @@ button:disabled {
   bottom: calc(96px + env(safe-area-inset-bottom, 0px) - 8px);
 }
 
-@media (hover: hover) and (pointer: fine) and (min-width: 700px) {
+@media (hover: hover) and (pointer: fine) {
   #touch-controls {
     display: none;
   }
@@ -231,6 +241,24 @@ button:disabled {
   .hint {
     display: block;
   }
+}
+
+@media (pointer: coarse), (any-pointer: coarse) {
+  #touch-controls {
+    display: block;
+  }
+
+  .hint {
+    display: none;
+  }
+}
+
+html[data-touch] #touch-controls {
+  display: block;
+}
+
+html[data-touch] .hint {
+  display: none;
 }
 
 #game-hud {
@@ -374,6 +402,8 @@ button:disabled {
   border-radius: var(--radius);
   background: var(--ochre);
   font-weight: 800;
+  pointer-events: auto;
+  touch-action: manipulation;
 }
 
 #dialogue-bubble {
@@ -381,9 +411,11 @@ button:disabled {
   z-index: 12;
   width: min(560px, calc(100vw - 32px));
   max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px);
   padding: 0;
   overflow-x: clip;
   overflow-y: auto;
+  touch-action: pan-y;
   border: var(--panel-border);
   border-radius: var(--radius);
   background: var(--paper);
@@ -572,6 +604,7 @@ button:disabled {
   gap: 8px;
   border-top: 1px solid color-mix(in srgb, var(--ink) 24%, transparent);
   transform: none;
+  touch-action: pan-y;
 }
 
 .reply-button {
@@ -655,6 +688,7 @@ button:disabled {
   place-items: center;
   padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
   overflow-y: auto;
+  touch-action: pan-y;
   background: rgba(23, 23, 23, 0.58);
   backdrop-filter: blur(4px);
 }
@@ -662,8 +696,10 @@ button:disabled {
 .ui-sheet {
   width: min(720px, 100%);
   max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px);
   padding: 24px;
   overflow-y: auto;
+  touch-action: pan-y;
   border: var(--panel-border);
   border-radius: var(--radius-lg);
   background: var(--paper);
@@ -941,6 +977,7 @@ button:disabled {
   margin: auto;
   padding: 24px;
   overflow: auto;
+  touch-action: pan-y;
   border: var(--panel-border);
   border-radius: var(--radius-lg);
   background: var(--paper);
@@ -1325,6 +1362,7 @@ button:disabled {
     width: 100%;
     max-width: none;
     max-height: calc(100vh - var(--touch-controls-band) - max(12px, env(safe-area-inset-top)));
+    max-height: calc(100dvh - var(--touch-controls-band) - max(12px, env(safe-area-inset-top)));
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     transform: none;
   }
@@ -1336,6 +1374,7 @@ button:disabled {
   #reply-options {
     max-height: 38vh;
     overflow-y: auto;
+    touch-action: pan-y;
   }
 
   #joystick-base,
@@ -1363,7 +1402,7 @@ button:disabled {
   #dialogue-bubble,
   #dialogue-bubble.below,
   #dialogue-bubble.offscreen {
-    max-height: 66vh;
+    max-height: calc(100dvh - var(--touch-controls-band) - max(12px, env(safe-area-inset-top)));
   }
 }
 

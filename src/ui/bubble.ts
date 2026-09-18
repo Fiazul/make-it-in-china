@@ -291,6 +291,9 @@ export function createBubble(
               previewReply(index);
               return;
             }
+            selectReply?.(index);
+            saySelected?.();
+            return;
           }
           selectReply?.(index);
         });

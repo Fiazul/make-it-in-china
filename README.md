@@ -14,6 +14,7 @@ npm run dev       # Open the URL Vite prints
 npm test
 npm run check:content
 npm run build
+npm run e2e:mobile   # Pixel 7 touch script; add playwright, then preview at BASE_URL (default http://localhost:4174)
 ```
 
 Optional: the world already uses toon shading and outlines. `?toon=1` is no longer required.
@@ -26,10 +27,10 @@ coverage. Run `npm run check:content:strict` for the matching command-line gate.
 
 - Start at the title screen with New game, or Continue when a local save exists.
 - WASD or arrow keys walk; hold Shift to run. On a phone, use the left joystick plus Run.
-- Right-drag (or two-finger drag on touch) orbits the camera.
+- Right-drag (or drag the open street on a phone) orbits the camera.
 - Walk up to an NPC, face them, and press E or Talk to start the existing dialogue.
 - NPC lines play automatically. Use Replay to hear a line again and Pinyin to reveal pronunciation.
-- Hover a reply to preview it. On touch screens, the first tap previews and the second selects.
+- Hover a reply to preview it. On touch screens, the first tap previews and the second tap says it.
 - Use 1–4 to select a reply, then Enter or Say selected reply to commit it.
 - Tap any dialogue word for pinyin, a gloss, and its pronunciation.
 - Wrong replies cost a yuan and show a consequence; you never lose the game.

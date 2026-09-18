@@ -326,9 +326,9 @@ export function createUiShell(root: HTMLElement, options: UiShellOptions) {
       ['Move', 'WASD or arrow keys', 'Touch joystick'],
       ['Run', 'Hold Shift', 'Hold Run'],
       ['Talk', 'Face an NPC and press E', 'Tap Talk'],
-      ['Dialogue', '1–4 select · Enter says', 'Tap audio to preview · tap the row to select'],
+      ['Dialogue', '1–4 select · Enter says', 'Tap to preview · tap again to say'],
       ['Notebook', 'Tab', 'Tap Book'],
-      ['Camera', 'Right-drag · R recentres', 'Two-finger drag'],
+      ['Camera', 'Right-drag · R recentres', 'Drag the open street'],
       ['Pause', 'Escape', 'Tap Menu'],
     ];
     for (const [name, desktop, phone] of controlGroups) {

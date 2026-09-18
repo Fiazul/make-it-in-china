@@ -487,6 +487,8 @@ declare global {
     __debug: {
       position(): [number, number, number];
       teleport(x: number, z: number): void;
+      snapToNpc(id: string): boolean;
+      yaw(): number;
       setTimeSlot(slot: TimeSlot): void;
       timeSlot(): TimeSlot | null;
       day(): number;
@@ -505,6 +507,12 @@ window.__debug = {
   teleport(x, z) {
     const pose = sceneHandle?.getPose();
     sceneHandle?.setPose(x, z, pose?.yaw ?? 0);
+  },
+  snapToNpc(id) {
+    return sceneHandle?.snapToNpc(id) ?? false;
+  },
+  yaw() {
+    return sceneHandle?.getYaw() ?? 0;
   },
   setTimeSlot(slot) {
     sceneHandle?.setTimeSlot(slot);

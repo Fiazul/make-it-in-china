@@ -54,6 +54,7 @@ export interface SceneHandle {
   fps(): number;
   draws(): number;
   getPose(): { x: number; z: number; yaw: number };
+  getYaw(): number;
   setPose(x: number, z: number, yaw: number): void;
   snapToNpc(id: string): boolean;
 }
@@ -164,7 +165,7 @@ export async function startScene(
     follow = cam;
     cam.yaw = startYaw;
     const district = buildDistrict(scene, world, assets, root);
-    const input = createInput(root);
+    const input = createInput(root, renderer.domElement, events.isLocked);
 
     function trackedBlob(name: string): Mesh {
       const shadow = blobShadow();
@@ -213,7 +214,7 @@ export async function startScene(
 
     placeCharacter(makeCharacter(true, assets, 0xe7d6ba, { bag: true }, 'player'));
     placeNpcs(spawnNpcs(world, true, assets));
-    placeCrowd(spawnCrowd(true, assets));
+    placeCrowd(spawnCrowd(true, assets, mobile));
     lights.attach({ setDayTone(palette) {
       district.setDayTone(palette);
       setBlobTone(palette);
@@ -223,15 +224,20 @@ export async function startScene(
       applyPose(spawn.position[0], spawn.position[2], spawn.yaw);
     }
 
+    let viewW = innerWidth;
+    let viewH = innerHeight;
     function resize(): void {
-      const width = innerWidth;
-      const height = innerHeight;
+      const port = visualViewport;
+      viewW = Math.max(1, Math.round(port?.width ?? innerWidth));
+      viewH = Math.max(1, Math.round(port?.height ?? innerHeight));
       renderer.setPixelRatio(Math.min(devicePixelRatio, isPhoneViewport() ? PHONE_DPR : DESKTOP_DPR));
-      renderer.setSize(width, height);
-      cam.camera.aspect = width / Math.max(1, height);
+      renderer.setSize(viewW, viewH);
+      cam.camera.aspect = viewW / viewH;
       cam.camera.updateProjectionMatrix();
     }
     addEventListener('resize', resize);
+    visualViewport?.addEventListener('resize', resize);
+    visualViewport?.addEventListener('scroll', resize);
     resize();
 
     function facingNpc(npc: NpcActor): boolean {
@@ -322,8 +328,8 @@ export async function startScene(
         intent.orbitYawDelta,
         intent.orbitPitchDelta,
         collision,
-        innerWidth,
-        innerHeight,
+        viewW,
+        viewH,
         walkSpeed,
       );
       lights?.update(raw, playerPos, district.lamps);
@@ -346,12 +352,12 @@ export async function startScene(
         npc.character.headWorld(headScratch).project(cam.camera);
         events.onNpcPosition(
           npc.id,
-          (headScratch.x * 0.5 + 0.5) * innerWidth,
-          (-headScratch.y * 0.5 + 0.5) * innerHeight,
+          (headScratch.x * 0.5 + 0.5) * viewW,
+          (-headScratch.y * 0.5 + 0.5) * viewH,
           headScratch.z >= -1 && headScratch.z <= 1,
         );
       }
-      district.projectSigns(cam.camera, innerWidth, innerHeight);
+      district.projectSigns(cam.camera, viewW, viewH);
       renderer.render(scene, cam.camera);
       measuredDraws = renderer.info.render.calls;
     });
@@ -363,7 +369,7 @@ export async function startScene(
         blobs.length = 0;
         placeCharacter(makeCharacter(true, assets, 0xe7d6ba, { bag: true }, 'player'));
         placeNpcs(spawnNpcs(world, true, assets));
-        placeCrowd(spawnCrowd(true, assets));
+        placeCrowd(spawnCrowd(true, assets, mobile));
         lights?.update(0, playerPos, district.lamps);
       }
       district.refreshProps();
@@ -382,6 +388,7 @@ export async function startScene(
     fps() { return Math.round(measuredFps); },
     draws() { return measuredDraws; },
     getPose() { return { x: playerPos.x, z: playerPos.z, yaw: motion.yaw }; },
+    getYaw() { return follow?.yaw ?? 0; },
     setPose(x, z, yaw) { applyPose(x, z, yaw); },
     snapToNpc,
   };

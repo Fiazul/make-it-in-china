@@ -12,6 +12,7 @@ what the doc leaves to the implementer: layout, contracts, assumptions, tonight'
   release; animals left out of Phase 1.
 - One repo, static Vite site, no backend, no accounts. Node 20, npm.
 - Stage 6 speech uses checked-in Opus clips and native Web Audio; it adds no runtime dependency.
+- Playwright is a devDependency to add for `npm run e2e:mobile` (Pixel 7 touch script against a preview server). It is not a runtime dependency. This sandbox could not run `npm install`; add `"playwright": "^1.55.0"` under devDependencies and refresh the lockfile.
 - Grey boxes first. Toon + outline exists as a toggle from day one because it is cheap in three.js,
   but no time is spent on art until M4 feedback.
 

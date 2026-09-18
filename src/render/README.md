@@ -6,10 +6,10 @@ Three.js world presentation, movement, and character visuals.
 - `camera.ts` — third-person follow, orbit, exponential smoothing, hull occlusion, and lerp clamp.
 - `character.ts` — UAL clone, clip map, locomotion state machine, per-bone outfit vertex colours, blank-head accessories.
 - `constants.ts` — TDD speeds, camera, blend, palette, crowd, decal, and clip-name table.
-- `crowd.ts` — background pedestrian and cyclist loops with player avoidance and LOD.
+- `crowd.ts` — background pedestrian and cyclist loops with player avoidance, LOD, and a reduced phone spawn.
 - `daylight.ts` — four ART day-slot palettes, 1.5 s sky/fog/sun/lamp transitions, day-tone hook.
 - `geom.ts` — vertex-coloured geometry merge; one draw plus one hull per batch.
-- `input.ts` — keyboard, touch joystick, and gamepad fused into one `Intent`.
+- `input.ts` — keyboard, per-pointer touch joystick/run/orbit, and gamepad fused into one `Intent`.
 - `motion.ts` — capsule vs expanded AABBs, sliding, footprint hulls, and district boundary clamp.
 - `navigation.ts` — legacy grid pathfinding (tests) plus waypoint Dijkstra for NPCs.
 - `npc.ts` — schedule anchors, facing, talk clip, and waypoint walking.
@@ -45,7 +45,8 @@ Satchels, apron ties and carried parcels hang off the upright root group via
 camera. A static idle clip is detected by `clipIsStatic`; when one is found the head and
 hands get a small procedural drift so nobody stands frozen.
 
-`crowd.ts` walks three to four faceless pedestrians and one cyclist on fixed loops:
+`crowd.ts` walks three to four faceless pedestrians and one cyclist on fixed loops
+(two walkers and no cyclist on the coarse-pointer quality path):
 pavement lanes plus the noodle-shop crossing for walkers, the road for the cyclist. They
 are not in `world.npcs`, so they never enter dialogue, never register for the talk prompt
 and never occlude the camera. They steer around the player inside 1.5 m, drop their hulls
@@ -93,6 +94,8 @@ keeps its own fade group for roof and upper-wall fading.
 |---|---|
 | `__debug.position()` | `[x, y, z]` of the player capsule |
 | `__debug.teleport(x, z)` | moves the player, keeping the current yaw |
+| `__debug.snapToNpc(id)` | stands the player in talk range, facing the NPC |
+| `__debug.yaw()` | follow-camera yaw in radians |
 | `__debug.setTimeSlot('M'\|'A1'\|'A2'\|'A3'\|'A4'\|'E')` | forces the daylight slot |
 | `__debug.timeSlot()` | the slot the renderer is showing |
 | `__debug.day()` | the engine day number |

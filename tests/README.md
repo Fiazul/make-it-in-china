@@ -22,3 +22,4 @@ Automated coverage for engine behavior, content contracts, and application smoke
 - `ui/preferences.test.ts` — UI preference defaults and persisted-value validation.
 - `check-level-strict.test.ts` — complete strict-check fixture plus pass/fail coverage for rules 1–7, 10, 11, and 14.
 - `smoke.test.ts` — application smoke coverage.
+- `e2e/mobile-touch.mjs` — Pixel 7 touch dispatch against a preview server (`npm run e2e:mobile`).

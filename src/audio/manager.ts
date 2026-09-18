@@ -93,7 +93,8 @@ export class AudioManager {
       : this.loadManifest();
     if (typeof window !== 'undefined') {
       this.gestureTarget = window;
-      window.addEventListener('pointerdown', this.handleGesture, { passive: true });
+      window.addEventListener('pointerdown', this.handleGesture, { passive: true, capture: true });
+      window.addEventListener('touchstart', this.handleGesture, { passive: true, capture: true });
       window.addEventListener('keydown', this.handleGesture);
     }
     this.publishState();
@@ -105,7 +106,8 @@ export class AudioManager {
 
   private removeGestureListeners(): void {
     if (!this.gestureTarget) return;
-    this.gestureTarget.removeEventListener('pointerdown', this.handleGesture);
+    this.gestureTarget.removeEventListener('pointerdown', this.handleGesture, true);
+    this.gestureTarget.removeEventListener('touchstart', this.handleGesture, true);
     this.gestureTarget.removeEventListener('keydown', this.handleGesture);
     this.gestureTarget = null;
   }

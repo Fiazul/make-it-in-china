@@ -183,5 +183,8 @@ export function expSmooth(lambda: number, dt: number): number {
 }
 
 export function isPhoneViewport(): boolean {
-  return innerWidth <= 520 || matchMedia('(pointer: coarse)').matches;
+  const touches = typeof navigator !== 'undefined' ? navigator.maxTouchPoints : 0;
+  if (touches > 1) return true;
+  if (typeof matchMedia !== 'function') return false;
+  return matchMedia('(pointer: coarse)').matches || matchMedia('(any-pointer: coarse)').matches;
 }

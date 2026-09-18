@@ -12,6 +12,7 @@ import {
   ORBIT_DEG_PER_PX,
   TOUCH_RUN,
   TOUCH_TALK,
+  isPhoneViewport,
 } from './constants';
 
 export interface Intent {
@@ -41,7 +42,7 @@ function radial(x: number, y: number, dead: number): { x: number; y: number } {
 
 const ORBIT_RAD_PER_PX = (ORBIT_DEG_PER_PX * Math.PI) / 180;
 
-export function createInput(root: HTMLElement): {
+export function createInput(root: HTMLElement, canvas: HTMLCanvasElement, isLocked: () => boolean): {
   sample(dt: number): Intent;
   isControl(target: EventTarget | null): boolean;
   dispose(): void;
@@ -50,23 +51,24 @@ export function createInput(root: HTMLElement): {
   const move = new Vector2();
   const touchMove = new Vector2();
   let source: Intent['source'] = 'keyboard';
-  let runHeld = false;
-  let touchRun = false;
   let talkEdge = false;
   let menuEdge = false;
   let orbitYaw = 0;
   let orbitPitch = 0;
   let joystickId: number | null = null;
-  const orbitPointers = new Map<number, { x: number; y: number }>();
-  let orbitCentroid: { x: number; y: number } | null = null;
-  let mouseOrbit = false;
-  let lastMouse = { x: 0, y: 0 };
+  let orbitId: number | null = null;
+  let wasLocked = isLocked();
+  const runPointers = new Set<number>();
+  const pointers = new Map<number, { target: HTMLElement; x: number; y: number }>();
+  const listeners = new AbortController();
+
+  if (isPhoneViewport()) document.documentElement.dataset.touch = 'true';
 
   const controls = document.createElement('div');
   controls.id = 'touch-controls';
   controls.innerHTML = `
     <div id="joystick-base" aria-hidden="true"><div id="joystick-thumb"></div></div>
-    <button id="touch-run" type="button">Run</button>
+    <button id="touch-run" type="button" aria-pressed="false">Run</button>
     <button id="touch-talk" type="button">Talk</button>`;
   root.append(controls);
   const base = controls.querySelector<HTMLDivElement>('#joystick-base')!;
@@ -98,25 +100,31 @@ export function createInput(root: HTMLElement): {
 
   function releaseHeld(): void {
     keys.clear();
-    runHeld = false;
-    touchRun = false;
-    resetJoystick();
-    orbitPointers.clear();
-    orbitCentroid = null;
-    mouseOrbit = false;
+    for (const id of pointers.keys()) releasePointer(id);
+    talkEdge = false;
+    menuEdge = false;
     orbitYaw = 0;
     orbitPitch = 0;
   }
 
   function onKey(event: KeyboardEvent, down: boolean): void {
-    if (typingTarget(event.target)) return;
-    if (down && (event.code === 'Tab' || event.code === 'KeyE')) event.preventDefault();
-    if (down && event.repeat) return;
-    if (down) keys.add(event.code);
-    else keys.delete(event.code);
-    if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') runHeld = down;
-    if (down && event.code === 'KeyE') talkEdge = true;
-    if (down && event.code === 'Tab') menuEdge = true;
+    if (!down) {
+      keys.delete(event.code);
+      return;
+    }
+    if (event.defaultPrevented || event.repeat || typingTarget(event.target)) return;
+    if (event.target instanceof Element && event.target.closest('#ui-overlay, #notebook-panel, select')) return;
+    if (event.code === 'Tab') {
+      event.preventDefault();
+      menuEdge = true;
+      return;
+    }
+    if (isLocked()) return;
+    keys.add(event.code);
+    if (event.code === 'KeyE') {
+      event.preventDefault();
+      talkEdge = true;
+    }
     source = 'keyboard';
   }
 
@@ -125,69 +133,64 @@ export function createInput(root: HTMLElement): {
   }
 
   function onPointerDown(event: PointerEvent): void {
-    if (controlEl(event.target)) {
-      if (event.target === runButton) {
-        touchRun = true;
-        source = 'touch';
-        runButton.setPointerCapture(event.pointerId);
-        return;
-      }
-      if (event.target === talkButton) {
-        talkEdge = true;
-        source = 'touch';
-        return;
-      }
+    const target = event.currentTarget as HTMLElement;
+    if (event.cancelable) event.preventDefault();
+    if (isLocked()) return;
+    if (target === canvas) {
+      if (event.pointerType === 'mouse' && event.button !== 2) return;
+      if (orbitId !== null) return;
+      orbitId = event.pointerId;
+    } else {
+      if (event.button !== 0) return;
+      if (target === base && joystickId !== null) return;
+    }
+    pointers.set(event.pointerId, { target, x: event.clientX, y: event.clientY });
+    try {
+      target.setPointerCapture(event.pointerId);
+    } catch {
+      /* Chrome Android can throw if capture is requested during pointercancel. */
+    }
+    if (target === base) {
       joystickId = event.pointerId;
-      base.setPointerCapture(event.pointerId);
       placeJoystick(event.clientX, event.clientY);
-      source = 'touch';
-      return;
+    } else if (target === runButton) {
+      runPointers.add(event.pointerId);
+      runButton.setAttribute('aria-pressed', 'true');
     }
-    if (event.button === 2) {
-      mouseOrbit = true;
-      lastMouse = { x: event.clientX, y: event.clientY };
-      return;
-    }
-    if (event.pointerType === 'touch') {
-      orbitPointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
-    }
+    if (event.pointerType !== 'mouse' || target !== canvas) source = 'touch';
   }
 
   function onPointerMove(event: PointerEvent): void {
+    const pointer = pointers.get(event.pointerId);
+    if (!pointer) return;
+    if (event.cancelable) event.preventDefault();
+    if (isLocked()) {
+      releaseHeld();
+      return;
+    }
     if (event.pointerId === joystickId) {
       placeJoystick(event.clientX, event.clientY);
-      return;
+    } else if (event.pointerId === orbitId) {
+      orbitYaw -= (event.clientX - pointer.x) * ORBIT_RAD_PER_PX;
+      orbitPitch -= (event.clientY - pointer.y) * ORBIT_RAD_PER_PX;
     }
-    if (mouseOrbit && event.buttons & 2) {
-      orbitYaw -= (event.clientX - lastMouse.x) * ORBIT_RAD_PER_PX;
-      orbitPitch -= (event.clientY - lastMouse.y) * ORBIT_RAD_PER_PX;
-      lastMouse = { x: event.clientX, y: event.clientY };
-      return;
-    }
-    if (!orbitPointers.has(event.pointerId)) return;
-    orbitPointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
-    if (orbitPointers.size < 2 || joystickId !== null) return;
-    let sx = 0;
-    let sy = 0;
-    for (const point of orbitPointers.values()) {
-      sx += point.x;
-      sy += point.y;
-    }
-    const cx = sx / orbitPointers.size;
-    const cy = sy / orbitPointers.size;
-    if (orbitCentroid) {
-      orbitYaw -= (cx - orbitCentroid.x) * ORBIT_RAD_PER_PX;
-      orbitPitch -= (cy - orbitCentroid.y) * ORBIT_RAD_PER_PX;
-    }
-    orbitCentroid = { x: cx, y: cy };
+    pointer.x = event.clientX;
+    pointer.y = event.clientY;
+  }
+
+  function releasePointer(id: number): void {
+    const pointer = pointers.get(id);
+    if (!pointer) return;
+    pointers.delete(id);
+    if (id === joystickId) resetJoystick();
+    if (id === orbitId) orbitId = null;
+    runPointers.delete(id);
+    runButton.setAttribute('aria-pressed', String(runPointers.size > 0));
+    if (pointer.target.hasPointerCapture(id)) pointer.target.releasePointerCapture(id);
   }
 
   function onPointerUp(event: PointerEvent): void {
-    if (event.pointerId === joystickId) resetJoystick();
-    if (event.target === runButton) touchRun = false;
-    orbitPointers.delete(event.pointerId);
-    if (orbitPointers.size < 2) orbitCentroid = null;
-    if (event.button === 2) mouseOrbit = false;
+    releasePointer(event.pointerId);
   }
 
   function readGamepad(dt: number): { move: Vector2; run: boolean; lookYaw: number; lookPitch: number; talk: boolean; menu: boolean } | null {
@@ -215,22 +218,42 @@ export function createInput(root: HTMLElement): {
   let gamepadMenu = false;
 
   const onContext = (event: Event) => {
-    if (event.target instanceof HTMLCanvasElement) event.preventDefault();
+    if (event.target === canvas || controlEl(event.target)) event.preventDefault();
   };
-  addEventListener('keydown', event => onKey(event, true));
-  addEventListener('keyup', event => onKey(event, false));
-  addEventListener('blur', releaseHeld);
-  document.addEventListener('visibilitychange', () => { if (document.hidden) releaseHeld(); });
-  addEventListener('pointerdown', onPointerDown);
-  addEventListener('pointermove', onPointerMove);
-  addEventListener('pointerup', onPointerUp);
-  addEventListener('pointercancel', onPointerUp);
-  addEventListener('lostpointercapture', onPointerUp);
-  addEventListener('contextmenu', onContext);
-  addEventListener('gamepaddisconnected', releaseHeld);
+  const listenerOptions = { signal: listeners.signal };
+  const pointerOptions = { signal: listeners.signal, passive: false };
+  addEventListener('keydown', event => onKey(event, true), listenerOptions);
+  addEventListener('keyup', event => onKey(event, false), listenerOptions);
+  addEventListener('blur', releaseHeld, listenerOptions);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) releaseHeld(); }, listenerOptions);
+  for (const target of [base, runButton, canvas] as HTMLElement[]) {
+    target.addEventListener('pointerdown', onPointerDown, pointerOptions);
+    target.addEventListener('touchstart', event => {
+      if (event.cancelable) event.preventDefault();
+    }, pointerOptions);
+    target.addEventListener('touchmove', event => {
+      if (event.cancelable) event.preventDefault();
+    }, pointerOptions);
+  }
+  talkButton.addEventListener('click', () => {
+    if (isLocked()) return;
+    source = 'touch';
+    talkEdge = true;
+  }, listenerOptions);
+  addEventListener('pointermove', onPointerMove, pointerOptions);
+  addEventListener('pointerup', onPointerUp, listenerOptions);
+  addEventListener('pointercancel', onPointerUp, listenerOptions);
+  addEventListener('lostpointercapture', onPointerUp, listenerOptions);
+  addEventListener('contextmenu', onContext, listenerOptions);
+  addEventListener('gamepaddisconnected', releaseHeld, listenerOptions);
 
   return {
     sample(dt: number): Intent {
+      const locked = isLocked();
+      if (locked && !wasLocked) releaseHeld();
+      wasLocked = locked;
+      runButton.disabled = locked;
+      talkButton.disabled = locked;
       const keyboard = new Vector2(
         (keys.has('KeyD') || keys.has('ArrowRight') ? 1 : 0) - (keys.has('KeyA') || keys.has('ArrowLeft') ? 1 : 0),
         (keys.has('KeyW') || keys.has('ArrowUp') ? 1 : 0) - (keys.has('KeyS') || keys.has('ArrowDown') ? 1 : 0),
@@ -264,7 +287,7 @@ export function createInput(root: HTMLElement): {
 
       const intent: Intent = {
         move: move.clone(),
-        run: runHeld || touchRun || !!pad?.run || keys.has('ShiftLeft') || keys.has('ShiftRight'),
+        run: runPointers.size > 0 || !!pad?.run || keys.has('ShiftLeft') || keys.has('ShiftRight'),
         talk,
         menu,
         orbitYawDelta: orbitYaw,
@@ -278,8 +301,8 @@ export function createInput(root: HTMLElement): {
     isControl: controlEl,
     dispose() {
       releaseHeld();
+      listeners.abort();
       controls.remove();
-      removeEventListener('contextmenu', onContext);
     },
   };
 }

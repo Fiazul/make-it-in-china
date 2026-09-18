@@ -82,6 +82,11 @@ describe('background crowd routes', () => {
     });
   });
 
+  it('thins the crowd on the phone quality path', () => {
+    const crowd = spawnCrowd(true, new Map(), true);
+    expect(crowd.walkers).toBe(2);
+  });
+
   it('drops hulls past LOD1 and stops animating past the far cutoff', () => {
     expect(CROWD_ANIM_CUTOFF).toBeGreaterThan(LOD1_DISTANCE);
     const crowd = spawnCrowd(true, new Map());

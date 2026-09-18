@@ -166,12 +166,13 @@ function makeWalker(route: Route, toon: boolean, assets: LoadedScenes): Walker {
   };
 }
 
-export function spawnCrowd(toon: boolean, assets: LoadedScenes): Crowd {
+export function spawnCrowd(toon: boolean, assets: LoadedScenes, reduced = false): Crowd {
   const group = new Group();
   group.name = 'crowd';
+  const routes = reduced ? PEDESTRIAN_ROUTES.slice(0, 2) : PEDESTRIAN_ROUTES;
   const walkers = [
-    ...PEDESTRIAN_ROUTES.map(route => makeWalker(route, toon, assets)),
-    makeWalker(CYCLE_ROUTE, toon, assets),
+    ...routes.map(route => makeWalker(route, toon, assets)),
+    ...(reduced ? [] : [makeWalker(CYCLE_ROUTE, toon, assets)]),
   ];
   for (const walker of walkers) group.add(walker.group);
 
