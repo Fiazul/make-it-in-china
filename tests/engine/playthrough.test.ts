@@ -24,7 +24,7 @@ it('plays p1_noodle_dishwasher_01 with one wrong reply', () => {
   expect(game.state().words['碗'].state).toBe('known');
   expect(game.state().words['工作'].state).toBe('shaky');
   expect(replies.filter(reply => !reply.correct)).toHaveLength(1);
-  expect(replies.flatMap(reply => reply.check ?? [])).toEqual(scene.exchanges.flatMap(ex => ex.replies.filter(reply => reply.correct && reply.check).map(reply => reply.check)));
+  expect(replies.flatMap(reply => reply.check ?? [])).toEqual(['count_and_table']);
   expect(game.state().dialogue).toBeNull();
-  expect(game.state().events.at(-1)?.type).toBe('sceneEnd');
+  expect(game.events().at(-1)?.type).toBe('sceneEnd');
 });

@@ -84,7 +84,7 @@
         },
         "replies": [
           { "hanzi": "{cup_count}个。", "pinyin": "{cup_count} gè.", "en": "{cup_count}.", "words": ["个"], "action": "answer_count", "correct": true },
-          { "hanzi": "一个。", "pinyin": "Yī gè.", "en": "One.", "words": ["一", "个"], "action": "answer_one", "correct": false, "next": "p1_noodle_dishwasher_01_e5" }
+          { "hanzi": "{bowl_count}个。", "pinyin": "{bowl_count} gè.", "en": "{bowl_count}.", "words": ["个"], "action": "answer_wrong_count", "correct": false, "next": "p1_noodle_dishwasher_01_e5" }
         ],
         "onWrong": "p1_noodle_dishwasher_01_wrong"
       }

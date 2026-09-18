@@ -11,10 +11,12 @@ const number = (value: unknown): value is number => typeof value === 'number' &&
 const integer = (value: unknown): value is number => number(value) && Number.isSafeInteger(value);
 const strings = (value: unknown) => Array.isArray(value) && value.every(item => typeof item === 'string');
 function text(value: unknown): boolean {
-  return record(value) && typeof value.hanzi === 'string' && ['pinyin', 'en'].every(key => value[key] === undefined || typeof value[key] === 'string') && (value.words === undefined || strings(value.words));
+  return record(value) && typeof value.hanzi === 'string' && ['pinyin', 'en', 'audio'].every(key => value[key] === undefined || typeof value[key] === 'string') && (value.words === undefined || strings(value.words));
 }
 function frame(value: unknown): boolean {
-  if (!record(value) || typeof value.sceneId !== 'string' || !integer(value.index) || !record(value.bindings) || !record(value.attempts)) return false;
+  // Older v1 saves have no retained first-appearance markers; do not invent any.
+  if (record(value) && !Object.hasOwn(value, 'newWords')) value.newWords = [];
+  if (!record(value) || typeof value.sceneId !== 'string' || !integer(value.index) || !record(value.bindings) || !record(value.attempts) || !strings(value.newWords) || (value.pendingNext !== undefined && typeof value.pendingNext !== 'string')) return false;
   const ex = value.exchange;
   return Object.values(value.attempts).every(integer) && Object.values(value.bindings).every(item => text(item) && record(item) && strings(item.words)) &&
     record(ex) && typeof ex.id === 'string' && text(ex.line) && record(ex.line) && strings(ex.line.words) && typeof ex.line.audio === 'string' &&
@@ -30,11 +32,11 @@ export function loadJSON(json: string): GameState {
   const validRules = record(rules) && ['actionSlots', 'foodCost', 'rentCost', 'graceDays', 'decayDays'].every(key => integer(rules[key])) &&
     Number(rules.actionSlots) > 0 && Number(rules.graceDays) > 0 && Number(rules.decayDays) > 0 &&
     (rules.wrongPenalty === 'action' || (integer(rules.wrongPenalty) && rules.wrongPenalty >= 1 && rules.wrongPenalty <= 5));
-  const firstSeen = (value: unknown) => value === undefined || (record(value) && ['location', 'sentence', 'audio'].every(key => typeof value[key] === 'string'));
+  const firstSeen = (value: unknown) => value === undefined || (record(value) && ['location', 'sentence'].every(key => typeof value[key] === 'string') && (value.audio === undefined || typeof value.audio === 'string'));
   const validWords = record(value.words) && Object.values(value.words).every(word => record(word) &&
     ['unseen', 'met', 'shaky', 'known'].includes(String(word.state)) && integer(word.lastSeen) && word.lastSeen <= Number(value.day) &&
     firstSeen(word.firstSeen));
-  const eventNames = ['sceneStart', 'exchange', 'reply', 'hint', 'word', 'sceneEnd', 'day', 'change'];
+  const eventNames = ['sceneStart', 'exchange', 'reply', 'hint', 'word', 'sceneEnd', 'rentDue', 'day', 'change'];
   if (!validRules || !validWords || !number(value.wallet) || !integer(value.day) || value.day < 1 ||
     !integer(value.actionSlots) || value.actionSlots > Number((rules as Record<string, unknown>).actionSlots) ||
     !integer(value.rng) || value.rng > 4294967295 || typeof value.rentDue !== 'boolean' ||

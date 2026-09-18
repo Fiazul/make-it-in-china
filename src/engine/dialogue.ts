@@ -10,24 +10,43 @@ export function getScene(content: GameContent, id: string): Scene {
   return scene;
 }
 export function available(state: GameState, content: GameContent): Scene[] {
-  return content.scenes.filter(scene => scene.requires.every(word => wordState(state, word) !== 'unseen'));
+  if (state.dialogue) return [];
+  return content.scenes.filter(scene => {
+    if (scene.kind === 'consequence') return false;
+    try { validateScene(scene, content, state); fillExchange({ ...state }, scene, scene.exchanges[0], {}, content); return true; }
+    catch (error) { if (error instanceof CommandError || error instanceof ContentError) return false; throw error; }
+  });
 }
 function present(state: GameState, content: GameContent, frame: DialogueFrame, emit: Emit, refill = true) {
   const scene = getScene(content, frame.sceneId);
-  if (refill) frame.exchange = fillExchange(state, scene, scene.exchanges[frame.index], frame.bindings, content);
+  if (refill) {
+    frame.exchange = fillExchange(state, scene, scene.exchanges[frame.index], frame.bindings, content);
+    frame.newWords = [...new Set(frame.exchange.line.words.filter(word => wordState(state, word) === 'unseen'))];
+  }
   state.dialogue = frame;
   meet(state, frame.exchange.line.words, frame.exchange.line, scene.location, emit);
-  emit('exchange', { sceneId: scene.id, exchange: frame.exchange });
+  emit('exchange', { sceneId: scene.id, exchange: frame.exchange, newWords: frame.newWords });
 }
 export function enter(state: GameState, content: GameContent, scene: Scene, emit: Emit, consequence = false) {
-  validateScene(scene, content);
-  if (!consequence) {
-    if (!available(state, content).includes(scene)) throw new CommandError(`Scene is locked: ${scene.id}`);
-    beginAction(state, scene);
-  }
-  const frame: DialogueFrame = { sceneId: scene.id, index: 0, bindings: {}, attempts: {}, exchange: scene.exchanges[0] };
+  if (!consequence && scene.kind === 'consequence') throw new CommandError('Consequences are entered only through onWrong.');
+  validateScene(scene, content, state);
+  if (!consequence) beginAction(state, scene);
+  const frame: DialogueFrame = { sceneId: scene.id, index: 0, bindings: {}, attempts: {}, exchange: scene.exchanges[0], newWords: [] };
   emit('sceneStart', { sceneId: scene.id });
   present(state, content, frame, emit);
+}
+function finish(state: GameState, scene: Scene, emit: Emit, abandoned = false) {
+  const reward = abandoned || scene.kind === 'consequence' ? 0 : (scene.reward ?? 0);
+  state.wallet += reward; settleRent(state);
+  emit('sceneEnd', { sceneId: scene.id, reward, ...(abandoned ? { abandoned: true } : {}) });
+}
+function resume(state: GameState, content: GameContent, frame: DialogueFrame, emit: Emit) {
+  const target = frame.pendingNext; delete frame.pendingNext;
+  if (target && target !== frame.exchange.id) {
+    const scene = getScene(content, frame.sceneId), index = scene.exchanges.findIndex(exchange => exchange.id === target);
+    if (index < 0) { finish(state, scene, emit, true); enter(state, content, getScene(content, target), emit); return; }
+    frame.index = index; present(state, content, frame, emit);
+  } else present(state, content, frame, emit, false);
 }
 export function answer(state: GameState, content: GameContent, index: number, emit: Emit): boolean {
   const frame = state.dialogue;
@@ -38,28 +57,31 @@ export function answer(state: GameState, content: GameContent, index: number, em
   const correct = reply.correct === true;
   emit('reply', { sceneId: scene.id, exchangeId: exchange.id, index, correct, action: reply.action, ...(reply.check === undefined ? {} : { check: reply.check }) });
   const words = [...exchange.line.words, ...(reply.words ?? [])];
-  meet(state, words, exchange.line, scene.location, emit);
+  meet(state, exchange.line.words, exchange.line, scene.location, emit);
+  meet(state, reply.words ?? [], reply, scene.location, emit);
   evidence(state, words, correct ? 'correct' : 'wrong', emit);
   if (!correct) {
     const attempts = frame.attempts[exchange.id] = (frame.attempts[exchange.id] ?? 0) + 1;
     const consequence = exchange.onWrong ? getScene(content, exchange.onWrong) : undefined;
     penalize(state, consequence);
     if (attempts >= 2) emit('hint', { sceneId: scene.id, exchangeId: exchange.id, attempts, line: exchange.line, simplified: exchange.line.en });
-    if (consequence) { state.returns.push(frame); enter(state, content, consequence, emit, true); }
-    else present(state, content, frame, emit, false);
+    frame.pendingNext = reply.next;
+    if (consequence) {
+      if (state.returns.length >= 32) throw new ContentError('Consequence nesting exceeds 32 scenes; sleep to exit.');
+      state.returns.push(frame); enter(state, content, consequence, emit, true);
+    } else resume(state, content, frame, emit);
     return false;
   }
   if (reply.next) {
     const targetIndex = scene.exchanges.findIndex(item => item.id === reply.next);
     if (targetIndex >= 0) frame.index = targetIndex;
-    else { enter(state, content, getScene(content, reply.next), emit); return true; }
+    else { finish(state, scene, emit); enter(state, content, getScene(content, reply.next), emit); return true; }
   } else frame.index++;
   if (frame.index < scene.exchanges.length) present(state, content, frame, emit);
   else {
-    const reward = scene.kind === 'consequence' ? 0 : (scene.reward ?? 0);
-    state.wallet += reward; settleRent(state); emit('sceneEnd', { sceneId: scene.id, reward });
-    const resume = state.returns.pop();
-    if (resume) present(state, content, resume, emit, false);
+    finish(state, scene, emit);
+    const parent = state.returns.pop();
+    if (parent) resume(state, content, parent, emit);
     else state.dialogue = null;
   }
   return true;

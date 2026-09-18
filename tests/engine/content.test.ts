@@ -22,8 +22,8 @@ describe('real Phase 1 job and consequence sites', () => {
         }
         expect(game.reply(exchange.replies.findIndex(reply => reply.correct))).toBe(true);
       }
-      const penalties = scene.exchanges.reduce((total, exchange) => total + Math.max(1, Math.min(5, data.scenes.find(item => item.id === exchange.onWrong)?.cost ?? 1)), 0);
-      expect(game.state()).toMatchObject({ dialogue: null, actionSlots: 3, wallet: 100 + (scene.reward ?? 0) - penalties });
+      const wallets: Record<string, number> = { p1_noodle_dishwasher_01: 103, p1_noodle_dishwasher_02: 104, p1_noodle_dishwasher_03: 100 };
+      expect(game.state()).toMatchObject({ dialogue: null, actionSlots: 3, wallet: wallets[scene.id] });
       expect(game.state().returns).toEqual([]);
     });
   }

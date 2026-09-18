@@ -77,7 +77,7 @@ planned scene appearances.
 
 | Word | Marker | Planned scenes | Count |
 |---|---|---|---:|
-| 碗 | `bonus: true` (checker allowlist) | S01, S02, S03 | 3 |
+| 碗 | `bonus: true` in `words.json` | S01, S02, S03 | 3 |
 
 Bonus total: **1** (maximum allowed: 10).
 
@@ -88,3 +88,28 @@ Bonus total: **1** (maximum allowed: 10).
 - Delivery hidden review: S08 and S21.
 - Slot-filled counts and shaky-word substitutions vary each replay; story, errand, consequence,
   and mentor scenes are not repeatable shifts.
+
+## Implemented reply distinctness audit
+
+| Exchange | Replies | Distinct guarantee |
+|---|---|---|
+| `p1_noodle_dishwasher_01_e1` | 好 / 不 | fixed polarity |
+| `p1_noodle_dishwasher_01_e2` | 杯子 / 碗 | different nouns |
+| `p1_noodle_dishwasher_01_e3` | 碗 / 杯子 | different nouns |
+| `p1_noodle_dishwasher_01_e4` | 好 / 杯子 | acknowledgement vs noun |
+| `p1_noodle_dishwasher_01_e5` | `{cup_count}个` / `{bowl_count}个` | different slots, same `number_1_10` pool; engine re-picks collisions |
+| `p1_noodle_dishwasher_01_wrong_e1` | 好 | singleton |
+| `p1_noodle_dishwasher_02_e1` | 好 / 不 | fixed polarity |
+| `p1_noodle_dishwasher_02_e2` | 水和茶 / 茶和水 | fixed reversed order |
+| `p1_noodle_dishwasher_02_e3` | 我喝水 / 我喝茶 | different drink nouns |
+| `p1_noodle_dishwasher_02_e4` | 好 / 碗 | acknowledgement vs noun |
+| `p1_noodle_dishwasher_02_e5` | 六个 / 四个 | different fixed numbers |
+| `p1_noodle_dishwasher_02_wrong_e1` | 好 | singleton |
+| `p1_noodle_dishwasher_02_wrong_e2` | 杯子 | singleton |
+| `p1_noodle_dishwasher_03_e1` | 有 / 有茶 | fixed phrase length |
+| `p1_noodle_dishwasher_03_e2` | 有菜 / 有米饭 | different food nouns |
+| `p1_noodle_dishwasher_03_e3` | 没有茶 / 没有水 | different drink nouns |
+| `p1_noodle_dishwasher_03_e4` | 不喝茶 / 不喝水 | different drink nouns |
+| `p1_noodle_dishwasher_03_e5` | 我吃米饭 / 我吃菜 | different food nouns |
+| `p1_noodle_dishwasher_03_wrong_e1` | 好 | singleton |
+| `p1_noodle_dishwasher_03_wrong_e2` | 不吃 | singleton |

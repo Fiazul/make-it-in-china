@@ -29,10 +29,5 @@ export function unbound(): GameContent {
 }
 export function phaseOne(): GameContent {
   const scenes = JSON.parse(scenesJSON) as Scene[];
-  // Authorized fixture-only repair while the content worker updates the real scene.
-  const fifth = scenes.find(item => item.id === 'p1_noodle_dishwasher_01')!.exchanges[4];
-  for (const reply of fifth.replies) for (const field of ['hanzi', 'pinyin', 'en'] as const) {
-    if (reply[field]) reply[field] = reply[field]!.replaceAll('{answer}', '{cup_count}');
-  }
   return { scenes, world: JSON.parse(worldJSON) as World };
 }

@@ -148,5 +148,6 @@
   { "hanzi": "字", "pinyin": "zì", "en": "written character", "hsk": 1, "pos": "noun" },
   { "hanzi": "昨天", "pinyin": "zuótiān", "en": "yesterday", "hsk": 1, "pos": "noun" },
   { "hanzi": "坐", "pinyin": "zuò", "en": "sit; travel by", "hsk": 1, "pos": "verb" },
-  { "hanzi": "做", "pinyin": "zuò", "en": "do; make", "hsk": 1, "pos": "verb" }
+  { "hanzi": "做", "pinyin": "zuò", "en": "do; make", "hsk": 1, "pos": "verb" },
+  { "hanzi": "碗", "pinyin": "wǎn", "en": "bowl", "hsk": 1, "bonus": true, "pos": "noun" }
 ]

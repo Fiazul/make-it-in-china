@@ -3,7 +3,7 @@ import type { Exchange, Line, Scene, SlotPool, Word, WordState } from '../conten
 export interface GameContent { scenes: Scene[]; world: { slotPools: SlotPool[] }; words?: Word[] }
 export interface WordProgress {
   state: WordState; lastSeen: number;
-  firstSeen?: { location: string; sentence: string; audio: string };
+  firstSeen?: { location: string; sentence: string; audio?: string };
 }
 export interface GameOptions {
   seed?: number; wallet?: number; actionSlots?: number; foodCost?: number;
@@ -14,15 +14,16 @@ export type Rules = Required<Omit<GameOptions, 'initialWords' | 'seed' | 'wallet
 export type Bindings = Record<string, SlotPool['values'][number]>;
 export interface DialogueFrame {
   sceneId: string; index: number; bindings: Bindings;
-  attempts: Record<string, number>; exchange: Exchange;
+  attempts: Record<string, number>; exchange: Exchange; newWords: string[]; pendingNext?: string;
 }
 export interface GameEvents {
   sceneStart: { sceneId: string };
-  exchange: { sceneId: string; exchange: Exchange };
+  exchange: { sceneId: string; exchange: Exchange; newWords: string[] };
   reply: { sceneId: string; exchangeId: string; index: number; correct: boolean; action: string; check?: string };
   hint: { sceneId: string; exchangeId: string; attempts: number; line: Line; simplified: string };
   word: { word: string; state: WordState; reason: 'seen' | 'correct' | 'wrong' | 'tap' | 'decay' };
-  sceneEnd: { sceneId: string; reward: number };
+  sceneEnd: { sceneId: string; reward: number; abandoned?: boolean };
+  rentDue: { amount: number; graceUntil: number };
   day: { day: number; rentDue: boolean; graceUntil: number | null };
   change: Record<string, never>;
 }

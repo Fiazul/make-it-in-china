@@ -26,6 +26,7 @@ export function createNotebook(
   panel.hidden = true;
   panel.innerHTML = `
     <header><h2>词本</h2><button id="notebook-close" type="button" aria-label="Close">×</button></header>
+    <div id="notebook-progress"></div>
     <div id="notebook-words"></div>
     <label for="save-string">Save string</label>
     <textarea id="save-string" rows="3" spellcheck="false"></textarea>
@@ -35,6 +36,7 @@ export function createNotebook(
     </div>
     <div id="save-status" role="status"></div>`;
   root.append(button, panel);
+  const progressCount = panel.querySelector<HTMLElement>('#notebook-progress')!;
   const list = panel.querySelector<HTMLElement>('#notebook-words')!;
   const textarea = panel.querySelector<HTMLTextAreaElement>('#save-string')!;
   const status = panel.querySelector<HTMLElement>('#save-status')!;
@@ -58,11 +60,13 @@ export function createNotebook(
   return {
     render(state: GameState): void {
       const grouped = new Map<string, Array<{ word: Word; state: string }>>();
+      let learned = 0;
       for (const hanzi of Object.keys(state.words)) {
         const progress = state.words[hanzi];
         if (progress.state === 'unseen') continue;
         const word = byHanzi.get(hanzi);
         if (!word) continue;
+        if (!word.bonus) learned += 1;
         const location = progress.firstSeen?.location ?? 'starter';
         const group = grouped.get(location) ?? [];
         group.push({ word, state: progress.state });
@@ -77,11 +81,18 @@ export function createNotebook(
         for (const entry of entries.sort((a, b) => a.word.hanzi.localeCompare(b.word.hanzi))) {
           const row = document.createElement('div');
           row.className = `notebook-word state-${entry.state}`;
-          row.textContent = `${entry.word.hanzi} · ${entry.word.pinyin} · ${entry.word.en} — ${entry.state}`;
+          row.append(`${entry.word.hanzi} · ${entry.word.pinyin} · ${entry.word.en} — ${entry.state}`);
+          if (entry.word.bonus) {
+            const tag = document.createElement('span');
+            tag.className = 'bonus-tag';
+            tag.textContent = '额外 · bonus';
+            row.append(' ', tag);
+          }
           section.append(row);
         }
         list.append(section);
       }
+      progressCount.textContent = `${learned} / ${words.filter(word => !word.bonus).length}`;
       if (!grouped.size) list.textContent = 'Tap words in conversation to fill your notebook.';
     },
   };

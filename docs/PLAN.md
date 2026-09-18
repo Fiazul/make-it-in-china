@@ -1,3 +1,6 @@
+## Documentation map
+- Use `CLAUDE.md` for architecture and repository directives, and module READMEs for area maps.
+- Use `README.md` for end-user setup, usage, and configuration.
 # Make It in China — build plan
 
 Source of truth for scope: `docs/design-doc.txt` (PDF in `docs/design-doc.pdf`). This file adds

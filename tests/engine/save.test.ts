@@ -40,14 +40,14 @@ describe('versioned saves', () => {
     expect(() => game.importString(encodeSave(state))).toThrow(SaveError);
   });
   it('caps loaded and newly appended events at 2000 while preserving order', () => {
-    const game = createGame(content(), { initialWords: { 杯子: 'met' } }), state = game.state();
+    const game = createGame(content(), { initialWords: { 杯子: 'met' } }), state = loadJSON(game.saveJSON());
     state.events = Array.from({ length: EVENT_LIMIT + 5 }, (_, i) => ({ type: 'day', day: 1, data: { day: i + 1, rentDue: false, graceUntil: null } }));
     const loaded = loadJSON(JSON.stringify(state)); expect(loaded.events).toHaveLength(EVENT_LIMIT); expect(loaded.events[0].data).toMatchObject({ day: 6 });
-    game.importString(encodeSave(state)); game.tapWord('杯子'); const events = game.state().events;
+    game.importString(encodeSave(state)); game.tapWord('杯子'); const events = game.events();
     expect(events).toHaveLength(EVENT_LIMIT); expect(events[0].data).toMatchObject({ day: 7 }); expect(events.at(-1)?.type).toBe('word');
-    const resumed = createGame(content()); resumed.importString(game.exportString()); expect(resumed.state().events).toEqual(events);
+    const resumed = createGame(content()); resumed.importString(game.exportString()); expect(resumed.events()).toEqual(events);
   });
   it.each([{ actionSlots: 0 }, { foodCost: -1 }, { decayDays: 0 }, { graceDays: 0 }, { wrongPenalty: 6 }])('rejects invalid tuning %j', options => {
-    expect(() => createGame(content(), options)).toThrow(SaveError);
+    expect(() => createGame(content(), options)).toThrow(/Invalid option:/);
   });
 });

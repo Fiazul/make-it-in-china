@@ -9,12 +9,8 @@ if (!process.argv[2]) {
   process.exit(1);
 }
 
-const DESIGN_BONUS_WORDS = [
-  { hanzi: "碗", pinyin: "wǎn", en: "bowl", hsk: 1, bonus: true }
-];
-
-const failures = Array.from({ length: 6 }, () => []);
-const warnings = Array.from({ length: 6 }, () => []);
+const failures = Array.from({ length: 7 }, () => []);
+const warnings = Array.from({ length: 7 }, () => []);
 
 let words;
 let scenes;
@@ -33,13 +29,15 @@ try {
   console.log("Rule 4 FAIL — not checked because content could not be read.");
   console.log("Rule 5 FAIL — not checked because content could not be read.");
   console.log("Rule 6 FAIL — not checked because content could not be read.");
-  console.log("Summary FAIL — 6 rules failed.");
+  console.log("Rule 7 FAIL — not checked because content could not be read.");
+  console.log("Summary FAIL — 7 rules failed.");
   process.exit(1);
 }
 
 const wordByHanzi = new Map(words.map((word) => [word.hanzi, word]));
-const bonusByHanzi = new Map(DESIGN_BONUS_WORDS.map((word) => [word.hanzi, word]));
-const lexicon = [...new Set([...wordByHanzi.keys(), ...bonusByHanzi.keys()])]
+const phaseWords = words.filter((word) => !word.bonus);
+const bonusWords = words.filter((word) => word.bonus);
+const lexicon = [...wordByHanzi.keys()]
   .sort((a, b) => [...b].length - [...a].length || a.localeCompare(b, "zh-CN"));
 const pools = new Map(world.slotPools.map((pool) => [pool.id, pool]));
 const sceneIds = new Set(scenes.map((scene) => scene.id));
@@ -110,7 +108,7 @@ function validateSite({
 
   for (const token of new Set([...tagged, ...segmented.tokens])) {
     if (token.startsWith("<?>")) continue;
-    const word = wordByHanzi.get(token) ?? bonusByHanzi.get(token);
+    const word = wordByHanzi.get(token);
     if (!word) {
       addUnique(rule1Bucket, `${where} tags off-list word "${token}"`);
     } else if (word.hsk > phase && !sceneIntroduces.has(token) && !word.bonus) {
@@ -152,6 +150,101 @@ function validateSite({
   }
 }
 
+function normalizeReplyHanzi(value) {
+  return String(value ?? "")
+    .normalize("NFKC")
+    .replace(/\s+/gu, "")
+    .replace(/[，。！？、,.!?;；:：]/gu, "");
+}
+
+function replyPlaceholders(hanzi) {
+  return [...normalizeReplyHanzi(hanzi).matchAll(
+    /\{([A-Za-z_][A-Za-z0-9_]*)\}/g
+  )].map((match) => match[1]);
+}
+
+function slotSkeleton(hanzi) {
+  return normalizeReplyHanzi(hanzi).replace(
+    /\{[A-Za-z_][A-Za-z0-9_]*\}/g,
+    "{slot}"
+  );
+}
+
+function renderedReplyValues(reply, boundSlots) {
+  const placeholders = [...new Set(replyPlaceholders(reply.hanzi))];
+  let rendered = [normalizeReplyHanzi(reply.hanzi)];
+
+  for (const placeholder of placeholders) {
+    const pool = pools.get(boundSlots.get(placeholder));
+    if (!pool) return new Set();
+    rendered = rendered.flatMap((candidate) =>
+      pool.values.map((value) =>
+        candidate.replaceAll(`{${placeholder}}`, value.hanzi)
+      )
+    );
+  }
+
+  return new Set(rendered.map(normalizeReplyHanzi));
+}
+
+function validateDistinctReplies(exchange, where, boundSlots) {
+  const replies = exchange.replies ?? [];
+  const seenTemplates = new Map();
+
+  for (const [index, reply] of replies.entries()) {
+    const normalized = normalizeReplyHanzi(reply.hanzi);
+    if (seenTemplates.has(normalized)) {
+      failures[6].push(
+        `${where} replies ${seenTemplates.get(normalized)} and ${index} have identical hanzi "${normalized}"`
+      );
+    } else {
+      seenTemplates.set(normalized, index);
+    }
+  }
+
+  for (let left = 0; left < replies.length; left += 1) {
+    for (let right = left + 1; right < replies.length; right += 1) {
+      const leftSlots = replyPlaceholders(replies[left].hanzi);
+      const rightSlots = replyPlaceholders(replies[right].hanzi);
+
+      if (leftSlots.length === 0 && rightSlots.length > 0) {
+        if (renderedReplyValues(replies[right], boundSlots).has(
+          normalizeReplyHanzi(replies[left].hanzi)
+        )) {
+          failures[6].push(
+            `${where} hardcoded reply ${left} can equal slot-filled reply ${right}`
+          );
+        }
+      } else if (rightSlots.length === 0 && leftSlots.length > 0) {
+        if (renderedReplyValues(replies[left], boundSlots).has(
+          normalizeReplyHanzi(replies[right].hanzi)
+        )) {
+          failures[6].push(
+            `${where} hardcoded reply ${right} can equal slot-filled reply ${left}`
+          );
+        }
+      } else if (
+        leftSlots.length > 0 &&
+        rightSlots.length > 0 &&
+        slotSkeleton(replies[left].hanzi) === slotSkeleton(replies[right].hanzi)
+      ) {
+        const safelyPaired =
+          leftSlots.length === rightSlots.length &&
+          leftSlots.every((name, index) =>
+            name !== rightSlots[index] &&
+            boundSlots.get(name) === boundSlots.get(rightSlots[index]) &&
+            pools.has(boundSlots.get(name))
+          );
+        if (!safelyPaired) {
+          failures[6].push(
+            `${where} slot replies ${left} and ${right} must use different slots from the same pool`
+          );
+        }
+      }
+    }
+  }
+}
+
 for (const scene of scenes) {
   const introducedSoFar = new Set();
   const sceneIntroduces = new Set(scene.introduces ?? []);
@@ -186,6 +279,7 @@ for (const scene of scenes) {
         boundSlots
       });
     }
+    validateDistinctReplies(exchange, where, boundSlots);
 
     const wordsHere = new Set(allExchangeWords(exchange));
     const newlyIntroduced = [...wordsHere].filter(
@@ -241,7 +335,7 @@ for (const location of world.locations ?? []) {
 }
 
 const regularScenes = scenes.filter((scene) => scene.kind !== "consequence");
-const coverage = new Map(words.map((word) => [word.hanzi, new Set()]));
+const coverage = new Map(phaseWords.map((word) => [word.hanzi, new Set()]));
 for (const scene of regularScenes) {
   const seen = new Set(
     (scene.exchanges ?? []).flatMap((exchange) => allExchangeWords(exchange))
@@ -253,7 +347,7 @@ for (const scene of regularScenes) {
 const undercovered = [...coverage].filter(([, ids]) => ids.size < 3);
 if (undercovered.length > 0) {
   const message =
-    `${undercovered.length}/${words.length} phase-list words appear in fewer than 3 ` +
+    `${undercovered.length}/${phaseWords.length} phase-list words appear in fewer than 3 ` +
     `non-consequence scenes`;
   if (scenes.length < 20) {
     warnings[3].push(
@@ -265,15 +359,20 @@ if (undercovered.length > 0) {
 }
 
 const ruleMessages = [
-  `all ${lineCount + replyCount + slotValueCount} dialogue and slot-value sites use phase-appropriate words; ${signCount} signs checked`,
+  `all ${lineCount + replyCount + slotValueCount} dialogue and slot-value sites use dictionary words; ${signCount} signs checked`,
   `no exchange introduces more than 2 new words (maximum ${maxIntroducedInExchange})`,
   `all ${lineCount + replyCount + slotValueCount} line, reply, and slot-value word tags match longest-match segmentation`,
-  `all ${words.length} phase-list words appear in at least 3 non-consequence scenes`,
+  `coverage checked for ${phaseWords.length} phase-list words; ${bonusWords.length} bonus word${bonusWords.length === 1 ? "" : "s"} excluded`,
   `all ${lineCount} lines have hanzi, pinyin, English, and audio; all ${replyCount} replies and ${slotValueCount} slot values have hanzi, pinyin, and English`,
-  `all placeholders in lines and replies have valid scene-scoped bindings`
+  `all placeholders in lines and replies have valid scene-scoped bindings`,
+  `all reply choices are distinct by template, slot pool, and rendered-value possibility`
 ];
 
-for (let index = 0; index < 6; index += 1) {
+console.log(
+  `Dictionary — ${phaseWords.length} phase words + ${bonusWords.length} bonus.`
+);
+
+for (let index = 0; index < 7; index += 1) {
   const ruleNumber = index + 1;
   if (failures[index].length > 0) {
     console.log(`Rule ${ruleNumber} FAIL — ${failures[index].join("; ")}`);

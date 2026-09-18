@@ -1,6 +1,6 @@
 import { answer, available, enter, getScene } from './dialogue';
 import { nextDay } from './economy';
-import { decay, evidence } from './learner';
+import { decay, evidence, meet } from './learner';
 import { decodeSave, encodeSave, EVENT_LIMIT, loadJSON, SaveError, saveJSON } from './save';
 import { validateScene } from './slots';
 import { CommandError, type Emit, type GameContent, type GameEvent, type GameEvents, type GameOptions, type GameState } from './types';
@@ -9,13 +9,18 @@ export function createGame(input: GameContent, opts: GameOptions = {}) {
   const content = structuredClone(input);
   const rules = { actionSlots: opts.actionSlots ?? 4, foodCost: opts.foodCost ?? 2, rentCost: opts.rentCost ?? 20,
     graceDays: opts.graceDays ?? 3, decayDays: opts.decayDays ?? 3, wrongPenalty: opts.wrongPenalty ?? 1 };
+  for (const [name, value] of Object.entries({ ...rules, wallet: opts.wallet ?? 20, seed: opts.seed ?? 1 })) {
+    if (name === 'wrongPenalty' && value === 'action') continue;
+    if (typeof value !== 'number' || !Number.isFinite(value) || value < 0 || (name !== 'wallet' && !Number.isInteger(value)) || (['actionSlots', 'graceDays', 'decayDays', 'wrongPenalty'].includes(name) && value === 0) || (name === 'wrongPenalty' && value > 5) || (name === 'seed' && value > 4294967295)) throw new CommandError(`Invalid option: ${name}`);
+  }
   let current: GameState = loadJSON(JSON.stringify({ v: 1, wallet: opts.wallet ?? 20, day: 1, actionSlots: rules.actionSlots,
     rentDue: false, graceUntil: null, rules, rng: opts.seed ?? 1, words: Object.fromEntries(Object.entries(opts.initialWords ?? {}).map(([word, state]) => [word, { state, lastSeen: 1 }])),
     dialogue: null, returns: [], events: [] }));
   const listeners = new Map<keyof GameEvents, Set<(data: never) => void>>();
   const notify = (event: GameEvent) => { for (const callback of [...(listeners.get(event.type) ?? [])]) callback(structuredClone(event.data) as never); };
   function command<T>(action: (state: GameState, emit: Emit) => T): T {
-    const state = structuredClone(current), pending: GameEvent[] = [];
+    const { events, ...core } = current;
+    const state: GameState = { ...structuredClone(core), events: [...events] }, pending: GameEvent[] = [];
     const emit: Emit = (type, data) => {
       const event = structuredClone({ type, day: state.day, data }) as GameEvent;
       state.events.push(event); pending.push(event);
@@ -33,16 +38,26 @@ export function createGame(input: GameContent, opts: GameOptions = {}) {
     }); },
     reply(index: number) { return command((state, emit) => answer(state, content, index, emit)); },
     tapWord(word: string) { return command((state, emit) => {
-      if (!Object.hasOwn(state.words, word) || state.words[word].state === 'unseen') throw new CommandError(`Word has not been met: ${word}`);
+      const frame = state.dialogue;
+      const source = frame && [frame.exchange.line, ...frame.exchange.replies].find(text => text.words?.includes(word));
+      if (source) meet(state, [word], source, getScene(content, frame!.sceneId).location, emit);
+      else if (!Object.hasOwn(state.words, word) || state.words[word].state === 'unseen') throw new CommandError(`Word has not been met: ${word}`);
       evidence(state, [word], 'tap', emit);
     }); },
     sleep() { return command((state, emit) => {
-      if (state.dialogue) throw new CommandError('Finish the current dialogue before sleeping.');
-      nextDay(state); decay(state, emit);
+      for (const frame of [...(state.dialogue ? [state.dialogue] : []), ...[...state.returns].reverse()]) emit('sceneEnd', { sceneId: frame.sceneId, reward: 0, abandoned: true });
+      state.dialogue = null; state.returns = [];
+      nextDay(state, emit); decay(state, emit);
       emit('day', { day: state.day, rentDue: state.rentDue, graceUntil: state.graceUntil });
     }); },
     availableScenes: () => structuredClone(available(current, content)),
-    state: () => structuredClone(current),
+    state: (): GameState => {
+      const { events, ...core } = current, snapshot = structuredClone(core);
+      // Compatibility for main.ts: copy analytics only when the legacy property is read.
+      return Object.defineProperty(snapshot, 'events', { enumerable: true, configurable: true, get: () => structuredClone(events) }) as GameState;
+    },
+    events: () => structuredClone(current.events),
+    gloss: (word: string) => structuredClone(content.words?.find(entry => entry.hanzi === word)),
     on<K extends keyof GameEvents>(event: K, callback: (data: GameEvents[K]) => void): () => void {
       const callbacks = listeners.get(event) ?? new Set(); listeners.set(event, callbacks);
       callbacks.add(callback as (data: never) => void);

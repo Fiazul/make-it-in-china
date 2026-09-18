@@ -27,7 +27,7 @@ describe('learner evidence and notebook', () => {
     const game = createGame(content(), { initialWords: { 杯子: 'known' } });
     game.tapWord('杯子'); expect(game.state().words['杯子'].state).toBe('shaky');
     game.tapWord('杯子'); game.tapWord('杯子'); expect(game.state().words['杯子'].state).toBe('met');
-    expect(game.state().events.at(-1)?.data).toMatchObject({ reason: 'tap' });
+    expect(game.events().at(-1)?.data).toMatchObject({ reason: 'tap' });
   });
   it('rejects taps on unseen words without mutating state', () => {
     const game = createGame(content()), before = game.state();

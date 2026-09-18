@@ -36,3 +36,8 @@ Note src/main.ts currently consumes `word` events with reason 'seen' to track ne
 ## Report format
 DONE / ACCEPTANCE / VERIFICATION (commands + tails) / FILES TOUCHED / OPEN QUESTIONS. Execute to
 completion; no mid-way check-ins.
+
+## Addendum from browser test
+- **Distinct fill guard**: after filling an exchange, if any two replies render identical hanzi,
+  re-pick slot values (≤ 20 tries with the seeded RNG); if still identical, throw `ContentError`
+  naming the exchange. Include in the pre-scan where statically detectable. Test it.
