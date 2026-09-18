@@ -1,4 +1,4 @@
-import './style.css'; // ui
+import './style.css';
 import scenesSource from '../content/phase1/scenes.json?raw';
 import wordsSource from '../content/phase1/words.json?raw';
 import worldSource from '../content/phase1/world.json?raw';
@@ -8,9 +8,9 @@ import { startScene } from './render/scene';
 import { createBubble } from './ui/bubble';
 import { createHud } from './ui/hud';
 import { createNotebook } from './ui/notebook';
-import { createUiShell } from './ui/shell'; // ui
-import { describeChoices } from './ui/activityAvailability'; // ui
-import { AudioManager } from './audio/manager'; // speech
+import { createUiShell } from './ui/shell';
+import { describeChoices } from './ui/activityAvailability';
+import { AudioManager } from './audio/manager';
 
 const root = document.querySelector<HTMLDivElement>('#app');
 if (!root) throw new Error('Missing #app root');
@@ -20,7 +20,7 @@ const scenes = JSON.parse(scenesSource) as Scene[];
 const words = JSON.parse(wordsSource) as Word[];
 const world = JSON.parse(worldSource) as World;
 const jobs = scenes.filter(scene => scene.kind === 'job');
-const activities = scenes.filter(scene => scene.kind !== 'consequence'); // speech
+const activities = scenes.filter(scene => scene.kind !== 'consequence');
 const starterWords = Object.fromEntries((jobs[0]?.requires ?? []).map(word => [word, 'met' as const]));
 const SAVE_KEY = 'make-it-in-china.save.v1';
 const UI_STATE_KEY = 'make-it-in-china.ui.v1';
@@ -80,8 +80,8 @@ let gateCardDismissed = false;
 let pendingCommandError: string | null = null;
 let bubble: ReturnType<typeof createBubble> | undefined;
 let sceneHandle: Awaited<ReturnType<typeof startScene>> | undefined;
-const audio = new AudioManager(); // speech
-await audio.ready(); // speech
+const audio = new AudioManager();
+await audio.ready();
 
 function showMessage(hanzi: string, en?: string, npcId = activeNpcId ?? nearNpc ?? undefined): void {
   const npc = world.npcs.find(item => item.id === npcId);
@@ -178,7 +178,7 @@ const nextActivity = (state: GameState, npcId: string): { scene: Scene; review: 
     scene.npc === npcId && available.has(scene.id) && !done.has(scene.id)
   ));
   return firstTime ? { scene: firstTime, review: false } : nextJob(state, npcId);
-}; // speech
+};
 
 function jobVerb(scene: Scene): string {
   const verb = scene.id.match(/^p\d+_.+_([^_]+)_\d+$/)?.[1]?.replaceAll('_', ' ') ?? 'work';
@@ -208,7 +208,7 @@ const objective = (state: GameState) => {
   return jobObjective(next.scene, next.review);
 };
 
-function importSave(save: string): void { // ui
+function importSave(save: string): void {
   if (!save) throw new Error('Paste a save string first.');
   suppressWalletToast = true;
   let imported = false;
@@ -228,7 +228,7 @@ function importSave(save: string): void { // ui
   render();
 }
 
-function resetLocalGame(): void { // ui
+function resetLocalGame(): void {
   try {
     localStorage.removeItem(SAVE_KEY);
     localStorage.removeItem(UI_STATE_KEY);
@@ -238,7 +238,7 @@ function resetLocalGame(): void { // ui
   location.reload();
 }
 
-function sleepUntilMorning(): void { // ui
+function sleepUntilMorning(): void {
   const slept = guardGame(() => {
     game.sleep();
     return true;
@@ -250,7 +250,7 @@ function sleepUntilMorning(): void { // ui
   render();
 }
 
-const ui = createUiShell(root, { // ui
+const ui = createUiShell(root, {
   hasSave: saved !== null,
   audio,
   onNewGame: resetLocalGame,
@@ -268,18 +268,18 @@ const hud = createHud(
   root,
   () => ui.openSleep(),
   () => {
-    if (notebook.isOpen()) notebook.toggle(); // ui
+    if (notebook.isOpen()) notebook.toggle();
     ui.openPause();
   },
   audio,
-); // speech // ui
+);
 const mentorScenes = scenes.filter(scene => scene.kind === 'mentor');
 const notebook = createNotebook(
   root,
   words,
   world.locations,
   word => guardGame(() => game.tapWord(word), undefined),
-  audio, // speech
+  audio,
   mentorScenes,
   world.npcs,
 );
@@ -298,7 +298,7 @@ bubble = createBubble(
     greetingOpen = false;
     render();
   },
-  audio, // speech
+  audio,
   (assistedWords, reason) => guardGame(() => { game.markAssisted(assistedWords, reason); return undefined; }, undefined),
 );
 
@@ -312,7 +312,6 @@ function restoreNewWords(): void {
   }
 }
 
-// render
 function timeSlotOf(): TimeSlot {
   const slots = guardGame(() => game.state().actionSlots, 4);
   if (slots >= 4) return 'M';
@@ -333,15 +332,15 @@ function render(): void {
   hud.render(state, objective(state));
   notebook.render(state);
   sceneHandle?.setSpeakingNpc(activeNpcId);
-  sceneHandle?.setTimeSlot(timeSlotOf()); // render
-  const gate = guardGame(() => game.queryGate(), null); // ui
-  const claimed = state.progress.gateReachedDay !== null; // ui
-  hud.setGateBadge(claimed); // ui
-  if (gate?.open && !claimed && !gateCardDismissed) { // ui
-    ui.showGate(gate, () => { // ui
+  sceneHandle?.setTimeSlot(timeSlotOf());
+  const gate = guardGame(() => game.queryGate(), null);
+  const claimed = state.progress.gateReachedDay !== null;
+  hud.setGateBadge(claimed);
+  if (gate?.open && !claimed && !gateCardDismissed) {
+    ui.showGate(gate, () => {
       guardGame(() => { game.claimGate(); return undefined; }, undefined);
-    }, () => { gateCardDismissed = true; }); // ui
-  } else ui.hideGate(); // ui
+    }, () => { gateCardDismissed = true; });
+  } else ui.hideGate();
 }
 
 function showBubbleActions(
@@ -448,7 +447,7 @@ guardGame(() => game.on('word', event => {
   if (event.reason === 'seen') newWords.add(event.word);
 }), () => {});
 guardGame(() => game.on('rentDue', event => {
-  ui.showRent(event.amount, event.graceUntil); // ui
+  ui.showRent(event.amount, event.graceUntil);
 }), () => {});
 guardGame(() => game.on('sceneEnd', event => {
   if (!event.abandoned) {
@@ -461,7 +460,7 @@ guardGame(() => game.on('change', () => {
   previousWallet = wallet;
   try {
     localStorage.setItem(SAVE_KEY, guardGame(() => game.exportString(), ''));
-    ui.markSaveAvailable(); // ui
+    ui.markSaveAvailable();
   } catch {
     // The loop remains playable when storage is disabled or full.
   }
@@ -471,9 +470,9 @@ guardGame(() => game.on('change', () => {
 
 restoreNewWords();
 render();
-const restoredState = guardGame(() => game.state(), null); // ui
+const restoredState = guardGame(() => game.state(), null);
 if (restoredState?.rentDue && restoredState.graceUntil !== null) {
-  ui.showRent(restoredState.rules.rentCost, restoredState.graceUntil); // ui
+  ui.showRent(restoredState.rules.rentCost, restoredState.graceUntil);
 }
 if (pendingCommandError) {
   const message = pendingCommandError;
@@ -481,7 +480,6 @@ if (pendingCommandError) {
   showMessage(message);
 }
 
-// render
 declare global {
   interface Window {
     __debug: {
@@ -498,7 +496,6 @@ declare global {
   }
 }
 
-// render
 window.__debug = {
   position() {
     const pose = sceneHandle?.getPose();
@@ -531,7 +528,6 @@ window.__debug = {
   },
 };
 
-// safe-spawn
 const restoredDialogue = guardGame(() => game.state().dialogue, null);
 const restoredScene = restoredDialogue
   ? scenes.find(item => item.id === restoredDialogue.sceneId)
@@ -542,13 +538,13 @@ startScene(root, world, {
     return !!guardGame(() => game.state().dialogue, null)
       || greetingOpen
       || notebook.isOpen()
-      || ui.isOpen(); // ui
+      || ui.isOpen();
   },
   onTalk() {
     maybeStartDialogue();
   },
   onMenu() {
-    if (!ui.isOpen()) notebook.toggle(); // ui
+    if (!ui.isOpen()) notebook.toggle();
   },
   onNearNpc(id) {
     nearNpc = id;
@@ -556,13 +552,11 @@ startScene(root, world, {
   onNpcPosition(id: string, x: number, y: number, visible: boolean) {
     if (activeNpcId === id) bubble?.anchor(x, y, visible);
   },
-  // safe-spawn
   onSafePose(x, z, yaw) {
     uiState.safePose = [x, z, yaw];
     persistUiState();
   },
 }, {
-  // safe-spawn
   pose: uiState.safePose,
   snapNpc: restoredScene?.npc,
   timeSlot: timeSlotOf(),

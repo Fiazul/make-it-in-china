@@ -1,8 +1,22 @@
 # Content preview
 
-DOM-only Stage-4 authoring view.
+DOM-only authoring view for Phase 1 content and strict checker output.
 
-- `main.ts` loads the Phase 1 JSON, runs the shared strict checker, and renders scenes, exchanges, stable content sites, issues, novelty, and coverage.
-- `style.css` provides the minimal readable layout and blocked/passed states.
+| File | Role |
+| --- | --- |
+| `main.ts` | Loads Phase 1 JSON, runs strict rules, lists sites/issues/coverage |
+| `style.css` | Preview layout and pass/fail styling |
 
-Start with `npm run dev`, then open `/preview.html`. A red banner means at least one strict `FAIL` is blocking the content.
+## Commands
+
+```bash
+npm run dev
+```
+
+Open `/preview.html` on the Vite URL. A red banner means at least one strict `FAIL`.
+
+```bash
+npm run check:content:strict
+```
+
+Same gate on the CLI.

@@ -1,50 +1,62 @@
 # Make It in China
 
-Browser game in three.js that teaches HSK Mandarin by making the player earn a living in it. Working title.
+Browser game that teaches HSK Mandarin by making you earn a living in it. Working title.
 
 ## Status
 
 **v0.0.2 slice** — third-person district with movement, follow camera, spoken Mandarin dialogue, learner notebook, and eight buildings with DOM signs.
 
-## Quick Start
+## Setup
 
 ```bash
 npm install
-npm run dev       # Open the URL Vite prints
+npm run dev
+```
+
+Open the URL Vite prints. Optional checks:
+
+```bash
 npm test
 npm run check:content
 npm run build
-npm run e2e:mobile   # Pixel 7 touch script; add playwright, then preview at BASE_URL (default http://localhost:4174)
 ```
 
-Optional: the world already uses toon shading and outlines. `?toon=1` is no longer required.
+Speech clips ship under `public/audio/`. Regenerate only if you are an author: `npm run tts` (needs Node 20, `edge-tts`, and `ffmpeg` on `PATH`).
 
-For content authoring, open `/preview.html` from the development server. The
-preview lists stable content sites, strict issues, exchange novelty, and HSK1
-coverage. Run `npm run check:content:strict` for the matching command-line gate.
+## How to play
 
-## How to Play
+### Desktop
+- Title screen: **New game**, or **Continue** when a local save exists.
+- **WASD** or arrows walk; hold **Shift** to run.
+- Right-drag orbits the camera.
+- Walk up to an NPC, face them, press **E** or **Talk**.
+- **1–4** select a reply; **Enter** or **Say selected reply** commits it. Hover a reply to preview speech.
+- **Tab** or **Book** opens the notebook. **Esc** or **Menu** opens pause.
+- HUD speaker mutes or unmutes speech.
 
-- Start at the title screen with New game, or Continue when a local save exists.
-- WASD or arrow keys walk; hold Shift to run. On a phone, use the left joystick plus Run.
-- Right-drag (or drag the open street on a phone) orbits the camera.
-- Walk up to an NPC, face them, and press E or Talk to start the existing dialogue.
-- NPC lines play automatically. Use Replay to hear a line again and Pinyin to reveal pronunciation.
-- Hover a reply to preview it. On touch screens, the first tap previews and the second tap says it.
-- Use 1–4 to select a reply, then Enter or Say selected reply to commit it.
-- Tap any dialogue word for pinyin, a gloss, and its pronunciation.
-- Wrong replies cost a yuan and show a consequence; you never lose the game.
-- Notebook: Tab or Book. Filter words by learner state or first-heard location, then play word and first-seen sentence audio.
-- Pause: Escape or Menu. Help, settings, credits, save export/import, and the title screen are available there.
-- Settings persist speech volume, mute, default pinyin visibility, and text size on this device.
-- End day opens a sleep confirmation showing unused slots and food cost.
-- Use the HUD speaker button to mute or unmute speech. Mute and volume settings persist after reload.
+### Phone
+- Left joystick moves; **Run** sprint; drag the open street to orbit.
+- **Talk** starts dialogue when near an NPC.
+- First tap on a reply previews it; second tap says it.
+- Use the on-screen menu and notebook controls the same way as desktop.
 
-## Documentation
+## Settings
 
-See `docs/design-doc.pdf` for the full game specification, `docs/PLAN.md` for the build plan,
-`docs/reference-videos.md` for visual sources, and `content/phase1/scene-list.md` for the curriculum.
+Pause → settings. On this device you can change:
+- Speech volume and mute
+- Default pinyin visibility
+- Text size
 
-## Licence and Credits
+Mute and volume also follow the HUD speaker button and persist after reload.
+
+## Save and import
+
+Progress autosaves in the browser. From pause you can export a save string and import one later. Import replaces the current run after confirmation. **New game** clears the local save.
+
+## Audio
+
+NPC and player lines play automatically once audio is unlocked (first tap or key). Use **Replay** to hear a line again and **Pinyin** to show pronunciation. Tap a dialogue word for pinyin, gloss, and word audio. The notebook plays word and first-seen sentence clips.
+
+## Licence and credits
 
 See `docs/CREDITS.md`.

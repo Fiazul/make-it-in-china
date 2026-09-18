@@ -1,12 +1,14 @@
 # UI
-DOM interface for dialogue, status, screens, and learner tools. Text remains outside WebGL for zoom, selection, and assistive technology.
 
-- `activityAvailability.ts` — pure availability-reason derivation shared by the activity chooser and the notebook's mentor topics; no DOM.
-- `bubble.ts` — sequenced speech, pinyin and word help, reply preview/selection (touch: preview then say), replay, hints, message/notice cards, the activity chooser, and assisted-flag hooks.
-- `hud.ts` — day, action slots, wallet changes, objective, mute, menu, sleep, gate badge, and live toasts.
-- `modal.ts` — shared keyboard focus trap and focus restoration.
-- `notebook.ts` — vocabulary filters, learner-state rows, first-seen details, word/sentence audio, mentor topics, and inventory.
-- `preferences.ts` — validated persisted pinyin and text-size settings.
-- `shell.ts` — title, pause, settings, help, credits, save transfer, sleep, money ledger, leave-conversation confirm, rent, and gate surfaces.
-- `index.ts` — public UI exports.
-- `../style.css` — ART token implementation and responsive desktop/phone layouts.
+DOM interface for dialogue, HUD, menus, and learner tools. Text stays outside WebGL. Do not import `src/render`.
+
+| File | Role |
+| --- | --- |
+| `index.ts` | Public exports |
+| `shell.ts` | Title, pause, settings, help, credits, save, sleep, rent, gate |
+| `bubble.ts` | Speech bubble, replies, hints, activity chooser |
+| `hud.ts` | Day, slots, wallet, objective, mute, menu, toasts |
+| `notebook.ts` | Vocabulary filters, audio, mentor topics, inventory |
+| `modal.ts` | Focus trap and restoration |
+| `preferences.ts` | Persisted pinyin and text-size settings |
+| `activityAvailability.ts` | Pure availability-reason labels (no DOM) |

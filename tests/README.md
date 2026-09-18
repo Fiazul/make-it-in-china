@@ -1,25 +1,46 @@
 # Tests
-Automated coverage for engine behavior, content contracts, and application smoke checks.
 
-- `audio/manager.test.ts` — manifest variant, word, and stored-sentence resolution.
-- `engine/content.test.ts` — content contract coverage.
-- `engine/dialogue.test.ts` — dialogue and routing coverage.
-- `engine/economy.test.ts` — economy and day-cycle coverage.
-- `engine/learner.test.ts` — word-progress coverage.
-- `engine/ledger.test.ts` — GDD day-1 and day-5 wallet ledgers on the canonical route.
-- `engine/progression.test.ts` — availability, penalty caps, purchases, guided consequences, world tasks, and the gate.
-- `engine/playthrough.test.ts` — engine playthrough coverage.
-- `engine/review.test.ts` — review regression coverage.
-- `engine/save.test.ts` — persistence coverage.
-- `engine/slots.test.ts` — slot validation and filling coverage.
-- `fixtures/engine.ts` — shared engine test fixtures.
-- `fixtures/save-v1.ts` — captured v1 export strings for the save migration.
-- `render/buildings.test.ts` — every door keeps a clear 2.4 m walking corridor.
-- `render/camera.test.ts` — occlusion pull-in against building hulls, roofs, and default ART framing.
-- `render/daylight.test.ts` — ART day-slot palettes, slot separation, and transitions.
-- `render/motion.test.ts` — capsule collision, every door sweep, wall blocking, hulls, and district bounds.
-- `render/toon.test.ts` — outline hull placement, small-prop and flat-plane skips.
-- `ui/preferences.test.ts` — UI preference defaults and persisted-value validation.
-- `check-level-strict.test.ts` — complete strict-check fixture plus pass/fail coverage for rules 1–7, 10, 11, and 14.
-- `smoke.test.ts` — application smoke coverage.
-- `e2e/mobile-touch.mjs` — Pixel 7 touch dispatch against a preview server (`npm run e2e:mobile`).
+Vitest unit coverage plus a Playwright mobile touch e2e script. Engine tests stay browser-free.
+
+| File | Role |
+| --- | --- |
+| `smoke.test.ts` | Application smoke |
+| `check-level-strict.test.ts` | Strict checker rules |
+| `tts-inventory.test.ts` | TTS inventory builder |
+| `fixtures/engine.ts` | Shared engine fixtures |
+| `fixtures/save-v1.ts` | Captured v1 save strings |
+| `engine/content.test.ts` | Content contracts |
+| `engine/dialogue.test.ts` | Dialogue routing |
+| `engine/economy.test.ts` | Economy and day cycle |
+| `engine/learner.test.ts` | Word progress |
+| `engine/ledger.test.ts` | Wallet ledgers |
+| `engine/progression.test.ts` | Availability, purchases, gate |
+| `engine/playthrough.test.ts` | Engine playthrough |
+| `engine/review.test.ts` | Review regressions |
+| `engine/save.test.ts` | Persistence |
+| `engine/slots.test.ts` | Slot fill/validation |
+| `render/buildings.test.ts` | Door corridors |
+| `render/camera.test.ts` | Occlusion and framing |
+| `render/character-detail.test.ts` | Outfit/attachment detail |
+| `render/crowd.test.ts` | Pedestrian/cyclist loops |
+| `render/daylight.test.ts` | Day-slot palettes |
+| `render/drawcalls.test.ts` | Draw budget |
+| `render/motion.test.ts` | Collision and bounds |
+| `render/npc-walk.test.ts` | NPC waypoint walking |
+| `render/street.test.ts` | Street geometry |
+| `render/toon.test.ts` | Outline hulls |
+| `ui/activityAvailability.test.ts` | Availability reasons |
+| `ui/modal.test.ts` | Focus trap |
+| `ui/preferences.test.ts` | Preference validation |
+| `audio/manager.test.ts` | Manifest and playback resolve |
+| `e2e/mobile-touch.mjs` | Pixel 7 real-touch e2e |
+
+## Commands
+
+```bash
+npm test
+npx vite preview --port 4174
+npm run e2e:mobile
+```
+
+Never drive touch assertions with mouse events; the e2e script uses CDP touch dispatch.
