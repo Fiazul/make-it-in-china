@@ -181,6 +181,17 @@ the Playwright MCP browser concurrently.
   intended, not the "spontaneous unwanted popup" bug; don't conflate the two. A reload while no
   dialogue is active would be needed to re-check the "no bubble on load" criterion cleanly.
 
+## GitHub Pages live check 2026-09-18
+- `https://fiazul.github.io/make-it-in-china/` at 1280x800: all `models/*` GLTF/GLB requests
+  returned 200 (character, buildings, street props, food props) — no 404s, unlike the flaky
+  5180 static-preview behavior noted above. No app console errors (only favicon 404 + an unrelated
+  stale duckduckgo.com 404 from browser history, both benign).
+- Cook mannequin reached by clicking directly on the purple-suited mannequin standing at the shop
+  table (not ground coords) — first line `你好，工作。`. 3 correct exchanges (好→杯子→碗) kept
+  wallet unchanged at 20块; a deliberate wrong reply on the 4th exchange dropped it to 19块 with
+  consequence line `这是杯子，不是碗。` — matches documented -1块 behavior exactly.
+- Reload (no localStorage clear) correctly restored wallet=19块, day=第1天.
+
 ## Selectors quick reference
 - HUD: `#game-hud`, `#hud-wallet`, `#hud-day`, `#hud-objective`, `#wallet-toast`
 - Dialogue: `#dialogue-bubble`, `.npc-name`, `#dialogue-line`, `.word-tap`, `#word-popup`

@@ -1,0 +1,1041 @@
+id,type,source,status,budget_kb,notes,licence
+char_body,char,CC0 pack,existing-review,160,Quaternius UAL Standard; 1 skin; 1 mesh; 67 nodes; source public/models/character/UAL1_Standard.glb; 3000 triangles max,CC0
+char_body_lod1,char,Blender script,planned,70,character_prepare.py; shared 900-triangle body; same rig
+char_blank_head,char,Blender script,planned,8,character_prepare.py; one swappable blank head; 0.2833 m height
+anim_idle,char,CC0 pack,existing,100,Idle_Loop mapped to idle; crop to 2.4s; strip root motion,CC0
+anim_walk,char,CC0 pack,existing,100,Walk_Loop mapped to walk; crop to 1s; strip root motion,CC0
+anim_run,char,CC0 pack,existing,100,Jog_Fwd_Loop mapped to run; crop to 0.7s; strip root motion,CC0
+anim_talk-gesture,char,CC0 pack,existing,100,Idle_Talking_Loop mapped to talk; crop to 2s; strip root motion,CC0
+anim_carry,char,Blender script,planned,100,character_prepare.py authors carry-idle and carry-walk on UAL rig; strip root motion,project-authored
+anim_pickup,char,CC0 pack,existing,100,PickUp_Table mapped to pickup; Interact retained as verified helper clip,CC0
+anim_wave,char,Blender script,planned,100,character_prepare.py authors missing wave on UAL rig; 1.2s,project-authored
+anim_nod,char,Blender script,planned,100,character_prepare.py authors missing nod on UAL rig; 0.7s,project-authored
+anim_shake-head,char,Blender script,planned,100,character_prepare.py authors missing shake on UAL rig; 0.8s,project-authored
+anim_sit,char,CC0 pack,existing,100,Sitting_Idle_Loop plus Sitting_Enter and Sitting_Exit mapped to sit,CC0
+char_player,char,Blender script,planned,5,ART character material/accessory recipe; aliases char_body/char_body_lod1 and shared anim clips; no duplicate geometry
+char_landlord,char,Blender script,planned,5,ART character material/accessory recipe; aliases char_body/char_body_lod1 and shared anim clips; no duplicate geometry
+char_mentor,char,Blender script,planned,5,ART character material/accessory recipe; aliases char_body/char_body_lod1 and shared anim clips; no duplicate geometry
+char_cook,char,Blender script,planned,5,ART character material/accessory recipe; aliases char_body/char_body_lod1 and shared anim clips; no duplicate geometry
+char_warehouse_boss,char,Blender script,planned,5,ART character material/accessory recipe; aliases char_body/char_body_lod1 and shared anim clips; no duplicate geometry
+char_delivery_boss,char,Blender script,planned,5,ART character material/accessory recipe; aliases char_body/char_body_lod1 and shared anim clips; no duplicate geometry
+char_fruit_seller,char,Blender script,planned,5,ART character material/accessory recipe; aliases char_body/char_body_lod1 and shared anim clips; no duplicate geometry
+char_shopkeeper,char,Blender script,planned,5,ART character material/accessory recipe; aliases char_body/char_body_lod1 and shared anim clips; no duplicate geometry
+char_customer,char,Blender script,planned,5,ART character material/accessory recipe; aliases char_body/char_body_lod1 and shared anim clips; no duplicate geometry
+district_ground,building,Blender script,planned,100,buildings.py; 60x40m paving and border shell; no text textures
+building_room,building,Blender script,planned,180,buildings.py; GDD footprint; shell floor/walls/roof only; 8000 triangle cap
+building_room_lod1,building,Blender script,planned,60,Same footprint and sockets; 2000 triangle cap
+building_noodle,building,Blender script,planned,180,buildings.py; GDD footprint; shell floor/walls/roof only; 8000 triangle cap
+building_noodle_lod1,building,Blender script,planned,60,Same footprint and sockets; 2000 triangle cap
+building_fruit,building,Blender script,planned,180,buildings.py; GDD footprint; shell floor/walls/roof only; 8000 triangle cap
+building_fruit_lod1,building,Blender script,planned,60,Same footprint and sockets; 2000 triangle cap
+building_shop,building,Blender script,planned,180,buildings.py; GDD footprint; shell floor/walls/roof only; 8000 triangle cap
+building_shop_lod1,building,Blender script,planned,60,Same footprint and sockets; 2000 triangle cap
+building_bus,building,Blender script,planned,180,buildings.py; GDD footprint; shell floor/walls/roof only; 8000 triangle cap
+building_bus_lod1,building,Blender script,planned,60,Same footprint and sockets; 2000 triangle cap
+building_warehouse,building,Blender script,planned,180,buildings.py; GDD footprint; shell floor/walls/roof only; 8000 triangle cap
+building_warehouse_lod1,building,Blender script,planned,60,Same footprint and sockets; 2000 triangle cap
+building_tea,building,Blender script,planned,180,buildings.py; GDD footprint; shell floor/walls/roof only; 8000 triangle cap
+building_tea_lod1,building,Blender script,planned,60,Same footprint and sockets; 2000 triangle cap
+building_gate,building,Blender script,planned,180,buildings.py; GDD footprint; shell floor/walls/roof only; 8000 triangle cap
+building_gate_lod1,building,Blender script,planned,60,Same footprint and sockets; 2000 triangle cap
+boundary_planter,prop,Blender script,planned,24,8 street instances; grounded collision border
+bush,prop,CC0 pack,existing-review,30,public/models/street/bush.glb;8instances; flat palette
+streetlight,prop,CC0 pack,existing-review,40,public/models/street/streetlight.glb;4instances; no point lights
+bench,prop,CC0 pack,existing-review,35,public/models/street/bench.glb;4instances total
+signboard,prop,Blender script,planned,20,signboard.py;8 street +2 gate instances; text_anchor DOM
+lantern,prop,Blender script,planned,24,lantern.py;4instances; emissive0.25
+drain,prop,Blender script,planned,8,furniture.py;4street instances
+bicycle,prop,Blender script,planned,50,furniture.py authored parked bicycle; 1 instance; no riding,project-authored
+bed,prop,Blender script,planned,35,furniture.py; room1
+quilt,prop,Blender script,planned,12,furniture.py; room1; blue flat material
+room_table,prop,Blender script,planned,24,furniture.py; room1
+chair,prop,Blender script,planned,20,furniture.py; room1 noodle4 tea4
+wardrobe,prop,Blender script,planned,25,furniture.py;room1
+phone,prop,Blender script,planned,8,furniture.py;room1; screen text DOM
+calendar,prop,Blender script,planned,10,furniture.py;room1; date text DOM
+book,prop,Blender script,planned,8,furniture.py;room2 tea1 mentor1
+key_ring,prop,Blender script,planned,10,furniture.py;room1 landlord attachment
+key_tray,prop,Blender script,planned,10,furniture.py;room2; onboarding near/far
+key_hook,prop,Blender script,planned,4,furniture.py;room4; onboarding counts
+tv,prop,Blender script,planned,16,furniture.py;room1 blank display; no people imagery
+computer,prop,Blender script,planned,20,furniture.py;room1 blank display; study scene
+counter,prop,Blender script,planned,25,furniture.py;noodle1 shop1
+sink,prop,Blender script,planned,20,furniture.py;noodle1
+dish_rack,prop,Blender script,planned,16,furniture.py;noodle1
+bowl,prop,CC0 pack,existing-review,12,public/models/food/bowl-broth.glb candidate; remove contents if necessary;noodle8
+cup,prop,CC0 pack,existing-review,12,public/models/food/cup-tea.glb candidate;noodle8 tea4
+chopsticks,prop,CC0 pack,existing-review,6,public/models/food/chopstick.glb;noodle4pairs
+pot,prop,CC0 pack,existing-review,18,public/models/food/pot.glb;noodle1
+steamer,prop,Blender script,planned,30,steamer.py;noodle2; existing food steamer is candidate only
+rice_portion,prop,Blender script,planned,10,furniture.py;noodle2
+vegetable_plate,prop,Blender script,planned,16,furniture.py;noodle2
+teapot,prop,Blender script,planned,20,furniture.py;noodle1 tea1
+towel,prop,Blender script,planned,5,furniture.py;noodle1 and cook attachment
+coaster,prop,Blender script,planned,4,furniture.py;noodle2; ordered 水/茶 placement
+tray,prop,Blender script,planned,10,furniture.py;noodle2 fruit1; consequences reuse
+dining_table,prop,Blender script,planned,25,furniture.py;noodle2
+menu_board,prop,Blender script,planned,12,signboard.py variant;noodle1;DOM menu text
+stall,prop,Blender script,planned,60,fruit_stall.py;fruit1; counter canopy sockets
+fruit_crate,prop,Blender script,planned,18,furniture.py;fruit3
+apple,prop,Blender script,planned,6,furniture.py;fruit12; no texture
+scale,prop,Blender script,planned,15,furniture.py;fruit1; display DOM
+basket,prop,Blender script,planned,16,furniture.py;fruit1 shop2 and shopkeeper attachment
+price_card,prop,Blender script,planned,4,furniture.py;fruit3 shop4; DOM text
+shelf,prop,Blender script,planned,30,furniture.py;shop3 warehouse2
+parcel,prop,Blender script,planned,8,furniture.py;shop6 gate2 delivery attachment
+carry_strap,prop,Blender script,planned,6,furniture.py;tool6yuan withheld S21
+phone_topup_card,prop,Blender script,planned,4,furniture.py;shop1; DOM labels
+receipt,prop,Blender script,planned,4,furniture.py;shop1; DOM amounts
+label_card,prop,Blender script,planned,4,furniture.py;shop6; text 狗/猫 no pictures
+bus_board,prop,Blender script,planned,25,signboard.py variant;bus1
+timetable_card,prop,Blender script,planned,5,furniture.py;bus1;DOM
+route_arrow,prop,Blender script,planned,8,furniture.py;bus2
+transport_card,prop,Blender script,planned,4,furniture.py;bus3; text-only vehicles
+crate,prop,CC0 pack,existing-review,18,public/models/street/box_A.glb;warehouse12
+pallet,prop,Blender script,planned,20,furniture.py;warehouse3
+clipboard,prop,Blender script,planned,8,furniture.py;warehouse1 boss attachment
+loading_pad,prop,Blender script,planned,6,furniture.py;warehouse3
+count_card,prop,Blender script,planned,4,furniture.py;warehouse10; DOM numbers
+round_table,prop,Blender script,planned,25,furniture.py;tea2
+kettle,prop,Blender script,planned,18,furniture.py;tea1
+doorway,prop,Blender script,planned,50,doorway.py; shared frame module
+gate_leaf,prop,Blender script,planned,20,doorway.py;gate2 animated hinge
+clinic_door,prop,Blender script,planned,20,doorway.py;gate1 locked panel
+doorbell,prop,Blender script,planned,6,doorway.py;gate2; no sound unless interaction
+delivery_pad,prop,Blender script,planned,5,furniture.py;gate2
+highlight_ring,prop,Blender script,planned,3,furniture.py;one reusable flat focus ring; no particles
+hat_navy,prop,Blender script,planned,12,character_prepare.py;landlord attachment
+hat_cook,prop,Blender script,planned,12,character_prepare.py;cook attachment
+hat_straw,prop,Blender script,planned,18,character_prepare.py;fruit_seller attachment
+bag_canvas,prop,Blender script,planned,12,character_prepare.py;player attachment
+bag_shopping,prop,Blender script,planned,12,character_prepare.py;customer attachment
+signboard_lod1,prop,Blender script,planned,8,LOD pair for signboard; retain silhouette and sockets; 300 triangles max except stated ART limit
+lantern_lod1,prop,Blender script,planned,10,LOD pair for lantern; retain silhouette and sockets; 300 triangles max except stated ART limit
+steamer_lod1,prop,Blender script,planned,12,LOD pair for steamer; retain silhouette and sockets; 300 triangles max except stated ART limit
+stall_lod1,prop,Blender script,planned,20,LOD pair for stall; retain silhouette and sockets; 300 triangles max except stated ART limit
+doorway_lod1,prop,Blender script,planned,18,LOD pair for doorway; retain silhouette and sockets; 300 triangles max except stated ART limit
+bench_lod1,prop,Blender script,planned,12,LOD pair for bench; retain silhouette and sockets; 300 triangles max except stated ART limit
+streetlight_lod1,prop,Blender script,planned,12,LOD pair for streetlight; retain silhouette and sockets; 300 triangles max except stated ART limit
+bush_lod1,prop,Blender script,planned,10,LOD pair for bush; retain silhouette and sockets; 300 triangles max except stated ART limit
+bicycle_lod1,prop,Blender script,planned,18,LOD pair for bicycle; retain silhouette and sockets; 300 triangles max except stated ART limit
+shelf_lod1,prop,Blender script,planned,10,LOD pair for shelf; retain silhouette and sockets; 300 triangles max except stated ART limit
+crate_lod1,prop,Blender script,planned,7,LOD pair for crate; retain silhouette and sockets; 300 triangles max except stated ART limit
+font_cjk_regular,ui,owner,planned,300,Noto font subset; tone marks and all Han glyphs covered,OFL-1.1
+font_cjk_semibold,ui,owner,planned,250,Noto font subset; tone marks and all Han glyphs covered,OFL-1.1
+font_licence,ui,owner,planned,10,Noto SIL Open Font License notice,OFL-1.1
+font_latin_pinyin,ui,owner,planned,30,Noto font subset; Latin and tone-marked pinyin covered,OFL-1.1
+ui_icons,ui,owner,planned,12,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_panel_skin,ui,owner,planned,4,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_joystick,ui,owner,planned,4,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_prompt,ui,owner,planned,2,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_notebook_tabs,ui,owner,planned,3,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_wallet,ui,owner,planned,2,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_slot_pips,ui,owner,planned,2,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_speaker,ui,owner,planned,2,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_replay,ui,owner,planned,2,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_slow,ui,owner,planned,2,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_objective_arrow,ui,owner,planned,2,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_title_wordmark,ui,owner,planned,4,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_focus_ring,ui,owner,planned,1,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_controls_keyboard,ui,owner,planned,4,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_controls_gamepad,ui,owner,planned,4,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_controls_touch,ui,owner,planned,4,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_loading_silhouette,ui,owner,planned,4,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_phone_message,ui,owner,planned,2,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_receipt_layout,ui,owner,planned,2,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_mentor_explanations,ui,owner,planned,8,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_settings_copy,ui,owner,planned,4,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_menu_copy,ui,owner,planned,6,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_save_copy,ui,owner,planned,4,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_gate_copy,ui,owner,planned,3,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_credits_copy,ui,owner,planned,8,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_onboarding_copy,ui,owner,planned,5,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+ui_error_copy,ui,owner,planned,4,Project-authored local DOM/CSS/vector/string asset; no bitmap portraits
+sign_text_rented_room,ui,owner,planned,2,GDD signs plus checked menus/price tags; projected DOM; every Han token dictionary checked
+sign_text_noodle_shop,ui,owner,planned,2,GDD signs plus checked menus/price tags; projected DOM; every Han token dictionary checked
+sign_text_fruit_stall,ui,owner,planned,2,GDD signs plus checked menus/price tags; projected DOM; every Han token dictionary checked
+sign_text_supermarket,ui,owner,planned,2,GDD signs plus checked menus/price tags; projected DOM; every Han token dictionary checked
+sign_text_bus_stop,ui,owner,planned,2,GDD signs plus checked menus/price tags; projected DOM; every Han token dictionary checked
+sign_text_warehouse,ui,owner,planned,2,GDD signs plus checked menus/price tags; projected DOM; every Han token dictionary checked
+sign_text_tea_house,ui,owner,planned,2,GDD signs plus checked menus/price tags; projected DOM; every Han token dictionary checked
+sign_text_phase2_gate,ui,owner,planned,2,GDD signs plus checked menus/price tags; projected DOM; every Han token dictionary checked
+p1_arrival_00_e1,audio,TTS,planned,24,S00 e1 NPC landlord; full sentence; fixed text; duration cap <=6s
+p1_arrival_00_e1_r1,audio,TTS,planned,12,S00 e1 spoken reply1; player voice; fixed
+p1_arrival_00_e1_r2,audio,TTS,planned,12,S00 e1 spoken reply2; player voice; fixed
+p1_arrival_00_e1_hint,audio,TTS,planned,16,S00 e1; NPC landlord; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_arrival_00_e2,audio,TTS,planned,24,S00 e2 NPC landlord; full sentence; fixed text; duration cap <=6s
+p1_arrival_00_e2_r1,audio,TTS,planned,12,S00 e2 spoken reply1; player voice; fixed
+p1_arrival_00_e2_r2,audio,TTS,planned,12,S00 e2 spoken reply2; player voice; fixed
+p1_arrival_00_e2_hint,audio,TTS,planned,16,S00 e2; NPC landlord; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_arrival_00_e3,audio,TTS,planned,24,S00 e3 NPC landlord; full sentence; fixed text; duration cap <=6s
+p1_arrival_00_e3_r1,audio,TTS,planned,12,S00 e3 spoken reply1; player voice; fixed
+p1_arrival_00_e3_r2,audio,TTS,planned,12,S00 e3 spoken reply2; player voice; fixed
+p1_arrival_00_e3_hint,audio,TTS,planned,16,S00 e3; NPC landlord; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_arrival_00_e4,audio,TTS,planned,24,S00 e4 NPC landlord; full sentence; fixed text; duration cap <=6s
+p1_arrival_00_e4_r1,audio,TTS,planned,12,S00 e4 spoken reply1; player voice; fixed
+p1_arrival_00_e4_r2,audio,TTS,planned,12,S00 e4 spoken reply2; player voice; fixed
+p1_arrival_00_e4_hint,audio,TTS,planned,16,S00 e4; NPC landlord; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_arrival_00_e5,audio,TTS,planned,24,S00 e5 NPC landlord; full sentence; fixed text; duration cap <=6s
+p1_arrival_00_e5_r1,audio,TTS,planned,12,S00 e5 spoken reply1; player voice; fixed
+p1_arrival_00_e5_r2,audio,TTS,planned,12,S00 e5 spoken reply2; player voice; fixed
+p1_arrival_00_e5_hint,audio,TTS,planned,16,S00 e5; NPC landlord; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_dishwasher_01_e1,audio,TTS,planned,24,S01 e1 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_noodle_dishwasher_01_e1_r1,audio,TTS,planned,12,S01 e1 spoken reply1; player voice; fixed
+p1_noodle_dishwasher_01_e1_r2,audio,TTS,planned,12,S01 e1 spoken reply2; player voice; fixed
+p1_noodle_dishwasher_01_e1_hint,audio,TTS,planned,16,S01 e1; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_dishwasher_01_e2,audio,TTS,planned,24,S01 e2 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_noodle_dishwasher_01_e2_r1,audio,TTS,planned,12,S01 e2 spoken reply1; player voice; fixed
+p1_noodle_dishwasher_01_e2_r2,audio,TTS,planned,12,S01 e2 spoken reply2; player voice; fixed
+p1_noodle_dishwasher_01_e2_hint,audio,TTS,planned,16,S01 e2; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_dishwasher_01_e3,audio,TTS,planned,24,S01 e3 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_noodle_dishwasher_01_e3_r1,audio,TTS,planned,12,S01 e3 spoken reply1; player voice; fixed
+p1_noodle_dishwasher_01_e3_r2,audio,TTS,planned,12,S01 e3 spoken reply2; player voice; fixed
+p1_noodle_dishwasher_01_e3_hint,audio,TTS,planned,16,S01 e3; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_dishwasher_01_e4__v000,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 0/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v001,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 1/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v002,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 2/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v003,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 3/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v004,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 4/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v005,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 5/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v006,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 6/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v007,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 7/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v008,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 8/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v009,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 9/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v010,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 10/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v011,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 11/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v012,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 12/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v013,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 13/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v014,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 14/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v015,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 15/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v016,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 16/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v017,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 17/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v018,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 18/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v019,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 19/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v020,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 20/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v021,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 21/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v022,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 22/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v023,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 23/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v024,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 24/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v025,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 25/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v026,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 26/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v027,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 27/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v028,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 28/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v029,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 29/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v030,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 30/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v031,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 31/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v032,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 32/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v033,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 33/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v034,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 34/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v035,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 35/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v036,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 36/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v037,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 37/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v038,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 38/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v039,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 39/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v040,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 40/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v041,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 41/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v042,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 42/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v043,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 43/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v044,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 44/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v045,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 45/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v046,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 46/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v047,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 47/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v048,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 48/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v049,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 49/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v050,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 50/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v051,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 51/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v052,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 52/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v053,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 53/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v054,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 54/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v055,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 55/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v056,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 56/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v057,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 57/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v058,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 58/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v059,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 59/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v060,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 60/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v061,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 61/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v062,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 62/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v063,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 63/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v064,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 64/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v065,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 65/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v066,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 66/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v067,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 67/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v068,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 68/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v069,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 69/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v070,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 70/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v071,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 71/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v072,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 72/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v073,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 73/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v074,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 74/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v075,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 75/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v076,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 76/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v077,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 77/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v078,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 78/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v079,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 79/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v080,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 80/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v081,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 81/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v082,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 82/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v083,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 83/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v084,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 84/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v085,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 85/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v086,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 86/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v087,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 87/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v088,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 88/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4__v089,audio,TTS,planned,24,S01 e4 NPC cook; full sentence; variant 89/90; duration cap <=6s
+p1_noodle_dishwasher_01_e4_r1__v000,audio,TTS,planned,12,S01 e4 spoken reply1; player voice; variant 0/10
+p1_noodle_dishwasher_01_e4_r1__v001,audio,TTS,planned,12,S01 e4 spoken reply1; player voice; variant 1/10
+p1_noodle_dishwasher_01_e4_r1__v002,audio,TTS,planned,12,S01 e4 spoken reply1; player voice; variant 2/10
+p1_noodle_dishwasher_01_e4_r1__v003,audio,TTS,planned,12,S01 e4 spoken reply1; player voice; variant 3/10
+p1_noodle_dishwasher_01_e4_r1__v004,audio,TTS,planned,12,S01 e4 spoken reply1; player voice; variant 4/10
+p1_noodle_dishwasher_01_e4_r1__v005,audio,TTS,planned,12,S01 e4 spoken reply1; player voice; variant 5/10
+p1_noodle_dishwasher_01_e4_r1__v006,audio,TTS,planned,12,S01 e4 spoken reply1; player voice; variant 6/10
+p1_noodle_dishwasher_01_e4_r1__v007,audio,TTS,planned,12,S01 e4 spoken reply1; player voice; variant 7/10
+p1_noodle_dishwasher_01_e4_r1__v008,audio,TTS,planned,12,S01 e4 spoken reply1; player voice; variant 8/10
+p1_noodle_dishwasher_01_e4_r1__v009,audio,TTS,planned,12,S01 e4 spoken reply1; player voice; variant 9/10
+p1_noodle_dishwasher_01_e4_r2__v000,audio,TTS,planned,12,S01 e4 spoken reply2; player voice; variant 0/10
+p1_noodle_dishwasher_01_e4_r2__v001,audio,TTS,planned,12,S01 e4 spoken reply2; player voice; variant 1/10
+p1_noodle_dishwasher_01_e4_r2__v002,audio,TTS,planned,12,S01 e4 spoken reply2; player voice; variant 2/10
+p1_noodle_dishwasher_01_e4_r2__v003,audio,TTS,planned,12,S01 e4 spoken reply2; player voice; variant 3/10
+p1_noodle_dishwasher_01_e4_r2__v004,audio,TTS,planned,12,S01 e4 spoken reply2; player voice; variant 4/10
+p1_noodle_dishwasher_01_e4_r2__v005,audio,TTS,planned,12,S01 e4 spoken reply2; player voice; variant 5/10
+p1_noodle_dishwasher_01_e4_r2__v006,audio,TTS,planned,12,S01 e4 spoken reply2; player voice; variant 6/10
+p1_noodle_dishwasher_01_e4_r2__v007,audio,TTS,planned,12,S01 e4 spoken reply2; player voice; variant 7/10
+p1_noodle_dishwasher_01_e4_r2__v008,audio,TTS,planned,12,S01 e4 spoken reply2; player voice; variant 8/10
+p1_noodle_dishwasher_01_e4_r2__v009,audio,TTS,planned,12,S01 e4 spoken reply2; player voice; variant 9/10
+p1_noodle_dishwasher_01_e4_hint,audio,TTS,planned,16,S01 e4; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_dishwasher_01_e5,audio,TTS,planned,24,S01 e5 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_noodle_dishwasher_01_e5_r1__v000,audio,TTS,planned,12,S01 e5 spoken reply1; player voice; variant 0/10
+p1_noodle_dishwasher_01_e5_r1__v001,audio,TTS,planned,12,S01 e5 spoken reply1; player voice; variant 1/10
+p1_noodle_dishwasher_01_e5_r1__v002,audio,TTS,planned,12,S01 e5 spoken reply1; player voice; variant 2/10
+p1_noodle_dishwasher_01_e5_r1__v003,audio,TTS,planned,12,S01 e5 spoken reply1; player voice; variant 3/10
+p1_noodle_dishwasher_01_e5_r1__v004,audio,TTS,planned,12,S01 e5 spoken reply1; player voice; variant 4/10
+p1_noodle_dishwasher_01_e5_r1__v005,audio,TTS,planned,12,S01 e5 spoken reply1; player voice; variant 5/10
+p1_noodle_dishwasher_01_e5_r1__v006,audio,TTS,planned,12,S01 e5 spoken reply1; player voice; variant 6/10
+p1_noodle_dishwasher_01_e5_r1__v007,audio,TTS,planned,12,S01 e5 spoken reply1; player voice; variant 7/10
+p1_noodle_dishwasher_01_e5_r1__v008,audio,TTS,planned,12,S01 e5 spoken reply1; player voice; variant 8/10
+p1_noodle_dishwasher_01_e5_r1__v009,audio,TTS,planned,12,S01 e5 spoken reply1; player voice; variant 9/10
+p1_noodle_dishwasher_01_e5_r2__v000,audio,TTS,planned,12,S01 e5 spoken reply2; player voice; variant 0/10
+p1_noodle_dishwasher_01_e5_r2__v001,audio,TTS,planned,12,S01 e5 spoken reply2; player voice; variant 1/10
+p1_noodle_dishwasher_01_e5_r2__v002,audio,TTS,planned,12,S01 e5 spoken reply2; player voice; variant 2/10
+p1_noodle_dishwasher_01_e5_r2__v003,audio,TTS,planned,12,S01 e5 spoken reply2; player voice; variant 3/10
+p1_noodle_dishwasher_01_e5_r2__v004,audio,TTS,planned,12,S01 e5 spoken reply2; player voice; variant 4/10
+p1_noodle_dishwasher_01_e5_r2__v005,audio,TTS,planned,12,S01 e5 spoken reply2; player voice; variant 5/10
+p1_noodle_dishwasher_01_e5_r2__v006,audio,TTS,planned,12,S01 e5 spoken reply2; player voice; variant 6/10
+p1_noodle_dishwasher_01_e5_r2__v007,audio,TTS,planned,12,S01 e5 spoken reply2; player voice; variant 7/10
+p1_noodle_dishwasher_01_e5_r2__v008,audio,TTS,planned,12,S01 e5 spoken reply2; player voice; variant 8/10
+p1_noodle_dishwasher_01_e5_r2__v009,audio,TTS,planned,12,S01 e5 spoken reply2; player voice; variant 9/10
+p1_noodle_dishwasher_01_e5_hint,audio,TTS,planned,16,S01 e5; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_dishwasher_02_e1,audio,TTS,planned,24,S02 e1 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_noodle_dishwasher_02_e1_r1,audio,TTS,planned,12,S02 e1 spoken reply1; player voice; fixed
+p1_noodle_dishwasher_02_e1_r2,audio,TTS,planned,12,S02 e1 spoken reply2; player voice; fixed
+p1_noodle_dishwasher_02_e1_hint,audio,TTS,planned,16,S02 e1; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_dishwasher_02_e2,audio,TTS,planned,24,S02 e2 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_noodle_dishwasher_02_e2_r1,audio,TTS,planned,12,S02 e2 spoken reply1; player voice; fixed
+p1_noodle_dishwasher_02_e2_r2,audio,TTS,planned,12,S02 e2 spoken reply2; player voice; fixed
+p1_noodle_dishwasher_02_e2_hint,audio,TTS,planned,16,S02 e2; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_dishwasher_02_e3,audio,TTS,planned,24,S02 e3 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_noodle_dishwasher_02_e3_r1,audio,TTS,planned,12,S02 e3 spoken reply1; player voice; fixed
+p1_noodle_dishwasher_02_e3_r2,audio,TTS,planned,12,S02 e3 spoken reply2; player voice; fixed
+p1_noodle_dishwasher_02_e3_hint,audio,TTS,planned,16,S02 e3; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_dishwasher_02_e4__v000,audio,TTS,planned,24,S02 e4 NPC cook; full sentence; variant 0/10; duration cap <=6s
+p1_noodle_dishwasher_02_e4__v001,audio,TTS,planned,24,S02 e4 NPC cook; full sentence; variant 1/10; duration cap <=6s
+p1_noodle_dishwasher_02_e4__v002,audio,TTS,planned,24,S02 e4 NPC cook; full sentence; variant 2/10; duration cap <=6s
+p1_noodle_dishwasher_02_e4__v003,audio,TTS,planned,24,S02 e4 NPC cook; full sentence; variant 3/10; duration cap <=6s
+p1_noodle_dishwasher_02_e4__v004,audio,TTS,planned,24,S02 e4 NPC cook; full sentence; variant 4/10; duration cap <=6s
+p1_noodle_dishwasher_02_e4__v005,audio,TTS,planned,24,S02 e4 NPC cook; full sentence; variant 5/10; duration cap <=6s
+p1_noodle_dishwasher_02_e4__v006,audio,TTS,planned,24,S02 e4 NPC cook; full sentence; variant 6/10; duration cap <=6s
+p1_noodle_dishwasher_02_e4__v007,audio,TTS,planned,24,S02 e4 NPC cook; full sentence; variant 7/10; duration cap <=6s
+p1_noodle_dishwasher_02_e4__v008,audio,TTS,planned,24,S02 e4 NPC cook; full sentence; variant 8/10; duration cap <=6s
+p1_noodle_dishwasher_02_e4__v009,audio,TTS,planned,24,S02 e4 NPC cook; full sentence; variant 9/10; duration cap <=6s
+p1_noodle_dishwasher_02_e4_r1__v000,audio,TTS,planned,12,S02 e4 spoken reply1; player voice; variant 0/10
+p1_noodle_dishwasher_02_e4_r1__v001,audio,TTS,planned,12,S02 e4 spoken reply1; player voice; variant 1/10
+p1_noodle_dishwasher_02_e4_r1__v002,audio,TTS,planned,12,S02 e4 spoken reply1; player voice; variant 2/10
+p1_noodle_dishwasher_02_e4_r1__v003,audio,TTS,planned,12,S02 e4 spoken reply1; player voice; variant 3/10
+p1_noodle_dishwasher_02_e4_r1__v004,audio,TTS,planned,12,S02 e4 spoken reply1; player voice; variant 4/10
+p1_noodle_dishwasher_02_e4_r1__v005,audio,TTS,planned,12,S02 e4 spoken reply1; player voice; variant 5/10
+p1_noodle_dishwasher_02_e4_r1__v006,audio,TTS,planned,12,S02 e4 spoken reply1; player voice; variant 6/10
+p1_noodle_dishwasher_02_e4_r1__v007,audio,TTS,planned,12,S02 e4 spoken reply1; player voice; variant 7/10
+p1_noodle_dishwasher_02_e4_r1__v008,audio,TTS,planned,12,S02 e4 spoken reply1; player voice; variant 8/10
+p1_noodle_dishwasher_02_e4_r1__v009,audio,TTS,planned,12,S02 e4 spoken reply1; player voice; variant 9/10
+p1_noodle_dishwasher_02_e4_r2__v000,audio,TTS,planned,12,S02 e4 spoken reply2; player voice; variant 0/10
+p1_noodle_dishwasher_02_e4_r2__v001,audio,TTS,planned,12,S02 e4 spoken reply2; player voice; variant 1/10
+p1_noodle_dishwasher_02_e4_r2__v002,audio,TTS,planned,12,S02 e4 spoken reply2; player voice; variant 2/10
+p1_noodle_dishwasher_02_e4_r2__v003,audio,TTS,planned,12,S02 e4 spoken reply2; player voice; variant 3/10
+p1_noodle_dishwasher_02_e4_r2__v004,audio,TTS,planned,12,S02 e4 spoken reply2; player voice; variant 4/10
+p1_noodle_dishwasher_02_e4_r2__v005,audio,TTS,planned,12,S02 e4 spoken reply2; player voice; variant 5/10
+p1_noodle_dishwasher_02_e4_r2__v006,audio,TTS,planned,12,S02 e4 spoken reply2; player voice; variant 6/10
+p1_noodle_dishwasher_02_e4_r2__v007,audio,TTS,planned,12,S02 e4 spoken reply2; player voice; variant 7/10
+p1_noodle_dishwasher_02_e4_r2__v008,audio,TTS,planned,12,S02 e4 spoken reply2; player voice; variant 8/10
+p1_noodle_dishwasher_02_e4_r2__v009,audio,TTS,planned,12,S02 e4 spoken reply2; player voice; variant 9/10
+p1_noodle_dishwasher_02_e4_hint,audio,TTS,planned,16,S02 e4; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_dishwasher_02_e5,audio,TTS,planned,24,S02 e5 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_noodle_dishwasher_02_e5_r1,audio,TTS,planned,12,S02 e5 spoken reply1; player voice; fixed
+p1_noodle_dishwasher_02_e5_r2,audio,TTS,planned,12,S02 e5 spoken reply2; player voice; fixed
+p1_noodle_dishwasher_02_e5_hint,audio,TTS,planned,16,S02 e5; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_dishwasher_03_e1,audio,TTS,planned,24,S03 e1 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_noodle_dishwasher_03_e1_r1,audio,TTS,planned,12,S03 e1 spoken reply1; player voice; fixed
+p1_noodle_dishwasher_03_e1_r2,audio,TTS,planned,12,S03 e1 spoken reply2; player voice; fixed
+p1_noodle_dishwasher_03_e1_hint,audio,TTS,planned,16,S03 e1; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_dishwasher_03_e2,audio,TTS,planned,24,S03 e2 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_noodle_dishwasher_03_e2_r1,audio,TTS,planned,12,S03 e2 spoken reply1; player voice; fixed
+p1_noodle_dishwasher_03_e2_r2,audio,TTS,planned,12,S03 e2 spoken reply2; player voice; fixed
+p1_noodle_dishwasher_03_e2_hint,audio,TTS,planned,16,S03 e2; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_dishwasher_03_e3,audio,TTS,planned,24,S03 e3 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_noodle_dishwasher_03_e3_r1,audio,TTS,planned,12,S03 e3 spoken reply1; player voice; fixed
+p1_noodle_dishwasher_03_e3_r2,audio,TTS,planned,12,S03 e3 spoken reply2; player voice; fixed
+p1_noodle_dishwasher_03_e3_hint,audio,TTS,planned,16,S03 e3; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_dishwasher_03_e4,audio,TTS,planned,24,S03 e4 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_noodle_dishwasher_03_e4_r1,audio,TTS,planned,12,S03 e4 spoken reply1; player voice; fixed
+p1_noodle_dishwasher_03_e4_r2,audio,TTS,planned,12,S03 e4 spoken reply2; player voice; fixed
+p1_noodle_dishwasher_03_e4_hint,audio,TTS,planned,16,S03 e4; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_dishwasher_03_e5,audio,TTS,planned,24,S03 e5 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_noodle_dishwasher_03_e5_r1,audio,TTS,planned,12,S03 e5 spoken reply1; player voice; fixed
+p1_noodle_dishwasher_03_e5_r2,audio,TTS,planned,12,S03 e5 spoken reply2; player voice; fixed
+p1_noodle_dishwasher_03_e5_hint,audio,TTS,planned,16,S03 e5; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_mentor_negatives_01_e1,audio,TTS,planned,24,S04 e1 NPC mentor; full sentence; fixed text; duration cap <=6s
+p1_mentor_negatives_01_e1_r1,audio,TTS,planned,12,S04 e1 spoken reply1; player voice; fixed
+p1_mentor_negatives_01_e1_r2,audio,TTS,planned,12,S04 e1 spoken reply2; player voice; fixed
+p1_mentor_negatives_01_e1_hint,audio,TTS,planned,16,S04 e1; NPC mentor; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_mentor_negatives_01_e2,audio,TTS,planned,24,S04 e2 NPC mentor; full sentence; fixed text; duration cap <=6s
+p1_mentor_negatives_01_e2_r1,audio,TTS,planned,12,S04 e2 spoken reply1; player voice; fixed
+p1_mentor_negatives_01_e2_r2,audio,TTS,planned,12,S04 e2 spoken reply2; player voice; fixed
+p1_mentor_negatives_01_e2_hint,audio,TTS,planned,16,S04 e2; NPC mentor; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_mentor_negatives_01_e3,audio,TTS,planned,24,S04 e3 NPC mentor; full sentence; fixed text; duration cap <=6s
+p1_mentor_negatives_01_e3_r1,audio,TTS,planned,12,S04 e3 spoken reply1; player voice; fixed
+p1_mentor_negatives_01_e3_r2,audio,TTS,planned,12,S04 e3 spoken reply2; player voice; fixed
+p1_mentor_negatives_01_e3_hint,audio,TTS,planned,16,S04 e3; NPC mentor; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_mentor_negatives_01_e4,audio,TTS,planned,24,S04 e4 NPC mentor; full sentence; fixed text; duration cap <=6s
+p1_mentor_negatives_01_e4_r1,audio,TTS,planned,12,S04 e4 spoken reply1; player voice; fixed
+p1_mentor_negatives_01_e4_r2,audio,TTS,planned,12,S04 e4 spoken reply2; player voice; fixed
+p1_mentor_negatives_01_e4_hint,audio,TTS,planned,16,S04 e4; NPC mentor; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_warehouse_porter_01_e1,audio,TTS,planned,24,S05 e1 NPC warehouse_boss; full sentence; fixed text; duration cap <=6s
+p1_warehouse_porter_01_e1_r1,audio,TTS,planned,12,S05 e1 spoken reply1; player voice; fixed
+p1_warehouse_porter_01_e1_r2,audio,TTS,planned,12,S05 e1 spoken reply2; player voice; fixed
+p1_warehouse_porter_01_e1_hint,audio,TTS,planned,16,S05 e1; NPC warehouse_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_warehouse_porter_01_e2,audio,TTS,planned,24,S05 e2 NPC warehouse_boss; full sentence; fixed text; duration cap <=6s
+p1_warehouse_porter_01_e2_r1,audio,TTS,planned,12,S05 e2 spoken reply1; player voice; fixed
+p1_warehouse_porter_01_e2_r2,audio,TTS,planned,12,S05 e2 spoken reply2; player voice; fixed
+p1_warehouse_porter_01_e2_hint,audio,TTS,planned,16,S05 e2; NPC warehouse_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_warehouse_porter_01_e3,audio,TTS,planned,24,S05 e3 NPC warehouse_boss; full sentence; fixed text; duration cap <=6s
+p1_warehouse_porter_01_e3_r1,audio,TTS,planned,12,S05 e3 spoken reply1; player voice; fixed
+p1_warehouse_porter_01_e3_r2,audio,TTS,planned,12,S05 e3 spoken reply2; player voice; fixed
+p1_warehouse_porter_01_e3_hint,audio,TTS,planned,16,S05 e3; NPC warehouse_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_warehouse_porter_01_e4,audio,TTS,planned,24,S05 e4 NPC warehouse_boss; full sentence; fixed text; duration cap <=6s
+p1_warehouse_porter_01_e4_r1,audio,TTS,planned,12,S05 e4 spoken reply1; player voice; fixed
+p1_warehouse_porter_01_e4_r2,audio,TTS,planned,12,S05 e4 spoken reply2; player voice; fixed
+p1_warehouse_porter_01_e4_hint,audio,TTS,planned,16,S05 e4; NPC warehouse_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_mentor_quantities_02_e1,audio,TTS,planned,24,S06 e1 NPC mentor; full sentence; fixed text; duration cap <=6s
+p1_mentor_quantities_02_e1_r1,audio,TTS,planned,12,S06 e1 spoken reply1; player voice; fixed
+p1_mentor_quantities_02_e1_r2,audio,TTS,planned,12,S06 e1 spoken reply2; player voice; fixed
+p1_mentor_quantities_02_e1_hint,audio,TTS,planned,16,S06 e1; NPC mentor; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_mentor_quantities_02_e2,audio,TTS,planned,24,S06 e2 NPC mentor; full sentence; fixed text; duration cap <=6s
+p1_mentor_quantities_02_e2_r1,audio,TTS,planned,12,S06 e2 spoken reply1; player voice; fixed
+p1_mentor_quantities_02_e2_r2,audio,TTS,planned,12,S06 e2 spoken reply2; player voice; fixed
+p1_mentor_quantities_02_e2_hint,audio,TTS,planned,16,S06 e2; NPC mentor; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_mentor_quantities_02_e3,audio,TTS,planned,24,S06 e3 NPC mentor; full sentence; fixed text; duration cap <=6s
+p1_mentor_quantities_02_e3_r1,audio,TTS,planned,12,S06 e3 spoken reply1; player voice; fixed
+p1_mentor_quantities_02_e3_r2,audio,TTS,planned,12,S06 e3 spoken reply2; player voice; fixed
+p1_mentor_quantities_02_e3_hint,audio,TTS,planned,16,S06 e3; NPC mentor; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_mentor_quantities_02_e4,audio,TTS,planned,24,S06 e4 NPC mentor; full sentence; fixed text; duration cap <=6s
+p1_mentor_quantities_02_e4_r1,audio,TTS,planned,12,S06 e4 spoken reply1; player voice; fixed
+p1_mentor_quantities_02_e4_r2,audio,TTS,planned,12,S06 e4 spoken reply2; player voice; fixed
+p1_mentor_quantities_02_e4_hint,audio,TTS,planned,16,S06 e4; NPC mentor; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_warehouse_porter_02_e1,audio,TTS,planned,24,S07 e1 NPC warehouse_boss; full sentence; fixed text; duration cap <=6s
+p1_warehouse_porter_02_e1_r1,audio,TTS,planned,12,S07 e1 spoken reply1; player voice; fixed
+p1_warehouse_porter_02_e1_r2,audio,TTS,planned,12,S07 e1 spoken reply2; player voice; fixed
+p1_warehouse_porter_02_e1_hint,audio,TTS,planned,16,S07 e1; NPC warehouse_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_warehouse_porter_02_e2,audio,TTS,planned,24,S07 e2 NPC warehouse_boss; full sentence; fixed text; duration cap <=6s
+p1_warehouse_porter_02_e2_r1,audio,TTS,planned,12,S07 e2 spoken reply1; player voice; fixed
+p1_warehouse_porter_02_e2_r2,audio,TTS,planned,12,S07 e2 spoken reply2; player voice; fixed
+p1_warehouse_porter_02_e2_hint,audio,TTS,planned,16,S07 e2; NPC warehouse_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_warehouse_porter_02_e3,audio,TTS,planned,24,S07 e3 NPC warehouse_boss; full sentence; fixed text; duration cap <=6s
+p1_warehouse_porter_02_e3_r1,audio,TTS,planned,12,S07 e3 spoken reply1; player voice; fixed
+p1_warehouse_porter_02_e3_r2,audio,TTS,planned,12,S07 e3 spoken reply2; player voice; fixed
+p1_warehouse_porter_02_e3_hint,audio,TTS,planned,16,S07 e3; NPC warehouse_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_warehouse_porter_02_e4,audio,TTS,planned,24,S07 e4 NPC warehouse_boss; full sentence; fixed text; duration cap <=6s
+p1_warehouse_porter_02_e4_r1,audio,TTS,planned,12,S07 e4 spoken reply1; player voice; fixed
+p1_warehouse_porter_02_e4_r2,audio,TTS,planned,12,S07 e4 spoken reply2; player voice; fixed
+p1_warehouse_porter_02_e4_hint,audio,TTS,planned,16,S07 e4; NPC warehouse_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_delivery_directions_01_e1,audio,TTS,planned,24,S08 e1 NPC delivery_boss; full sentence; fixed text; duration cap <=6s
+p1_delivery_directions_01_e1_r1,audio,TTS,planned,12,S08 e1 spoken reply1; player voice; fixed
+p1_delivery_directions_01_e1_r2,audio,TTS,planned,12,S08 e1 spoken reply2; player voice; fixed
+p1_delivery_directions_01_e1_hint,audio,TTS,planned,16,S08 e1; NPC delivery_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_delivery_directions_01_e2__v000,audio,TTS,planned,24,S08 e2 NPC delivery_boss; full sentence; variant 0/3; duration cap <=6s
+p1_delivery_directions_01_e2__v001,audio,TTS,planned,24,S08 e2 NPC delivery_boss; full sentence; variant 1/3; duration cap <=6s
+p1_delivery_directions_01_e2__v002,audio,TTS,planned,24,S08 e2 NPC delivery_boss; full sentence; variant 2/3; duration cap <=6s
+p1_delivery_directions_01_e2_r1__v000,audio,TTS,planned,12,S08 e2 spoken reply1; player voice; variant 0/3
+p1_delivery_directions_01_e2_r1__v001,audio,TTS,planned,12,S08 e2 spoken reply1; player voice; variant 1/3
+p1_delivery_directions_01_e2_r1__v002,audio,TTS,planned,12,S08 e2 spoken reply1; player voice; variant 2/3
+p1_delivery_directions_01_e2_r2__v000,audio,TTS,planned,12,S08 e2 spoken reply2; player voice; variant 0/3
+p1_delivery_directions_01_e2_r2__v001,audio,TTS,planned,12,S08 e2 spoken reply2; player voice; variant 1/3
+p1_delivery_directions_01_e2_r2__v002,audio,TTS,planned,12,S08 e2 spoken reply2; player voice; variant 2/3
+p1_delivery_directions_01_e2_hint,audio,TTS,planned,16,S08 e2; NPC delivery_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_delivery_directions_01_e3,audio,TTS,planned,24,S08 e3 NPC delivery_boss; full sentence; fixed text; duration cap <=6s
+p1_delivery_directions_01_e3_r1,audio,TTS,planned,12,S08 e3 spoken reply1; player voice; fixed
+p1_delivery_directions_01_e3_r2,audio,TTS,planned,12,S08 e3 spoken reply2; player voice; fixed
+p1_delivery_directions_01_e3_hint,audio,TTS,planned,16,S08 e3; NPC delivery_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_delivery_directions_01_e4,audio,TTS,planned,24,S08 e4 NPC delivery_boss; full sentence; fixed text; duration cap <=6s
+p1_delivery_directions_01_e4_r1,audio,TTS,planned,12,S08 e4 spoken reply1; player voice; fixed
+p1_delivery_directions_01_e4_r2,audio,TTS,planned,12,S08 e4 spoken reply2; player voice; fixed
+p1_delivery_directions_01_e4_hint,audio,TTS,planned,16,S08 e4; NPC delivery_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_delivery_names_02_e1,audio,TTS,planned,24,S09 e1 NPC customer; full sentence; fixed text; duration cap <=6s
+p1_delivery_names_02_e1_r1,audio,TTS,planned,12,S09 e1 spoken reply1; player voice; fixed
+p1_delivery_names_02_e1_r2,audio,TTS,planned,12,S09 e1 spoken reply2; player voice; fixed
+p1_delivery_names_02_e1_hint,audio,TTS,planned,16,S09 e1; NPC customer; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_delivery_names_02_e2,audio,TTS,planned,24,S09 e2 NPC customer; full sentence; fixed text; duration cap <=6s
+p1_delivery_names_02_e2_r1,audio,TTS,planned,12,S09 e2 spoken reply1; player voice; fixed
+p1_delivery_names_02_e2_r2,audio,TTS,planned,12,S09 e2 spoken reply2; player voice; fixed
+p1_delivery_names_02_e2_hint,audio,TTS,planned,16,S09 e2; NPC customer; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_delivery_names_02_e3,audio,TTS,planned,24,S09 e3 NPC customer; full sentence; fixed text; duration cap <=6s
+p1_delivery_names_02_e3_r1,audio,TTS,planned,12,S09 e3 spoken reply1; player voice; fixed
+p1_delivery_names_02_e3_r2,audio,TTS,planned,12,S09 e3 spoken reply2; player voice; fixed
+p1_delivery_names_02_e3_hint,audio,TTS,planned,16,S09 e3; NPC customer; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_delivery_names_02_e4,audio,TTS,planned,24,S09 e4 NPC customer; full sentence; fixed text; duration cap <=6s
+p1_delivery_names_02_e4_r1,audio,TTS,planned,12,S09 e4 spoken reply1; player voice; fixed
+p1_delivery_names_02_e4_r2,audio,TTS,planned,12,S09 e4 spoken reply2; player voice; fixed
+p1_delivery_names_02_e4_hint,audio,TTS,planned,16,S09 e4; NPC customer; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_ask_time_01_e1,audio,TTS,planned,24,S10 e1 NPC customer; full sentence; fixed text; duration cap <=6s
+p1_ask_time_01_e1_r1,audio,TTS,planned,12,S10 e1 spoken reply1; player voice; fixed
+p1_ask_time_01_e1_r2,audio,TTS,planned,12,S10 e1 spoken reply2; player voice; fixed
+p1_ask_time_01_e1_hint,audio,TTS,planned,16,S10 e1; NPC customer; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_ask_time_01_e2,audio,TTS,planned,24,S10 e2 NPC customer; full sentence; fixed text; duration cap <=6s
+p1_ask_time_01_e2_r1,audio,TTS,planned,12,S10 e2 spoken reply1; player voice; fixed
+p1_ask_time_01_e2_r2,audio,TTS,planned,12,S10 e2 spoken reply2; player voice; fixed
+p1_ask_time_01_e2_hint,audio,TTS,planned,16,S10 e2; NPC customer; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_ask_time_01_e3,audio,TTS,planned,24,S10 e3 NPC customer; full sentence; fixed text; duration cap <=6s
+p1_ask_time_01_e3_r1,audio,TTS,planned,12,S10 e3 spoken reply1; player voice; fixed
+p1_ask_time_01_e3_r2,audio,TTS,planned,12,S10 e3 spoken reply2; player voice; fixed
+p1_ask_time_01_e3_hint,audio,TTS,planned,16,S10 e3; NPC customer; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_ask_time_01_e4,audio,TTS,planned,24,S10 e4 NPC customer; full sentence; fixed text; duration cap <=6s
+p1_ask_time_01_e4_r1,audio,TTS,planned,12,S10 e4 spoken reply1; player voice; fixed
+p1_ask_time_01_e4_r2,audio,TTS,planned,12,S10 e4 spoken reply2; player voice; fixed
+p1_ask_time_01_e4_hint,audio,TTS,planned,16,S10 e4; NPC customer; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_wrong_bus_01_e1,audio,TTS,planned,24,S11 e1 NPC customer; full sentence; fixed text; duration cap <=6s
+p1_wrong_bus_01_e1_r1,audio,TTS,planned,12,S11 e1 spoken reply1; player voice; fixed
+p1_wrong_bus_01_e1_r2,audio,TTS,planned,12,S11 e1 spoken reply2; player voice; fixed
+p1_wrong_bus_01_e2,audio,TTS,planned,24,S11 e2 NPC customer; full sentence; fixed text; duration cap <=6s
+p1_wrong_bus_01_e2_r1,audio,TTS,planned,12,S11 e2 spoken reply1; player voice; fixed
+p1_wrong_bus_01_e2_r2,audio,TTS,planned,12,S11 e2 spoken reply2; player voice; fixed
+p1_wrong_bus_01_e3,audio,TTS,planned,24,S11 e3 NPC customer; full sentence; fixed text; duration cap <=6s
+p1_wrong_bus_01_e3_r1,audio,TTS,planned,12,S11 e3 spoken reply1; player voice; fixed
+p1_wrong_bus_01_e3_r2,audio,TTS,planned,12,S11 e3 spoken reply2; player voice; fixed
+p1_wrong_bus_01_e4,audio,TTS,planned,24,S11 e4 NPC customer; full sentence; fixed text; duration cap <=6s
+p1_wrong_bus_01_e4_r1,audio,TTS,planned,12,S11 e4 spoken reply1; player voice; fixed
+p1_wrong_bus_01_e4_r2,audio,TTS,planned,12,S11 e4 spoken reply2; player voice; fixed
+p1_buy_fruit_01_e1,audio,TTS,planned,24,S12 e1 NPC fruit_seller; full sentence; fixed text; duration cap <=6s
+p1_buy_fruit_01_e1_r1,audio,TTS,planned,12,S12 e1 spoken reply1; player voice; fixed
+p1_buy_fruit_01_e1_r2,audio,TTS,planned,12,S12 e1 spoken reply2; player voice; fixed
+p1_buy_fruit_01_e1_hint,audio,TTS,planned,16,S12 e1; NPC fruit_seller; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_buy_fruit_01_e2,audio,TTS,planned,24,S12 e2 NPC fruit_seller; full sentence; fixed text; duration cap <=6s
+p1_buy_fruit_01_e2_r1,audio,TTS,planned,12,S12 e2 spoken reply1; player voice; fixed
+p1_buy_fruit_01_e2_r2,audio,TTS,planned,12,S12 e2 spoken reply2; player voice; fixed
+p1_buy_fruit_01_e2_hint,audio,TTS,planned,16,S12 e2; NPC fruit_seller; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_buy_fruit_01_e3,audio,TTS,planned,24,S12 e3 NPC fruit_seller; full sentence; fixed text; duration cap <=6s
+p1_buy_fruit_01_e3_r1,audio,TTS,planned,12,S12 e3 spoken reply1; player voice; fixed
+p1_buy_fruit_01_e3_r2,audio,TTS,planned,12,S12 e3 spoken reply2; player voice; fixed
+p1_buy_fruit_01_e3_hint,audio,TTS,planned,16,S12 e3; NPC fruit_seller; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_buy_fruit_01_e4,audio,TTS,planned,24,S12 e4 NPC fruit_seller; full sentence; fixed text; duration cap <=6s
+p1_buy_fruit_01_e4_r1,audio,TTS,planned,12,S12 e4 spoken reply1; player voice; fixed
+p1_buy_fruit_01_e4_r2,audio,TTS,planned,12,S12 e4 spoken reply2; player voice; fixed
+p1_buy_fruit_01_e4_hint,audio,TTS,planned,16,S12 e4; NPC fruit_seller; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_pay_rent_01_e1,audio,TTS,planned,24,S13 e1 NPC landlord; full sentence; fixed text; duration cap <=6s
+p1_pay_rent_01_e1_r1,audio,TTS,planned,12,S13 e1 spoken reply1; player voice; fixed
+p1_pay_rent_01_e1_r2,audio,TTS,planned,12,S13 e1 spoken reply2; player voice; fixed
+p1_pay_rent_01_e1_hint,audio,TTS,planned,16,S13 e1; NPC landlord; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_pay_rent_01_e2,audio,TTS,planned,24,S13 e2 NPC landlord; full sentence; fixed text; duration cap <=6s
+p1_pay_rent_01_e2_r1,audio,TTS,planned,12,S13 e2 spoken reply1; player voice; fixed
+p1_pay_rent_01_e2_r2,audio,TTS,planned,12,S13 e2 spoken reply2; player voice; fixed
+p1_pay_rent_01_e2_hint,audio,TTS,planned,16,S13 e2; NPC landlord; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_pay_rent_01_e3,audio,TTS,planned,24,S13 e3 NPC landlord; full sentence; fixed text; duration cap <=6s
+p1_pay_rent_01_e3_r1,audio,TTS,planned,12,S13 e3 spoken reply1; player voice; fixed
+p1_pay_rent_01_e3_r2,audio,TTS,planned,12,S13 e3 spoken reply2; player voice; fixed
+p1_pay_rent_01_e3_hint,audio,TTS,planned,16,S13 e3; NPC landlord; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_pay_rent_01_e4,audio,TTS,planned,24,S13 e4 NPC landlord; full sentence; fixed text; duration cap <=6s
+p1_pay_rent_01_e4_r1,audio,TTS,planned,12,S13 e4 spoken reply1; player voice; fixed
+p1_pay_rent_01_e4_r2,audio,TTS,planned,12,S13 e4 spoken reply2; player voice; fixed
+p1_pay_rent_01_e4_hint,audio,TTS,planned,16,S13 e4; NPC landlord; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_landlord_phone_01_e1,audio,TTS,planned,24,S14 e1 NPC landlord; full sentence; fixed text; duration cap <=6s
+p1_landlord_phone_01_e1_r1,audio,TTS,planned,12,S14 e1 spoken reply1; player voice; fixed
+p1_landlord_phone_01_e1_r2,audio,TTS,planned,12,S14 e1 spoken reply2; player voice; fixed
+p1_landlord_phone_01_e1_hint,audio,TTS,planned,16,S14 e1; NPC landlord; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_landlord_phone_01_e2,audio,TTS,planned,24,S14 e2 NPC landlord; full sentence; fixed text; duration cap <=6s
+p1_landlord_phone_01_e2_r1,audio,TTS,planned,12,S14 e2 spoken reply1; player voice; fixed
+p1_landlord_phone_01_e2_r2,audio,TTS,planned,12,S14 e2 spoken reply2; player voice; fixed
+p1_landlord_phone_01_e2_hint,audio,TTS,planned,16,S14 e2; NPC landlord; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_landlord_phone_01_e3,audio,TTS,planned,24,S14 e3 NPC landlord; full sentence; fixed text; duration cap <=6s
+p1_landlord_phone_01_e3_r1,audio,TTS,planned,12,S14 e3 spoken reply1; player voice; fixed
+p1_landlord_phone_01_e3_r2,audio,TTS,planned,12,S14 e3 spoken reply2; player voice; fixed
+p1_landlord_phone_01_e3_hint,audio,TTS,planned,16,S14 e3; NPC landlord; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_landlord_phone_01_e4,audio,TTS,planned,24,S14 e4 NPC landlord; full sentence; fixed text; duration cap <=6s
+p1_landlord_phone_01_e4_r1,audio,TTS,planned,12,S14 e4 spoken reply1; player voice; fixed
+p1_landlord_phone_01_e4_r2,audio,TTS,planned,12,S14 e4 spoken reply2; player voice; fixed
+p1_landlord_phone_01_e4_hint,audio,TTS,planned,16,S14 e4; NPC landlord; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_cook_family_chat_01_e1,audio,TTS,planned,24,S15 e1 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_cook_family_chat_01_e1_r1,audio,TTS,planned,12,S15 e1 spoken reply1; player voice; fixed
+p1_cook_family_chat_01_e1_r2,audio,TTS,planned,12,S15 e1 spoken reply2; player voice; fixed
+p1_cook_family_chat_01_e1_hint,audio,TTS,planned,16,S15 e1; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_cook_family_chat_01_e2,audio,TTS,planned,24,S15 e2 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_cook_family_chat_01_e2_r1,audio,TTS,planned,12,S15 e2 spoken reply1; player voice; fixed
+p1_cook_family_chat_01_e2_r2,audio,TTS,planned,12,S15 e2 spoken reply2; player voice; fixed
+p1_cook_family_chat_01_e2_hint,audio,TTS,planned,16,S15 e2; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_cook_family_chat_01_e3,audio,TTS,planned,24,S15 e3 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_cook_family_chat_01_e3_r1,audio,TTS,planned,12,S15 e3 spoken reply1; player voice; fixed
+p1_cook_family_chat_01_e3_r2,audio,TTS,planned,12,S15 e3 spoken reply2; player voice; fixed
+p1_cook_family_chat_01_e3_hint,audio,TTS,planned,16,S15 e3; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_cook_family_chat_01_e4,audio,TTS,planned,24,S15 e4 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_cook_family_chat_01_e4_r1,audio,TTS,planned,12,S15 e4 spoken reply1; player voice; fixed
+p1_cook_family_chat_01_e4_r2,audio,TTS,planned,12,S15 e4 spoken reply2; player voice; fixed
+p1_cook_family_chat_01_e4_hint,audio,TTS,planned,16,S15 e4; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_customer_people_chat_02_e1,audio,TTS,planned,24,S16 e1 NPC customer; full sentence; fixed text; duration cap <=6s
+p1_customer_people_chat_02_e1_r1,audio,TTS,planned,12,S16 e1 spoken reply1; player voice; fixed
+p1_customer_people_chat_02_e1_r2,audio,TTS,planned,12,S16 e1 spoken reply2; player voice; fixed
+p1_customer_people_chat_02_e1_hint,audio,TTS,planned,16,S16 e1; NPC customer; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_customer_people_chat_02_e2,audio,TTS,planned,24,S16 e2 NPC customer; full sentence; fixed text; duration cap <=6s
+p1_customer_people_chat_02_e2_r1,audio,TTS,planned,12,S16 e2 spoken reply1; player voice; fixed
+p1_customer_people_chat_02_e2_r2,audio,TTS,planned,12,S16 e2 spoken reply2; player voice; fixed
+p1_customer_people_chat_02_e2_hint,audio,TTS,planned,16,S16 e2; NPC customer; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_customer_people_chat_02_e3,audio,TTS,planned,24,S16 e3 NPC customer; full sentence; fixed text; duration cap <=6s
+p1_customer_people_chat_02_e3_r1,audio,TTS,planned,12,S16 e3 spoken reply1; player voice; fixed
+p1_customer_people_chat_02_e3_r2,audio,TTS,planned,12,S16 e3 spoken reply2; player voice; fixed
+p1_customer_people_chat_02_e3_hint,audio,TTS,planned,16,S16 e3; NPC customer; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_customer_people_chat_02_e4,audio,TTS,planned,24,S16 e4 NPC customer; full sentence; fixed text; duration cap <=6s
+p1_customer_people_chat_02_e4_r1,audio,TTS,planned,12,S16 e4 spoken reply1; player voice; fixed
+p1_customer_people_chat_02_e4_r2,audio,TTS,planned,12,S16 e4 spoken reply2; player voice; fixed
+p1_customer_people_chat_02_e4_hint,audio,TTS,planned,16,S16 e4; NPC customer; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_mentor_address_03_e1,audio,TTS,planned,24,S17 e1 NPC mentor; full sentence; fixed text; duration cap <=6s
+p1_mentor_address_03_e1_r1,audio,TTS,planned,12,S17 e1 spoken reply1; player voice; fixed
+p1_mentor_address_03_e1_r2,audio,TTS,planned,12,S17 e1 spoken reply2; player voice; fixed
+p1_mentor_address_03_e1_hint,audio,TTS,planned,16,S17 e1; NPC mentor; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_mentor_address_03_e2,audio,TTS,planned,24,S17 e2 NPC mentor; full sentence; fixed text; duration cap <=6s
+p1_mentor_address_03_e2_r1,audio,TTS,planned,12,S17 e2 spoken reply1; player voice; fixed
+p1_mentor_address_03_e2_r2,audio,TTS,planned,12,S17 e2 spoken reply2; player voice; fixed
+p1_mentor_address_03_e2_hint,audio,TTS,planned,16,S17 e2; NPC mentor; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_mentor_address_03_e3,audio,TTS,planned,24,S17 e3 NPC mentor; full sentence; fixed text; duration cap <=6s
+p1_mentor_address_03_e3_r1,audio,TTS,planned,12,S17 e3 spoken reply1; player voice; fixed
+p1_mentor_address_03_e3_r2,audio,TTS,planned,12,S17 e3 spoken reply2; player voice; fixed
+p1_mentor_address_03_e3_hint,audio,TTS,planned,16,S17 e3; NPC mentor; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_mentor_address_03_e4,audio,TTS,planned,24,S17 e4 NPC mentor; full sentence; fixed text; duration cap <=6s
+p1_mentor_address_03_e4_r1,audio,TTS,planned,12,S17 e4 spoken reply1; player voice; fixed
+p1_mentor_address_03_e4_r2,audio,TTS,planned,12,S17 e4 spoken reply2; player voice; fixed
+p1_mentor_address_03_e4_hint,audio,TTS,planned,16,S17 e4; NPC mentor; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_study_at_home_01_e1,audio,TTS,planned,24,S18 e1 NPC mentor; full sentence; fixed text; duration cap <=6s
+p1_study_at_home_01_e1_r1,audio,TTS,planned,12,S18 e1 spoken reply1; player voice; fixed
+p1_study_at_home_01_e1_r2,audio,TTS,planned,12,S18 e1 spoken reply2; player voice; fixed
+p1_study_at_home_01_e1_hint,audio,TTS,planned,16,S18 e1; NPC mentor; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_study_at_home_01_e2,audio,TTS,planned,24,S18 e2 NPC mentor; full sentence; fixed text; duration cap <=6s
+p1_study_at_home_01_e2_r1,audio,TTS,planned,12,S18 e2 spoken reply1; player voice; fixed
+p1_study_at_home_01_e2_r2,audio,TTS,planned,12,S18 e2 spoken reply2; player voice; fixed
+p1_study_at_home_01_e2_hint,audio,TTS,planned,16,S18 e2; NPC mentor; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_study_at_home_01_e3,audio,TTS,planned,24,S18 e3 NPC mentor; full sentence; fixed text; duration cap <=6s
+p1_study_at_home_01_e3_r1,audio,TTS,planned,12,S18 e3 spoken reply1; player voice; fixed
+p1_study_at_home_01_e3_r2,audio,TTS,planned,12,S18 e3 spoken reply2; player voice; fixed
+p1_study_at_home_01_e3_hint,audio,TTS,planned,16,S18 e3; NPC mentor; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_study_at_home_01_e4,audio,TTS,planned,24,S18 e4 NPC mentor; full sentence; fixed text; duration cap <=6s
+p1_study_at_home_01_e4_r1,audio,TTS,planned,12,S18 e4 spoken reply1; player voice; fixed
+p1_study_at_home_01_e4_r2,audio,TTS,planned,12,S18 e4 spoken reply2; player voice; fixed
+p1_study_at_home_01_e4_hint,audio,TTS,planned,16,S18 e4; NPC mentor; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_room_evening_01_e1,audio,TTS,planned,24,S19 e1 NPC landlord; full sentence; fixed text; duration cap <=6s
+p1_room_evening_01_e1_r1,audio,TTS,planned,12,S19 e1 spoken reply1; player voice; fixed
+p1_room_evening_01_e1_r2,audio,TTS,planned,12,S19 e1 spoken reply2; player voice; fixed
+p1_room_evening_01_e1_hint,audio,TTS,planned,16,S19 e1; NPC landlord; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_room_evening_01_e2,audio,TTS,planned,24,S19 e2 NPC landlord; full sentence; fixed text; duration cap <=6s
+p1_room_evening_01_e2_r1,audio,TTS,planned,12,S19 e2 spoken reply1; player voice; fixed
+p1_room_evening_01_e2_r2,audio,TTS,planned,12,S19 e2 spoken reply2; player voice; fixed
+p1_room_evening_01_e2_hint,audio,TTS,planned,16,S19 e2; NPC landlord; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_room_evening_01_e3,audio,TTS,planned,24,S19 e3 NPC landlord; full sentence; fixed text; duration cap <=6s
+p1_room_evening_01_e3_r1,audio,TTS,planned,12,S19 e3 spoken reply1; player voice; fixed
+p1_room_evening_01_e3_r2,audio,TTS,planned,12,S19 e3 spoken reply2; player voice; fixed
+p1_room_evening_01_e3_hint,audio,TTS,planned,16,S19 e3; NPC landlord; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_room_evening_01_e4,audio,TTS,planned,24,S19 e4 NPC landlord; full sentence; fixed text; duration cap <=6s
+p1_room_evening_01_e4_r1,audio,TTS,planned,12,S19 e4 spoken reply1; player voice; fixed
+p1_room_evening_01_e4_r2,audio,TTS,planned,12,S19 e4 spoken reply2; player voice; fixed
+p1_room_evening_01_e4_hint,audio,TTS,planned,16,S19 e4; NPC landlord; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_weather_lunch_01_e1,audio,TTS,planned,24,S20 e1 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_weather_lunch_01_e1_r1,audio,TTS,planned,12,S20 e1 spoken reply1; player voice; fixed
+p1_weather_lunch_01_e1_r2,audio,TTS,planned,12,S20 e1 spoken reply2; player voice; fixed
+p1_weather_lunch_01_e1_hint,audio,TTS,planned,16,S20 e1; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_weather_lunch_01_e2,audio,TTS,planned,24,S20 e2 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_weather_lunch_01_e2_r1,audio,TTS,planned,12,S20 e2 spoken reply1; player voice; fixed
+p1_weather_lunch_01_e2_r2,audio,TTS,planned,12,S20 e2 spoken reply2; player voice; fixed
+p1_weather_lunch_01_e2_hint,audio,TTS,planned,16,S20 e2; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_weather_lunch_01_e3,audio,TTS,planned,24,S20 e3 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_weather_lunch_01_e3_r1,audio,TTS,planned,12,S20 e3 spoken reply1; player voice; fixed
+p1_weather_lunch_01_e3_r2,audio,TTS,planned,12,S20 e3 spoken reply2; player voice; fixed
+p1_weather_lunch_01_e3_hint,audio,TTS,planned,16,S20 e3; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_weather_lunch_01_e4,audio,TTS,planned,24,S20 e4 NPC cook; full sentence; fixed text; duration cap <=6s
+p1_weather_lunch_01_e4_r1,audio,TTS,planned,12,S20 e4 spoken reply1; player voice; fixed
+p1_weather_lunch_01_e4_r2,audio,TTS,planned,12,S20 e4 spoken reply2; player voice; fixed
+p1_weather_lunch_01_e4_hint,audio,TTS,planned,16,S20 e4; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_clinic_delivery_03_e1,audio,TTS,planned,24,S21 e1 NPC delivery_boss; full sentence; fixed text; duration cap <=6s
+p1_clinic_delivery_03_e1_r1,audio,TTS,planned,12,S21 e1 spoken reply1; player voice; fixed
+p1_clinic_delivery_03_e1_r2,audio,TTS,planned,12,S21 e1 spoken reply2; player voice; fixed
+p1_clinic_delivery_03_e1_hint,audio,TTS,planned,16,S21 e1; NPC delivery_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_clinic_delivery_03_e2,audio,TTS,planned,24,S21 e2 NPC delivery_boss; full sentence; fixed text; duration cap <=6s
+p1_clinic_delivery_03_e2_r1,audio,TTS,planned,12,S21 e2 spoken reply1; player voice; fixed
+p1_clinic_delivery_03_e2_r2,audio,TTS,planned,12,S21 e2 spoken reply2; player voice; fixed
+p1_clinic_delivery_03_e2_hint,audio,TTS,planned,16,S21 e2; NPC delivery_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_clinic_delivery_03_e3,audio,TTS,planned,24,S21 e3 NPC delivery_boss; full sentence; fixed text; duration cap <=6s
+p1_clinic_delivery_03_e3_r1,audio,TTS,planned,12,S21 e3 spoken reply1; player voice; fixed
+p1_clinic_delivery_03_e3_r2,audio,TTS,planned,12,S21 e3 spoken reply2; player voice; fixed
+p1_clinic_delivery_03_e3_hint,audio,TTS,planned,16,S21 e3; NPC delivery_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_clinic_delivery_03_e4,audio,TTS,planned,24,S21 e4 NPC delivery_boss; full sentence; fixed text; duration cap <=6s
+p1_clinic_delivery_03_e4_r1,audio,TTS,planned,12,S21 e4 spoken reply1; player voice; fixed
+p1_clinic_delivery_03_e4_r2,audio,TTS,planned,12,S21 e4 spoken reply2; player voice; fixed
+p1_clinic_delivery_03_e4_hint,audio,TTS,planned,16,S21 e4; NPC delivery_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_street_labels_01_e1,audio,TTS,planned,24,S22 e1 NPC shopkeeper; full sentence; fixed text; duration cap <=6s
+p1_street_labels_01_e1_r1,audio,TTS,planned,12,S22 e1 spoken reply1; player voice; fixed
+p1_street_labels_01_e1_r2,audio,TTS,planned,12,S22 e1 spoken reply2; player voice; fixed
+p1_street_labels_01_e1_hint,audio,TTS,planned,16,S22 e1; NPC shopkeeper; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_street_labels_01_e2,audio,TTS,planned,24,S22 e2 NPC shopkeeper; full sentence; fixed text; duration cap <=6s
+p1_street_labels_01_e2_r1,audio,TTS,planned,12,S22 e2 spoken reply1; player voice; fixed
+p1_street_labels_01_e2_r2,audio,TTS,planned,12,S22 e2 spoken reply2; player voice; fixed
+p1_street_labels_01_e2_hint,audio,TTS,planned,16,S22 e2; NPC shopkeeper; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_street_labels_01_e3,audio,TTS,planned,24,S22 e3 NPC shopkeeper; full sentence; fixed text; duration cap <=6s
+p1_street_labels_01_e3_r1,audio,TTS,planned,12,S22 e3 spoken reply1; player voice; fixed
+p1_street_labels_01_e3_r2,audio,TTS,planned,12,S22 e3 spoken reply2; player voice; fixed
+p1_street_labels_01_e3_hint,audio,TTS,planned,16,S22 e3; NPC shopkeeper; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_street_labels_01_e4,audio,TTS,planned,24,S22 e4 NPC shopkeeper; full sentence; fixed text; duration cap <=6s
+p1_street_labels_01_e4_r1,audio,TTS,planned,12,S22 e4 spoken reply1; player voice; fixed
+p1_street_labels_01_e4_r2,audio,TTS,planned,12,S22 e4 spoken reply2; player voice; fixed
+p1_street_labels_01_e4_hint,audio,TTS,planned,16,S22 e4; NPC shopkeeper; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_warehouse_review_03_e1__v000,audio,TTS,planned,24,S23 e1 NPC warehouse_boss; full sentence; variant 0/2; duration cap <=6s
+p1_warehouse_review_03_e1__v001,audio,TTS,planned,24,S23 e1 NPC warehouse_boss; full sentence; variant 1/2; duration cap <=6s
+p1_warehouse_review_03_e1_r1__v000,audio,TTS,planned,12,S23 e1 spoken reply1; player voice; variant 0/2
+p1_warehouse_review_03_e1_r1__v001,audio,TTS,planned,12,S23 e1 spoken reply1; player voice; variant 1/2
+p1_warehouse_review_03_e1_r2__v000,audio,TTS,planned,12,S23 e1 spoken reply2; player voice; variant 0/2
+p1_warehouse_review_03_e1_r2__v001,audio,TTS,planned,12,S23 e1 spoken reply2; player voice; variant 1/2
+p1_warehouse_review_03_e1_hint,audio,TTS,planned,16,S23 e1; NPC warehouse_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_warehouse_review_03_e2__v000,audio,TTS,planned,24,S23 e2 NPC warehouse_boss; full sentence; variant 0/10; duration cap <=6s
+p1_warehouse_review_03_e2__v001,audio,TTS,planned,24,S23 e2 NPC warehouse_boss; full sentence; variant 1/10; duration cap <=6s
+p1_warehouse_review_03_e2__v002,audio,TTS,planned,24,S23 e2 NPC warehouse_boss; full sentence; variant 2/10; duration cap <=6s
+p1_warehouse_review_03_e2__v003,audio,TTS,planned,24,S23 e2 NPC warehouse_boss; full sentence; variant 3/10; duration cap <=6s
+p1_warehouse_review_03_e2__v004,audio,TTS,planned,24,S23 e2 NPC warehouse_boss; full sentence; variant 4/10; duration cap <=6s
+p1_warehouse_review_03_e2__v005,audio,TTS,planned,24,S23 e2 NPC warehouse_boss; full sentence; variant 5/10; duration cap <=6s
+p1_warehouse_review_03_e2__v006,audio,TTS,planned,24,S23 e2 NPC warehouse_boss; full sentence; variant 6/10; duration cap <=6s
+p1_warehouse_review_03_e2__v007,audio,TTS,planned,24,S23 e2 NPC warehouse_boss; full sentence; variant 7/10; duration cap <=6s
+p1_warehouse_review_03_e2__v008,audio,TTS,planned,24,S23 e2 NPC warehouse_boss; full sentence; variant 8/10; duration cap <=6s
+p1_warehouse_review_03_e2__v009,audio,TTS,planned,24,S23 e2 NPC warehouse_boss; full sentence; variant 9/10; duration cap <=6s
+p1_warehouse_review_03_e2_r1__v000,audio,TTS,planned,12,S23 e2 spoken reply1; player voice; variant 0/10
+p1_warehouse_review_03_e2_r1__v001,audio,TTS,planned,12,S23 e2 spoken reply1; player voice; variant 1/10
+p1_warehouse_review_03_e2_r1__v002,audio,TTS,planned,12,S23 e2 spoken reply1; player voice; variant 2/10
+p1_warehouse_review_03_e2_r1__v003,audio,TTS,planned,12,S23 e2 spoken reply1; player voice; variant 3/10
+p1_warehouse_review_03_e2_r1__v004,audio,TTS,planned,12,S23 e2 spoken reply1; player voice; variant 4/10
+p1_warehouse_review_03_e2_r1__v005,audio,TTS,planned,12,S23 e2 spoken reply1; player voice; variant 5/10
+p1_warehouse_review_03_e2_r1__v006,audio,TTS,planned,12,S23 e2 spoken reply1; player voice; variant 6/10
+p1_warehouse_review_03_e2_r1__v007,audio,TTS,planned,12,S23 e2 spoken reply1; player voice; variant 7/10
+p1_warehouse_review_03_e2_r1__v008,audio,TTS,planned,12,S23 e2 spoken reply1; player voice; variant 8/10
+p1_warehouse_review_03_e2_r1__v009,audio,TTS,planned,12,S23 e2 spoken reply1; player voice; variant 9/10
+p1_warehouse_review_03_e2_r2__v000,audio,TTS,planned,12,S23 e2 spoken reply2; player voice; variant 0/10
+p1_warehouse_review_03_e2_r2__v001,audio,TTS,planned,12,S23 e2 spoken reply2; player voice; variant 1/10
+p1_warehouse_review_03_e2_r2__v002,audio,TTS,planned,12,S23 e2 spoken reply2; player voice; variant 2/10
+p1_warehouse_review_03_e2_r2__v003,audio,TTS,planned,12,S23 e2 spoken reply2; player voice; variant 3/10
+p1_warehouse_review_03_e2_r2__v004,audio,TTS,planned,12,S23 e2 spoken reply2; player voice; variant 4/10
+p1_warehouse_review_03_e2_r2__v005,audio,TTS,planned,12,S23 e2 spoken reply2; player voice; variant 5/10
+p1_warehouse_review_03_e2_r2__v006,audio,TTS,planned,12,S23 e2 spoken reply2; player voice; variant 6/10
+p1_warehouse_review_03_e2_r2__v007,audio,TTS,planned,12,S23 e2 spoken reply2; player voice; variant 7/10
+p1_warehouse_review_03_e2_r2__v008,audio,TTS,planned,12,S23 e2 spoken reply2; player voice; variant 8/10
+p1_warehouse_review_03_e2_r2__v009,audio,TTS,planned,12,S23 e2 spoken reply2; player voice; variant 9/10
+p1_warehouse_review_03_e2_hint,audio,TTS,planned,16,S23 e2; NPC warehouse_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_warehouse_review_03_e3__v000,audio,TTS,planned,24,S23 e3 NPC warehouse_boss; full sentence; variant 0/3; duration cap <=6s
+p1_warehouse_review_03_e3__v001,audio,TTS,planned,24,S23 e3 NPC warehouse_boss; full sentence; variant 1/3; duration cap <=6s
+p1_warehouse_review_03_e3__v002,audio,TTS,planned,24,S23 e3 NPC warehouse_boss; full sentence; variant 2/3; duration cap <=6s
+p1_warehouse_review_03_e3_r1__v000,audio,TTS,planned,12,S23 e3 spoken reply1; player voice; variant 0/3
+p1_warehouse_review_03_e3_r1__v001,audio,TTS,planned,12,S23 e3 spoken reply1; player voice; variant 1/3
+p1_warehouse_review_03_e3_r1__v002,audio,TTS,planned,12,S23 e3 spoken reply1; player voice; variant 2/3
+p1_warehouse_review_03_e3_r2__v000,audio,TTS,planned,12,S23 e3 spoken reply2; player voice; variant 0/3
+p1_warehouse_review_03_e3_r2__v001,audio,TTS,planned,12,S23 e3 spoken reply2; player voice; variant 1/3
+p1_warehouse_review_03_e3_r2__v002,audio,TTS,planned,12,S23 e3 spoken reply2; player voice; variant 2/3
+p1_warehouse_review_03_e3_hint,audio,TTS,planned,16,S23 e3; NPC warehouse_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_warehouse_review_03_e4,audio,TTS,planned,24,S23 e4 NPC warehouse_boss; full sentence; fixed text; duration cap <=6s
+p1_warehouse_review_03_e4_r1,audio,TTS,planned,12,S23 e4 spoken reply1; player voice; fixed
+p1_warehouse_review_03_e4_r2,audio,TTS,planned,12,S23 e4 spoken reply2; player voice; fixed
+p1_warehouse_review_03_e4_hint,audio,TTS,planned,16,S23 e4; NPC warehouse_boss; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_review_04_e1__v000,audio,TTS,planned,24,S24 e1 NPC cook; full sentence; variant 0/2; duration cap <=6s
+p1_noodle_review_04_e1__v001,audio,TTS,planned,24,S24 e1 NPC cook; full sentence; variant 1/2; duration cap <=6s
+p1_noodle_review_04_e1_r1__v000,audio,TTS,planned,12,S24 e1 spoken reply1; player voice; variant 0/2
+p1_noodle_review_04_e1_r1__v001,audio,TTS,planned,12,S24 e1 spoken reply1; player voice; variant 1/2
+p1_noodle_review_04_e1_r2__v000,audio,TTS,planned,12,S24 e1 spoken reply2; player voice; variant 0/2
+p1_noodle_review_04_e1_r2__v001,audio,TTS,planned,12,S24 e1 spoken reply2; player voice; variant 1/2
+p1_noodle_review_04_e1_hint,audio,TTS,planned,16,S24 e1; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_review_04_e2__v000,audio,TTS,planned,24,S24 e2 NPC cook; full sentence; variant 0/2; duration cap <=6s
+p1_noodle_review_04_e2__v001,audio,TTS,planned,24,S24 e2 NPC cook; full sentence; variant 1/2; duration cap <=6s
+p1_noodle_review_04_e2_r1__v000,audio,TTS,planned,12,S24 e2 spoken reply1; player voice; variant 0/2
+p1_noodle_review_04_e2_r1__v001,audio,TTS,planned,12,S24 e2 spoken reply1; player voice; variant 1/2
+p1_noodle_review_04_e2_r2__v000,audio,TTS,planned,12,S24 e2 spoken reply2; player voice; variant 0/2
+p1_noodle_review_04_e2_r2__v001,audio,TTS,planned,12,S24 e2 spoken reply2; player voice; variant 1/2
+p1_noodle_review_04_e2_hint,audio,TTS,planned,16,S24 e2; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_review_04_e3__v000,audio,TTS,planned,24,S24 e3 NPC cook; full sentence; variant 0/10; duration cap <=6s
+p1_noodle_review_04_e3__v001,audio,TTS,planned,24,S24 e3 NPC cook; full sentence; variant 1/10; duration cap <=6s
+p1_noodle_review_04_e3__v002,audio,TTS,planned,24,S24 e3 NPC cook; full sentence; variant 2/10; duration cap <=6s
+p1_noodle_review_04_e3__v003,audio,TTS,planned,24,S24 e3 NPC cook; full sentence; variant 3/10; duration cap <=6s
+p1_noodle_review_04_e3__v004,audio,TTS,planned,24,S24 e3 NPC cook; full sentence; variant 4/10; duration cap <=6s
+p1_noodle_review_04_e3__v005,audio,TTS,planned,24,S24 e3 NPC cook; full sentence; variant 5/10; duration cap <=6s
+p1_noodle_review_04_e3__v006,audio,TTS,planned,24,S24 e3 NPC cook; full sentence; variant 6/10; duration cap <=6s
+p1_noodle_review_04_e3__v007,audio,TTS,planned,24,S24 e3 NPC cook; full sentence; variant 7/10; duration cap <=6s
+p1_noodle_review_04_e3__v008,audio,TTS,planned,24,S24 e3 NPC cook; full sentence; variant 8/10; duration cap <=6s
+p1_noodle_review_04_e3__v009,audio,TTS,planned,24,S24 e3 NPC cook; full sentence; variant 9/10; duration cap <=6s
+p1_noodle_review_04_e3_r1__v000,audio,TTS,planned,12,S24 e3 spoken reply1; player voice; variant 0/10
+p1_noodle_review_04_e3_r1__v001,audio,TTS,planned,12,S24 e3 spoken reply1; player voice; variant 1/10
+p1_noodle_review_04_e3_r1__v002,audio,TTS,planned,12,S24 e3 spoken reply1; player voice; variant 2/10
+p1_noodle_review_04_e3_r1__v003,audio,TTS,planned,12,S24 e3 spoken reply1; player voice; variant 3/10
+p1_noodle_review_04_e3_r1__v004,audio,TTS,planned,12,S24 e3 spoken reply1; player voice; variant 4/10
+p1_noodle_review_04_e3_r1__v005,audio,TTS,planned,12,S24 e3 spoken reply1; player voice; variant 5/10
+p1_noodle_review_04_e3_r1__v006,audio,TTS,planned,12,S24 e3 spoken reply1; player voice; variant 6/10
+p1_noodle_review_04_e3_r1__v007,audio,TTS,planned,12,S24 e3 spoken reply1; player voice; variant 7/10
+p1_noodle_review_04_e3_r1__v008,audio,TTS,planned,12,S24 e3 spoken reply1; player voice; variant 8/10
+p1_noodle_review_04_e3_r1__v009,audio,TTS,planned,12,S24 e3 spoken reply1; player voice; variant 9/10
+p1_noodle_review_04_e3_r2__v000,audio,TTS,planned,12,S24 e3 spoken reply2; player voice; variant 0/10
+p1_noodle_review_04_e3_r2__v001,audio,TTS,planned,12,S24 e3 spoken reply2; player voice; variant 1/10
+p1_noodle_review_04_e3_r2__v002,audio,TTS,planned,12,S24 e3 spoken reply2; player voice; variant 2/10
+p1_noodle_review_04_e3_r2__v003,audio,TTS,planned,12,S24 e3 spoken reply2; player voice; variant 3/10
+p1_noodle_review_04_e3_r2__v004,audio,TTS,planned,12,S24 e3 spoken reply2; player voice; variant 4/10
+p1_noodle_review_04_e3_r2__v005,audio,TTS,planned,12,S24 e3 spoken reply2; player voice; variant 5/10
+p1_noodle_review_04_e3_r2__v006,audio,TTS,planned,12,S24 e3 spoken reply2; player voice; variant 6/10
+p1_noodle_review_04_e3_r2__v007,audio,TTS,planned,12,S24 e3 spoken reply2; player voice; variant 7/10
+p1_noodle_review_04_e3_r2__v008,audio,TTS,planned,12,S24 e3 spoken reply2; player voice; variant 8/10
+p1_noodle_review_04_e3_r2__v009,audio,TTS,planned,12,S24 e3 spoken reply2; player voice; variant 9/10
+p1_noodle_review_04_e3_hint,audio,TTS,planned,16,S24 e3; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_review_04_e4__v000,audio,TTS,planned,24,S24 e4 NPC cook; full sentence; variant 0/2; duration cap <=6s
+p1_noodle_review_04_e4__v001,audio,TTS,planned,24,S24 e4 NPC cook; full sentence; variant 1/2; duration cap <=6s
+p1_noodle_review_04_e4_r1__v000,audio,TTS,planned,12,S24 e4 spoken reply1; player voice; variant 0/2
+p1_noodle_review_04_e4_r1__v001,audio,TTS,planned,12,S24 e4 spoken reply1; player voice; variant 1/2
+p1_noodle_review_04_e4_r2__v000,audio,TTS,planned,12,S24 e4 spoken reply2; player voice; variant 0/2
+p1_noodle_review_04_e4_r2__v001,audio,TTS,planned,12,S24 e4 spoken reply2; player voice; variant 1/2
+p1_noodle_review_04_e4_hint,audio,TTS,planned,16,S24 e4; NPC cook; simpler fixed no-slot rephrase; only words already met; shown after2misses
+p1_noodle_dishwasher_01_wrong_e1,audio,TTS,planned,8,Ordinary consequence base ID; exact text 好。; alias context voice clip via parent NPC; no new vocabulary
+p1_noodle_dishwasher_01_wrong_e1_r1,audio,TTS,planned,8,Guided consequence reply 好。; player voice; no tested-word promotion
+p1_noodle_dishwasher_02_wrong_e1,audio,TTS,planned,8,Ordinary consequence base ID; exact text 好。; alias context voice clip via parent NPC; no new vocabulary
+p1_noodle_dishwasher_02_wrong_e1_r1,audio,TTS,planned,8,Guided consequence reply 好。; player voice; no tested-word promotion
+p1_noodle_dishwasher_02_wrong_e2,audio,TTS,planned,8,Ordinary consequence base ID; exact text 好。; alias context voice clip via parent NPC; no new vocabulary
+p1_noodle_dishwasher_02_wrong_e2_r1,audio,TTS,planned,8,Guided consequence reply 好。; player voice; no tested-word promotion
+p1_noodle_dishwasher_03_wrong_e1,audio,TTS,planned,8,Ordinary consequence base ID; exact text 好。; alias context voice clip via parent NPC; no new vocabulary
+p1_noodle_dishwasher_03_wrong_e1_r1,audio,TTS,planned,8,Guided consequence reply 好。; player voice; no tested-word promotion
+p1_noodle_dishwasher_03_wrong_e2,audio,TTS,planned,8,Ordinary consequence base ID; exact text 好。; alias context voice clip via parent NPC; no new vocabulary
+p1_noodle_dishwasher_03_wrong_e2_r1,audio,TTS,planned,8,Guided consequence reply 好。; player voice; no tested-word promotion
+p1_mixup_size_e1,audio,TTS,planned,8,Ordinary consequence base ID; exact text 好。; alias context voice clip via parent NPC; no new vocabulary
+p1_mixup_size_e1_r1,audio,TTS,planned,8,Guided consequence reply 好。; player voice; no tested-word promotion
+p1_mixup_count_e1,audio,TTS,planned,8,Ordinary consequence base ID; exact text 好。; alias context voice clip via parent NPC; no new vocabulary
+p1_mixup_count_e1_r1,audio,TTS,planned,8,Guided consequence reply 好。; player voice; no tested-word promotion
+p1_mixup_position_e1,audio,TTS,planned,8,Ordinary consequence base ID; exact text 好。; alias context voice clip via parent NPC; no new vocabulary
+p1_mixup_position_e1_r1,audio,TTS,planned,8,Guided consequence reply 好。; player voice; no tested-word promotion
+p1_mixup_recipient_e1,audio,TTS,planned,8,Ordinary consequence base ID; exact text 好。; alias context voice clip via parent NPC; no new vocabulary
+p1_mixup_recipient_e1_r1,audio,TTS,planned,8,Guided consequence reply 好。; player voice; no tested-word promotion
+p1_mixup_fruit_e1,audio,TTS,planned,8,Ordinary consequence base ID; exact text 好。; alias context voice clip via parent NPC; no new vocabulary
+p1_mixup_fruit_e1_r1,audio,TTS,planned,8,Guided consequence reply 好。; player voice; no tested-word promotion
+p1_mixup_calendar_e1,audio,TTS,planned,8,Ordinary consequence base ID; exact text 好。; alias context voice clip via parent NPC; no new vocabulary
+p1_mixup_calendar_e1_r1,audio,TTS,planned,8,Guided consequence reply 好。; player voice; no tested-word promotion
+p1_mixup_home_e1,audio,TTS,planned,8,Ordinary consequence base ID; exact text 好。; alias context voice clip via parent NPC; no new vocabulary
+p1_mixup_home_e1_r1,audio,TTS,planned,8,Guided consequence reply 好。; player voice; no tested-word promotion
+p1_mixup_clinic_e1,audio,TTS,planned,8,Ordinary consequence base ID; exact text 好。; alias context voice clip via parent NPC; no new vocabulary
+p1_mixup_clinic_e1_r1,audio,TTS,planned,8,Guided consequence reply 好。; player voice; no tested-word promotion
+mixup_voice_landlord,audio,TTS,planned,8,Exact 好。 in landlord preset; alias for ordinary consequence lines; context-safe
+mixup_voice_cook,audio,TTS,planned,8,Exact 好。 in cook preset; alias for ordinary consequence lines; context-safe
+mixup_voice_mentor,audio,TTS,planned,8,Exact 好。 in mentor preset; alias for ordinary consequence lines; context-safe
+mixup_voice_warehouse_boss,audio,TTS,planned,8,Exact 好。 in warehouse_boss preset; alias for ordinary consequence lines; context-safe
+mixup_voice_delivery_boss,audio,TTS,planned,8,Exact 好。 in delivery_boss preset; alias for ordinary consequence lines; context-safe
+mixup_voice_customer,audio,TTS,planned,8,Exact 好。 in customer preset; alias for ordinary consequence lines; context-safe
+mixup_voice_fruit_seller,audio,TTS,planned,8,Exact 好。 in fruit_seller preset; alias for ordinary consequence lines; context-safe
+mixup_voice_shopkeeper,audio,TTS,planned,8,Exact 好。 in shopkeeper preset; alias for ordinary consequence lines; context-safe
+word_001,audio,TTS,planned,8,爱 | ài | love; Xiaoxiao -15% +0Hz; HSK1
+word_002,audio,TTS,planned,8,八 | bā | eight; Xiaoxiao -15% +0Hz; HSK1
+word_003,audio,TTS,planned,8,爸爸 | bàba | father; Xiaoxiao -15% +0Hz; HSK1
+word_004,audio,TTS,planned,8,杯子 | bēizi | cup; glass; Xiaoxiao -15% +0Hz; HSK1
+word_005,audio,TTS,planned,8,北京 | Běijīng | Beijing; Xiaoxiao -15% +0Hz; HSK1
+word_006,audio,TTS,planned,8,本 | běn | measure word for books; Xiaoxiao -15% +0Hz; HSK1
+word_007,audio,TTS,planned,8,不 | bù | not; no; Xiaoxiao -15% +0Hz; HSK1
+word_008,audio,TTS,planned,8,不客气 | bú kèqi | you're welcome; Xiaoxiao -15% +0Hz; HSK1
+word_009,audio,TTS,planned,8,菜 | cài | dish; vegetable; Xiaoxiao -15% +0Hz; HSK1
+word_010,audio,TTS,planned,8,茶 | chá | tea; Xiaoxiao -15% +0Hz; HSK1
+word_011,audio,TTS,planned,8,吃 | chī | eat; Xiaoxiao -15% +0Hz; HSK1
+word_012,audio,TTS,planned,8,出租车 | chūzūchē | taxi; Xiaoxiao -15% +0Hz; HSK1
+word_013,audio,TTS,planned,8,打电话 | dǎ diànhuà | make a phone call; Xiaoxiao -15% +0Hz; HSK1
+word_014,audio,TTS,planned,8,大 | dà | big; Xiaoxiao -15% +0Hz; HSK1
+word_015,audio,TTS,planned,8,的 | de | possessive particle; Xiaoxiao -15% +0Hz; HSK1
+word_016,audio,TTS,planned,8,点 | diǎn | o'clock; Xiaoxiao -15% +0Hz; HSK1
+word_017,audio,TTS,planned,8,电脑 | diànnǎo | computer; Xiaoxiao -15% +0Hz; HSK1
+word_018,audio,TTS,planned,8,电视 | diànshì | television; Xiaoxiao -15% +0Hz; HSK1
+word_019,audio,TTS,planned,8,电影 | diànyǐng | movie; Xiaoxiao -15% +0Hz; HSK1
+word_020,audio,TTS,planned,8,东西 | dōngxi | thing; Xiaoxiao -15% +0Hz; HSK1
+word_021,audio,TTS,planned,8,都 | dōu | all; both; Xiaoxiao -15% +0Hz; HSK1
+word_022,audio,TTS,planned,8,读 | dú | read; Xiaoxiao -15% +0Hz; HSK1
+word_023,audio,TTS,planned,8,对不起 | duìbuqǐ | sorry; Xiaoxiao -15% +0Hz; HSK1
+word_024,audio,TTS,planned,8,多 | duō | many; much; Xiaoxiao -15% +0Hz; HSK1
+word_025,audio,TTS,planned,8,多少 | duōshao | how many; how much; Xiaoxiao -15% +0Hz; HSK1
+word_026,audio,TTS,planned,8,儿子 | érzi | son; Xiaoxiao -15% +0Hz; HSK1
+word_027,audio,TTS,planned,8,二 | èr | two; Xiaoxiao -15% +0Hz; HSK1
+word_028,audio,TTS,planned,8,饭店 | fàndiàn | restaurant; hotel; Xiaoxiao -15% +0Hz; HSK1
+word_029,audio,TTS,planned,8,飞机 | fēijī | airplane; Xiaoxiao -15% +0Hz; HSK1
+word_030,audio,TTS,planned,8,分钟 | fēnzhōng | minute; Xiaoxiao -15% +0Hz; HSK1
+word_031,audio,TTS,planned,8,高兴 | gāoxìng | happy; Xiaoxiao -15% +0Hz; HSK1
+word_032,audio,TTS,planned,8,个 | gè | general measure word; Xiaoxiao -15% +0Hz; HSK1
+word_033,audio,TTS,planned,8,工作 | gōngzuò | work; job; Xiaoxiao -15% +0Hz; HSK1
+word_034,audio,TTS,planned,8,狗 | gǒu | dog; Xiaoxiao -15% +0Hz; HSK1
+word_035,audio,TTS,planned,8,汉语 | Hànyǔ | Chinese language; Xiaoxiao -15% +0Hz; HSK1
+word_036,audio,TTS,planned,8,好 | hǎo | good; well; Xiaoxiao -15% +0Hz; HSK1
+word_037,audio,TTS,planned,8,喝 | hē | drink; Xiaoxiao -15% +0Hz; HSK1
+word_038,audio,TTS,planned,8,和 | hé | and; Xiaoxiao -15% +0Hz; HSK1
+word_039,audio,TTS,planned,8,很 | hěn | very; Xiaoxiao -15% +0Hz; HSK1
+word_040,audio,TTS,planned,8,后面 | hòumiàn | behind; back; Xiaoxiao -15% +0Hz; HSK1
+word_041,audio,TTS,planned,8,回 | huí | return; go back; Xiaoxiao -15% +0Hz; HSK1
+word_042,audio,TTS,planned,8,会 | huì | can; know how to; Xiaoxiao -15% +0Hz; HSK1
+word_043,audio,TTS,planned,8,火车站 | huǒchēzhàn | train station; Xiaoxiao -15% +0Hz; HSK1
+word_044,audio,TTS,planned,8,几 | jǐ | how many; several; Xiaoxiao -15% +0Hz; HSK1
+word_045,audio,TTS,planned,8,家 | jiā | home; family; Xiaoxiao -15% +0Hz; HSK1
+word_046,audio,TTS,planned,8,叫 | jiào | be called; call; Xiaoxiao -15% +0Hz; HSK1
+word_047,audio,TTS,planned,8,她 | tā | she; her; Xiaoxiao -15% +0Hz; HSK1
+word_048,audio,TTS,planned,8,今天 | jīntiān | today; Xiaoxiao -15% +0Hz; HSK1
+word_049,audio,TTS,planned,8,九 | jiǔ | nine; Xiaoxiao -15% +0Hz; HSK1
+word_050,audio,TTS,planned,8,开 | kāi | open; drive; Xiaoxiao -15% +0Hz; HSK1
+word_051,audio,TTS,planned,8,看 | kàn | look; watch; read; Xiaoxiao -15% +0Hz; HSK1
+word_052,audio,TTS,planned,8,看见 | kànjiàn | see; Xiaoxiao -15% +0Hz; HSK1
+word_053,audio,TTS,planned,8,块 | kuài | yuan; piece; Xiaoxiao -15% +0Hz; HSK1
+word_054,audio,TTS,planned,8,来 | lái | come; Xiaoxiao -15% +0Hz; HSK1
+word_055,audio,TTS,planned,8,老师 | lǎoshī | teacher; Xiaoxiao -15% +0Hz; HSK1
+word_056,audio,TTS,planned,8,了 | le | completed-action particle; Xiaoxiao -15% +0Hz; HSK1
+word_057,audio,TTS,planned,8,冷 | lěng | cold; Xiaoxiao -15% +0Hz; HSK1
+word_058,audio,TTS,planned,8,里 | lǐ | inside; in; Xiaoxiao -15% +0Hz; HSK1
+word_059,audio,TTS,planned,8,六 | liù | six; Xiaoxiao -15% +0Hz; HSK1
+word_060,audio,TTS,planned,8,妈妈 | māma | mother; Xiaoxiao -15% +0Hz; HSK1
+word_061,audio,TTS,planned,8,吗 | ma | question particle; Xiaoxiao -15% +0Hz; HSK1
+word_062,audio,TTS,planned,8,买 | mǎi | buy; Xiaoxiao -15% +0Hz; HSK1
+word_063,audio,TTS,planned,8,猫 | māo | cat; Xiaoxiao -15% +0Hz; HSK1
+word_064,audio,TTS,planned,8,没关系 | méi guānxi | it doesn't matter; Xiaoxiao -15% +0Hz; HSK1
+word_065,audio,TTS,planned,8,没有 | méiyǒu | not have; there isn't; Xiaoxiao -15% +0Hz; HSK1
+word_066,audio,TTS,planned,8,米饭 | mǐfàn | cooked rice; Xiaoxiao -15% +0Hz; HSK1
+word_067,audio,TTS,planned,8,明天 | míngtiān | tomorrow; Xiaoxiao -15% +0Hz; HSK1
+word_068,audio,TTS,planned,8,名字 | míngzi | name; Xiaoxiao -15% +0Hz; HSK1
+word_069,audio,TTS,planned,8,哪儿 | nǎr | where; Xiaoxiao -15% +0Hz; HSK1
+word_070,audio,TTS,planned,8,那 | nà | that; Xiaoxiao -15% +0Hz; HSK1
+word_071,audio,TTS,planned,8,呢 | ne | question particle; Xiaoxiao -15% +0Hz; HSK1
+word_072,audio,TTS,planned,8,能 | néng | can; be able to; Xiaoxiao -15% +0Hz; HSK1
+word_073,audio,TTS,planned,8,你 | nǐ | you; Xiaoxiao -15% +0Hz; HSK1
+word_074,audio,TTS,planned,8,年 | nián | year; Xiaoxiao -15% +0Hz; HSK1
+word_075,audio,TTS,planned,8,女儿 | nǚ'ér | daughter; Xiaoxiao -15% +0Hz; HSK1
+word_076,audio,TTS,planned,8,朋友 | péngyou | friend; Xiaoxiao -15% +0Hz; HSK1
+word_077,audio,TTS,planned,8,漂亮 | piàoliang | beautiful; Xiaoxiao -15% +0Hz; HSK1
+word_078,audio,TTS,planned,8,苹果 | píngguǒ | apple; Xiaoxiao -15% +0Hz; HSK1
+word_079,audio,TTS,planned,8,七 | qī | seven; Xiaoxiao -15% +0Hz; HSK1
+word_080,audio,TTS,planned,8,前面 | qiánmiàn | in front; ahead; Xiaoxiao -15% +0Hz; HSK1
+word_081,audio,TTS,planned,8,钱 | qián | money; Xiaoxiao -15% +0Hz; HSK1
+word_082,audio,TTS,planned,8,请 | qǐng | please; invite; Xiaoxiao -15% +0Hz; HSK1
+word_083,audio,TTS,planned,8,去 | qù | go; Xiaoxiao -15% +0Hz; HSK1
+word_084,audio,TTS,planned,8,热 | rè | hot; Xiaoxiao -15% +0Hz; HSK1
+word_085,audio,TTS,planned,8,人 | rén | person; people; Xiaoxiao -15% +0Hz; HSK1
+word_086,audio,TTS,planned,8,认识 | rènshi | know; meet; Xiaoxiao -15% +0Hz; HSK1
+word_087,audio,TTS,planned,8,日 | rì | day; date; Xiaoxiao -15% +0Hz; HSK1
+word_088,audio,TTS,planned,8,三 | sān | three; Xiaoxiao -15% +0Hz; HSK1
+word_089,audio,TTS,planned,8,商店 | shāngdiàn | shop; Xiaoxiao -15% +0Hz; HSK1
+word_090,audio,TTS,planned,8,上 | shàng | above; on; previous; Xiaoxiao -15% +0Hz; HSK1
+word_091,audio,TTS,planned,8,上午 | shàngwǔ | morning; Xiaoxiao -15% +0Hz; HSK1
+word_092,audio,TTS,planned,8,少 | shǎo | few; little; Xiaoxiao -15% +0Hz; HSK1
+word_093,audio,TTS,planned,8,谁 | shéi | who; Xiaoxiao -15% +0Hz; HSK1
+word_094,audio,TTS,planned,8,什么 | shénme | what; Xiaoxiao -15% +0Hz; HSK1
+word_095,audio,TTS,planned,8,十 | shí | ten; Xiaoxiao -15% +0Hz; HSK1
+word_096,audio,TTS,planned,8,时候 | shíhou | time; moment; Xiaoxiao -15% +0Hz; HSK1
+word_097,audio,TTS,planned,8,是 | shì | be; Xiaoxiao -15% +0Hz; HSK1
+word_098,audio,TTS,planned,8,书 | shū | book; Xiaoxiao -15% +0Hz; HSK1
+word_099,audio,TTS,planned,8,水 | shuǐ | water; Xiaoxiao -15% +0Hz; HSK1
+word_100,audio,TTS,planned,8,水果 | shuǐguǒ | fruit; Xiaoxiao -15% +0Hz; HSK1
+word_101,audio,TTS,planned,8,睡觉 | shuìjiào | sleep; Xiaoxiao -15% +0Hz; HSK1
+word_102,audio,TTS,planned,8,说话 | shuōhuà | speak; Xiaoxiao -15% +0Hz; HSK1
+word_103,audio,TTS,planned,8,四 | sì | four; Xiaoxiao -15% +0Hz; HSK1
+word_104,audio,TTS,planned,8,岁 | suì | years old; Xiaoxiao -15% +0Hz; HSK1
+word_105,audio,TTS,planned,8,他 | tā | he; him; Xiaoxiao -15% +0Hz; HSK1
+word_106,audio,TTS,planned,8,太 | tài | too; extremely; Xiaoxiao -15% +0Hz; HSK1
+word_107,audio,TTS,planned,8,天 | tiān | day; sky; Xiaoxiao -15% +0Hz; HSK1
+word_108,audio,TTS,planned,8,天气 | tiānqì | weather; Xiaoxiao -15% +0Hz; HSK1
+word_109,audio,TTS,planned,8,听 | tīng | listen; hear; Xiaoxiao -15% +0Hz; HSK1
+word_110,audio,TTS,planned,8,同学 | tóngxué | classmate; Xiaoxiao -15% +0Hz; HSK1
+word_111,audio,TTS,planned,8,喂 | wèi | hello (on the phone); Xiaoxiao -15% +0Hz; HSK1
+word_112,audio,TTS,planned,8,我 | wǒ | I; me; Xiaoxiao -15% +0Hz; HSK1
+word_113,audio,TTS,planned,8,我们 | wǒmen | we; us; Xiaoxiao -15% +0Hz; HSK1
+word_114,audio,TTS,planned,8,五 | wǔ | five; Xiaoxiao -15% +0Hz; HSK1
+word_115,audio,TTS,planned,8,喜欢 | xǐhuan | like; Xiaoxiao -15% +0Hz; HSK1
+word_116,audio,TTS,planned,8,下 | xià | below; next; Xiaoxiao -15% +0Hz; HSK1
+word_117,audio,TTS,planned,8,下午 | xiàwǔ | afternoon; Xiaoxiao -15% +0Hz; HSK1
+word_118,audio,TTS,planned,8,下雨 | xiàyǔ | rain; Xiaoxiao -15% +0Hz; HSK1
+word_119,audio,TTS,planned,8,先生 | xiānsheng | Mr.; sir; Xiaoxiao -15% +0Hz; HSK1
+word_120,audio,TTS,planned,8,现在 | xiànzài | now; Xiaoxiao -15% +0Hz; HSK1
+word_121,audio,TTS,planned,8,想 | xiǎng | want; think; Xiaoxiao -15% +0Hz; HSK1
+word_122,audio,TTS,planned,8,小 | xiǎo | small; Xiaoxiao -15% +0Hz; HSK1
+word_123,audio,TTS,planned,8,小姐 | xiǎojiě | Miss; young woman; Xiaoxiao -15% +0Hz; HSK1
+word_124,audio,TTS,planned,8,些 | xiē | some; Xiaoxiao -15% +0Hz; HSK1
+word_125,audio,TTS,planned,8,写 | xiě | write; Xiaoxiao -15% +0Hz; HSK1
+word_126,audio,TTS,planned,8,谢谢 | xièxie | thank you; Xiaoxiao -15% +0Hz; HSK1
+word_127,audio,TTS,planned,8,星期 | xīngqī | week; Xiaoxiao -15% +0Hz; HSK1
+word_128,audio,TTS,planned,8,学生 | xuésheng | student; Xiaoxiao -15% +0Hz; HSK1
+word_129,audio,TTS,planned,8,学习 | xuéxí | study; learn; Xiaoxiao -15% +0Hz; HSK1
+word_130,audio,TTS,planned,8,学校 | xuéxiào | school; Xiaoxiao -15% +0Hz; HSK1
+word_131,audio,TTS,planned,8,一 | yī | one; Xiaoxiao -15% +0Hz; HSK1
+word_132,audio,TTS,planned,8,衣服 | yīfu | clothes; Xiaoxiao -15% +0Hz; HSK1
+word_133,audio,TTS,planned,8,医生 | yīshēng | doctor; Xiaoxiao -15% +0Hz; HSK1
+word_134,audio,TTS,planned,8,医院 | yīyuàn | hospital; Xiaoxiao -15% +0Hz; HSK1
+word_135,audio,TTS,planned,8,椅子 | yǐzi | chair; Xiaoxiao -15% +0Hz; HSK1
+word_136,audio,TTS,planned,8,有 | yǒu | have; there is; Xiaoxiao -15% +0Hz; HSK1
+word_137,audio,TTS,planned,8,月 | yuè | month; moon; Xiaoxiao -15% +0Hz; HSK1
+word_138,audio,TTS,planned,8,再见 | zàijiàn | goodbye; Xiaoxiao -15% +0Hz; HSK1
+word_139,audio,TTS,planned,8,在 | zài | be at; in; Xiaoxiao -15% +0Hz; HSK1
+word_140,audio,TTS,planned,8,怎么 | zěnme | how; Xiaoxiao -15% +0Hz; HSK1
+word_141,audio,TTS,planned,8,怎么样 | zěnmeyàng | how about; how is; Xiaoxiao -15% +0Hz; HSK1
+word_142,audio,TTS,planned,8,这 | zhè | this; Xiaoxiao -15% +0Hz; HSK1
+word_143,audio,TTS,planned,8,中国 | Zhōngguó | China; Xiaoxiao -15% +0Hz; HSK1
+word_144,audio,TTS,planned,8,中午 | zhōngwǔ | noon; Xiaoxiao -15% +0Hz; HSK1
+word_145,audio,TTS,planned,8,住 | zhù | live; stay; Xiaoxiao -15% +0Hz; HSK1
+word_146,audio,TTS,planned,8,桌子 | zhuōzi | table; desk; Xiaoxiao -15% +0Hz; HSK1
+word_147,audio,TTS,planned,8,字 | zì | written character; Xiaoxiao -15% +0Hz; HSK1
+word_148,audio,TTS,planned,8,昨天 | zuótiān | yesterday; Xiaoxiao -15% +0Hz; HSK1
+word_149,audio,TTS,planned,8,坐 | zuò | sit; travel by; Xiaoxiao -15% +0Hz; HSK1
+word_150,audio,TTS,planned,8,做 | zuò | do; make; Xiaoxiao -15% +0Hz; HSK1
+word_151,audio,TTS,planned,8,碗 | wǎn | bowl; Xiaoxiao -15% +0Hz; bonus
+amb_01,audio,TTS,planned,16,Exact GDD living-street line 1; NPC preset from GDD; only when all words met
+amb_02,audio,TTS,planned,16,Exact GDD living-street line 2; NPC preset from GDD; only when all words met
+amb_03,audio,TTS,planned,16,Exact GDD living-street line 3; NPC preset from GDD; only when all words met
+amb_04,audio,TTS,planned,16,Exact GDD living-street line 4; NPC preset from GDD; only when all words met
+amb_05,audio,TTS,planned,16,Exact GDD living-street line 5; NPC preset from GDD; only when all words met
+amb_06,audio,TTS,planned,16,Exact GDD living-street line 6; NPC preset from GDD; only when all words met
+amb_07,audio,TTS,planned,16,Exact GDD living-street line 7; NPC preset from GDD; only when all words met
+amb_08,audio,TTS,planned,16,Exact GDD living-street line 8; NPC preset from GDD; only when all words met
+amb_09,audio,TTS,planned,16,Exact GDD living-street line 9; NPC preset from GDD; only when all words met
+amb_10,audio,TTS,planned,16,Exact GDD living-street line 10; NPC preset from GDD; only when all words met
+amb_11,audio,TTS,planned,16,Exact GDD living-street line 11; NPC preset from GDD; only when all words met
+amb_12,audio,TTS,planned,16,Exact GDD living-street line 12; NPC preset from GDD; only when all words met
+amb_13,audio,TTS,planned,16,Exact GDD living-street line 13; NPC preset from GDD; only when all words met
+amb_14,audio,TTS,planned,16,Exact GDD living-street line 14; NPC preset from GDD; only when all words met
+amb_15,audio,TTS,planned,16,Exact GDD living-street line 15; NPC preset from GDD; only when all words met
+amb_16,audio,TTS,planned,16,Exact GDD living-street line 16; NPC preset from GDD; only when all words met
+amb_17,audio,TTS,planned,16,Exact GDD living-street line 17; NPC preset from GDD; only when all words met
+amb_18,audio,TTS,planned,16,Exact GDD living-street line 18; NPC preset from GDD; only when all words met
+amb_19,audio,TTS,planned,16,Exact GDD living-street line 19; NPC preset from GDD; only when all words met
+amb_20,audio,TTS,planned,16,Exact GDD living-street line 20; NPC preset from GDD; only when all words met
+sys_rent,audio,TTS,planned,16,Landlord 钱，二十块。; only after all words met
+sys_gate,audio,TTS,planned,16,Mentor 你会汉语。; dictionary words only; no 说; only after all words met,TTS service terms
+sys_sleep,audio,TTS,planned,16,Landlord 睡觉。; only after all words met
+sfx_step_stone,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+sfx_step_wood,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+sfx_cloth,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+sfx_cup,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+sfx_bowl,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+sfx_crate,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+sfx_parcel,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+sfx_door,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+sfx_gate,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+sfx_page,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+sfx_select,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+sfx_wage,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+sfx_spend,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+sfx_phone,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+sfx_kettle,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+sfx_water,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+sfx_apple,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+sfx_sign_tap,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+amb_street_bed,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+amb_noodle_bed,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+music_day,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+music_evening,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+music_gate,audio,owner,planned,4,Original procedural recipe; exact frequencies/durations/gains ART6; no external recording
+char_outfit_shells,char,Blender script,planned,80,character_prepare.py; shared skinned coat/cardigan/apron/vest/tunic geometry; merge into <=3 body materials; no separate rig
+char_outfit_shells_lod1,char,Blender script,planned,30,Same outfit geometry family; reduced silhouette-preserving LOD
+blob_shadow,prop,Blender script,planned,3,Shared ground quad GLB; procedural radial alpha; player and8NPCs; no image texture
+steam_quad,prop,Blender script,planned,3,Shared billboard quad GLB; procedural soft alpha; max24high/8low instances
+toon_ramp,ui,owner,planned,1,Procedural 3x1 data texture bytes80/165/255; nearest; no downloaded bitmap
+palette_catalog,ui,owner,planned,4,ART exact district/time/character hex roles; generated material map
+ui_offline_copy,ui,owner,planned,3,Offline pack bytes/progress/ready/retry copy; English DOM
