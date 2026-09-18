@@ -1,0 +1,1 @@
+Decision: scene-list.md takes precedence. S17 e4 introduces 不客气 (paired naturally with 谢谢 from e3) and is not a zero-introduction review; the review requirement applied to S04/S06 only. Author S13–S18 now, to completion, and report per the brief.

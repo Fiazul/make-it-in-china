@@ -1,338 +1,388 @@
 import {
-  Box3,
-  BoxGeometry,
-  CanvasTexture,
   Clock,
-  DirectionalLight,
-  DoubleSide,
-  GridHelper,
-  HemisphereLight,
+  Color,
   Mesh,
   MeshBasicMaterial,
-  Object3D,
-  OrthographicCamera,
-  PlaneGeometry,
-  Raycaster,
+  NoToneMapping,
+  PCFSoftShadowMap,
   Scene,
   SRGBColorSpace,
   Vector2,
   Vector3,
   WebGLRenderer,
 } from 'three';
-import type { World } from '../content/types';
-import { cloneModel, loadAll, type LoadedScenes, type ModelId } from './assets';
-import { makeCharacter } from './character';
-import { cellToWorld, findPath, makeGrid, worldToCell } from './navigation';
-import { makeMesh, styleLoadedScene } from './toon';
-import { spawnNpcs } from './world';
-
-const GRID_SIZE = 20;
-const VIEW_HEIGHT = 16;
-
-function makeShopSign(): Mesh {
-  const canvas = document.createElement('canvas');
-  canvas.width = 256;
-  canvas.height = 96;
-  const context = canvas.getContext('2d');
-  if (!context) throw new Error('Canvas 2D unavailable');
-  context.fillStyle = '#f2d58b';
-  context.fillRect(0, 0, canvas.width, canvas.height);
-  context.fillStyle = '#38251f';
-  context.font = 'bold 62px sans-serif';
-  context.textAlign = 'center';
-  context.textBaseline = 'middle';
-  context.fillText('面馆', 128, 48);
-  const texture = new CanvasTexture(canvas);
-  texture.colorSpace = SRGBColorSpace;
-  return new Mesh(
-    new PlaneGeometry(2.5, 0.95),
-    new MeshBasicMaterial({ map: texture, side: DoubleSide }),
-  );
-}
+import type { TimeSlot, World } from '../content/types';
+import { loadAll, type LoadedScenes } from './assets';
+import { createFollowCamera, type FollowCamera } from './camera';
+import { makeCharacter, type Character } from './character';
+import {
+  ARRIVAL_OFFSETS,
+  BLOB_ALPHA,
+  CAPSULE_RADIUS,
+  DESKTOP_DPR,
+  DESKTOP_FPS,
+  isPhoneViewport,
+  MAX_ACCUM,
+  MAX_SUBSTEPS,
+  PHONE_DPR,
+  PHONE_FPS,
+  SIM_DT,
+  TALK_EXIT_RANGE,
+  TALK_FACING_DOT,
+  TALK_RANGE,
+} from './constants';
+import { spawnCrowd, type Crowd } from './crowd';
+import { createInput } from './input';
+import { collidersFromWorld, isStreetPose, isWalkable, stepMotion, type MotionState } from './motion';
+import { npcAnchor, spawnNpcs, type NpcActor } from './npc';
+import { shadowStretch, type DayPalette } from './daylight';
+import { blobShadow, buildDistrict, createDaylight, type Daylight } from './world';
 
 export interface SceneEvents {
-  onMoveIntent(): void;
-  onArrivalNpc(id: string | null): void;
+  isLocked(): boolean;
+  onTalk(): void;
+  onMenu(): void;
   onNpcPosition(id: string, x: number, y: number, visible: boolean): void;
+  onNearNpc(id: string | null, label: string | null): void;
+  onSafePose?(x: number, z: number, yaw: number): void;
 }
 
-function fitModel(model: Object3D, limits: Vector3): void {
-  const bounds = new Box3().setFromObject(model);
-  const size = bounds.getSize(new Vector3());
-  if (size.x <= 0 || size.y <= 0 || size.z <= 0) return;
-  const scale = Math.min(limits.x / size.x, limits.y / size.y, limits.z / size.z);
-  const center = bounds.getCenter(new Vector3());
-  model.scale.setScalar(scale);
-  model.position.set(-center.x * scale, -bounds.min.y * scale, -center.z * scale);
+export interface SceneHandle {
+  setSpeakingNpc(id: string | null): void;
+  setTimeSlot(slot: TimeSlot): void;
+  getTimeSlot(): TimeSlot;
+  fps(): number;
+  draws(): number;
+  getPose(): { x: number; z: number; yaw: number };
+  setPose(x: number, z: number, yaw: number): void;
+  snapToNpc(id: string): boolean;
 }
 
-function prepareModel(
-  assets: LoadedScenes,
-  id: ModelId,
-  toon: boolean,
-  position: Vector3,
-  limits: Vector3,
-  fallback: () => Object3D,
-  rotationY = 0,
-): Object3D {
-  const loaded = cloneModel(assets, id);
-  const model = loaded?.scene ?? fallback();
-  if (loaded) styleLoadedScene(model, toon);
-  fitModel(model, limits);
-  model.position.add(position);
-  model.rotation.y = rotationY;
-  return model;
+export interface SceneStartOptions {
+  pose?: [number, number, number];
+  snapNpc?: string;
+  timeSlot?: TimeSlot;
 }
 
-export async function startScene(root: HTMLElement, world: World, events: SceneEvents): Promise<void> {
-  const toon = new URLSearchParams(location.search).get('toon') === '1';
+function spawnOf(world: World) {
+  return world.spawns?.find(item => item.id === 'player_start')
+    ?? { position: [-24, 0, -5] as [number, number, number], yaw: Math.PI };
+}
+
+export async function startScene(
+  root: HTMLElement,
+  world: World,
+  events: SceneEvents,
+  options: SceneStartOptions = {},
+): Promise<SceneHandle> {
+  const mobile = isPhoneViewport();
   const assets: LoadedScenes = new Map();
   const scene = new Scene();
-  scene.background = null;
   const loading = document.createElement('div');
   loading.id = 'loading';
   loading.textContent = '加载中… loading models';
   root.append(loading);
 
+  const prompt = document.createElement('div');
+  prompt.id = 'talk-prompt';
+  prompt.hidden = true;
+  root.append(prompt);
+
+  const collision = collidersFromWorld(world);
+  const spawn = spawnOf(world);
+  const startX = options.pose?.[0] ?? spawn.position[0];
+  const startZ = options.pose?.[1] ?? spawn.position[2];
+  const startYaw = options.pose?.[2] ?? spawn.yaw;
+  const motion: MotionState = { velocity: new Vector2(), yaw: startYaw };
+  let speakingNpc: string | null = null;
+  let timeSlot: TimeSlot = options.timeSlot ?? 'M';
+  let nearId: string | null = null;
+  let character: Character | undefined;
+  let npcs: NpcActor[] = [];
+  let follow: FollowCamera | undefined;
+  let lights: Daylight | undefined;
+  let crowd: Crowd | undefined;
+  const blobs: Mesh[] = [];
+  let measuredFps = 0;
+  let measuredDraws = 0;
+  const headScratch = new Vector3();
+  const playerPos = new Vector3(startX, 0, startZ);
+  const zeroMove = new Vector2();
+
+  function applyPose(x: number, z: number, yaw: number): void {
+    playerPos.set(x, 0, z);
+    motion.yaw = yaw;
+    motion.velocity.set(0, 0);
+    if (character) {
+      character.group.position.copy(playerPos);
+      character.group.rotation.y = yaw;
+    }
+    if (follow) {
+      follow.yaw = yaw;
+      follow.snap();
+    }
+  }
+
+  function snapToNpc(id: string): boolean {
+    const index = world.npcs.findIndex(item => item.id === id);
+    if (index < 0) return false;
+    const stand = npcAnchor(world, id, timeSlot, index);
+    const actor = npcs.find(item => item.id === id);
+    const nx = actor?.group.position.x ?? stand?.x;
+    const nz = actor?.group.position.z ?? stand?.z;
+    if (nx === undefined || nz === undefined) return false;
+    for (const [dx, dz] of ARRIVAL_OFFSETS) {
+      if (dx === 0 && dz === 0) continue;
+      const x = nx + dx;
+      const z = nz + dz;
+      if (!isWalkable(x, z, CAPSULE_RADIUS, collision)) continue;
+      applyPose(x, z, Math.atan2(nx - x, nz - z));
+      return true;
+    }
+    const fallbackZ = nz + 1.2;
+    if (isWalkable(nx, fallbackZ, CAPSULE_RADIUS, collision)) {
+      applyPose(nx, fallbackZ, Math.atan2(0, nz - fallbackZ));
+      return true;
+    }
+    return false;
+  }
+
   try {
-  const renderer = new WebGLRenderer({ antialias: true, alpha: true });
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-  renderer.setSize(innerWidth, innerHeight);
-  renderer.outputColorSpace = SRGBColorSpace;
-  root.append(renderer.domElement);
-
-  const camera = new OrthographicCamera(-8, 8, 8, -8, 0.1, 100);
-  const cameraTarget = new Vector3();
-  const cameraOffset = new Vector3(9, 18.7, 9);
-  camera.position.copy(cameraOffset);
-  camera.lookAt(0, 0.8, 0);
-
-  scene.add(new HemisphereLight(0xfff2d5, 0x657080, 2.2));
-  const sun = new DirectionalLight(0xffffff, 2);
-  sun.position.set(-5, 10, 7);
-  scene.add(sun);
-
-  const ground = makeMesh(new PlaneGeometry(GRID_SIZE, GRID_SIZE), 0xb9ae96, toon);
-  ground.rotation.x = -Math.PI / 2;
-  scene.add(ground);
-  const gridLines = new GridHelper(GRID_SIZE, GRID_SIZE, 0x746d60, 0x938b7c);
-  gridLines.position.y = 0.012;
-  scene.add(gridLines);
-
-  const modelSwaps = new Map<ModelId, Array<() => void>>();
-  function addModel(
-    id: ModelId,
-    position: Vector3,
-    limits: Vector3,
-    fallback: () => Object3D,
-    rotationY = 0,
-  ): Object3D {
-    let current = prepareModel(assets, id, toon, position, limits, fallback, rotationY);
-    scene.add(current);
-    const swap = () => {
-      if (!assets.has(id)) return;
-      const replacement = prepareModel(assets, id, toon, position, limits, fallback, rotationY);
-      scene.remove(current);
-      scene.add(replacement);
-      current = replacement;
-    };
-    const swaps = modelSwaps.get(id) ?? [];
-    swaps.push(swap);
-    modelSwaps.set(id, swaps);
-    return current;
-  }
-
-  const grid = makeGrid(GRID_SIZE);
-  function addBuilding(
-    id: Extract<ModelId, 'building-a' | 'building-b' | 'building-c'>,
-    col: number,
-    row: number,
-    width: number,
-    depth: number,
-    height: number,
-    color: number,
-    shop = false,
-  ): void {
-    const [x, z] = cellToWorld({ col: col + (width - 1) / 2, row: row + (depth - 1) / 2 }, GRID_SIZE);
-    addModel(
-      id,
-      new Vector3(x, 0, z),
-      new Vector3(width, height, depth),
-      () => makeMesh(new BoxGeometry(width, height, depth), color, toon),
-    );
-    for (let r = row; r < row + depth; r += 1) {
-      for (let c = col; c < col + width; c += 1) grid[r][c] = false;
-    }
-    if (shop) {
-      const sign = makeShopSign();
-      sign.position.set(x, height * 0.68, z + depth / 2 + 0.012);
-      scene.add(sign);
-    }
-  }
-
-  addBuilding('building-a', 2, 2, 5, 3, 3.8, 0xb7604b, true);
-  addBuilding('building-b', 8, 1, 4, 4, 5.2, 0x667785);
-  addBuilding('building-c', 14, 1, 4, 6, 4.5, 0x9a846f);
-
-  addModel(
-    'awning',
-    new Vector3(-5.5, 2.25, -4.9),
-    new Vector3(3.2, 0.8, 1.1),
-    () => makeMesh(new BoxGeometry(3.2, 0.18, 1.1), 0xe5c36b, toon),
-  );
-
-  const streetProps: Array<{
-    id: Extract<ModelId, 'streetlight' | 'bench' | 'box-a' | 'bush'>;
-    position: Vector3;
-    limits: Vector3;
-    color: number;
-  }> = [
-    { id: 'streetlight', position: new Vector3(-7, 0, -2.2), limits: new Vector3(0.8, 3.2, 0.8), color: 0x4d5358 },
-    { id: 'bench', position: new Vector3(-2.2, 0, -2.1), limits: new Vector3(2.1, 1, 0.8), color: 0x8b6547 },
-    { id: 'box-a', position: new Vector3(1.6, 0, -2), limits: new Vector3(0.8, 0.8, 0.8), color: 0x9b734f },
-    { id: 'bush', position: new Vector3(6.2, 0, -2.2), limits: new Vector3(1.5, 1.2, 1.5), color: 0x66834f },
-  ];
-  for (const prop of streetProps) {
-    addModel(
-      prop.id,
-      prop.position,
-      prop.limits,
-      () => makeMesh(new BoxGeometry(prop.limits.x, prop.limits.y, prop.limits.z), prop.color, toon),
-    );
-  }
-
-  const table = makeMesh(new BoxGeometry(2.1, 0.75, 0.9), 0x855d3f, toon);
-  table.position.set(-4.25, 0.375, 1.5);
-  scene.add(table);
-  const foodProps: Array<{
-    id: Extract<ModelId, 'bowl-broth' | 'chopstick' | 'cup-tea' | 'steamer' | 'pot'>;
-    position: Vector3;
-    limits: Vector3;
-    color: number;
-  }> = [
-    { id: 'bowl-broth', position: new Vector3(-4.85, 0.76, 1.5), limits: new Vector3(0.34, 0.22, 0.34), color: 0xe7e1d4 },
-    { id: 'chopstick', position: new Vector3(-4.45, 0.76, 1.4), limits: new Vector3(0.08, 0.06, 0.55), color: 0x65452f },
-    { id: 'cup-tea', position: new Vector3(-4.05, 0.76, 1.45), limits: new Vector3(0.25, 0.32, 0.25), color: 0xb8c6ac },
-    { id: 'steamer', position: new Vector3(-3.68, 0.76, 1.5), limits: new Vector3(0.42, 0.34, 0.42), color: 0xc99d62 },
-    { id: 'pot', position: new Vector3(-4.25, 0.76, 1.7), limits: new Vector3(0.42, 0.36, 0.42), color: 0x5a6063 },
-  ];
-  for (const prop of foodProps) {
-    addModel(
-      prop.id,
-      prop.position,
-      prop.limits,
-      () => makeMesh(new BoxGeometry(prop.limits.x, prop.limits.y, prop.limits.z), prop.color, toon),
-    );
-  }
-
-  let character = makeCharacter(toon, assets);
-  character.group.position.set(-7.5, 0, 2.5);
-  scene.add(character.group);
-  let npcs = spawnNpcs(scene, world, toon, assets);
-
-  let waypoints: Vector3[] = [];
-  let arrivalPending = false;
-  const pointer = new Vector2();
-  const raycaster = new Raycaster();
-  renderer.domElement.addEventListener('pointerup', (event) => {
-    const rect = renderer.domElement.getBoundingClientRect();
-    pointer.set(
-      ((event.clientX - rect.left) / rect.width) * 2 - 1,
-      -((event.clientY - rect.top) / rect.height) * 2 + 1,
-    );
-    raycaster.setFromCamera(pointer, camera);
-    const hit = raycaster.intersectObject(ground, false)[0];
-    if (!hit) return;
-    const start = worldToCell(character.group.position.x, character.group.position.z, GRID_SIZE);
-    const goal = worldToCell(hit.point.x, hit.point.z, GRID_SIZE);
-    if (!start || !goal || !grid[goal.row][goal.col]) return;
-    const path = findPath(grid, start, goal);
-    if (!path.length && (start.col !== goal.col || start.row !== goal.row)) return;
-    events.onMoveIntent();
-    waypoints = path.map((cell) => {
-      const [x, z] = cellToWorld(cell, GRID_SIZE);
-      return new Vector3(x, 0, z);
-    });
-    arrivalPending = true;
-  });
-
-  function resize(): void {
-    const aspect = innerWidth / innerHeight;
-    camera.left = -(VIEW_HEIGHT * aspect) / 2;
-    camera.right = (VIEW_HEIGHT * aspect) / 2;
-    camera.top = VIEW_HEIGHT / 2;
-    camera.bottom = -VIEW_HEIGHT / 2;
-    camera.updateProjectionMatrix();
-    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    const renderer = new WebGLRenderer({ antialias: !mobile, alpha: false });
+    renderer.setPixelRatio(Math.min(devicePixelRatio, mobile ? PHONE_DPR : DESKTOP_DPR));
     renderer.setSize(innerWidth, innerHeight);
-  }
-  addEventListener('resize', resize);
-  resize();
+    renderer.outputColorSpace = SRGBColorSpace;
+    renderer.toneMapping = NoToneMapping;
+    renderer.toneMappingExposure = 1;
+    renderer.setClearColor(new Color(0xdce9e7), 1);
+    if (!mobile) renderer.shadowMap.enabled = true;
+    if (!mobile) renderer.shadowMap.type = PCFSoftShadowMap;
+    root.append(renderer.domElement);
 
-  const clock = new Clock();
-  renderer.setAnimationLoop(() => {
-    const delta = Math.min(clock.getDelta(), 0.05);
-    let travel = delta * 3.4;
-    while (waypoints.length && travel > 0) {
-      const target = waypoints[0];
-      const direction = target.clone().sub(character.group.position);
-      const distance = direction.length();
-      character.group.rotation.y = Math.atan2(direction.x, direction.z);
-      if (distance <= travel) {
-        character.group.position.copy(target);
-        waypoints.shift();
-        travel -= distance;
-      } else {
-        character.group.position.addScaledVector(direction.normalize(), travel);
-        travel = 0;
+    lights = createDaylight(scene, renderer, mobile, timeSlot);
+    const cam = createFollowCamera();
+    follow = cam;
+    cam.yaw = startYaw;
+    const district = buildDistrict(scene, world, assets, root);
+    const input = createInput(root);
+
+    function trackedBlob(name: string): Mesh {
+      const shadow = blobShadow();
+      shadow.name = name;
+      blobs.push(shadow);
+      return shadow;
+    }
+
+    function placeCharacter(next: Character): void {
+      if (character) scene.remove(character.group);
+      character = next;
+      character.group.position.copy(playerPos);
+      character.group.rotation.y = motion.yaw;
+      scene.add(character.group);
+      character.group.add(trackedBlob('player-blob'));
+    }
+
+    function placeNpcs(next: NpcActor[]): void {
+      for (const npc of npcs) scene.remove(npc.group);
+      npcs = next;
+      for (const npc of npcs) {
+        npc.group.add(trackedBlob(`${npc.id}-blob`));
+        scene.add(npc.group);
+        npc.update(0, playerPos, speakingNpc, timeSlot, world, 0);
       }
     }
-    character.setWalking(waypoints.length > 0, delta);
-    for (const npc of npcs) npc.setWalking(false, delta);
-    cameraTarget.lerp(character.group.position, 1 - Math.exp(-delta * 2.2));
-    camera.position.copy(cameraTarget).add(cameraOffset);
-    camera.lookAt(cameraTarget.x, 0.8, cameraTarget.z);
-    const playerCell = worldToCell(character.group.position.x, character.group.position.z, GRID_SIZE);
-    let nearest: { id: string; distance: number } | null = null;
-    for (const npc of npcs) {
-      const npcCell = worldToCell(npc.group.position.x, npc.group.position.z, GRID_SIZE);
-      if (playerCell && npcCell) {
-        const distance = Math.abs(playerCell.col - npcCell.col) + Math.abs(playerCell.row - npcCell.row);
-        if (distance <= 1 && (!nearest || distance < nearest.distance)) nearest = { id: npc.id, distance };
+
+    function placeCrowd(next: Crowd): void {
+      if (crowd) scene.remove(crowd.group);
+      crowd = next;
+      scene.add(crowd.group);
+      crowd.update(0, playerPos, cam.camera.position);
+    }
+
+    function setBlobTone(palette: DayPalette): void {
+      const stretch = shadowStretch(palette);
+      const spread = Math.min(1.7, 1 + (stretch - 1) * 0.22);
+      for (const blob of blobs) {
+        blob.scale.set(spread, spread, 1);
+        const material = blob.material;
+        if (material instanceof MeshBasicMaterial) {
+          material.opacity = BLOB_ALPHA / Math.max(1, spread * 0.85);
+        }
       }
-      const head = npc.group.localToWorld(new Vector3(0, 2.35, 0)).project(camera);
-      events.onNpcPosition(
-        npc.id,
-        (head.x * 0.5 + 0.5) * innerWidth,
-        (-head.y * 0.5 + 0.5) * innerHeight,
-        head.z >= -1 && head.z <= 1,
+    }
+
+    placeCharacter(makeCharacter(true, assets, 0xe7d6ba, { bag: true }, 'player'));
+    placeNpcs(spawnNpcs(world, true, assets));
+    placeCrowd(spawnCrowd(true, assets));
+    lights.attach({ setDayTone(palette) {
+      district.setDayTone(palette);
+      setBlobTone(palette);
+    } });
+    if (options.snapNpc) snapToNpc(options.snapNpc);
+    else if (options.pose && !isWalkable(startX, startZ, CAPSULE_RADIUS, collision)) {
+      applyPose(spawn.position[0], spawn.position[2], spawn.yaw);
+    }
+
+    function resize(): void {
+      const width = innerWidth;
+      const height = innerHeight;
+      renderer.setPixelRatio(Math.min(devicePixelRatio, isPhoneViewport() ? PHONE_DPR : DESKTOP_DPR));
+      renderer.setSize(width, height);
+      cam.camera.aspect = width / Math.max(1, height);
+      cam.camera.updateProjectionMatrix();
+    }
+    addEventListener('resize', resize);
+    resize();
+
+    function facingNpc(npc: NpcActor): boolean {
+      const dx = npc.group.position.x - playerPos.x;
+      const dz = npc.group.position.z - playerPos.z;
+      const length = Math.hypot(dx, dz);
+      if (length < 1e-4) return true;
+      const fx = Math.sin(motion.yaw);
+      const fz = Math.cos(motion.yaw);
+      return (fx * dx + fz * dz) / length >= TALK_FACING_DOT;
+    }
+
+    function nearestTalk(): NpcActor | null {
+      const candidates = npcs
+        .map(npc => ({ npc, dist: Math.hypot(npc.group.position.x - playerPos.x, npc.group.position.z - playerPos.z) }))
+        .filter(item => item.dist <= (nearId === item.npc.id ? TALK_EXIT_RANGE : TALK_RANGE) && facingNpc(item.npc))
+        .sort((a, b) => a.dist - b.dist || a.npc.id.localeCompare(b.npc.id));
+      return candidates[0]?.npc ?? null;
+    }
+
+    const clock = new Clock();
+    let frameAcc = 0;
+    let frameCount = 0;
+    let accum = 0;
+    let renderBank = 0;
+    let safeAcc = 0;
+    let lastLocked = events.isLocked();
+    const fps = mobile ? PHONE_FPS : DESKTOP_FPS;
+
+    renderer.setAnimationLoop(() => {
+      if (!character) return;
+      const raw = clock.getDelta();
+      frameAcc += raw;
+      frameCount += 1;
+      if (frameAcc >= 0.5) {
+        measuredFps = frameCount / frameAcc;
+        frameAcc = 0;
+        frameCount = 0;
+      }
+      if (document.hidden) {
+        accum = 0;
+        return;
+      }
+      accum = Math.min(MAX_ACCUM, accum + raw);
+      const intent = input.sample(raw);
+      const locked = events.isLocked();
+      if (lastLocked && !locked) events.onSafePose?.(playerPos.x, playerPos.z, motion.yaw);
+      lastLocked = locked;
+      let steps = 0;
+      let walkSpeed = 0;
+      while (accum >= SIM_DT && steps < MAX_SUBSTEPS) {
+        const speed = stepMotion(
+          playerPos,
+          motion,
+          locked ? zeroMove : intent.move,
+          locked ? false : intent.run,
+          cam.yaw,
+          SIM_DT,
+          collision,
+          locked,
+        );
+        walkSpeed = locked ? 0 : speed;
+        character.group.position.copy(playerPos);
+        character.group.rotation.y = motion.yaw;
+        character.update(SIM_DT, walkSpeed, false, 0);
+        for (const npc of npcs) {
+          const view = cam.camera.position.distanceTo(npc.group.position);
+          npc.update(SIM_DT, playerPos, speakingNpc, timeSlot, world, view);
+        }
+        district.setInterior(playerPos, SIM_DT);
+        crowd?.update(SIM_DT, playerPos, cam.camera.position);
+        if (!locked && speed > 0.04 && isStreetPose(playerPos.x, playerPos.z, CAPSULE_RADIUS, collision)) {
+          safeAcc += SIM_DT;
+          if (safeAcc >= 2) {
+            safeAcc = 0;
+            events.onSafePose?.(playerPos.x, playerPos.z, motion.yaw);
+          }
+        } else {
+          safeAcc = 0;
+        }
+        accum -= SIM_DT;
+        steps += 1;
+      }
+      cam.update(
+        raw,
+        playerPos,
+        motion.yaw,
+        intent.orbitYawDelta,
+        intent.orbitPitchDelta,
+        collision,
+        innerWidth,
+        innerHeight,
+        walkSpeed,
       );
-    }
-    if (arrivalPending && waypoints.length === 0) {
-      arrivalPending = false;
-      events.onArrivalNpc(nearest?.id ?? null);
-    }
-    renderer.render(scene, camera);
-  });
+      lights?.update(raw, playerPos, district.lamps);
+      district.update(raw);
+      const talkNpc = nearestTalk();
+      const nextNear = talkNpc?.id ?? null;
+      if (nextNear !== nearId) {
+        nearId = nextNear;
+        events.onNearNpc(nearId, talkNpc ? `${talkNpc.name} · ${talkNpc.label}` : null);
+      }
+      prompt.hidden = !talkNpc || locked;
+      prompt.textContent = talkNpc ? `[E] Talk · ${talkNpc.name}` : '';
+      if (intent.menu) events.onMenu();
+      if (!locked && intent.talk && talkNpc) events.onTalk();
+
+      renderBank += raw;
+      if (renderBank < 1 / fps) return;
+      renderBank %= 1 / fps;
+      for (const npc of npcs) {
+        npc.character.headWorld(headScratch).project(cam.camera);
+        events.onNpcPosition(
+          npc.id,
+          (headScratch.x * 0.5 + 0.5) * innerWidth,
+          (-headScratch.y * 0.5 + 0.5) * innerHeight,
+          headScratch.z >= -1 && headScratch.z <= 1,
+        );
+      }
+      district.projectSigns(cam.camera, innerWidth, innerHeight);
+      renderer.render(scene, cam.camera);
+      measuredDraws = renderer.info.render.calls;
+    });
 
     await loadAll((id, loaded) => {
       if (!loaded) return;
       assets.set(id, loaded);
       if (id === 'mannequin') {
-        const playerPosition = character.group.position.clone();
-        const playerRotation = character.group.rotation.clone();
-        scene.remove(character.group);
-        character = makeCharacter(toon, assets);
-        character.group.position.copy(playerPosition);
-        character.group.rotation.copy(playerRotation);
-        scene.add(character.group);
-        for (const npc of npcs) scene.remove(npc.group);
-        npcs = spawnNpcs(scene, world, toon, assets);
+        blobs.length = 0;
+        placeCharacter(makeCharacter(true, assets, 0xe7d6ba, { bag: true }, 'player'));
+        placeNpcs(spawnNpcs(world, true, assets));
+        placeCrowd(spawnCrowd(true, assets));
+        lights?.update(0, playerPos, district.lamps);
       }
-      for (const swap of modelSwaps.get(id) ?? []) swap();
-      modelSwaps.delete(id);
+      district.refreshProps();
     });
   } finally {
     loading.remove();
   }
+
+  return {
+    setSpeakingNpc(id) { speakingNpc = id; },
+    setTimeSlot(slot) {
+      timeSlot = slot;
+      lights?.setSlot(slot);
+    },
+    getTimeSlot() { return timeSlot; },
+    fps() { return Math.round(measuredFps); },
+    draws() { return measuredDraws; },
+    getPose() { return { x: playerPos.x, z: playerPos.z, yaw: motion.yaw }; },
+    setPose(x, z, yaw) { applyPose(x, z, yaw); },
+    snapToNpc,
+  };
 }

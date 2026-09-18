@@ -1,12 +1,16 @@
+import './style.css'; // ui
 import scenesSource from '../content/phase1/scenes.json?raw';
 import wordsSource from '../content/phase1/words.json?raw';
 import worldSource from '../content/phase1/world.json?raw';
-import type { Scene, Word, World } from './content/types';
+import type { Npc, Scene, TimeSlot, Word, World } from './content/types';
 import { CommandError, createGame, type GameState } from './engine';
 import { startScene } from './render/scene';
 import { createBubble } from './ui/bubble';
 import { createHud } from './ui/hud';
 import { createNotebook } from './ui/notebook';
+import { createUiShell } from './ui/shell'; // ui
+import { describeChoices } from './ui/activityAvailability'; // ui
+import { AudioManager } from './audio/manager'; // speech
 
 const root = document.querySelector<HTMLDivElement>('#app');
 if (!root) throw new Error('Missing #app root');
@@ -16,7 +20,7 @@ const scenes = JSON.parse(scenesSource) as Scene[];
 const words = JSON.parse(wordsSource) as Word[];
 const world = JSON.parse(worldSource) as World;
 const jobs = scenes.filter(scene => scene.kind === 'job');
-const activities = scenes.filter(scene => ['job', 'errand', 'mentor'].includes(scene.kind));
+const activities = scenes.filter(scene => scene.kind !== 'consequence'); // speech
 const starterWords = Object.fromEntries((jobs[0]?.requires ?? []).map(word => [word, 'met' as const]));
 const SAVE_KEY = 'make-it-in-china.save.v1';
 const UI_STATE_KEY = 'make-it-in-china.ui.v1';
@@ -26,10 +30,18 @@ try { saved = localStorage.getItem(SAVE_KEY); } catch { /* storage unavailable *
 type UiState = {
   completedOn: Record<string, number>;
   greetedOn: Record<string, number>;
+  safePose?: [number, number, number];
 };
 
 function emptyUiState(): UiState {
   return { completedOn: {}, greetedOn: {} };
+}
+
+function parseSafePose(value: unknown): [number, number, number] | undefined {
+  if (!Array.isArray(value) || value.length !== 3) return undefined;
+  const pose = value.map(item => (typeof item === 'number' && Number.isFinite(item) ? item : NaN));
+  if (pose.some(item => Number.isNaN(item))) return undefined;
+  return [pose[0], pose[1], pose[2]];
 }
 
 function loadUiState(): UiState {
@@ -46,7 +58,8 @@ function loadUiState(): UiState {
         typeof entry[1] === "number" && Number.isInteger(entry[1]) && entry[1] > 0
       )),
     );
-    return { completedOn, greetedOn };
+    const safePose = parseSafePose(value.safePose);
+    return { completedOn, greetedOn, ...(safePose ? { safePose } : {}) };
   } catch {
     return emptyUiState();
   }
@@ -62,13 +75,18 @@ function randomSeed(): number {
 
 let activeNpcId: string | null = null;
 let nearNpc: string | null = null;
-let lastMoveWasUserInitiated = false;
+let greetingOpen = false;
+let gateCardDismissed = false;
 let pendingCommandError: string | null = null;
 let bubble: ReturnType<typeof createBubble> | undefined;
+let sceneHandle: Awaited<ReturnType<typeof startScene>> | undefined;
+const audio = new AudioManager(); // speech
+await audio.ready(); // speech
 
 function showMessage(hanzi: string, en?: string, npcId = activeNpcId ?? nearNpc ?? undefined): void {
   const npc = world.npcs.find(item => item.id === npcId);
   activeNpcId = npc?.id ?? null;
+  greetingOpen = true;
   if (bubble) bubble.message(hanzi, en, npc);
   else pendingCommandError = hanzi;
 }
@@ -153,6 +171,14 @@ const nextJob = (state: GameState, npcId: string): { scene: Scene; review: boole
     ))[0];
   return scene ? { scene, review: true } : undefined;
 };
+const nextActivity = (state: GameState, npcId: string): { scene: Scene; review: boolean } | undefined => {
+  const done = completed();
+  const available = new Set(guardGame(() => game.availableScenes(), []).map(scene => scene.id));
+  const firstTime = activities.find(scene => (
+    scene.npc === npcId && available.has(scene.id) && !done.has(scene.id)
+  ));
+  return firstTime ? { scene: firstTime, review: false } : nextJob(state, npcId);
+}; // speech
 
 function jobVerb(scene: Scene): string {
   const verb = scene.id.match(/^p\d+_.+_([^_]+)_\d+$/)?.[1]?.replaceAll('_', ' ') ?? 'work';
@@ -182,7 +208,37 @@ const objective = (state: GameState) => {
   return jobObjective(next.scene, next.review);
 };
 
-const hud = createHud(root, () => {
+function importSave(save: string): void { // ui
+  if (!save) throw new Error('Paste a save string first.');
+  suppressWalletToast = true;
+  let imported = false;
+  try {
+    imported = guardGame(() => {
+      game.importString(save);
+      return true;
+    }, false);
+  } finally {
+    suppressWalletToast = false;
+    previousWallet = guardGame(() => game.state().wallet, previousWallet);
+  }
+  if (!imported) throw new Error('Save could not be imported.');
+  uiState = { completedOn: completionDays(), greetedOn: {} };
+  persistUiState();
+  restoreNewWords();
+  render();
+}
+
+function resetLocalGame(): void { // ui
+  try {
+    localStorage.removeItem(SAVE_KEY);
+    localStorage.removeItem(UI_STATE_KEY);
+  } catch {
+    return;
+  }
+  location.reload();
+}
+
+function sleepUntilMorning(): void { // ui
   const slept = guardGame(() => {
     game.sleep();
     return true;
@@ -192,31 +248,40 @@ const hud = createHud(root, () => {
   if (!state) return;
   hud.toast(`第${state.day}天`);
   render();
+}
+
+const ui = createUiShell(root, { // ui
+  hasSave: saved !== null,
+  audio,
+  onNewGame: resetLocalGame,
+  onResetSave: resetLocalGame,
+  onExport: () => guardGame(() => game.exportString(), ''),
+  onImport: importSave,
+  onSleep: sleepUntilMorning,
+  onAbandon: () => {
+    guardGame(() => { game.abandon(); return undefined; }, undefined);
+  },
+  getState: () => guardGame(() => game.state(), null),
+  getEvents: () => guardGame(() => game.events(), []),
 });
+const hud = createHud(
+  root,
+  () => ui.openSleep(),
+  () => {
+    if (notebook.isOpen()) notebook.toggle(); // ui
+    ui.openPause();
+  },
+  audio,
+); // speech // ui
+const mentorScenes = scenes.filter(scene => scene.kind === 'mentor');
 const notebook = createNotebook(
   root,
   words,
   world.locations,
-  () => guardGame(() => game.exportString(), ''),
-  save => {
-    if (!save) throw new Error('Paste a save string first.');
-    suppressWalletToast = true;
-    let imported = false;
-    try {
-      imported = guardGame(() => {
-        game.importString(save);
-        return true;
-      }, false);
-    } finally {
-      suppressWalletToast = false;
-      previousWallet = guardGame(() => game.state().wallet, previousWallet);
-    }
-    if (!imported) return;
-    uiState = { completedOn: completionDays(), greetedOn: {} };
-    persistUiState();
-    restoreNewWords();
-    render();
-  },
+  word => guardGame(() => game.tapWord(word), undefined),
+  audio, // speech
+  mentorScenes,
+  world.npcs,
 );
 bubble = createBubble(
   root,
@@ -229,7 +294,12 @@ bubble = createBubble(
     }, undefined);
   },
   word => guardGame(() => game.tapWord(word), undefined),
-  render,
+  () => {
+    greetingOpen = false;
+    render();
+  },
+  audio, // speech
+  (assistedWords, reason) => guardGame(() => { game.markAssisted(assistedWords, reason); return undefined; }, undefined),
 );
 
 function restoreNewWords(): void {
@@ -242,60 +312,143 @@ function restoreNewWords(): void {
   }
 }
 
+// render
+function timeSlotOf(): TimeSlot {
+  const slots = guardGame(() => game.state().actionSlots, 4);
+  if (slots >= 4) return 'M';
+  if (slots === 3) return 'A1';
+  if (slots === 2) return 'A2';
+  if (slots === 1) return 'A3';
+  return 'E';
+}
+
 function render(): void {
   const state = guardGame(() => game.state(), null);
   if (!state || !bubble) return;
   const scene = state.dialogue ? scenes.find(item => item.id === state.dialogue!.sceneId) : undefined;
   const npc = scene ? world.npcs.find(item => item.id === scene.npc) : undefined;
-  activeNpcId = npc?.id ?? null;
-  bubble.render(state.dialogue, npc, newWords);
+  if (state.dialogue) greetingOpen = false;
+  activeNpcId = npc?.id ?? (greetingOpen ? activeNpcId : null);
+  if (state.dialogue || !greetingOpen) bubble.render(state.dialogue, npc, newWords);
   hud.render(state, objective(state));
   notebook.render(state);
+  sceneHandle?.setSpeakingNpc(activeNpcId);
+  sceneHandle?.setTimeSlot(timeSlotOf()); // render
+  const gate = guardGame(() => game.queryGate(), null); // ui
+  const claimed = state.progress.gateReachedDay !== null; // ui
+  hud.setGateBadge(claimed); // ui
+  if (gate?.open && !claimed && !gateCardDismissed) { // ui
+    ui.showGate(gate, () => { // ui
+      guardGame(() => { game.claimGate(); return undefined; }, undefined);
+    }, () => { gateCardDismissed = true; }); // ui
+  } else ui.hideGate(); // ui
+}
+
+function showBubbleActions(
+  hanzi: string,
+  en: string | undefined,
+  npcId: string | undefined,
+  actions: { label: string; primary?: boolean; onClick: () => void }[],
+): void {
+  const npc = world.npcs.find(item => item.id === npcId);
+  activeNpcId = npc?.id ?? activeNpcId ?? null;
+  greetingOpen = true;
+  bubble?.message(hanzi, en, npc, actions);
+}
+
+function attemptStart(sceneId: string): void {
+  const scene = scenes.find(item => item.id === sceneId);
+  const state = guardGame(() => game.state(), null);
+  if (scene?.purchase?.mode === 'withhold-first-reward' && state && !state.progress.inventory[scene.purchase.itemId]) {
+    const price = scene.purchase.price;
+    showBubbleActions(
+      `¥${price} withheld`,
+      `First pay withholds ¥${price} for the carry strap.`,
+      scene.npc,
+      [
+        { label: 'Continue', primary: true, onClick: () => {
+          newWords.clear();
+          guardGame(() => game.start(sceneId), undefined);
+        } },
+        { label: 'Cancel', onClick: () => { greetingOpen = false; render(); } },
+      ],
+    );
+    return;
+  }
+  newWords.clear();
+  try {
+    game.start(sceneId);
+  } catch (error) {
+    if (!(error instanceof CommandError)) throw error;
+    if (scene?.purchase?.mode === 'optional-entry') {
+      showBubbleActions(
+        'Not enough money',
+        `¥${scene.purchase.price} needed for ${scene.purchase.itemId.replaceAll('_', ' ')}.`,
+        scene.npc,
+        [
+          { label: 'Just look', primary: true, onClick: () => {
+            newWords.clear();
+            guardGame(() => game.start(sceneId, { purchase: 'look' }), undefined);
+          } },
+          { label: 'Cancel', onClick: () => { greetingOpen = false; render(); } },
+        ],
+      );
+      return;
+    }
+    showMessage(error.message, undefined, scene?.npc);
+  }
 }
 
 function maybeStartDialogue(): void {
   if (!nearNpc) return;
+  const npcId = nearNpc;
   const state = guardGame(() => game.state(), null);
   if (!state || state.dialogue) return;
-  if (!activities.some(scene => scene.npc === nearNpc)) {
-    if (uiState.greetedOn[nearNpc] !== state.day) {
-      uiState.greetedOn[nearNpc] = state.day;
+  if (!activities.some(scene => scene.npc === npcId)) {
+    if (uiState.greetedOn[npcId] !== state.day) {
+      uiState.greetedOn[npcId] = state.day;
       persistUiState();
-      showMessage('你好。', 'Hello.', nearNpc);
+      showMessage('你好。', 'Hello.', npcId);
     }
     return;
   }
-  const next = nextJob(state, nearNpc);
-  if (!next) {
+  const availableIds = new Set(guardGame(() => game.availableScenes(), []).map(scene => scene.id));
+  const choices = describeChoices(scenes, state, availableIds, npcId);
+  const startable = choices.filter(choice => choice.available);
+  if (!startable.length) {
     if (state.actionSlots === 0) {
-      showMessage(
-        '今天没有工作了。明天再来。',
-        'No more work today. Come back tomorrow.',
-        nearNpc,
-      );
+      showMessage('今天没有工作了。明天再来。', 'No more work today. Come back tomorrow.', npcId);
+    } else if (choices.some(choice => choice.reason === "You don't know these words yet")) {
+      showMessage('你还不认识这些字。', "You don't know these words yet.", npcId);
     } else {
-      const done = completed();
-      const unfinished = jobs.filter(item => item.npc === nearNpc && !done.has(item.id));
-      const lockedByWords = unfinished.some(item => (
-        item.requires.some(word => state.words[word]?.state === undefined || state.words[word].state === 'unseen')
-      ));
-      if (lockedByWords) {
-        showMessage('你还不认识这些字。', "You don't know these words yet.", nearNpc);
-      } else {
-        showMessage('今天做完了。', undefined, nearNpc);
-      }
+      showMessage('今天做完了。', undefined, npcId);
     }
     return;
   }
-  newWords.clear();
-  guardGame(() => game.start(next.scene.id), undefined);
+  if (startable.length === 1) {
+    attemptStart(startable[0].id);
+    return;
+  }
+  const npc: Npc | undefined = world.npcs.find(item => item.id === npcId);
+  if (!npc) {
+    attemptStart(startable[0].id);
+    return;
+  }
+  greetingOpen = true;
+  activeNpcId = npc.id;
+  bubble?.choices(
+    npc,
+    choices,
+    id => { greetingOpen = false; attemptStart(id); },
+    () => { greetingOpen = false; render(); },
+  );
 }
 
 guardGame(() => game.on('word', event => {
   if (event.reason === 'seen') newWords.add(event.word);
 }), () => {});
 guardGame(() => game.on('rentDue', event => {
-  hud.toast(`房东 · Landlord: ${event.amount}块 rent due by 第${event.graceUntil}天`);
+  ui.showRent(event.amount, event.graceUntil); // ui
 }), () => {});
 guardGame(() => game.on('sceneEnd', event => {
   if (!event.abandoned) {
@@ -308,6 +461,7 @@ guardGame(() => game.on('change', () => {
   previousWallet = wallet;
   try {
     localStorage.setItem(SAVE_KEY, guardGame(() => game.exportString(), ''));
+    ui.markSaveAvailable(); // ui
   } catch {
     // The loop remains playable when storage is disabled or full.
   }
@@ -317,27 +471,97 @@ guardGame(() => game.on('change', () => {
 
 restoreNewWords();
 render();
+const restoredState = guardGame(() => game.state(), null); // ui
+if (restoredState?.rentDue && restoredState.graceUntil !== null) {
+  ui.showRent(restoredState.rules.rentCost, restoredState.graceUntil); // ui
+}
 if (pendingCommandError) {
   const message = pendingCommandError;
   pendingCommandError = null;
   showMessage(message);
 }
+
+// render
+declare global {
+  interface Window {
+    __debug: {
+      position(): [number, number, number];
+      teleport(x: number, z: number): void;
+      setTimeSlot(slot: TimeSlot): void;
+      timeSlot(): TimeSlot | null;
+      day(): number;
+      fps(): number;
+      draws(): number;
+    };
+  }
+}
+
+// render
+window.__debug = {
+  position() {
+    const pose = sceneHandle?.getPose();
+    return pose ? [pose.x, 0, pose.z] : [0, 0, 0];
+  },
+  teleport(x, z) {
+    const pose = sceneHandle?.getPose();
+    sceneHandle?.setPose(x, z, pose?.yaw ?? 0);
+  },
+  setTimeSlot(slot) {
+    sceneHandle?.setTimeSlot(slot);
+  },
+  draws() {
+    return sceneHandle?.draws() ?? 0;
+  },
+  timeSlot() {
+    return sceneHandle?.getTimeSlot() ?? null;
+  },
+  day() {
+    return guardGame(() => game.state().day, 0);
+  },
+  fps() {
+    return sceneHandle?.fps() ?? 0;
+  },
+};
+
+// safe-spawn
+const restoredDialogue = guardGame(() => game.state().dialogue, null);
+const restoredScene = restoredDialogue
+  ? scenes.find(item => item.id === restoredDialogue.sceneId)
+  : undefined;
+
 startScene(root, world, {
-  onMoveIntent(): void {
-    lastMoveWasUserInitiated = true;
+  isLocked() {
+    return !!guardGame(() => game.state().dialogue, null)
+      || greetingOpen
+      || notebook.isOpen()
+      || ui.isOpen(); // ui
   },
-  onArrivalNpc(id: string | null): void {
+  onTalk() {
+    maybeStartDialogue();
+  },
+  onMenu() {
+    if (!ui.isOpen()) notebook.toggle(); // ui
+  },
+  onNearNpc(id) {
     nearNpc = id;
-    if (!lastMoveWasUserInitiated) return;
-    try {
-      maybeStartDialogue();
-    } finally {
-      lastMoveWasUserInitiated = false;
-    }
   },
-  onNpcPosition(id: string, x: number, y: number, visible: boolean): void {
+  onNpcPosition(id: string, x: number, y: number, visible: boolean) {
     if (activeNpcId === id) bubble?.anchor(x, y, visible);
   },
+  // safe-spawn
+  onSafePose(x, z, yaw) {
+    uiState.safePose = [x, z, yaw];
+    persistUiState();
+  },
+}, {
+  // safe-spawn
+  pose: uiState.safePose,
+  snapNpc: restoredScene?.npc,
+  timeSlot: timeSlotOf(),
+}).then(handle => {
+  sceneHandle = handle;
+  sceneHandle.setSpeakingNpc(activeNpcId);
+  sceneHandle.setTimeSlot(timeSlotOf());
 }).catch(error => showFatal(error));
 
 function showFatal(error: unknown): void {

@@ -4,7 +4,24 @@ import { wordState } from './learner';
 
 const fields = ['hanzi', 'pinyin', 'en'] as const;
 const names = (text = '') => [...text.matchAll(/\{([^{}]+)\}/g)].map(match => match[1]);
-const eligible = (state: GameState, scene: Scene, pool: SlotPool) => pool.values.filter(value => value.words.every(word => wordState(state, word) !== 'unseen' || scene.introduces.includes(word)));
+const introducedBy = (exchange?: Exchange) => new Set(exchange?.introduces ?? []);
+// TDD 6.1: a value is only offered when its fixed wrong alternative is offerable too.
+export function alternativeIndex(pool: SlotPool, index: number): number {
+  const ids = pool.values.map(value => value.id);
+  const fixed: Record<string, string> = { front: 'back', back: 'front', inside: 'front' };
+  const mapped = fixed[ids[index]];
+  if (mapped !== undefined && ids.includes(mapped)) return ids.indexOf(mapped);
+  if (pool.values.length === 2) return 1 - index;
+  const paired = index ^ 1;
+  return paired < pool.values.length ? paired : Math.max(0, index - 1);
+}
+const offerable = (state: GameState, introduced: Set<string>, value: SlotPool['values'][number]) =>
+  value.words.every(word => wordState(state, word) !== 'unseen' || introduced.has(word));
+function usable(state: GameState, pool: SlotPool, exchange?: Exchange) {
+  const introduced = introducedBy(exchange);
+  return pool.values.filter((value, index) => offerable(state, introduced, value) && offerable(state, introduced, pool.values[alternativeIndex(pool, index)]));
+}
+const eligible = (state: GameState, _scene: Scene, pool: SlotPool, exchange?: Exchange) => usable(state, pool, exchange);
 const duplicate = (values: string[]) => new Set(values).size !== values.length;
 export function validateScene(scene: Scene, content: GameContent, state?: GameState, visited = new Set<string>()) {
   if (state && scene.kind !== 'consequence') {
@@ -23,7 +40,7 @@ export function validateScene(scene: Scene, content: GameContent, state?: GameSt
     for (const [name, poolId] of Object.entries(exchange.slots ?? {})) {
       const pool = content.world.slotPools.find(item => item.id === poolId);
       if (!pool?.values.length) throw new ContentError(`Unknown/empty pool: ${poolId}`);
-      const values = state ? eligible(state, scene, pool) : pool.values;
+      const values = state ? eligible(state, scene, pool, exchange) : pool.values;
       if (!values.length) throw new ContentError(`No eligible values for ${poolId} in ${exchange.id}`);
       staticBindings[name] = values.every(value => value.hanzi === values[0].hanzi) ? values[0].hanzi : undefined;
       bound.add(name);
@@ -60,42 +77,67 @@ export function validateScene(scene: Scene, content: GameContent, state?: GameSt
     }
   }
 }
-export function fillExchange(state: GameState, scene: Scene, exchange: Exchange, bindings: Bindings, content: GameContent): Exchange {
-  let collision = exchange.id;
-  for (let attempt = 0; attempt < 20; attempt++) {
-    for (const [name, poolId] of Object.entries(exchange.slots ?? {})) {
-      const pool = content.world.slotPools.find(pool => pool.id === poolId)!;
-      const values = eligible(state, scene, pool);
-      const shaky = values.filter(value => value.words.some(word => wordState(state, word) === 'shaky'));
-      const met = values.filter(value => value.words.every(word => wordState(state, word) !== 'unseen') && value.words.some(word => wordState(state, word) === 'met'));
-      const introduced = values.filter(value => value.words.some(word => wordState(state, word) === 'unseen'));
-      const seen = values.filter(value => value.words.every(word => wordState(state, word) !== 'unseen'));
-      const choices = attempt > 0 ? values : shaky.length ? shaky : met.length ? met : introduced.length ? introduced : seen.length ? seen : values;
-      if (!choices.length) throw new ContentError(`No eligible values for ${poolId}`);
-      state.rng = (Math.imul(state.rng, 1664525) + 1013904223) >>> 0;
-      bindings[name] = structuredClone(choices[Math.floor(state.rng / 4294967296 * choices.length)]);
-    }
-    // Check inherited uses before showing a binding that would make a later answer ambiguous.
-    collision = '';
-    for (const later of scene.exchanges.slice(scene.exchanges.indexOf(exchange))) {
-      if (later !== exchange && Object.keys(later.slots ?? {}).length) break;
-      if (later.replies.some(reply => names(reply.hanzi).some(name => !Object.hasOwn(bindings, name)))) continue;
-      if (duplicate(later.replies.map(reply => reply.hanzi.replace(/\{([^{}]+)\}/g, (_, name: string) => bindings[name].hanzi)))) { collision = later.id; break; }
-    }
-    if (!collision) break;
-    if (!Object.keys(exchange.slots ?? {}).length) break;
+const priority = (state: GameState, introduced: Set<string>, value: SlotPool['values'][number]): number => {
+  if (value.words.some(word => wordState(state, word) === 'shaky')) return 0;
+  if (value.words.some(word => wordState(state, word) === 'unseen' && introduced.has(word))) return 2;
+  if (value.words.some(word => wordState(state, word) === 'met')) return 1;
+  return 3;
+};
+function segment(hanzi: string, dictionary: string[]): string[] {
+  const words: string[] = [];
+  for (let index = 0; index < hanzi.length;) {
+    const match = dictionary.find(word => hanzi.startsWith(word, index));
+    if (!match) { index++; continue; }
+    words.push(match); index += match.length;
   }
-  if (collision) throw new ContentError(`Identical reply hanzi in ${collision} after at most 20 fills`);
-  const exchangeSlots = [...Object.keys(exchange.slots ?? {}), ...fields.flatMap(field => names(exchange.line[field]))];
+  return words;
+}
+export function fillExchange(state: GameState, scene: Scene, exchange: Exchange, bindings: Bindings, content: GameContent): Exchange {
+  const slotNames = Object.keys(exchange.slots ?? {}).sort();
+  const introduced = introducedBy(exchange);
+  if (slotNames.length) {
+    const pools = slotNames.map(name => {
+      const pool = content.world.slotPools.find(item => item.id === exchange.slots![name]);
+      if (!pool?.values.length) throw new ContentError(`Unknown/empty pool: ${exchange.slots![name]}`);
+      return pool;
+    });
+    const options = pools.map(pool => usable(state, pool, exchange));
+    options.forEach((values, index) => { if (!values.length) throw new ContentError(`No eligible values for ${pools[index].id} in ${exchange.id}`); });
+    // Enumerate every permitted tuple instead of resampling: no random draw can miss a legal binding.
+    let tuples: SlotPool['values'][number][][] = [[]];
+    for (const values of options) tuples = tuples.flatMap(tuple => values.map(value => [...tuple, value]));
+    const sharesPool = (left: number, right: number) => pools[left].id === pools[right].id;
+    tuples = tuples.filter(tuple => tuple.every((value, index) =>
+      tuple.every((other, otherIndex) => index === otherIndex || !sharesPool(index, otherIndex) || other.id !== value.id)));
+    tuples = tuples.filter(tuple => !collides(scene, exchange, { ...bindings, ...Object.fromEntries(slotNames.map((name, index) => [name, tuple[index]])) }));
+    if (!tuples.length) throw new ContentError(`No distinct slot values for ${exchange.id}`);
+    const rank = (tuple: SlotPool['values'][number][]) => Math.min(...tuple.map(value => priority(state, introduced, value)));
+    const best = Math.min(...tuples.map(rank));
+    const choices = tuples.filter(tuple => rank(tuple) === best);
+    state.rng = (Math.imul(state.rng, 1664525) + 1013904223) >>> 0;
+    const pick = choices[Math.floor(state.rng / 4294967296 * choices.length)];
+    slotNames.forEach((name, index) => { bindings[name] = structuredClone(pick[index]); });
+  }
+  const dictionary = [...(content.words ?? [])].map(word => word.hanzi).sort((left, right) => right.length - left.length);
   const fill = <T extends { hanzi: string; pinyin?: string; en?: string; words?: string[] }>(text: T): T => {
     const result = structuredClone(text);
-    const used = new Set([...exchangeSlots, ...fields.flatMap(field => names(text[field]))]);
+    // Only placeholders this text actually renders contribute words; tags follow the filled text order.
+    const used = [...new Set(fields.flatMap(field => names(text[field])))];
     for (const field of fields) if (text[field] !== undefined) result[field] = text[field]!.replace(/\{([^{}]+)\}/g, (_, name: string) => {
       if (!Object.hasOwn(bindings, name)) throw new ContentError(`Unbound {${name}} in ${exchange.id}`);
       return bindings[name][field];
     });
-    result.words = [...(text.words ?? []), ...[...used].flatMap(name => bindings[name].words)];
+    result.words = dictionary.length ? segment(result.hanzi, dictionary) : [...(text.words ?? []), ...used.flatMap(name => bindings[name].words)];
     return result;
   };
   return { ...structuredClone(exchange), line: fill(exchange.line), replies: exchange.replies.map(fill) };
+}
+function collides(scene: Scene, exchange: Exchange, bindings: Bindings): boolean {
+  // Inherited uses matter: a binding must not make a later answer ambiguous either.
+  for (const later of scene.exchanges.slice(scene.exchanges.indexOf(exchange))) {
+    if (later !== exchange && Object.keys(later.slots ?? {}).length) break;
+    if (later.replies.some(reply => names(reply.hanzi).some(name => !Object.hasOwn(bindings, name)))) continue;
+    if (duplicate(later.replies.map(reply => reply.hanzi.replace(/\{([^{}]+)\}/g, (_, name: string) => bindings[name].hanzi)))) return true;
+  }
+  return false;
 }

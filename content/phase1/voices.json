@@ -1,0 +1,55 @@
+{
+  "contentRevision": "phase1-design-1",
+  "presets": {
+    "player": {
+      "voice": "zh-CN-YunxiNeural",
+      "rate": "-10%",
+      "pitch": "+0Hz"
+    },
+    "landlord": {
+      "voice": "zh-CN-YunyangNeural",
+      "rate": "-12%",
+      "pitch": "-4Hz"
+    },
+    "mentor": {
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-15%",
+      "pitch": "-2Hz"
+    },
+    "cook": {
+      "voice": "zh-CN-YunjianNeural",
+      "rate": "-10%",
+      "pitch": "+2Hz"
+    },
+    "warehouse_boss": {
+      "voice": "zh-CN-YunyangNeural",
+      "rate": "-8%",
+      "pitch": "-8Hz"
+    },
+    "delivery_boss": {
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-8%",
+      "pitch": "+2Hz"
+    },
+    "fruit_seller": {
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-12%",
+      "pitch": "-6Hz"
+    },
+    "shopkeeper": {
+      "voice": "zh-CN-YunyangNeural",
+      "rate": "-10%",
+      "pitch": "+1Hz"
+    },
+    "customer": {
+      "voice": "zh-CN-YunxiNeural",
+      "rate": "-10%",
+      "pitch": "+4Hz"
+    },
+    "system": {
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "rate": "-15%",
+      "pitch": "+0Hz"
+    }
+  }
+}

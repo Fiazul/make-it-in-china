@@ -36,3 +36,9 @@ data and `citybits_texture.png` embedded during the copy so the runtime has no s
 | `food/cup-tea.glb` | Kenney Food Kit, `Models/GLB format/cup-tea.glb` |
 | `food/steamer.glb` | Kenney Food Kit, `Models/GLB format/steamer.glb` |
 | `food/pot.glb` | Kenney Food Kit, `Models/GLB format/pot.glb` |
+
+Parametric district shells, tiled roofs, street kerbs, skyline, parked bicycle, lanterns,
+interior furniture, and outfit attachments are project-authored three.js fallbacks (no
+atlas textures, no faces). They ship even when `public/models/generated/` is empty.
+Optional Blender exports from `scripts/blender/` use the same ART palette and CC0 is
+unchanged for Kenney / KayKit / Quaternius GLBs when those files are present.

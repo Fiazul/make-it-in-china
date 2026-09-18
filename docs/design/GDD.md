@@ -204,7 +204,7 @@ Keep the four owner states exactly `unseen → met → shaky → known`; shaky i
 
 | Rule | Implementation contract |
 |---|---|
-| Exchange size | 4–6 exchanges per curriculum scene; jobs specifically 3–5 (this plan uses 4 or 5); ordinary consequence vignette 1–2 |
+| Exchange size | 4–6 exchanges per curriculum scene; jobs specifically 3–5 (this plan uses 4 to 6, jobs 4 or 5); ordinary consequence vignette 1–2 |
 | Novelty | At most 2 newly encountered dictionary words across NPC line + every reply + hints/branches per exchange; ~6 per scene; S00 is 10 across 5 exchanges |
 | Familiarity | Target 90% familiar tokens per exchange; acceptable approximation 80–100%. Count NPC line before its exposure and replies after that line has been met; report both ratio and distinct introductions. Below80% requires rewrite; S00 bootstrap is the unavoidable zero-known tutorial exception |
 | Coverage | Every one of 150 HSK1 words in ≥3 distinct reachable curriculum scenes; bonus 碗 excluded from 150; no counting repeated shifts as distinct scenes |
@@ -285,56 +285,56 @@ Use exact introduction/recontextualisation groups in `content/phase1/scene-list.
 | S01 p1_noodle_dishwasher_01 | noodle / cook | job | 5 | 1 / S00 | 5 / 1 |
 | S02 p1_noodle_dishwasher_02 | noodle / cook | job | 5 | 1 / S01 | 6 / 0 |
 | S03 p1_noodle_dishwasher_03 | noodle / cook | job; starter-ten fourth coverage | 5 | 1 / S02 | 6 / 0 |
-| S04 p1_mentor_negatives_01 | tea / mentor | mentor | 4 | 1 / S03; A4 | 6 / 0 |
-| S05 p1_warehouse_porter_01 | warehouse / warehouse_boss | job | 4 | 2 / S04 | 6 / 0 |
-| S06 p1_mentor_quantities_02 | tea / mentor | mentor | 4 | 2 / S05; A4 | 6 / 0 |
+| S04 p1_mentor_negatives_01 | tea / mentor | mentor | 5 | 1 / S03; A4 | 6 / 0 |
+| S05 p1_warehouse_porter_01 | warehouse / warehouse_boss | job | 5 | 2 / S04 | 6 / 0 |
+| S06 p1_mentor_quantities_02 | tea / mentor | mentor | 5 | 2 / S05; A4 | 6 / 0 |
 | S07 p1_warehouse_porter_02 | warehouse / warehouse_boss | job | 4 | 3 / S06 | 6 / 0 |
 | S08 p1_delivery_directions_01 | shop → street → gate / delivery_boss | job | 4 | 3 / S07 | 7 / 0 |
 | S09 p1_delivery_names_02 | gate residential bell / customer | job, once | 4 | 3 / S08 | 7 / 0 |
 | S10 p1_ask_time_01 | bus / customer | errand | 4 | 4 / S09 | 7 / 0 |
 | S11 p1_wrong_bus_01 | bus / customer | consequence, curriculum | 4 | within S10 e3 | 7 / 0 |
-| S12 p1_buy_fruit_01 | fruit / fruit_seller | errand | 4 | 4 / S10 and S11 | 7 / 0 |
-| S13 p1_pay_rent_01 | room / landlord | story | 4 | 4 / S12 | 7 / 0 |
-| S14 p1_landlord_phone_01 | room / landlord phone | story | 4 | 4 / S13 | 7 / 0 |
-| S15 p1_cook_family_chat_01 | noodle / cook | story | 4 | 4 / S14 | 7 / 0 |
-| S16 p1_customer_people_chat_02 | noodle / customer | story | 4 | 4 / S15 | 7 / 0 |
-| S17 p1_mentor_address_03 | tea / mentor | mentor | 4 | 4 / S16; A4 | 7 / 0 |
-| S18 p1_study_at_home_01 | room / mentor | mentor | 4 | 5 / S17; A4 | 7 / 0 |
-| S19 p1_room_evening_01 | room / landlord | story | 4 | 5 / S18; E | 7 / 0 |
-| S20 p1_weather_lunch_01 | noodle / cook | story | 4 | 5 / S19; E, recount today's lunch | 5 / 0 |
-| S21 p1_clinic_delivery_03 | gate clinic / delivery_boss | job | 4 | 6 / S20 | 5 / 0 |
-| S22 p1_street_labels_01 | shop / shopkeeper | errand | 4 | 7 / S21 | 5 / 0 |
-| S23 p1_warehouse_review_03 | warehouse / warehouse_boss | job | 4 | 7 / S22 | 0 / 0 |
+| S12 p1_buy_fruit_01 | fruit / fruit_seller | errand | 5 | 4 / S10 and S11 | 7 / 0 |
+| S13 p1_pay_rent_01 | room / landlord | story | 6 | 4 / S12 | 7 / 0 |
+| S14 p1_landlord_phone_01 | room / landlord phone | story | 5 | 4 / S13 | 7 / 0 |
+| S15 p1_cook_family_chat_01 | noodle / cook | story | 6 | 4 / S14 | 7 / 0 |
+| S16 p1_customer_people_chat_02 | noodle / customer | story | 6 | 4 / S15 | 7 / 0 |
+| S17 p1_mentor_address_03 | tea / mentor | mentor | 6 | 4 / S16; A4 | 7 / 0 |
+| S18 p1_study_at_home_01 | room / mentor | mentor | 6 | 5 / S17; A4 | 7 / 0 |
+| S19 p1_room_evening_01 | room / landlord | story | 6 | 5 / S18; E | 7 / 0 |
+| S20 p1_weather_lunch_01 | noodle / cook | story | 6 | 5 / S19; E, recount today's lunch | 5 / 0 |
+| S21 p1_clinic_delivery_03 | gate clinic / delivery_boss | job | 5 | 6 / S20 | 5 / 0 |
+| S22 p1_street_labels_01 | shop / shopkeeper | errand | 5 | 7 / S21 | 5 / 0 |
+| S23 p1_warehouse_review_03 | warehouse / warehouse_boss | job | 5 | 7 / S22 | 0 / 0 |
 | S24 p1_noodle_review_04 | noodle / cook | job | 4 | 7 / S23 | 0 / 0 |
 
 Coverage correction: S11 remains a consequence kind but counts among the explicitly numbered 25 curriculum scenes, because its route is guaranteed. Generic consequence scenes never count. S23 and S24 must carry the late-scene coverage assigned in the source list, not only numbers/dishes. Specifically S23 reuses 医院/怎么/怎么样/岁/再见 and 狗/猫/都/中国/饭店; S24 reuses the latter five as shelf/order labels. All introductions in a group appear in their introducing scene and next two assigned scenes, even if that needs a second short sentence within one exchange.
 
 Coverage margin: schedule the starter ten 你/好/我/是/这/那/一/二/三/四 in S00, S01, S02, **and S03**. The remaining 140 HSK1 words keep at least three distinct curriculum scenes. Minimum planned scene-word placements are therefore `(140 × 3) + (10 × 4) = 460`, ten above the 450-placement minimum. Bonus 碗 remains outside both totals.
 
-Ambient lines play within 4 m if every token is already met. Once/NPC/slot, global cooldown 12 s, one voice max, suppressed during dialogue/menu; no learning or wage evidence. Display for audio duration +1 s, minimum 2 s. These are all dictionary HSK1, not promises of availability on arrival.
+Ambient lines live in `content/phase1/ambient.json`, one entry per row below, and each is bound to a location. They play within 4 m if every token is already met. Once/NPC/slot, global cooldown 12 s, one voice max, suppressed during dialogue/menu; no learning or wage evidence. Display for audio duration +1 s, minimum 2 s. These are all dictionary HSK1, at most eight syllables each, not promises of availability on arrival. A word that appears in an ambient line counts as placed in every curriculum scene at that location (checker rule 4), which lets curriculum lines stay short enough to say aloud.
 
-| Audio ID | NPC | Hanzi | Pinyin | English |
-|---|---|---|---|---|
-| amb_01 | landlord | 你好。 | Nǐ hǎo. | Hello. |
-| amb_02 | landlord | 你回家吗？ | Nǐ huí jiā ma? | Are you going home? |
-| amb_03 | landlord | 明天你来吗？ | Míngtiān nǐ lái ma? | Are you coming tomorrow? |
-| amb_04 | mentor | 请坐。 | Qǐng zuò. | Please sit. |
-| amb_05 | mentor | 你喝茶吗？ | Nǐ hē chá ma? | Do you drink tea? |
-| amb_06 | mentor | 我喜欢汉语。 | Wǒ xǐhuan Hànyǔ. | I like Chinese. |
-| amb_07 | cook | 有米饭。 | Yǒu mǐfàn. | There is rice. |
-| amb_08 | cook | 你吃什么？ | Nǐ chī shénme? | What are you eating? |
-| amb_09 | cook | 水在这。 | Shuǐ zài zhè. | The water is here. |
-| amb_10 | warehouse_boss | 这个大。 | Zhège dà. | This one is big. |
-| amb_11 | warehouse_boss | 那个小。 | Nàge xiǎo. | That one is small. |
-| amb_12 | delivery_boss | 我去商店。 | Wǒ qù shāngdiàn. | I am going to the shop. |
-| amb_13 | delivery_boss | 他在前面。 | Tā zài qiánmiàn. | He is in front. |
-| amb_14 | fruit_seller | 苹果，三块。 | Píngguǒ, sān kuài. | Apples, three yuan. |
-| amb_15 | fruit_seller | 你买什么？ | Nǐ mǎi shénme? | What are you buying? |
-| amb_16 | shopkeeper | 请看。 | Qǐng kàn. | Please look. |
-| amb_17 | shopkeeper | 谢谢你。 | Xièxie nǐ. | Thank you. |
-| amb_18 | customer | 今天天气很好。 | Jīntiān tiānqì hěn hǎo. | The weather is good today. |
-| amb_19 | customer | 现在几点？ | Xiànzài jǐ diǎn? | What time is it now? |
-| amb_20 | customer | 再见。 | Zàijiàn. | Goodbye. |
+| Audio ID | Location | NPC | Hanzi | Pinyin | English |
+|---|---|---|---|---|---|
+| amb_001 | rented_room | landlord | 你好。 | Nǐ hǎo. | Hello. |
+| amb_002 | rented_room | landlord | 你回家吗？ | Nǐ huí jiā ma? | Are you going home? |
+| amb_003 | rented_room | landlord | 明天你来吗？ | Míngtiān nǐ lái ma? | Are you coming tomorrow? |
+| amb_004 | tea_house | mentor | 请坐。 | Qǐng zuò. | Please sit. |
+| amb_005 | tea_house | mentor | 你喝茶吗？ | Nǐ hē chá ma? | Do you drink tea? |
+| amb_006 | tea_house | mentor | 我喜欢汉语。 | Wǒ xǐhuan Hànyǔ. | I like Chinese. |
+| amb_007 | noodle_shop | cook | 有米饭，有八个碗。 | Yǒu mǐfàn, yǒu bā ge wǎn. | There is rice, and eight bowls. |
+| amb_008 | noodle_shop | cook | 六个杯子在桌子上。 | Liù ge bēizi zài zhuōzi shàng. | Six cups are on the table. |
+| amb_009 | noodle_shop | cook | 几个人？请坐椅子。 | Jǐ ge rén? Qǐng zuò yǐzi. | How many people? Please take a chair. |
+| amb_010 | noodle_shop | customer | 你的衣服很漂亮。 | Nǐ de yīfu hěn piàoliang. | Your clothes are lovely. |
+| amb_011 | noodle_shop | customer | 我爱吃米饭。 | Wǒ ài chī mǐfàn. | I love eating rice. |
+| amb_012 | warehouse | warehouse_boss | 这本书，我读。 | Zhè běn shū, wǒ dú. | This book — I read it. |
+| amb_013 | warehouse | warehouse_boss | 我四十岁。 | Wǒ sìshí suì. | I am forty. |
+| amb_014 | supermarket | delivery_boss | 我去商店。 | Wǒ qù shāngdiàn. | I am going to the shop. |
+| amb_015 | supermarket | delivery_boss | 他在前面。 | Tā zài qiánmiàn. | He is in front. |
+| amb_016 | supermarket | shopkeeper | 谢谢你。 | Xièxie nǐ. | Thank you. |
+| amb_017 | fruit_stall | fruit_seller | 苹果，三块。 | Píngguǒ, sān kuài. | Apples, three yuan. |
+| amb_018 | fruit_stall | customer | 五分钟，飞机去北京。 | Wǔ fēnzhōng, fēijī qù Běijīng. | Five minutes — the plane leaves for Beijing. |
+| amb_019 | bus_stop | customer | 现在几点？ | Xiànzài jǐ diǎn? | What time is it now? |
+| amb_020 | phase2_gate | delivery_boss | 医生的衣服很漂亮。 | Yīshēng de yīfu hěn piàoliang. | The doctor's coat is lovely. |
 
 ## 7. Screens and overlays
 

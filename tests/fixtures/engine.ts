@@ -1,6 +1,7 @@
-import type { Exchange, Scene, World } from '../../src/content/types';
+import type { Exchange, Scene, Word, World } from '../../src/content/types';
 import type { GameContent } from '../../src/engine';
 import scenesJSON from '../../content/phase1/scenes.json?raw';
+import wordsJSON from '../../content/phase1/words.json?raw';
 import worldJSON from '../../content/phase1/world.json?raw';
 
 export const exchange = (id = 'e1'): Exchange => ({ id,
@@ -10,8 +11,8 @@ export const exchange = (id = 'e1'): Exchange => ({ id,
 export const scene = (overrides: Partial<Scene> = {}): Scene => ({ id: 'job', phase: 1, location: 'shop', npc: 'cook', kind: 'job',
   requires: [], introduces: ['杯子'], reward: 8, exchanges: [exchange()], ...overrides });
 export const content = (...scenes: Scene[]): GameContent => ({ scenes: scenes.length ? scenes : [scene()], world: { slotPools: [{ id: 'numbers', values: [
-  { hanzi: '一', pinyin: 'yī', en: 'one', words: ['一'] }, { hanzi: '二', pinyin: 'èr', en: 'two', words: ['二'] },
-  { hanzi: '三', pinyin: 'sān', en: 'three', words: ['三'] },
+  { id: 'one', hanzi: '一', pinyin: 'yī', en: 'one', words: ['一'] }, { id: 'two', hanzi: '二', pinyin: 'èr', en: 'two', words: ['二'] },
+  { id: 'three', hanzi: '三', pinyin: 'sān', en: 'three', words: ['三'] },
 ] }] } });
 export function slotted(): Scene {
   const first = exchange(); first.slots = { n: 'numbers' };
@@ -29,5 +30,5 @@ export function unbound(): GameContent {
 }
 export function phaseOne(): GameContent {
   const scenes = JSON.parse(scenesJSON) as Scene[];
-  return { scenes, world: JSON.parse(worldJSON) as World };
+  return { scenes, world: JSON.parse(worldJSON) as World, words: JSON.parse(wordsJSON) as Word[] };
 }

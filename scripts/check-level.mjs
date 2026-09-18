@@ -2,10 +2,18 @@
 
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
+import {
+  ambientRows,
+  checkStrictContent,
+  legacyCoverageScenes,
+  strictRuleNumbers,
+} from "./check-level-rules.mjs";
 
-const phaseDir = resolve(process.argv[2] ?? "");
-if (!process.argv[2]) {
-  console.error("Usage: node scripts/check-level.mjs <phase-directory>");
+const strict = process.argv.includes("--strict");
+const phaseArgument = process.argv.slice(2).find((argument) => argument !== "--strict");
+const phaseDir = resolve(phaseArgument ?? "");
+if (!phaseArgument) {
+  console.error("Usage: node scripts/check-level.mjs <phase-directory> [--strict]");
   process.exit(1);
 }
 
@@ -16,13 +24,26 @@ let words;
 let scenes;
 let world;
 
+let ambient = [];
+
 try {
   [words, scenes, world] = await Promise.all(
     ["words.json", "scenes.json", "world.json"].map(async (name) =>
       JSON.parse(await readFile(resolve(phaseDir, name), "utf8"))
     )
   );
+  try {
+    ambient = ambientRows(JSON.parse(await readFile(resolve(phaseDir, "ambient.json"), "utf8")));
+  } catch {
+    ambient = [];
+  }
 } catch (error) {
+  if (strict) {
+    for (const rule of strictRuleNumbers) {
+      console.log(`RULE${rule} FAIL content: ${rule === 1 ? `content files could not be read: ${error.message}` : "not checked because content could not be read"}`);
+    }
+    process.exit(1);
+  }
   console.log(`Rule 1 FAIL — content files could not be read: ${error.message}`);
   console.log("Rule 2 FAIL — not checked because content could not be read.");
   console.log("Rule 3 FAIL — not checked because content could not be read.");
@@ -32,6 +53,35 @@ try {
   console.log("Rule 7 FAIL — not checked because content could not be read.");
   console.log("Summary FAIL — 7 rules failed.");
   process.exit(1);
+}
+
+if (strict) {
+  let wordAudioMap = {};
+  try {
+    wordAudioMap = JSON.parse(await readFile(resolve(phaseDir, "word-audio-map.json"), "utf8"));
+  } catch {
+    wordAudioMap = {};
+  }
+  const result = checkStrictContent(words, scenes, world, wordAudioMap, ambient);
+  const issuesByRule = new Map(strictRuleNumbers.map((rule) => [rule, []]));
+  for (const issue of result.issues) issuesByRule.get(issue.rule)?.push(issue);
+  for (const rule of strictRuleNumbers) {
+    const ruleIssues = issuesByRule.get(rule);
+    if (ruleIssues.length === 0) {
+      console.log(`RULE${rule} PASS summary: no strict issues`);
+      continue;
+    }
+    const bySite = new Map();
+    for (const issue of ruleIssues) {
+      const entry = bySite.get(issue.siteId) ?? { severity: issue.severity, messages: [] };
+      if (!entry.messages.includes(issue.message)) entry.messages.push(issue.message);
+      bySite.set(issue.siteId, entry);
+    }
+    for (const [siteId, entry] of bySite) {
+      console.log(`RULE${rule} ${entry.severity} ${siteId}: ${entry.messages.join("; ")}`);
+    }
+  }
+  process.exit(result.failed ? 1 : 0);
 }
 
 const wordByHanzi = new Map(words.map((word) => [word.hanzi, word]));
@@ -334,12 +384,25 @@ for (const location of world.locations ?? []) {
   }
 }
 
-const regularScenes = scenes.filter((scene) => scene.kind !== "consequence");
+const coverageScenes = legacyCoverageScenes(scenes);
+const coverageSceneLabel = scenes.some((scene) => scene.curriculumIndex !== undefined)
+  ? "curriculum scenes"
+  : "non-consequence scenes";
+const ambientWordsByLocation = new Map();
+for (const line of ambient) {
+  const bucket = ambientWordsByLocation.get(line.location) ?? new Set();
+  for (const word of line.words ?? []) bucket.add(word);
+  ambientWordsByLocation.set(line.location, bucket);
+}
 const coverage = new Map(phaseWords.map((word) => [word.hanzi, new Set()]));
-for (const scene of regularScenes) {
-  const seen = new Set(
-    (scene.exchanges ?? []).flatMap((exchange) => allExchangeWords(exchange))
-  );
+for (const scene of coverageScenes) {
+  const seen = new Set([
+    ...(scene.exchanges ?? []).flatMap((exchange) => [
+      ...allExchangeWords(exchange),
+      ...(exchange.hint?.words ?? []),
+    ]),
+    ...(ambientWordsByLocation.get(scene.location) ?? []),
+  ]);
   for (const word of seen) {
     coverage.get(word)?.add(scene.id);
   }
@@ -348,7 +411,7 @@ const undercovered = [...coverage].filter(([, ids]) => ids.size < 3);
 if (undercovered.length > 0) {
   const message =
     `${undercovered.length}/${phaseWords.length} phase-list words appear in fewer than 3 ` +
-    `non-consequence scenes`;
+    coverageSceneLabel;
   if (scenes.length < 20) {
     warnings[3].push(
       `${message}; scenes.json has ${scenes.length} scenes (<20), so rule 4 is advisory`
@@ -362,7 +425,7 @@ const ruleMessages = [
   `all ${lineCount + replyCount + slotValueCount} dialogue and slot-value sites use dictionary words; ${signCount} signs checked`,
   `no exchange introduces more than 2 new words (maximum ${maxIntroducedInExchange})`,
   `all ${lineCount + replyCount + slotValueCount} line, reply, and slot-value word tags match longest-match segmentation`,
-  `coverage checked for ${phaseWords.length} phase-list words; ${bonusWords.length} bonus word${bonusWords.length === 1 ? "" : "s"} excluded`,
+  `coverage checked for ${phaseWords.length} phase-list words across lines, replies, hints, and ${ambient.length} ambient line${ambient.length === 1 ? "" : "s"}; ${bonusWords.length} bonus word${bonusWords.length === 1 ? "" : "s"} excluded`,
   `all ${lineCount} lines have hanzi, pinyin, English, and audio; all ${replyCount} replies and ${slotValueCount} slot values have hanzi, pinyin, and English`,
   `all placeholders in lines and replies have valid scene-scoped bindings`,
   `all reply choices are distinct by template, slot pool, and rendered-value possibility`

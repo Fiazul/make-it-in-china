@@ -1,39 +1,2340 @@
 {
+  "schemaVersion": 2,
   "phase": 1,
+  "bounds": {
+    "min": [
+      -30,
+      0,
+      -20
+    ],
+    "max": [
+      30,
+      8,
+      20
+    ]
+  },
+  "assets": {
+    "building-a": {
+      "glb": "models/buildings/building-a.glb"
+    },
+    "building-b": {
+      "glb": "models/buildings/building-b.glb"
+    },
+    "building-c": {
+      "glb": "models/buildings/building-c.glb"
+    },
+    "awning": {
+      "glb": "models/buildings/detail-awning.glb"
+    },
+    "streetlight": {
+      "glb": "models/street/streetlight.glb"
+    },
+    "bench": {
+      "glb": "models/street/bench.glb"
+    },
+    "box-a": {
+      "glb": "models/street/box_A.glb"
+    },
+    "bush": {
+      "glb": "models/street/bush.glb"
+    },
+    "bowl-broth": {
+      "glb": "models/food/bowl-broth.glb"
+    },
+    "chopstick": {
+      "glb": "models/food/chopstick.glb"
+    },
+    "cup-tea": {
+      "glb": "models/food/cup-tea.glb"
+    },
+    "steamer": {
+      "glb": "models/food/steamer.glb"
+    },
+    "pot": {
+      "glb": "models/food/pot.glb"
+    }
+  },
   "locations": [
-    { "id": "rented_room", "name": "出租屋", "position": [0, 0], "signs": ["家"] },
-    { "id": "noodle_shop", "name": "面馆", "position": [3, 0], "signs": ["饭店", "水", "茶"] },
-    { "id": "fruit_stall", "name": "水果摊", "position": [6, 0], "signs": ["水果", "苹果"] },
-    { "id": "supermarket", "name": "小商店", "position": [9, 0], "signs": ["商店", "买东西"] },
-    { "id": "bus_stop", "name": "车站", "position": [12, 0], "signs": ["火车站", "前面", "后面"] },
-    { "id": "warehouse", "name": "仓库", "position": [15, 0], "signs": ["工作", "大", "小", "多少"] },
-    { "id": "tea_house", "name": "茶馆", "position": [18, 0], "signs": ["茶", "请坐"] },
-    { "id": "phase2_gate", "name": "新区门", "position": [21, 0], "signs": ["前面"] }
+    {
+      "id": "rented_room",
+      "name": "出租屋",
+      "position": [
+        -24,
+        -6
+      ],
+      "signs": [
+        "家",
+        "今天",
+        "明天"
+      ],
+      "door": {
+        "position": [
+          -24,
+          0,
+          -6
+        ],
+        "yaw": 0
+      },
+      "footprint": {
+        "center": [
+          -24,
+          -11
+        ],
+        "size": [
+          8,
+          8
+        ]
+      }
+    },
+    {
+      "id": "noodle_shop",
+      "name": "面馆",
+      "position": [
+        -8,
+        -6
+      ],
+      "signs": [
+        "饭店",
+        "水",
+        "茶",
+        "米饭",
+        "二块"
+      ],
+      "door": {
+        "position": [
+          -8,
+          0,
+          -6
+        ],
+        "yaw": 0
+      },
+      "footprint": {
+        "center": [
+          -8,
+          -11
+        ],
+        "size": [
+          10,
+          8
+        ]
+      }
+    },
+    {
+      "id": "fruit_stall",
+      "name": "水果摊",
+      "position": [
+        8,
+        -6
+      ],
+      "signs": [
+        "水果",
+        "苹果",
+        "三块"
+      ],
+      "door": {
+        "position": [
+          8,
+          0,
+          -6
+        ],
+        "yaw": 0
+      },
+      "footprint": {
+        "center": [
+          8,
+          -9
+        ],
+        "size": [
+          8,
+          4
+        ]
+      }
+    },
+    {
+      "id": "supermarket",
+      "name": "小商店",
+      "position": [
+        22,
+        -6
+      ],
+      "signs": [
+        "商店",
+        "买东西",
+        "六块"
+      ],
+      "door": {
+        "position": [
+          22,
+          0,
+          -6
+        ],
+        "yaw": 0
+      },
+      "footprint": {
+        "center": [
+          22,
+          -11
+        ],
+        "size": [
+          10,
+          8
+        ]
+      }
+    },
+    {
+      "id": "bus_stop",
+      "name": "车站",
+      "position": [
+        -24,
+        6
+      ],
+      "signs": [
+        "火车站",
+        "前面",
+        "后面"
+      ],
+      "door": {
+        "position": [
+          -24,
+          0,
+          6
+        ],
+        "yaw": 3.141593
+      },
+      "footprint": {
+        "center": [
+          -24,
+          9
+        ],
+        "size": [
+          8,
+          4
+        ]
+      }
+    },
+    {
+      "id": "warehouse",
+      "name": "仓库",
+      "position": [
+        -8,
+        6
+      ],
+      "signs": [
+        "工作",
+        "大",
+        "小",
+        "多少"
+      ],
+      "door": {
+        "position": [
+          -8,
+          0,
+          6
+        ],
+        "yaw": 3.141593
+      },
+      "footprint": {
+        "center": [
+          -8,
+          11
+        ],
+        "size": [
+          10,
+          8
+        ]
+      }
+    },
+    {
+      "id": "tea_house",
+      "name": "茶馆",
+      "position": [
+        8,
+        6
+      ],
+      "signs": [
+        "茶",
+        "请坐",
+        "一块"
+      ],
+      "door": {
+        "position": [
+          8,
+          0,
+          6
+        ],
+        "yaw": 3.141593
+      },
+      "footprint": {
+        "center": [
+          8,
+          11
+        ],
+        "size": [
+          10,
+          8
+        ]
+      }
+    },
+    {
+      "id": "phase2_gate",
+      "name": "新区门",
+      "position": [
+        28,
+        0
+      ],
+      "signs": [
+        "前面",
+        "医院"
+      ],
+      "door": {
+        "position": [
+          28,
+          0,
+          0
+        ],
+        "yaw": -1.570796
+      },
+      "footprint": {
+        "center": [
+          29,
+          0
+        ],
+        "size": [
+          2,
+          8
+        ]
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "id": "ground",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "yaw": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "paving",
+      "kind": "ground"
+    },
+    {
+      "id": "room",
+      "position": [
+        -24,
+        0,
+        -11
+      ],
+      "yaw": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "plaster",
+      "kind": "building",
+      "location": "rented_room"
+    },
+    {
+      "id": "noodle",
+      "position": [
+        -8,
+        0,
+        -11
+      ],
+      "yaw": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "plaster",
+      "kind": "building",
+      "location": "noodle_shop"
+    },
+    {
+      "id": "fruit",
+      "position": [
+        8,
+        0,
+        -9
+      ],
+      "yaw": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "ochre",
+      "kind": "building",
+      "location": "fruit_stall"
+    },
+    {
+      "id": "shop",
+      "position": [
+        22,
+        0,
+        -11
+      ],
+      "yaw": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "sage",
+      "kind": "building",
+      "location": "supermarket"
+    },
+    {
+      "id": "bus",
+      "position": [
+        -24,
+        0,
+        9
+      ],
+      "yaw": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "slate",
+      "kind": "building",
+      "location": "bus_stop"
+    },
+    {
+      "id": "warehouse",
+      "position": [
+        -8,
+        0,
+        11
+      ],
+      "yaw": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "teal",
+      "kind": "building",
+      "location": "warehouse"
+    },
+    {
+      "id": "tea",
+      "position": [
+        8,
+        0,
+        11
+      ],
+      "yaw": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "wood",
+      "kind": "building",
+      "location": "tea_house"
+    },
+    {
+      "id": "gate",
+      "position": [
+        29,
+        0,
+        0
+      ],
+      "yaw": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "slate",
+      "kind": "building",
+      "location": "phase2_gate"
+    },
+    {
+      "id": "light_a",
+      "asset": "streetlight",
+      "position": [
+        -16,
+        0,
+        -3.2
+      ],
+      "yaw": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "slate",
+      "kind": "prop"
+    },
+    {
+      "id": "light_b",
+      "asset": "streetlight",
+      "position": [
+        0,
+        0,
+        3.2
+      ],
+      "yaw": 3.141593,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "slate",
+      "kind": "prop"
+    },
+    {
+      "id": "light_c",
+      "asset": "streetlight",
+      "position": [
+        14,
+        0,
+        -3.2
+      ],
+      "yaw": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "slate",
+      "kind": "prop"
+    },
+    {
+      "id": "light_d",
+      "asset": "streetlight",
+      "position": [
+        -16,
+        0,
+        3.2
+      ],
+      "yaw": 3.141593,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "slate",
+      "kind": "prop"
+    },
+    {
+      "id": "bench_street",
+      "asset": "bench",
+      "position": [
+        0,
+        0,
+        -3.1
+      ],
+      "yaw": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "wood",
+      "kind": "prop"
+    },
+    {
+      "id": "bench_bus",
+      "asset": "bench",
+      "position": [
+        -24,
+        0,
+        10
+      ],
+      "yaw": 3.141593,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "wood",
+      "kind": "prop"
+    },
+    {
+      "id": "bench_tea",
+      "asset": "bench",
+      "position": [
+        8,
+        0,
+        10
+      ],
+      "yaw": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "wood",
+      "kind": "prop"
+    },
+    {
+      "id": "bush_a",
+      "asset": "bush",
+      "position": [
+        -12,
+        0,
+        -3.4
+      ],
+      "yaw": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "sage",
+      "kind": "prop"
+    },
+    {
+      "id": "bush_b",
+      "asset": "bush",
+      "position": [
+        4,
+        0,
+        3.4
+      ],
+      "yaw": 0.4,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "sage",
+      "kind": "prop"
+    },
+    {
+      "id": "bush_c",
+      "asset": "bush",
+      "position": [
+        16,
+        0,
+        -3.4
+      ],
+      "yaw": 1.1,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "sage",
+      "kind": "prop"
+    },
+    {
+      "id": "bush_d",
+      "asset": "bush",
+      "position": [
+        -4,
+        0,
+        3.4
+      ],
+      "yaw": 2.2,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "sage",
+      "kind": "prop"
+    },
+    {
+      "id": "bush_e",
+      "asset": "bush",
+      "position": [
+        -28,
+        0,
+        0
+      ],
+      "yaw": 0.7,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "sage",
+      "kind": "prop"
+    },
+    {
+      "id": "bush_f",
+      "asset": "bush",
+      "position": [
+        12,
+        0,
+        3.4
+      ],
+      "yaw": 1.8,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "sage",
+      "kind": "prop"
+    },
+    {
+      "id": "bush_g",
+      "asset": "bush",
+      "position": [
+        26,
+        0,
+        -3.2
+      ],
+      "yaw": 0.2,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "sage",
+      "kind": "prop"
+    },
+    {
+      "id": "bush_h",
+      "asset": "bush",
+      "position": [
+        -20,
+        0,
+        3.4
+      ],
+      "yaw": 2.8,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "sage",
+      "kind": "prop"
+    },
+    {
+      "id": "awning_noodle",
+      "asset": "awning",
+      "position": [
+        -8,
+        2.35,
+        -6.7
+      ],
+      "yaw": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "ochre",
+      "kind": "prop"
+    },
+    {
+      "id": "crate_a",
+      "asset": "box-a",
+      "position": [
+        -10.2,
+        0,
+        12.4
+      ],
+      "yaw": 0.2,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "wood",
+      "kind": "prop"
+    },
+    {
+      "id": "crate_b",
+      "asset": "box-a",
+      "position": [
+        -9.2,
+        0,
+        13.1
+      ],
+      "yaw": 0.8,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "wood",
+      "kind": "prop"
+    },
+    {
+      "id": "crate_c",
+      "asset": "box-a",
+      "position": [
+        -8.4,
+        0.62,
+        12.7
+      ],
+      "yaw": 0.1,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "wood",
+      "kind": "prop"
+    },
+    {
+      "id": "bowl_a",
+      "asset": "bowl-broth",
+      "position": [
+        -9.3,
+        0.92,
+        -9.4
+      ],
+      "yaw": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "paper",
+      "kind": "prop"
+    },
+    {
+      "id": "cup_a",
+      "asset": "cup-tea",
+      "position": [
+        -8.7,
+        0.92,
+        -9.35
+      ],
+      "yaw": 0.4,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "sage",
+      "kind": "prop"
+    },
+    {
+      "id": "chop_a",
+      "asset": "chopstick",
+      "position": [
+        -8.1,
+        0.9,
+        -9.45
+      ],
+      "yaw": 0.2,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "wood",
+      "kind": "prop"
+    },
+    {
+      "id": "pot_a",
+      "asset": "pot",
+      "position": [
+        -7.3,
+        0.92,
+        -9.5
+      ],
+      "yaw": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "slate",
+      "kind": "prop"
+    },
+    {
+      "id": "steam_a",
+      "asset": "steamer",
+      "position": [
+        -6.6,
+        0.92,
+        -9.4
+      ],
+      "yaw": 0.3,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "palette": "ochre",
+      "kind": "prop"
+    }
+  ],
+  "colliders": [
+    {
+      "id": "perimeter",
+      "shape": "boundary",
+      "min": [
+        -30,
+        -20
+      ],
+      "max": [
+        30,
+        20
+      ]
+    },
+    {
+      "id": "room_wall",
+      "shape": "roomWalls",
+      "center": [
+        -24,
+        0,
+        -11
+      ],
+      "size": [
+        8,
+        8
+      ],
+      "doorSide": "south",
+      "doorWidth": 2.4,
+      "thickness": 0.3,
+      "height": 3.2
+    },
+    {
+      "id": "noodle_wall",
+      "shape": "roomWalls",
+      "center": [
+        -8,
+        0,
+        -11
+      ],
+      "size": [
+        10,
+        8
+      ],
+      "doorSide": "south",
+      "doorWidth": 2.4,
+      "thickness": 0.3,
+      "height": 3.2
+    },
+    {
+      "id": "shop_wall",
+      "shape": "roomWalls",
+      "center": [
+        22,
+        0,
+        -11
+      ],
+      "size": [
+        10,
+        8
+      ],
+      "doorSide": "south",
+      "doorWidth": 2.4,
+      "thickness": 0.3,
+      "height": 3.2
+    },
+    {
+      "id": "warehouse_wall",
+      "shape": "roomWalls",
+      "center": [
+        -8,
+        0,
+        11
+      ],
+      "size": [
+        10,
+        8
+      ],
+      "doorSide": "north",
+      "doorWidth": 2.4,
+      "thickness": 0.3,
+      "height": 3.2
+    },
+    {
+      "id": "tea_wall",
+      "shape": "roomWalls",
+      "center": [
+        8,
+        0,
+        11
+      ],
+      "size": [
+        10,
+        8
+      ],
+      "doorSide": "north",
+      "doorWidth": 2.4,
+      "thickness": 0.3,
+      "height": 3.2
+    },
+    {
+      "id": "fruit_counter",
+      "shape": "box",
+      "center": [
+        8,
+        0.5,
+        -9
+      ],
+      "half": [
+        3,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "bus_bench",
+      "shape": "box",
+      "center": [
+        -24,
+        0.4,
+        10
+      ],
+      "half": [
+        1.5,
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "id": "bus_back",
+      "shape": "box",
+      "center": [
+        -24,
+        1.2,
+        10.6
+      ],
+      "half": [
+        3.6,
+        1.2,
+        0.12
+      ]
+    },
+    {
+      "id": "closed_gate",
+      "shape": "box",
+      "center": [
+        29,
+        1.6,
+        0
+      ],
+      "half": [
+        0.3,
+        1.6,
+        3.5
+      ],
+      "disabledWhen": "gateReached"
+    },
+    {
+      "id": "planter_w",
+      "shape": "box",
+      "center": [
+        -29.2,
+        0.35,
+        0
+      ],
+      "half": [
+        0.6,
+        0.35,
+        19
+      ]
+    },
+    {
+      "id": "planter_e",
+      "shape": "box",
+      "center": [
+        29.2,
+        0.35,
+        0
+      ],
+      "half": [
+        0.6,
+        0.35,
+        19
+      ]
+    },
+    {
+      "id": "planter_s",
+      "shape": "box",
+      "center": [
+        0,
+        0.35,
+        -19.2
+      ],
+      "half": [
+        28,
+        0.35,
+        0.6
+      ]
+    },
+    {
+      "id": "planter_n",
+      "shape": "box",
+      "center": [
+        0,
+        0.35,
+        19.2
+      ],
+      "half": [
+        28,
+        0.35,
+        0.6
+      ]
+    },
+    {
+      "id": "bush_a",
+      "shape": "box",
+      "center": [
+        -12,
+        0.55,
+        -3.4
+      ],
+      "half": [
+        0.7,
+        0.55,
+        0.7
+      ]
+    },
+    {
+      "id": "bush_b",
+      "shape": "box",
+      "center": [
+        4,
+        0.55,
+        3.4
+      ],
+      "half": [
+        0.7,
+        0.55,
+        0.7
+      ]
+    },
+    {
+      "id": "bush_c",
+      "shape": "box",
+      "center": [
+        16,
+        0.55,
+        -3.4
+      ],
+      "half": [
+        0.7,
+        0.55,
+        0.7
+      ]
+    },
+    {
+      "id": "bush_d",
+      "shape": "box",
+      "center": [
+        -4,
+        0.55,
+        3.4
+      ],
+      "half": [
+        0.7,
+        0.55,
+        0.7
+      ]
+    },
+    {
+      "id": "bush_e",
+      "shape": "box",
+      "center": [
+        -28,
+        0.55,
+        0
+      ],
+      "half": [
+        0.7,
+        0.55,
+        0.7
+      ]
+    },
+    {
+      "id": "bush_f",
+      "shape": "box",
+      "center": [
+        12,
+        0.55,
+        3.4
+      ],
+      "half": [
+        0.7,
+        0.55,
+        0.7
+      ]
+    },
+    {
+      "id": "bush_g",
+      "shape": "box",
+      "center": [
+        26,
+        0.55,
+        -3.2
+      ],
+      "half": [
+        0.7,
+        0.55,
+        0.7
+      ]
+    },
+    {
+      "id": "bush_h",
+      "shape": "box",
+      "center": [
+        -20,
+        0.55,
+        3.4
+      ],
+      "half": [
+        0.7,
+        0.55,
+        0.7
+      ]
+    },
+    {
+      "id": "bench_street",
+      "shape": "box",
+      "center": [
+        0,
+        0.4,
+        -3.1
+      ],
+      "half": [
+        1.05,
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "id": "bench_tea",
+      "shape": "box",
+      "center": [
+        8,
+        0.4,
+        10
+      ],
+      "half": [
+        1.05,
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "id": "bicycle",
+      "shape": "box",
+      "center": [
+        19.2,
+        0.45,
+        -3.55
+      ],
+      "half": [
+        0.85,
+        0.45,
+        0.32
+      ]
+    },
+    {
+      "id": "room_bed",
+      "shape": "box",
+      "center": [
+        -26.1,
+        0.35,
+        -12.4
+      ],
+      "half": [
+        1.05,
+        0.35,
+        0.7
+      ]
+    },
+    {
+      "id": "room_table",
+      "shape": "box",
+      "center": [
+        -22,
+        0.4,
+        -11
+      ],
+      "half": [
+        0.55,
+        0.4,
+        0.4
+      ]
+    },
+    {
+      "id": "noodle_counter",
+      "shape": "box",
+      "center": [
+        -8,
+        0.45,
+        -13.6
+      ],
+      "half": [
+        3.2,
+        0.45,
+        0.5
+      ]
+    },
+    {
+      "id": "noodle_table_a",
+      "shape": "box",
+      "center": [
+        -10.6,
+        0.35,
+        -10.6
+      ],
+      "half": [
+        0.7,
+        0.35,
+        0.7
+      ]
+    },
+    {
+      "id": "noodle_table_b",
+      "shape": "box",
+      "center": [
+        -5.6,
+        0.35,
+        -10.6
+      ],
+      "half": [
+        0.7,
+        0.35,
+        0.7
+      ]
+    },
+    {
+      "id": "shop_counter",
+      "shape": "box",
+      "center": [
+        22,
+        0.45,
+        -13.4
+      ],
+      "half": [
+        1.4,
+        0.45,
+        0.4
+      ]
+    },
+    {
+      "id": "shop_shelf_w",
+      "shape": "box",
+      "center": [
+        19.2,
+        0.85,
+        -11.2
+      ],
+      "half": [
+        0.9,
+        0.85,
+        0.2
+      ]
+    },
+    {
+      "id": "shop_shelf_e",
+      "shape": "box",
+      "center": [
+        24.8,
+        0.85,
+        -11.2
+      ],
+      "half": [
+        0.9,
+        0.85,
+        0.2
+      ]
+    },
+    {
+      "id": "warehouse_crate",
+      "shape": "box",
+      "center": [
+        -5.4,
+        0.55,
+        12.6
+      ],
+      "half": [
+        0.45,
+        0.55,
+        0.4
+      ]
+    },
+    {
+      "id": "tea_table_a",
+      "shape": "box",
+      "center": [
+        6.2,
+        0.35,
+        11
+      ],
+      "half": [
+        0.62,
+        0.35,
+        0.62
+      ]
+    },
+    {
+      "id": "tea_table_b",
+      "shape": "box",
+      "center": [
+        9.8,
+        0.35,
+        11.4
+      ],
+      "half": [
+        0.62,
+        0.35,
+        0.62
+      ]
+    },
+    {
+      "id": "tree_sw",
+      "shape": "box",
+      "center": [
+        -27.4,
+        0.7,
+        -16.6
+      ],
+      "half": [
+        0.55,
+        0.7,
+        0.55
+      ]
+    },
+    {
+      "id": "tree_se",
+      "shape": "box",
+      "center": [
+        27.2,
+        0.7,
+        -16.4
+      ],
+      "half": [
+        0.5,
+        0.7,
+        0.5
+      ]
+    },
+    {
+      "id": "tree_nw",
+      "shape": "box",
+      "center": [
+        -27.2,
+        0.7,
+        16.5
+      ],
+      "half": [
+        0.55,
+        0.7,
+        0.55
+      ]
+    },
+    {
+      "id": "tree_ne",
+      "shape": "box",
+      "center": [
+        26.8,
+        0.7,
+        16.2
+      ],
+      "half": [
+        0.5,
+        0.7,
+        0.5
+      ]
+    }
+  ],
+  "spawns": [
+    {
+      "id": "player_start",
+      "position": [
+        -25.4,
+        0,
+        -5
+      ],
+      "yaw": 3.141593
+    },
+    {
+      "id": "return_rented_room",
+      "position": [
+        -24,
+        0,
+        -5
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "return_noodle_shop",
+      "position": [
+        -8,
+        0,
+        -5
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "return_fruit_stall",
+      "position": [
+        8,
+        0,
+        -5
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "return_supermarket",
+      "position": [
+        22,
+        0,
+        -5
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "return_bus_stop",
+      "position": [
+        -24,
+        0,
+        5
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "return_warehouse",
+      "position": [
+        -8,
+        0,
+        5
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "return_tea_house",
+      "position": [
+        8,
+        0,
+        5
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "return_phase2_gate",
+      "position": [
+        27,
+        0,
+        0
+      ],
+      "yaw": 0
+    }
+  ],
+  "waypoints": [
+    {
+      "id": "j_room",
+      "position": [
+        -24,
+        0
+      ],
+      "neighbors": [
+        "j_noodle",
+        "room",
+        "bus"
+      ]
+    },
+    {
+      "id": "j_noodle",
+      "position": [
+        -8,
+        0
+      ],
+      "neighbors": [
+        "j_room",
+        "j_fruit",
+        "noodle",
+        "warehouse"
+      ]
+    },
+    {
+      "id": "j_fruit",
+      "position": [
+        8,
+        0
+      ],
+      "neighbors": [
+        "j_noodle",
+        "j_shop",
+        "fruit",
+        "tea"
+      ]
+    },
+    {
+      "id": "j_shop",
+      "position": [
+        22,
+        0
+      ],
+      "neighbors": [
+        "j_fruit",
+        "gate",
+        "shop",
+        "dispatch"
+      ]
+    },
+    {
+      "id": "room",
+      "position": [
+        -24,
+        -6
+      ],
+      "neighbors": [
+        "j_room",
+        "room_desk"
+      ]
+    },
+    {
+      "id": "room_desk",
+      "position": [
+        -24,
+        -10
+      ],
+      "neighbors": [
+        "room"
+      ]
+    },
+    {
+      "id": "noodle",
+      "position": [
+        -8,
+        -6
+      ],
+      "neighbors": [
+        "j_noodle",
+        "wash"
+      ]
+    },
+    {
+      "id": "wash",
+      "position": [
+        -8,
+        -10
+      ],
+      "neighbors": [
+        "noodle"
+      ]
+    },
+    {
+      "id": "fruit",
+      "position": [
+        8,
+        -6
+      ],
+      "neighbors": [
+        "j_fruit"
+      ]
+    },
+    {
+      "id": "shop",
+      "position": [
+        22,
+        -6
+      ],
+      "neighbors": [
+        "j_shop"
+      ]
+    },
+    {
+      "id": "dispatch",
+      "position": [
+        20,
+        -5
+      ],
+      "neighbors": [
+        "j_shop"
+      ]
+    },
+    {
+      "id": "bus",
+      "position": [
+        -24,
+        6
+      ],
+      "neighbors": [
+        "j_room"
+      ]
+    },
+    {
+      "id": "warehouse",
+      "position": [
+        -8,
+        6
+      ],
+      "neighbors": [
+        "j_noodle",
+        "loading"
+      ]
+    },
+    {
+      "id": "loading",
+      "position": [
+        -8,
+        10
+      ],
+      "neighbors": [
+        "warehouse"
+      ]
+    },
+    {
+      "id": "tea",
+      "position": [
+        8,
+        6
+      ],
+      "neighbors": [
+        "j_fruit",
+        "tea_bench"
+      ]
+    },
+    {
+      "id": "tea_bench",
+      "position": [
+        8,
+        10
+      ],
+      "neighbors": [
+        "tea"
+      ]
+    },
+    {
+      "id": "gate",
+      "position": [
+        27,
+        0
+      ],
+      "neighbors": [
+        "j_shop",
+        "clinic",
+        "residential"
+      ]
+    },
+    {
+      "id": "clinic",
+      "position": [
+        27,
+        -3
+      ],
+      "neighbors": [
+        "gate"
+      ]
+    },
+    {
+      "id": "residential",
+      "position": [
+        26,
+        2
+      ],
+      "neighbors": [
+        "gate"
+      ]
+    }
   ],
   "npcs": [
-    { "id": "landlord", "name": "王先生", "label": "房东", "location": "rented_room", "color": "#526D82", "headwear": "navy cap" },
-    { "id": "mentor", "name": "林老师", "label": "邻居", "location": "tea_house", "color": "#8D6E63", "prop": "book" },
-    { "id": "cook", "name": "陈师傅", "label": "厨师", "location": "noodle_shop", "color": "#C65D3B", "headwear": "white cook cap", "prop": "towel" },
-    { "id": "warehouse_boss", "name": "赵老板", "label": "仓库老板", "location": "warehouse", "color": "#455A64", "prop": "clipboard" },
-    { "id": "delivery_boss", "name": "刘姐", "label": "配送员", "location": "supermarket", "color": "#5B7C4D", "prop": "parcel" },
-    { "id": "fruit_seller", "name": "孙阿姨", "label": "水果摊主", "location": "fruit_stall", "color": "#B56A3D", "headwear": "straw hat" },
-    { "id": "shopkeeper", "name": "周先生", "label": "店员", "location": "supermarket", "color": "#5C6BC0", "prop": "basket" },
-    { "id": "customer", "name": "客人", "label": "顾客", "location": "noodle_shop", "color": "#7E57C2", "prop": "shopping bag" }
+    {
+      "id": "landlord",
+      "name": "王先生",
+      "label": "房东",
+      "location": "rented_room",
+      "color": "#526D82",
+      "headwear": "navy cap",
+      "asset": "char_landlord"
+    },
+    {
+      "id": "mentor",
+      "name": "林老师",
+      "label": "邻居",
+      "location": "tea_house",
+      "color": "#8D6E63",
+      "prop": "book",
+      "asset": "char_mentor"
+    },
+    {
+      "id": "cook",
+      "name": "陈师傅",
+      "label": "厨师",
+      "location": "noodle_shop",
+      "color": "#C65D3B",
+      "headwear": "white cook cap",
+      "prop": "towel",
+      "asset": "char_cook"
+    },
+    {
+      "id": "warehouse_boss",
+      "name": "赵老板",
+      "label": "仓库老板",
+      "location": "warehouse",
+      "color": "#455A64",
+      "prop": "clipboard",
+      "asset": "char_warehouse_boss"
+    },
+    {
+      "id": "delivery_boss",
+      "name": "刘姐",
+      "label": "配送员",
+      "location": "supermarket",
+      "color": "#5B7C4D",
+      "prop": "parcel",
+      "asset": "char_delivery_boss"
+    },
+    {
+      "id": "fruit_seller",
+      "name": "孙阿姨",
+      "label": "水果摊主",
+      "location": "fruit_stall",
+      "color": "#B56A3D",
+      "headwear": "straw hat",
+      "asset": "char_fruit_seller"
+    },
+    {
+      "id": "shopkeeper",
+      "name": "周先生",
+      "label": "店员",
+      "location": "supermarket",
+      "color": "#5C6BC0",
+      "prop": "basket",
+      "asset": "char_shopkeeper"
+    },
+    {
+      "id": "customer",
+      "name": "客人",
+      "label": "顾客",
+      "location": "noodle_shop",
+      "color": "#7E57C2",
+      "prop": "shopping bag",
+      "asset": "char_customer"
+    }
+  ],
+  "schedules": {
+    "landlord": {
+      "M": "room",
+      "A1": "room",
+      "A2": "room_desk",
+      "A3": "noodle",
+      "A4": "room",
+      "E": "room"
+    },
+    "mentor": {
+      "M": "tea_bench",
+      "A1": "tea_bench",
+      "A2": "tea_bench",
+      "A3": "tea",
+      "A4": "tea",
+      "E": "tea"
+    },
+    "cook": {
+      "M": "noodle",
+      "A1": "noodle",
+      "A2": "wash",
+      "A3": "noodle",
+      "A4": "noodle",
+      "E": "noodle"
+    },
+    "warehouse_boss": {
+      "M": "warehouse",
+      "A1": "warehouse",
+      "A2": "loading",
+      "A3": "warehouse",
+      "A4": "warehouse",
+      "E": "warehouse"
+    },
+    "delivery_boss": {
+      "M": "dispatch",
+      "A1": "dispatch",
+      "A2": "dispatch",
+      "A3": "dispatch",
+      "A4": "tea",
+      "E": "tea"
+    },
+    "fruit_seller": {
+      "M": "fruit",
+      "A1": "fruit",
+      "A2": "fruit",
+      "A3": "fruit",
+      "A4": "tea_bench",
+      "E": "tea_bench"
+    },
+    "shopkeeper": {
+      "M": "shop",
+      "A1": "shop",
+      "A2": "shop",
+      "A3": "shop",
+      "A4": "shop",
+      "E": "shop"
+    },
+    "customer": {
+      "M": "noodle",
+      "A1": "noodle",
+      "A2": "bus",
+      "A3": "fruit",
+      "A4": "noodle",
+      "E": "noodle"
+    }
+  },
+  "triggers": [
+    {
+      "id": "arrival",
+      "action": "talk",
+      "scene": "p1_arrival_00",
+      "position": [
+        -24,
+        0,
+        -6
+      ],
+      "radius": 1.8
+    },
+    {
+      "id": "bed",
+      "action": "bed",
+      "position": [
+        -26,
+        0,
+        -11
+      ],
+      "radius": 1.2
+    },
+    {
+      "id": "noodle_work",
+      "action": "talk",
+      "npc": "cook",
+      "position": [
+        -8,
+        0,
+        -6
+      ],
+      "radius": 1.8
+    },
+    {
+      "id": "fruit_buy",
+      "action": "talk",
+      "npc": "fruit_seller",
+      "position": [
+        8,
+        0,
+        -6
+      ],
+      "radius": 1.8
+    },
+    {
+      "id": "shop_buy",
+      "action": "talk",
+      "npc": "shopkeeper",
+      "position": [
+        22,
+        0,
+        -6
+      ],
+      "radius": 1.8
+    },
+    {
+      "id": "bus_story",
+      "action": "talk",
+      "npc": "customer",
+      "position": [
+        -24,
+        0,
+        6
+      ],
+      "radius": 1.8
+    },
+    {
+      "id": "warehouse_work",
+      "action": "talk",
+      "npc": "warehouse_boss",
+      "position": [
+        -8,
+        0,
+        6
+      ],
+      "radius": 1.8
+    },
+    {
+      "id": "mentor_talk",
+      "action": "talk",
+      "npc": "mentor",
+      "position": [
+        8,
+        0,
+        6
+      ],
+      "radius": 1.8
+    },
+    {
+      "id": "gate_check",
+      "action": "gate",
+      "position": [
+        28,
+        0,
+        0
+      ],
+      "radius": 1.8
+    },
+    {
+      "id": "gate_delivery",
+      "action": "delivery",
+      "position": [
+        27,
+        0,
+        0
+      ],
+      "radius": 1.2
+    },
+    {
+      "id": "residential_delivery",
+      "action": "delivery",
+      "position": [
+        26,
+        0,
+        2
+      ],
+      "radius": 1.2
+    },
+    {
+      "id": "clinic_delivery",
+      "action": "delivery",
+      "position": [
+        27,
+        0,
+        -3
+      ],
+      "radius": 1.2
+    }
+  ],
+  "signs": [
+    {
+      "id": "sign_room",
+      "location": "rented_room",
+      "text": "家",
+      "position": [
+        -24,
+        2.6,
+        -6.8
+      ],
+      "yaw": 0,
+      "fontRole": "shop"
+    },
+    {
+      "id": "sign_noodle",
+      "location": "noodle_shop",
+      "text": "饭店",
+      "position": [
+        -8,
+        2.6,
+        -6.8
+      ],
+      "yaw": 0,
+      "fontRole": "shop"
+    },
+    {
+      "id": "sign_fruit",
+      "location": "fruit_stall",
+      "text": "水果",
+      "position": [
+        8,
+        2.6,
+        -7
+      ],
+      "yaw": 0,
+      "fontRole": "shop"
+    },
+    {
+      "id": "sign_shop",
+      "location": "supermarket",
+      "text": "商店",
+      "position": [
+        22,
+        2.6,
+        -6.8
+      ],
+      "yaw": 0,
+      "fontRole": "shop"
+    },
+    {
+      "id": "sign_bus",
+      "location": "bus_stop",
+      "text": "火车站",
+      "position": [
+        -24,
+        2.2,
+        8
+      ],
+      "yaw": 3.141593,
+      "fontRole": "shop"
+    },
+    {
+      "id": "sign_warehouse",
+      "location": "warehouse",
+      "text": "工作",
+      "position": [
+        -8,
+        2.6,
+        6.8
+      ],
+      "yaw": 3.141593,
+      "fontRole": "shop"
+    },
+    {
+      "id": "sign_tea",
+      "location": "tea_house",
+      "text": "茶",
+      "position": [
+        8,
+        2.6,
+        6.8
+      ],
+      "yaw": 3.141593,
+      "fontRole": "shop"
+    },
+    {
+      "id": "sign_gate",
+      "location": "phase2_gate",
+      "text": "前面",
+      "position": [
+        28.5,
+        3,
+        0
+      ],
+      "yaw": -1.570796,
+      "fontRole": "shop"
+    },
+    {
+      "id": "sign_clinic",
+      "location": "phase2_gate",
+      "text": "医院",
+      "position": [
+        28,
+        2.2,
+        -3
+      ],
+      "yaw": -1.570796,
+      "fontRole": "label"
+    }
   ],
   "slotPools": [
     {
       "id": "number_1_10",
       "values": [
-        { "hanzi": "一", "pinyin": "yī", "en": "one", "words": ["一"] },
-        { "hanzi": "二", "pinyin": "èr", "en": "two", "words": ["二"] },
-        { "hanzi": "三", "pinyin": "sān", "en": "three", "words": ["三"] },
-        { "hanzi": "四", "pinyin": "sì", "en": "four", "words": ["四"] },
-        { "hanzi": "五", "pinyin": "wǔ", "en": "five", "words": ["五"] },
-        { "hanzi": "六", "pinyin": "liù", "en": "six", "words": ["六"] },
-        { "hanzi": "七", "pinyin": "qī", "en": "seven", "words": ["七"] },
-        { "hanzi": "八", "pinyin": "bā", "en": "eight", "words": ["八"] },
-        { "hanzi": "九", "pinyin": "jiǔ", "en": "nine", "words": ["九"] },
-        { "hanzi": "十", "pinyin": "shí", "en": "ten", "words": ["十"] }
+        {
+          "id": "n01",
+          "hanzi": "一",
+          "pinyin": "yí",
+          "en": "one",
+          "words": [
+            "一"
+          ]
+        },
+        {
+          "id": "n02",
+          "hanzi": "二",
+          "pinyin": "èr",
+          "en": "two",
+          "words": [
+            "二"
+          ]
+        },
+        {
+          "id": "n03",
+          "hanzi": "三",
+          "pinyin": "sān",
+          "en": "three",
+          "words": [
+            "三"
+          ]
+        },
+        {
+          "id": "n04",
+          "hanzi": "四",
+          "pinyin": "sì",
+          "en": "four",
+          "words": [
+            "四"
+          ]
+        },
+        {
+          "id": "n05",
+          "hanzi": "五",
+          "pinyin": "wǔ",
+          "en": "five",
+          "words": [
+            "五"
+          ]
+        },
+        {
+          "id": "n06",
+          "hanzi": "六",
+          "pinyin": "liù",
+          "en": "six",
+          "words": [
+            "六"
+          ]
+        },
+        {
+          "id": "n07",
+          "hanzi": "七",
+          "pinyin": "qī",
+          "en": "seven",
+          "words": [
+            "七"
+          ]
+        },
+        {
+          "id": "n08",
+          "hanzi": "八",
+          "pinyin": "bā",
+          "en": "eight",
+          "words": [
+            "八"
+          ]
+        },
+        {
+          "id": "n09",
+          "hanzi": "九",
+          "pinyin": "jiǔ",
+          "en": "nine",
+          "words": [
+            "九"
+          ]
+        },
+        {
+          "id": "n10",
+          "hanzi": "十",
+          "pinyin": "shí",
+          "en": "ten",
+          "words": [
+            "十"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "place",
+      "values": [
+        {
+          "id": "front",
+          "hanzi": "前面",
+          "pinyin": "qiánmiàn",
+          "en": "in front",
+          "words": [
+            "前面"
+          ]
+        },
+        {
+          "id": "back",
+          "hanzi": "后面",
+          "pinyin": "hòumiàn",
+          "en": "behind",
+          "words": [
+            "后面"
+          ]
+        },
+        {
+          "id": "inside",
+          "hanzi": "杯子里",
+          "pinyin": "bēizi lǐ",
+          "en": "inside the cup",
+          "words": [
+            "杯子",
+            "里"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "size",
+      "values": [
+        {
+          "id": "big",
+          "hanzi": "大",
+          "pinyin": "dà",
+          "en": "big",
+          "words": [
+            "大"
+          ]
+        },
+        {
+          "id": "small",
+          "hanzi": "小",
+          "pinyin": "xiǎo",
+          "en": "small",
+          "words": [
+            "小"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "drink",
+      "values": [
+        {
+          "id": "water",
+          "hanzi": "水",
+          "pinyin": "shuǐ",
+          "en": "water",
+          "words": [
+            "水"
+          ]
+        },
+        {
+          "id": "tea",
+          "hanzi": "茶",
+          "pinyin": "chá",
+          "en": "tea",
+          "words": [
+            "茶"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "container",
+      "values": [
+        {
+          "id": "cup",
+          "hanzi": "杯子",
+          "pinyin": "bēizi",
+          "en": "cup",
+          "words": [
+            "杯子"
+          ]
+        },
+        {
+          "id": "bowl",
+          "hanzi": "碗",
+          "pinyin": "wǎn",
+          "en": "bowl",
+          "words": [
+            "碗"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "negative",
+      "values": [
+        {
+          "id": "yes",
+          "hanzi": "有",
+          "pinyin": "yǒu",
+          "en": "there is",
+          "words": [
+            "有"
+          ]
+        },
+        {
+          "id": "no",
+          "hanzi": "没有",
+          "pinyin": "méiyǒu",
+          "en": "there is not",
+          "words": [
+            "没有"
+          ]
+        }
       ]
     }
   ]

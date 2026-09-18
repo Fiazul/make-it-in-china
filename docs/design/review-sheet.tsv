@@ -1,0 +1,882 @@
+id	text	pinyin	voice	file
+amb_001	你好。	Nǐ hǎo.	zh-CN-YunyangNeural	audio/phase1/amb_001.opus
+amb_002	你回家吗？	Nǐ huí jiā ma?	zh-CN-YunyangNeural	audio/phase1/amb_002.opus
+amb_003	明天你来吗？	Míngtiān nǐ lái ma?	zh-CN-YunyangNeural	audio/phase1/amb_003.opus
+amb_004	请坐。	Qǐng zuò.	zh-CN-XiaoxiaoNeural	audio/phase1/amb_004.opus
+amb_005	你喝茶吗？	Nǐ hē chá ma?	zh-CN-XiaoxiaoNeural	audio/phase1/amb_005.opus
+amb_006	我喜欢汉语。	Wǒ xǐhuan Hànyǔ.	zh-CN-XiaoxiaoNeural	audio/phase1/amb_006.opus
+amb_007	有米饭，有八个碗。	Yǒu mǐfàn, yǒu bā ge wǎn.	zh-CN-YunjianNeural	audio/phase1/amb_007.opus
+amb_008	六个杯子在桌子上。	Liù ge bēizi zài zhuōzi shàng.	zh-CN-YunjianNeural	audio/phase1/amb_008.opus
+amb_009	几个人？请坐椅子。	Jǐ ge rén? Qǐng zuò yǐzi.	zh-CN-YunjianNeural	audio/phase1/amb_009.opus
+amb_010	你的衣服很漂亮。	Nǐ de yīfu hěn piàoliang.	zh-CN-YunxiNeural	audio/phase1/amb_010.opus
+amb_011	我爱吃米饭。	Wǒ ài chī mǐfàn.	zh-CN-YunxiNeural	audio/phase1/amb_011.opus
+amb_012	这本书，我读。	Zhè běn shū, wǒ dú.	zh-CN-YunyangNeural	audio/phase1/amb_012.opus
+amb_013	我四十岁。	Wǒ sìshí suì.	zh-CN-YunyangNeural	audio/phase1/amb_013.opus
+amb_014	我去商店。	Wǒ qù shāngdiàn.	zh-CN-XiaoxiaoNeural	audio/phase1/amb_014.opus
+amb_015	他在前面。	Tā zài qiánmiàn.	zh-CN-XiaoxiaoNeural	audio/phase1/amb_015.opus
+amb_016	谢谢你。	Xièxie nǐ.	zh-CN-YunyangNeural	audio/phase1/amb_016.opus
+amb_017	苹果，三块。	Píngguǒ, sān kuài.	zh-CN-XiaoxiaoNeural	audio/phase1/amb_017.opus
+amb_018	五分钟，飞机去北京。	Wǔ fēnzhōng, fēijī qù Běijīng.	zh-CN-YunxiNeural	audio/phase1/amb_018.opus
+amb_019	现在几点？	Xiànzài jǐ diǎn?	zh-CN-YunxiNeural	audio/phase1/amb_019.opus
+amb_020	医生的衣服很漂亮。	Yīshēng de yīfu hěn piàoliang.	zh-CN-XiaoxiaoNeural	audio/phase1/amb_020.opus
+p1_arrival_00_e1	你好。	Nǐ hǎo.	zh-CN-YunyangNeural	audio/phase1/p1_arrival_00_e1.opus
+p1_arrival_00_e1_h	好。	Hǎo.	zh-CN-YunyangNeural	audio/phase1/p1_arrival_00_e1_h.opus
+p1_arrival_00_e1_r1	你好。	Nǐ hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_arrival_00_e1_r1.opus
+p1_arrival_00_e1_r2	你。	Nǐ.	zh-CN-YunxiNeural	audio/phase1/p1_arrival_00_e1_r2.opus
+p1_arrival_00_e2	是我。是你。	Shì wǒ. Shì nǐ.	zh-CN-YunyangNeural	audio/phase1/p1_arrival_00_e2.opus
+p1_arrival_00_e2_h	我。	Wǒ.	zh-CN-YunyangNeural	audio/phase1/p1_arrival_00_e2_h.opus
+p1_arrival_00_e2_r1	我。	Wǒ.	zh-CN-YunxiNeural	audio/phase1/p1_arrival_00_e2_r1.opus
+p1_arrival_00_e2_r2	你。	Nǐ.	zh-CN-YunxiNeural	audio/phase1/p1_arrival_00_e2_r2.opus
+p1_arrival_00_e3	这。那。	Zhè. Nà.	zh-CN-YunyangNeural	audio/phase1/p1_arrival_00_e3.opus
+p1_arrival_00_e3_h	这。	Zhè.	zh-CN-YunyangNeural	audio/phase1/p1_arrival_00_e3_h.opus
+p1_arrival_00_e3_r1	这。	Zhè.	zh-CN-YunxiNeural	audio/phase1/p1_arrival_00_e3_r1.opus
+p1_arrival_00_e3_r2	那。	Nà.	zh-CN-YunxiNeural	audio/phase1/p1_arrival_00_e3_r2.opus
+p1_arrival_00_e4	一。二。	Yī. Èr.	zh-CN-YunyangNeural	audio/phase1/p1_arrival_00_e4.opus
+p1_arrival_00_e4_h	二。	Èr.	zh-CN-YunyangNeural	audio/phase1/p1_arrival_00_e4_h.opus
+p1_arrival_00_e4_r1	二。	Èr.	zh-CN-YunxiNeural	audio/phase1/p1_arrival_00_e4_r1.opus
+p1_arrival_00_e4_r2	一。	Yī.	zh-CN-YunxiNeural	audio/phase1/p1_arrival_00_e4_r2.opus
+p1_arrival_00_e5	三。四。	Sān. Sì.	zh-CN-YunyangNeural	audio/phase1/p1_arrival_00_e5.opus
+p1_arrival_00_e5_h	四。	Sì.	zh-CN-YunyangNeural	audio/phase1/p1_arrival_00_e5_h.opus
+p1_arrival_00_e5_r1	四。	Sì.	zh-CN-YunxiNeural	audio/phase1/p1_arrival_00_e5_r1.opus
+p1_arrival_00_e5_r2	三。	Sān.	zh-CN-YunxiNeural	audio/phase1/p1_arrival_00_e5_r2.opus
+p1_arrival_00_wrong_e1	好。	Hǎo.	zh-CN-YunyangNeural	audio/phase1/p1_arrival_00_wrong_e1.opus
+p1_arrival_00_wrong_e1_r1	好。	Hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_arrival_00_wrong_e1_r1.opus
+p1_ask_time_01_e1	现在三点。先生在火车站。	Xiànzài sān diǎn. Xiānsheng zài huǒchēzhàn.	zh-CN-YunxiNeural	audio/phase1/p1_ask_time_01_e1.opus
+p1_ask_time_01_e1_h	三点。	Sān diǎn.	zh-CN-YunxiNeural	audio/phase1/p1_ask_time_01_e1_h.opus
+p1_ask_time_01_e1_r1	现在三点。	Xiànzài sān diǎn.	zh-CN-YunxiNeural	audio/phase1/p1_ask_time_01_e1_r1.opus
+p1_ask_time_01_e1_r2	现在四点。	Xiànzài sì diǎn.	zh-CN-YunxiNeural	audio/phase1/p1_ask_time_01_e1_r2.opus
+p1_ask_time_01_e2	上午她去，中午他回。名字在这。	Shàngwǔ tā qù, zhōngwǔ tā huí. Míngzi zài zhè.	zh-CN-YunxiNeural	audio/phase1/p1_ask_time_01_e2.opus
+p1_ask_time_01_e2_h	她上午去。	Tā shàngwǔ qù.	zh-CN-YunxiNeural	audio/phase1/p1_ask_time_01_e2_h.opus
+p1_ask_time_01_e2_r1	上午她去。	Shàngwǔ tā qù.	zh-CN-YunxiNeural	audio/phase1/p1_ask_time_01_e2_r1.opus
+p1_ask_time_01_e2_r2	中午她去。	Zhōngwǔ tā qù.	zh-CN-YunxiNeural	audio/phase1/p1_ask_time_01_e2_r2.opus
+p1_ask_time_01_e3	前面五分钟，后面十分钟。你去哪儿？	Qiánmiàn wǔ fēnzhōng, hòumiàn shí fēnzhōng. Nǐ qù nǎr?	zh-CN-YunxiNeural	audio/phase1/p1_ask_time_01_e3.opus
+p1_ask_time_01_e3_r1	下午我去前面。	Xiàwǔ wǒ qù qiánmiàn.	zh-CN-YunxiNeural	audio/phase1/p1_ask_time_01_e3_r1.opus
+p1_ask_time_01_e3_r2	我去后面。	Wǒ qù hòumiàn.	zh-CN-YunxiNeural	audio/phase1/p1_ask_time_01_e3_r2.opus
+p1_ask_time_01_e4	那时候，小姐叫我回家。	Nà shíhou, xiǎojiě jiào wǒ huí jiā.	zh-CN-YunxiNeural	audio/phase1/p1_ask_time_01_e4.opus
+p1_ask_time_01_e4_h	那时候，回家。	Nà shíhou, huí jiā.	zh-CN-YunxiNeural	audio/phase1/p1_ask_time_01_e4_h.opus
+p1_ask_time_01_e4_r1	那时候我回家。	Nà shíhou wǒ huí jiā.	zh-CN-YunxiNeural	audio/phase1/p1_ask_time_01_e4_r1.opus
+p1_ask_time_01_e4_r2	现在我回家。	Xiànzài wǒ huí jiā.	zh-CN-YunxiNeural	audio/phase1/p1_ask_time_01_e4_r2.opus
+p1_buy_fruit_01_e1	现在下午三点。苹果多少个？	Xiànzài xiàwǔ sān diǎn. Píngguǒ duōshao ge?	zh-CN-XiaoxiaoNeural	audio/phase1/p1_buy_fruit_01_e1.opus
+p1_buy_fruit_01_e1_h	苹果，三个。	Píngguǒ, sān ge.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_buy_fruit_01_e1_h.opus
+p1_buy_fruit_01_e1_r1	我看见三个苹果。	Wǒ kànjiàn sān ge píngguǒ.	zh-CN-YunxiNeural	audio/phase1/p1_buy_fruit_01_e1_r1.opus
+p1_buy_fruit_01_e1_r2	我看见四个水果。	Wǒ kànjiàn sì ge shuǐguǒ.	zh-CN-YunxiNeural	audio/phase1/p1_buy_fruit_01_e1_r2.opus
+p1_buy_fruit_01_e2	我坐出租车来。钱在这。你买水果？	Wǒ zuò chūzūchē lái. Qián zài zhè. Nǐ mǎi shuǐguǒ?	zh-CN-XiaoxiaoNeural	audio/phase1/p1_buy_fruit_01_e2.opus
+p1_buy_fruit_01_e2_h	买苹果。	Mǎi píngguǒ.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_buy_fruit_01_e2_h.opus
+p1_buy_fruit_01_e2_r1	我买苹果。	Wǒ mǎi píngguǒ.	zh-CN-YunxiNeural	audio/phase1/p1_buy_fruit_01_e2_r1.opus
+p1_buy_fruit_01_e2_r2	我买水。	Wǒ mǎi shuǐ.	zh-CN-YunxiNeural	audio/phase1/p1_buy_fruit_01_e2_r2.opus
+p1_buy_fruit_01_e3	对不起，商店在前面。苹果三块钱。	Duìbuqǐ, shāngdiàn zài qiánmiàn. Píngguǒ sān kuài qián.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_buy_fruit_01_e3.opus
+p1_buy_fruit_01_e3_h	苹果三块。	Píngguǒ sān kuài.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_buy_fruit_01_e3_h.opus
+p1_buy_fruit_01_e3_r1	我有三块钱。	Wǒ yǒu sān kuài qián.	zh-CN-YunxiNeural	audio/phase1/p1_buy_fruit_01_e3_r1.opus
+p1_buy_fruit_01_e3_r2	我有四块钱。	Wǒ yǒu sì kuài qián.	zh-CN-YunxiNeural	audio/phase1/p1_buy_fruit_01_e3_r2.opus
+p1_buy_fruit_01_e4	这时候水果少。你买些苹果？	Zhè shíhou shuǐguǒ shǎo. Nǐ mǎi xiē píngguǒ?	zh-CN-XiaoxiaoNeural	audio/phase1/p1_buy_fruit_01_e4.opus
+p1_buy_fruit_01_e4_h	些苹果。	Xiē píngguǒ.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_buy_fruit_01_e4_h.opus
+p1_buy_fruit_01_e4_r1	我买些苹果。	Wǒ mǎi xiē píngguǒ.	zh-CN-YunxiNeural	audio/phase1/p1_buy_fruit_01_e4_r1.opus
+p1_buy_fruit_01_e4_r2	我买些水。	Wǒ mǎi xiē shuǐ.	zh-CN-YunxiNeural	audio/phase1/p1_buy_fruit_01_e4_r2.opus
+p1_buy_fruit_01_e5	上午我开出租车，中午我买水果。	Shàngwǔ wǒ kāi chūzūchē, zhōngwǔ wǒ mǎi shuǐguǒ.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_buy_fruit_01_e5.opus
+p1_buy_fruit_01_e5_h	中午，买水果。	Zhōngwǔ, mǎi shuǐguǒ.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_buy_fruit_01_e5_h.opus
+p1_buy_fruit_01_e5_r1	中午你买水果。	Zhōngwǔ nǐ mǎi shuǐguǒ.	zh-CN-YunxiNeural	audio/phase1/p1_buy_fruit_01_e5_r1.opus
+p1_buy_fruit_01_e5_r2	上午你买水果。	Shàngwǔ nǐ mǎi shuǐguǒ.	zh-CN-YunxiNeural	audio/phase1/p1_buy_fruit_01_e5_r2.opus
+p1_clinic_delivery_03_e1	医院怎么去？医院在前面。	Yīyuàn zěnme qù? Yīyuàn zài qiánmiàn.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_clinic_delivery_03_e1.opus
+p1_clinic_delivery_03_e1_h	医院在前面。	Yīyuàn zài qiánmiàn.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_clinic_delivery_03_e1_h.opus
+p1_clinic_delivery_03_e1_r1	我去医院。	Wǒ qù yīyuàn.	zh-CN-YunxiNeural	audio/phase1/p1_clinic_delivery_03_e1_r1.opus
+p1_clinic_delivery_03_e1_r2	我回家。	Wǒ huí jiā.	zh-CN-YunxiNeural	audio/phase1/p1_clinic_delivery_03_e1_r2.opus
+p1_clinic_delivery_03_e2	医生四十岁。东西去医院，怎么样？	Yīshēng sìshí suì. Dōngxi qù yīyuàn, zěnmeyàng?	zh-CN-XiaoxiaoNeural	audio/phase1/p1_clinic_delivery_03_e2.opus
+p1_clinic_delivery_03_e2_h	东西去医院。	Dōngxi qù yīyuàn.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_clinic_delivery_03_e2_h.opus
+p1_clinic_delivery_03_e2_r1	我去医院。	Wǒ qù yīyuàn.	zh-CN-YunxiNeural	audio/phase1/p1_clinic_delivery_03_e2_r1.opus
+p1_clinic_delivery_03_e2_r2	我去商店。	Wǒ qù shāngdiàn.	zh-CN-YunxiNeural	audio/phase1/p1_clinic_delivery_03_e2_r2.opus
+p1_clinic_delivery_03_e3	昨天我看电影，睡觉了。谢谢你。	Zuótiān wǒ kàn diànyǐng, shuìjiào le. Xièxie nǐ.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_clinic_delivery_03_e3.opus
+p1_clinic_delivery_03_e3_h	再见。	Zàijiàn.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_clinic_delivery_03_e3_h.opus
+p1_clinic_delivery_03_e3_r1	再见。	Zàijiàn.	zh-CN-YunxiNeural	audio/phase1/p1_clinic_delivery_03_e3_r1.opus
+p1_clinic_delivery_03_e3_r2	谢谢。	Xièxie.	zh-CN-YunxiNeural	audio/phase1/p1_clinic_delivery_03_e3_r2.opus
+p1_clinic_delivery_03_e4	医院怎么去？这几天天气热，没关系。	Yīyuàn zěnme qù? Zhè jǐ tiān tiānqì rè, méi guānxi.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_clinic_delivery_03_e4.opus
+p1_clinic_delivery_03_e4_h	医院，前面。	Yīyuàn, qiánmiàn.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_clinic_delivery_03_e4_h.opus
+p1_clinic_delivery_03_e4_r1	医院在前面。	Yīyuàn zài qiánmiàn.	zh-CN-YunxiNeural	audio/phase1/p1_clinic_delivery_03_e4_r1.opus
+p1_clinic_delivery_03_e4_r2	医院在后面。	Yīyuàn zài hòumiàn.	zh-CN-YunxiNeural	audio/phase1/p1_clinic_delivery_03_e4_r2.opus
+p1_clinic_delivery_03_e5	医院里有桌子、椅子。	Yīyuàn lǐ yǒu zhuōzi, yǐzi.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_clinic_delivery_03_e5.opus
+p1_clinic_delivery_03_e5_h	桌子，医院里。	Zhuōzi, yīyuàn lǐ.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_clinic_delivery_03_e5_h.opus
+p1_clinic_delivery_03_e5_r1	桌子在医院里。	Zhuōzi zài yīyuàn lǐ.	zh-CN-YunxiNeural	audio/phase1/p1_clinic_delivery_03_e5_r1.opus
+p1_clinic_delivery_03_e5_r2	桌子在商店里。	Zhuōzi zài shāngdiàn lǐ.	zh-CN-YunxiNeural	audio/phase1/p1_clinic_delivery_03_e5_r2.opus
+p1_cook_family_chat_01_e1	我爸爸住北京，我妈妈住家里。	Wǒ bàba zhù Běijīng, wǒ māma zhù jiā lǐ.	zh-CN-YunjianNeural	audio/phase1/p1_cook_family_chat_01_e1.opus
+p1_cook_family_chat_01_e1_h	爸爸住北京。	Bàba zhù Běijīng.	zh-CN-YunjianNeural	audio/phase1/p1_cook_family_chat_01_e1_h.opus
+p1_cook_family_chat_01_e1_r1	爸爸住北京。	Bàba zhù Běijīng.	zh-CN-YunxiNeural	audio/phase1/p1_cook_family_chat_01_e1_r1.opus
+p1_cook_family_chat_01_e1_r2	妈妈住北京。	Māma zhù Běijīng.	zh-CN-YunxiNeural	audio/phase1/p1_cook_family_chat_01_e1_r2.opus
+p1_cook_family_chat_01_e2	我儿子住北京，我女儿住家里。	Wǒ érzi zhù Běijīng, wǒ nǚ'ér zhù jiā lǐ.	zh-CN-YunjianNeural	audio/phase1/p1_cook_family_chat_01_e2.opus
+p1_cook_family_chat_01_e2_h	儿子在北京。	Érzi zài Běijīng.	zh-CN-YunjianNeural	audio/phase1/p1_cook_family_chat_01_e2_h.opus
+p1_cook_family_chat_01_e2_r1	儿子住北京。	Érzi zhù Běijīng.	zh-CN-YunxiNeural	audio/phase1/p1_cook_family_chat_01_e2_r1.opus
+p1_cook_family_chat_01_e2_r2	女儿住北京。	Nǚ'ér zhù Běijīng.	zh-CN-YunxiNeural	audio/phase1/p1_cook_family_chat_01_e2_r2.opus
+p1_cook_family_chat_01_e3	我爱我的女儿。她是我的朋友。	Wǒ ài wǒ de nǚ'ér. Tā shì wǒ de péngyou.	zh-CN-YunjianNeural	audio/phase1/p1_cook_family_chat_01_e3.opus
+p1_cook_family_chat_01_e3_h	她是我的朋友。	Tā shì wǒ de péngyou.	zh-CN-YunjianNeural	audio/phase1/p1_cook_family_chat_01_e3_h.opus
+p1_cook_family_chat_01_e3_r1	她是我的朋友。	Tā shì wǒ de péngyou.	zh-CN-YunxiNeural	audio/phase1/p1_cook_family_chat_01_e3_r1.opus
+p1_cook_family_chat_01_e3_r2	先生是我的朋友。	Xiānsheng shì wǒ de péngyou.	zh-CN-YunxiNeural	audio/phase1/p1_cook_family_chat_01_e3_r2.opus
+p1_cook_family_chat_01_e4	我和朋友在家。爸爸打电话：妈妈呢？	Wǒ hé péngyou zài jiā. Bàba dǎ diànhuà: māma ne?	zh-CN-YunjianNeural	audio/phase1/p1_cook_family_chat_01_e4.opus
+p1_cook_family_chat_01_e4_h	妈妈在家。	Māma zài jiā.	zh-CN-YunjianNeural	audio/phase1/p1_cook_family_chat_01_e4_h.opus
+p1_cook_family_chat_01_e4_r1	喂，妈妈在家。	Wèi, māma zài jiā.	zh-CN-YunxiNeural	audio/phase1/p1_cook_family_chat_01_e4_r1.opus
+p1_cook_family_chat_01_e4_r2	喂，爸爸在家。	Wèi, bàba zài jiā.	zh-CN-YunxiNeural	audio/phase1/p1_cook_family_chat_01_e4_r2.opus
+p1_cook_family_chat_01_e5	明天下雨吗？今天很冷。	Míngtiān xiàyǔ ma? Jīntiān hěn lěng.	zh-CN-YunjianNeural	audio/phase1/p1_cook_family_chat_01_e5.opus
+p1_cook_family_chat_01_e5_h	明天，下雨。	Míngtiān, xiàyǔ.	zh-CN-YunjianNeural	audio/phase1/p1_cook_family_chat_01_e5_h.opus
+p1_cook_family_chat_01_e5_r1	明天下雨。	Míngtiān xiàyǔ.	zh-CN-YunxiNeural	audio/phase1/p1_cook_family_chat_01_e5_r1.opus
+p1_cook_family_chat_01_e5_r2	今天下雨。	Jīntiān xiàyǔ.	zh-CN-YunxiNeural	audio/phase1/p1_cook_family_chat_01_e5_r2.opus
+p1_cook_family_chat_01_e6	我女儿十八日来，住一个星期。	Wǒ nǚ'ér shíbā rì lái, zhù yí ge xīngqī.	zh-CN-YunjianNeural	audio/phase1/p1_cook_family_chat_01_e6.opus
+p1_cook_family_chat_01_e6_h	一个星期，不是一年。	Yí ge xīngqī, bú shì yì nián.	zh-CN-YunjianNeural	audio/phase1/p1_cook_family_chat_01_e6_h.opus
+p1_cook_family_chat_01_e6_r1	她住一个星期。	Tā zhù yí ge xīngqī.	zh-CN-YunxiNeural	audio/phase1/p1_cook_family_chat_01_e6_r1.opus
+p1_cook_family_chat_01_e6_r2	她住一个月。	Tā zhù yí ge yuè.	zh-CN-YunxiNeural	audio/phase1/p1_cook_family_chat_01_e6_r2.opus
+p1_customer_people_chat_02_e1	我的同学是老师，她在前面。	Wǒ de tóngxué shì lǎoshī, tā zài qiánmiàn.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e1.opus
+p1_customer_people_chat_02_e1_h	她是老师。	Tā shì lǎoshī.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e1_h.opus
+p1_customer_people_chat_02_e1_r1	她是老师。	Tā shì lǎoshī.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e1_r1.opus
+p1_customer_people_chat_02_e1_r2	先生是老师。	Xiānsheng shì lǎoshī.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e1_r2.opus
+p1_customer_people_chat_02_e2	他是医生，她是学生。今天冷吗？	Tā shì yīshēng, tā shì xuésheng. Jīntiān lěng ma?	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e2.opus
+p1_customer_people_chat_02_e2_h	他是医生。	Tā shì yīshēng.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e2_h.opus
+p1_customer_people_chat_02_e2_r1	他是医生。	Tā shì yīshēng.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e2_r1.opus
+p1_customer_people_chat_02_e2_r2	他是学生。	Tā shì xuésheng.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e2_r2.opus
+p1_customer_people_chat_02_e3	我认识这个人，她是我爸爸的朋友。	Wǒ rènshi zhè ge rén, tā shì wǒ bàba de péngyou.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e3.opus
+p1_customer_people_chat_02_e3_h	她是我的朋友。	Tā shì wǒ de péngyou.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e3_h.opus
+p1_customer_people_chat_02_e3_r1	我认识她。	Wǒ rènshi tā.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e3_r1.opus
+p1_customer_people_chat_02_e3_r2	我不认识她。	Wǒ bú rènshi tā.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e3_r2.opus
+p1_customer_people_chat_02_e4	儿子和女儿在家。我很高兴。你呢？	Érzi hé nǚ'ér zài jiā. Wǒ hěn gāoxìng. Nǐ ne?	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e4.opus
+p1_customer_people_chat_02_e4_h	我很高兴。	Wǒ hěn gāoxìng.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e4_h.opus
+p1_customer_people_chat_02_e4_r1	我很高兴。	Wǒ hěn gāoxìng.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e4_r1.opus
+p1_customer_people_chat_02_e4_r2	我不高兴。	Wǒ bù gāoxìng.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e4_r2.opus
+p1_customer_people_chat_02_e5	喂，我妈妈打电话。	Wèi, wǒ māma dǎ diànhuà.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e5.opus
+p1_customer_people_chat_02_e5_h	妈妈打电话。	Māma dǎ diànhuà.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e5_h.opus
+p1_customer_people_chat_02_e5_r1	妈妈打电话。	Māma dǎ diànhuà.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e5_r1.opus
+p1_customer_people_chat_02_e5_r2	爸爸打电话。	Bàba dǎ diànhuà.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e5_r2.opus
+p1_customer_people_chat_02_e6	明天下雨，我和儿子在家。	Míngtiān xiàyǔ, wǒ hé érzi zài jiā.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e6.opus
+p1_customer_people_chat_02_e6_h	明天，在家。	Míngtiān, zài jiā.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e6_h.opus
+p1_customer_people_chat_02_e6_r1	明天你在家。	Míngtiān nǐ zài jiā.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e6_r1.opus
+p1_customer_people_chat_02_e6_r2	今天你在家。	Jīntiān nǐ zài jiā.	zh-CN-YunxiNeural	audio/phase1/p1_customer_people_chat_02_e6_r2.opus
+p1_delivery_directions_01_e1	书多，东西少。十本书，在哪儿？	Shū duō, dōngxi shǎo. Shí běn shū, zài nǎr?	zh-CN-XiaoxiaoNeural	audio/phase1/p1_delivery_directions_01_e1.opus
+p1_delivery_directions_01_e1_h	十本书，上。	Shí běn shū, shàng.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_delivery_directions_01_e1_h.opus
+p1_delivery_directions_01_e1_r1	书在上。	Shū zài shàng.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_directions_01_e1_r1.opus
+p1_delivery_directions_01_e1_r2	书在下。	Shū zài xià.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_directions_01_e1_r2.opus
+p1_delivery_directions_01_e2__v000	我看这个。这个在前面，东西在前面。	Wǒ kàn zhè ge. Zhè ge zài qiánmiàn, dōngxi zài qiánmiàn.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_delivery_directions_01_e2__v000.opus
+p1_delivery_directions_01_e2__v001	我看这个。这个在前面，东西在后面。	Wǒ kàn zhè ge. Zhè ge zài qiánmiàn, dōngxi zài hòumiàn.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_delivery_directions_01_e2__v001.opus
+p1_delivery_directions_01_e2__v002	我看这个。这个在前面，东西在杯子里。	Wǒ kàn zhè ge. Zhè ge zài qiánmiàn, dōngxi zài bēizi lǐ.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_delivery_directions_01_e2__v002.opus
+p1_delivery_directions_01_e2_h__v000	东西在前面。	Dōngxi zài qiánmiàn.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_delivery_directions_01_e2_h__v000.opus
+p1_delivery_directions_01_e2_h__v001	东西在后面。	Dōngxi zài hòumiàn.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_delivery_directions_01_e2_h__v001.opus
+p1_delivery_directions_01_e2_h__v002	东西在杯子里。	Dōngxi zài bēizi lǐ.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_delivery_directions_01_e2_h__v002.opus
+p1_delivery_directions_01_e2_r1__v000	东西在前面。	Dōngxi zài qiánmiàn.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_directions_01_e2_r1__v000.opus
+p1_delivery_directions_01_e2_r1__v001	东西在后面。	Dōngxi zài hòumiàn.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_directions_01_e2_r1__v001.opus
+p1_delivery_directions_01_e2_r1__v002	东西在杯子里。	Dōngxi zài bēizi lǐ.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_directions_01_e2_r1__v002.opus
+p1_delivery_directions_01_e2_r2	东西不在后面。	Dōngxi bú zài hòumiàn.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_directions_01_e2_r2.opus
+p1_delivery_directions_01_e3	东西在前面。我看见东西，你去。	Dōngxi zài qiánmiàn. Wǒ kànjiàn dōngxi, nǐ qù.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_delivery_directions_01_e3.opus
+p1_delivery_directions_01_e3_h	去前面。	Qù qiánmiàn.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_delivery_directions_01_e3_h.opus
+p1_delivery_directions_01_e3_r1	我去前面。	Wǒ qù qiánmiàn.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_directions_01_e3_r1.opus
+p1_delivery_directions_01_e3_r2	我回后面。	Wǒ huí hòumiàn.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_directions_01_e3_r2.opus
+p1_delivery_directions_01_e4	你去火车站。我在这读书。	Nǐ qù huǒchēzhàn. Wǒ zài zhè dú shū.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_delivery_directions_01_e4.opus
+p1_delivery_directions_01_e4_h	火车站在前面。	Huǒchēzhàn zài qiánmiàn.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_delivery_directions_01_e4_h.opus
+p1_delivery_directions_01_e4_r1	我去火车站。	Wǒ qù huǒchēzhàn.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_directions_01_e4_r1.opus
+p1_delivery_directions_01_e4_r2	我回。	Wǒ huí.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_directions_01_e4_r2.opus
+p1_delivery_names_02_e1	名字在上，东西在下。家在哪儿？	Míngzi zài shàng, dōngxi zài xià. Jiā zài nǎr?	zh-CN-YunxiNeural	audio/phase1/p1_delivery_names_02_e1.opus
+p1_delivery_names_02_e1_h	家在前面。	Jiā zài qiánmiàn.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_names_02_e1_h.opus
+p1_delivery_names_02_e1_r1	家在前面。	Jiā zài qiánmiàn.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_names_02_e1_r1.opus
+p1_delivery_names_02_e1_r2	家在后面。	Jiā zài hòumiàn.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_names_02_e1_r2.opus
+p1_delivery_names_02_e2	先生叫我去这个家里。	Xiānsheng jiào wǒ qù zhè ge jiā lǐ.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_names_02_e2.opus
+p1_delivery_names_02_e2_h	这个家。	Zhè ge jiā.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_names_02_e2_h.opus
+p1_delivery_names_02_e2_r1	我去这个家。	Wǒ qù zhè ge jiā.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_names_02_e2_r1.opus
+p1_delivery_names_02_e2_r2	我去那个家。	Wǒ qù nà ge jiā.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_names_02_e2_r2.opus
+p1_delivery_names_02_e3	小姐在前面，先生在后面。我看见她。	Xiǎojiě zài qiánmiàn, xiānsheng zài hòumiàn. Wǒ kànjiàn tā.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_names_02_e3.opus
+p1_delivery_names_02_e3_h	小姐在前面。	Xiǎojiě zài qiánmiàn.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_names_02_e3_h.opus
+p1_delivery_names_02_e3_r1	她在前面。	Tā zài qiánmiàn.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_names_02_e3_r1.opus
+p1_delivery_names_02_e3_r2	先生在前面。	Xiānsheng zài qiánmiàn.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_names_02_e3_r2.opus
+p1_delivery_names_02_e4	他在火车站。你看，先生回家。	Tā zài huǒchēzhàn. Nǐ kàn, xiānsheng huí jiā.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_names_02_e4.opus
+p1_delivery_names_02_e4_h	他在火车站。	Tā zài huǒchēzhàn.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_names_02_e4_h.opus
+p1_delivery_names_02_e4_r1	先生回家。	Xiānsheng huí jiā.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_names_02_e4_r1.opus
+p1_delivery_names_02_e4_r2	小姐回家。	Xiǎojiě huí jiā.	zh-CN-YunxiNeural	audio/phase1/p1_delivery_names_02_e4_r2.opus
+p1_landlord_phone_01_e1	喂，我打电话。你在家？这是我的。	Wèi, wǒ dǎ diànhuà. Nǐ zài jiā? Zhè shì wǒ de.	zh-CN-YunyangNeural	audio/phase1/p1_landlord_phone_01_e1.opus
+p1_landlord_phone_01_e1_h	喂，我在家。	Wèi, wǒ zài jiā.	zh-CN-YunyangNeural	audio/phase1/p1_landlord_phone_01_e1_h.opus
+p1_landlord_phone_01_e1_r1	喂，我现在在家。	Wèi, wǒ xiànzài zài jiā.	zh-CN-YunxiNeural	audio/phase1/p1_landlord_phone_01_e1_r1.opus
+p1_landlord_phone_01_e1_r2	我在商店。	Wǒ zài shāngdiàn.	zh-CN-YunxiNeural	audio/phase1/p1_landlord_phone_01_e1_r2.opus
+p1_landlord_phone_01_e2	明天你买些苹果吗？水果三块钱。	Míngtiān nǐ mǎi xiē píngguǒ ma? Shuǐguǒ sān kuài qián.	zh-CN-YunyangNeural	audio/phase1/p1_landlord_phone_01_e2.opus
+p1_landlord_phone_01_e2_h	明天，买苹果。	Míngtiān, mǎi píngguǒ.	zh-CN-YunyangNeural	audio/phase1/p1_landlord_phone_01_e2_h.opus
+p1_landlord_phone_01_e2_r1	明天我买些苹果。	Míngtiān wǒ mǎi xiē píngguǒ.	zh-CN-YunxiNeural	audio/phase1/p1_landlord_phone_01_e2_r1.opus
+p1_landlord_phone_01_e2_r2	今天我买些苹果。	Jīntiān wǒ mǎi xiē píngguǒ.	zh-CN-YunxiNeural	audio/phase1/p1_landlord_phone_01_e2_r2.opus
+p1_landlord_phone_01_e3	今天很冷。你呢？	Jīntiān hěn lěng. Nǐ ne?	zh-CN-YunyangNeural	audio/phase1/p1_landlord_phone_01_e3.opus
+p1_landlord_phone_01_e3_h	今天很冷。	Jīntiān hěn lěng.	zh-CN-YunyangNeural	audio/phase1/p1_landlord_phone_01_e3_h.opus
+p1_landlord_phone_01_e3_r1	我很冷。	Wǒ hěn lěng.	zh-CN-YunxiNeural	audio/phase1/p1_landlord_phone_01_e3_r1.opus
+p1_landlord_phone_01_e3_r2	我很好。	Wǒ hěn hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_landlord_phone_01_e3_r2.opus
+p1_landlord_phone_01_e4	明天下雨。你住一年吗？今天十八日。	Míngtiān xiàyǔ. Nǐ zhù yì nián ma? Jīntiān shíbā rì.	zh-CN-YunyangNeural	audio/phase1/p1_landlord_phone_01_e4.opus
+p1_landlord_phone_01_e4_h	明天下雨。	Míngtiān xiàyǔ.	zh-CN-YunyangNeural	audio/phase1/p1_landlord_phone_01_e4_h.opus
+p1_landlord_phone_01_e4_r1	明天下雨。	Míngtiān xiàyǔ.	zh-CN-YunxiNeural	audio/phase1/p1_landlord_phone_01_e4_r1.opus
+p1_landlord_phone_01_e4_r2	今天下雨。	Jīntiān xiàyǔ.	zh-CN-YunxiNeural	audio/phase1/p1_landlord_phone_01_e4_r2.opus
+p1_landlord_phone_01_e5	这个星期我在家，下个月我不在。	Zhè ge xīngqī wǒ zài jiā, xià ge yuè wǒ bú zài.	zh-CN-YunyangNeural	audio/phase1/p1_landlord_phone_01_e5.opus
+p1_landlord_phone_01_e5_h	这个星期，在家。	Zhè ge xīngqī, zài jiā.	zh-CN-YunyangNeural	audio/phase1/p1_landlord_phone_01_e5_h.opus
+p1_landlord_phone_01_e5_r1	你这个星期在家。	Nǐ zhè ge xīngqī zài jiā.	zh-CN-YunxiNeural	audio/phase1/p1_landlord_phone_01_e5_r1.opus
+p1_landlord_phone_01_e5_r2	你这个月在家。	Nǐ zhè ge yuè zài jiā.	zh-CN-YunxiNeural	audio/phase1/p1_landlord_phone_01_e5_r2.opus
+p1_mentor_address_03_e1	谁是老师？他是什么？他是我的朋友。	Shéi shì lǎoshī? Tā shì shénme? Tā shì wǒ de péngyou.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_address_03_e1.opus
+p1_mentor_address_03_e1_h	他是老师。	Tā shì lǎoshī.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_address_03_e1_h.opus
+p1_mentor_address_03_e1_r1	他是老师。	Tā shì lǎoshī.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_address_03_e1_r1.opus
+p1_mentor_address_03_e1_r2	他是学生。	Tā shì xuésheng.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_address_03_e1_r2.opus
+p1_mentor_address_03_e2	老师说话，你听。爸爸和妈妈说话。	Lǎoshī shuōhuà, nǐ tīng. Bàba hé māma shuōhuà.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_address_03_e2.opus
+p1_mentor_address_03_e2_h	听老师说话。	Tīng lǎoshī shuōhuà.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_address_03_e2_h.opus
+p1_mentor_address_03_e2_r1	我听老师说话。	Wǒ tīng lǎoshī shuōhuà.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_address_03_e2_r1.opus
+p1_mentor_address_03_e2_r2	我听儿子说话。	Wǒ tīng érzi shuōhuà.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_address_03_e2_r2.opus
+p1_mentor_address_03_e3	我们认识这个人，她是老师。	Wǒmen rènshi zhè ge rén, tā shì lǎoshī.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_address_03_e3.opus
+p1_mentor_address_03_e3_h	她是老师。	Tā shì lǎoshī.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_address_03_e3_h.opus
+p1_mentor_address_03_e3_r1	谢谢老师。	Xièxie lǎoshī.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_address_03_e3_r1.opus
+p1_mentor_address_03_e3_r2	谢谢同学。	Xièxie tóngxué.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_address_03_e3_r2.opus
+p1_mentor_address_03_e4	谢谢你。我们听老师说话。我很高兴。	Xièxie nǐ. Wǒmen tīng lǎoshī shuōhuà. Wǒ hěn gāoxìng.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_address_03_e4.opus
+p1_mentor_address_03_e4_h	谢谢。不客气。	Xièxie. Bú kèqi.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_address_03_e4_h.opus
+p1_mentor_address_03_e4_r1	不客气。	Bú kèqi.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_address_03_e4_r1.opus
+p1_mentor_address_03_e4_r2	对不起。	Duìbuqǐ.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_address_03_e4_r2.opus
+p1_mentor_address_03_e5	我爱我的女儿和儿子。	Wǒ ài wǒ de nǚ'ér hé érzi.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_address_03_e5.opus
+p1_mentor_address_03_e5_h	女儿和儿子。	Nǚ'ér hé érzi.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_address_03_e5_h.opus
+p1_mentor_address_03_e5_r1	你爱你的女儿。	Nǐ ài nǐ de nǚ'ér.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_address_03_e5_r1.opus
+p1_mentor_address_03_e5_r2	你爱你的朋友。	Nǐ ài nǐ de péngyou.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_address_03_e5_r2.opus
+p1_mentor_address_03_e6	老师和医生说话，你听。	Lǎoshī hé yīshēng shuōhuà, nǐ tīng.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_address_03_e6.opus
+p1_mentor_address_03_e6_h	听医生说话。	Tīng yīshēng shuōhuà.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_address_03_e6_h.opus
+p1_mentor_address_03_e6_r1	我听医生说话。	Wǒ tīng yīshēng shuōhuà.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_address_03_e6_r1.opus
+p1_mentor_address_03_e6_r2	我听同学说话。	Wǒ tīng tóngxué shuōhuà.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_address_03_e6_r2.opus
+p1_mentor_negatives_01_e1	请喝茶。你能工作。这个工作，我会做。	Qǐng hē chá. Nǐ néng gōngzuò. Zhè ge gōngzuò, wǒ huì zuò.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_negatives_01_e1.opus
+p1_mentor_negatives_01_e1_h	会做。	Huì zuò.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_negatives_01_e1_h.opus
+p1_mentor_negatives_01_e1_r1	我会做。	Wǒ huì zuò.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_negatives_01_e1_r1.opus
+p1_mentor_negatives_01_e1_r2	我不会做。	Wǒ bú huì zuò.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_negatives_01_e1_r2.opus
+p1_mentor_negatives_01_e2	我想喝茶，我喜欢茶。	Wǒ xiǎng hē chá, wǒ xǐhuan chá.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_negatives_01_e2.opus
+p1_mentor_negatives_01_e2_h	我喜欢茶。	Wǒ xǐhuan chá.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_negatives_01_e2_h.opus
+p1_mentor_negatives_01_e2_r1	我喜欢茶。	Wǒ xǐhuan chá.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_negatives_01_e2_r1.opus
+p1_mentor_negatives_01_e2_r2	我喜欢水。	Wǒ xǐhuan shuǐ.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_negatives_01_e2_r2.opus
+p1_mentor_negatives_01_e3	有米饭，没有菜。茶很好，水不太好。	Yǒu mǐfàn, méiyǒu cài. Chá hěn hǎo, shuǐ bú tài hǎo.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_negatives_01_e3.opus
+p1_mentor_negatives_01_e3_h	茶很好。	Chá hěn hǎo.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_negatives_01_e3_h.opus
+p1_mentor_negatives_01_e3_r1	茶很好。	Chá hěn hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_negatives_01_e3_r1.opus
+p1_mentor_negatives_01_e3_r2	水很好。	Shuǐ hěn hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_negatives_01_e3_r2.opus
+p1_mentor_negatives_01_e4	我吃米饭，我会做菜。你能做？	Wǒ chī mǐfàn, wǒ huì zuò cài. Nǐ néng zuò?	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_negatives_01_e4.opus
+p1_mentor_negatives_01_e4_h	会做。	Huì zuò.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_negatives_01_e4_h.opus
+p1_mentor_negatives_01_e4_r1	我能做。	Wǒ néng zuò.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_negatives_01_e4_r1.opus
+p1_mentor_negatives_01_e4_r2	我不能做。	Wǒ bù néng zuò.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_negatives_01_e4_r2.opus
+p1_mentor_negatives_01_e5	碗没有八个，杯子有六个。	Wǎn méiyǒu bā ge, bēizi yǒu liù ge.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_negatives_01_e5.opus
+p1_mentor_negatives_01_e5_h	碗，没有八个。	Wǎn, méiyǒu bā ge.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_negatives_01_e5_h.opus
+p1_mentor_negatives_01_e5_r1	没有八个碗。	Méiyǒu bā ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_negatives_01_e5_r1.opus
+p1_mentor_negatives_01_e5_r2	有八个碗。	Yǒu bā ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_negatives_01_e5_r2.opus
+p1_mentor_quantities_02_e1	这个多，那个少。我喜欢多，不喜欢少。	Zhè ge duō, nà ge shǎo. Wǒ xǐhuan duō, bù xǐhuan shǎo.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_quantities_02_e1.opus
+p1_mentor_quantities_02_e1_h	那个少。	Nà ge shǎo.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_quantities_02_e1_h.opus
+p1_mentor_quantities_02_e1_r1	那个少。	Nà ge shǎo.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_quantities_02_e1_r1.opus
+p1_mentor_quantities_02_e1_r2	这个少。	Zhè ge shǎo.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_quantities_02_e1_r2.opus
+p1_mentor_quantities_02_e2	这个有十本，那个有三个。	Zhè ge yǒu shí běn, nà ge yǒu sān ge.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_quantities_02_e2.opus
+p1_mentor_quantities_02_e2_h	十本。	Shí běn.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_quantities_02_e2_h.opus
+p1_mentor_quantities_02_e2_r1	十本。	Shí běn.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_quantities_02_e2_r1.opus
+p1_mentor_quantities_02_e2_r2	三本。	Sān běn.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_quantities_02_e2_r2.opus
+p1_mentor_quantities_02_e3	这个很大，那个太小。这本书，你读？	Zhè ge hěn dà, nà ge tài xiǎo. Zhè běn shū, nǐ dú?	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_quantities_02_e3.opus
+p1_mentor_quantities_02_e3_h	读这本书。	Dú zhè běn shū.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_quantities_02_e3_h.opus
+p1_mentor_quantities_02_e3_r1	我读这本书。	Wǒ dú zhè běn shū.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_quantities_02_e3_r1.opus
+p1_mentor_quantities_02_e3_r2	我读那本书。	Wǒ dú nà běn shū.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_quantities_02_e3_r2.opus
+p1_mentor_quantities_02_e4	七本，你能读？有九本书。你读多少本？	Qī běn, nǐ néng dú? Yǒu jiǔ běn shū. Nǐ dú duōshao běn?	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_quantities_02_e4.opus
+p1_mentor_quantities_02_e4_h	读九本书。	Dú jiǔ běn shū.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_quantities_02_e4_h.opus
+p1_mentor_quantities_02_e4_r1	我读九本书。	Wǒ dú jiǔ běn shū.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_quantities_02_e4_r1.opus
+p1_mentor_quantities_02_e4_r2	我读五本书。	Wǒ dú wǔ běn shū.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_quantities_02_e4_r2.opus
+p1_mentor_quantities_02_e5	你想读多少本？我会读十本。	Nǐ xiǎng dú duōshao běn? Wǒ huì dú shí běn.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_quantities_02_e5.opus
+p1_mentor_quantities_02_e5_h	十本。	Shí běn.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mentor_quantities_02_e5_h.opus
+p1_mentor_quantities_02_e5_r1	我想读十本。	Wǒ xiǎng dú shí běn.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_quantities_02_e5_r1.opus
+p1_mentor_quantities_02_e5_r2	我想读七本。	Wǒ xiǎng dú qī běn.	zh-CN-YunxiNeural	audio/phase1/p1_mentor_quantities_02_e5_r2.opus
+p1_mixup_calendar_e1	好。	Hǎo.	zh-CN-YunyangNeural	audio/phase1/p1_mixup_calendar_e1.opus
+p1_mixup_calendar_e1_r1	好。	Hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_mixup_calendar_e1_r1.opus
+p1_mixup_clinic_e1	好。	Hǎo.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mixup_clinic_e1.opus
+p1_mixup_clinic_e1_r1	好。	Hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_mixup_clinic_e1_r1.opus
+p1_mixup_count_e1	好。	Hǎo.	zh-CN-YunyangNeural	audio/phase1/p1_mixup_count_e1.opus
+p1_mixup_count_e1_r1	好。	Hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_mixup_count_e1_r1.opus
+p1_mixup_fruit_e1	好。	Hǎo.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mixup_fruit_e1.opus
+p1_mixup_fruit_e1_r1	好。	Hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_mixup_fruit_e1_r1.opus
+p1_mixup_home_e1	好。	Hǎo.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_mixup_home_e1.opus
+p1_mixup_home_e1_r1	好。	Hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_mixup_home_e1_r1.opus
+p1_mixup_position_e1	好。	Hǎo.	zh-CN-YunyangNeural	audio/phase1/p1_mixup_position_e1.opus
+p1_mixup_position_e1_r1	好。	Hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_mixup_position_e1_r1.opus
+p1_mixup_recipient_e1	好。	Hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_mixup_recipient_e1.opus
+p1_mixup_recipient_e1_r1	好。	Hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_mixup_recipient_e1_r1.opus
+p1_mixup_size_e1	好。	Hǎo.	zh-CN-YunyangNeural	audio/phase1/p1_mixup_size_e1.opus
+p1_mixup_size_e1_r1	好。	Hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_mixup_size_e1_r1.opus
+p1_noodle_dishwasher_01_e1	你好。我工作，你工作？	Nǐ hǎo. Wǒ gōngzuò, nǐ gōngzuò?	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e1.opus
+p1_noodle_dishwasher_01_e1_h	我工作。	Wǒ gōngzuò.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e1_h.opus
+p1_noodle_dishwasher_01_e1_r1	我工作。	Wǒ gōngzuò.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e1_r1.opus
+p1_noodle_dishwasher_01_e1_r2	你工作。	Nǐ gōngzuò.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e1_r2.opus
+p1_noodle_dishwasher_01_e2	一、二、三、四。这是杯子，那是碗。	Yī, èr, sān, sì. Zhè shì bēizi, nà shì wǎn.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e2.opus
+p1_noodle_dishwasher_01_e2_h	这是杯子。	Zhè shì bēizi.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e2_h.opus
+p1_noodle_dishwasher_01_e2_r1	杯子。	Bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e2_r1.opus
+p1_noodle_dishwasher_01_e2_r2	碗。	Wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e2_r2.opus
+p1_noodle_dishwasher_01_e3	那是碗。	Nà shì wǎn.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e3.opus
+p1_noodle_dishwasher_01_e3_h	碗。	Wǎn.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e3_h.opus
+p1_noodle_dishwasher_01_e3_r1	碗。	Wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e3_r1.opus
+p1_noodle_dishwasher_01_e3_r2	杯子。	Bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e3_r2.opus
+p1_noodle_dishwasher_01_e4__v000	这是杯子，那是碗。杯子，一个？	Zhè shì bēizi, nà shì wǎn. Bēizi, yí ge?	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4__v000.opus
+p1_noodle_dishwasher_01_e4__v001	这是杯子，那是碗。杯子，二个？	Zhè shì bēizi, nà shì wǎn. Bēizi, èr ge?	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4__v001.opus
+p1_noodle_dishwasher_01_e4__v002	这是杯子，那是碗。杯子，三个？	Zhè shì bēizi, nà shì wǎn. Bēizi, sān ge?	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4__v002.opus
+p1_noodle_dishwasher_01_e4__v003	这是杯子，那是碗。杯子，四个？	Zhè shì bēizi, nà shì wǎn. Bēizi, sì ge?	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4__v003.opus
+p1_noodle_dishwasher_01_e4__v004	这是杯子，那是碗。杯子，五个？	Zhè shì bēizi, nà shì wǎn. Bēizi, wǔ ge?	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4__v004.opus
+p1_noodle_dishwasher_01_e4__v005	这是杯子，那是碗。杯子，六个？	Zhè shì bēizi, nà shì wǎn. Bēizi, liù ge?	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4__v005.opus
+p1_noodle_dishwasher_01_e4__v006	这是杯子，那是碗。杯子，七个？	Zhè shì bēizi, nà shì wǎn. Bēizi, qī ge?	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4__v006.opus
+p1_noodle_dishwasher_01_e4__v007	这是杯子，那是碗。杯子，八个？	Zhè shì bēizi, nà shì wǎn. Bēizi, bā ge?	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4__v007.opus
+p1_noodle_dishwasher_01_e4__v008	这是杯子，那是碗。杯子，九个？	Zhè shì bēizi, nà shì wǎn. Bēizi, jiǔ ge?	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4__v008.opus
+p1_noodle_dishwasher_01_e4__v009	这是杯子，那是碗。杯子，十个？	Zhè shì bēizi, nà shì wǎn. Bēizi, shí ge?	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4__v009.opus
+p1_noodle_dishwasher_01_e4_h__v000	杯子，一个。	Bēizi, yí ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4_h__v000.opus
+p1_noodle_dishwasher_01_e4_h__v001	杯子，二个。	Bēizi, èr ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4_h__v001.opus
+p1_noodle_dishwasher_01_e4_h__v002	杯子，三个。	Bēizi, sān ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4_h__v002.opus
+p1_noodle_dishwasher_01_e4_h__v003	杯子，四个。	Bēizi, sì ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4_h__v003.opus
+p1_noodle_dishwasher_01_e4_h__v004	杯子，五个。	Bēizi, wǔ ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4_h__v004.opus
+p1_noodle_dishwasher_01_e4_h__v005	杯子，六个。	Bēizi, liù ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4_h__v005.opus
+p1_noodle_dishwasher_01_e4_h__v006	杯子，七个。	Bēizi, qī ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4_h__v006.opus
+p1_noodle_dishwasher_01_e4_h__v007	杯子，八个。	Bēizi, bā ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4_h__v007.opus
+p1_noodle_dishwasher_01_e4_h__v008	杯子，九个。	Bēizi, jiǔ ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4_h__v008.opus
+p1_noodle_dishwasher_01_e4_h__v009	杯子，十个。	Bēizi, shí ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e4_h__v009.opus
+p1_noodle_dishwasher_01_e4_r1__v000	一个杯子。	yí ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r1__v000.opus
+p1_noodle_dishwasher_01_e4_r1__v001	二个杯子。	èr ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r1__v001.opus
+p1_noodle_dishwasher_01_e4_r1__v002	三个杯子。	sān ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r1__v002.opus
+p1_noodle_dishwasher_01_e4_r1__v003	四个杯子。	sì ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r1__v003.opus
+p1_noodle_dishwasher_01_e4_r1__v004	五个杯子。	wǔ ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r1__v004.opus
+p1_noodle_dishwasher_01_e4_r1__v005	六个杯子。	liù ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r1__v005.opus
+p1_noodle_dishwasher_01_e4_r1__v006	七个杯子。	qī ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r1__v006.opus
+p1_noodle_dishwasher_01_e4_r1__v007	八个杯子。	bā ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r1__v007.opus
+p1_noodle_dishwasher_01_e4_r1__v008	九个杯子。	jiǔ ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r1__v008.opus
+p1_noodle_dishwasher_01_e4_r1__v009	十个杯子。	shí ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r1__v009.opus
+p1_noodle_dishwasher_01_e4_r2__v000	一个碗。	yí ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r2__v000.opus
+p1_noodle_dishwasher_01_e4_r2__v001	二个碗。	èr ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r2__v001.opus
+p1_noodle_dishwasher_01_e4_r2__v002	三个碗。	sān ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r2__v002.opus
+p1_noodle_dishwasher_01_e4_r2__v003	四个碗。	sì ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r2__v003.opus
+p1_noodle_dishwasher_01_e4_r2__v004	五个碗。	wǔ ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r2__v004.opus
+p1_noodle_dishwasher_01_e4_r2__v005	六个碗。	liù ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r2__v005.opus
+p1_noodle_dishwasher_01_e4_r2__v006	七个碗。	qī ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r2__v006.opus
+p1_noodle_dishwasher_01_e4_r2__v007	八个碗。	bā ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r2__v007.opus
+p1_noodle_dishwasher_01_e4_r2__v008	九个碗。	jiǔ ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r2__v008.opus
+p1_noodle_dishwasher_01_e4_r2__v009	十个碗。	shí ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e4_r2__v009.opus
+p1_noodle_dishwasher_01_e5	杯子几个？你做。	Bēizi jǐ ge? Nǐ zuò.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e5.opus
+p1_noodle_dishwasher_01_e5_h__v000	杯子，一个。	Bēizi, yí ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e5_h__v000.opus
+p1_noodle_dishwasher_01_e5_h__v001	杯子，二个。	Bēizi, èr ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e5_h__v001.opus
+p1_noodle_dishwasher_01_e5_h__v002	杯子，三个。	Bēizi, sān ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e5_h__v002.opus
+p1_noodle_dishwasher_01_e5_h__v003	杯子，四个。	Bēizi, sì ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e5_h__v003.opus
+p1_noodle_dishwasher_01_e5_h__v004	杯子，五个。	Bēizi, wǔ ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e5_h__v004.opus
+p1_noodle_dishwasher_01_e5_h__v005	杯子，六个。	Bēizi, liù ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e5_h__v005.opus
+p1_noodle_dishwasher_01_e5_h__v006	杯子，七个。	Bēizi, qī ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e5_h__v006.opus
+p1_noodle_dishwasher_01_e5_h__v007	杯子，八个。	Bēizi, bā ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e5_h__v007.opus
+p1_noodle_dishwasher_01_e5_h__v008	杯子，九个。	Bēizi, jiǔ ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e5_h__v008.opus
+p1_noodle_dishwasher_01_e5_h__v009	杯子，十个。	Bēizi, shí ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_e5_h__v009.opus
+p1_noodle_dishwasher_01_e5_r1__v000	我做一个杯子。	Wǒ zuò yí ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r1__v000.opus
+p1_noodle_dishwasher_01_e5_r1__v001	我做二个杯子。	Wǒ zuò èr ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r1__v001.opus
+p1_noodle_dishwasher_01_e5_r1__v002	我做三个杯子。	Wǒ zuò sān ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r1__v002.opus
+p1_noodle_dishwasher_01_e5_r1__v003	我做四个杯子。	Wǒ zuò sì ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r1__v003.opus
+p1_noodle_dishwasher_01_e5_r1__v004	我做五个杯子。	Wǒ zuò wǔ ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r1__v004.opus
+p1_noodle_dishwasher_01_e5_r1__v005	我做六个杯子。	Wǒ zuò liù ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r1__v005.opus
+p1_noodle_dishwasher_01_e5_r1__v006	我做七个杯子。	Wǒ zuò qī ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r1__v006.opus
+p1_noodle_dishwasher_01_e5_r1__v007	我做八个杯子。	Wǒ zuò bā ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r1__v007.opus
+p1_noodle_dishwasher_01_e5_r1__v008	我做九个杯子。	Wǒ zuò jiǔ ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r1__v008.opus
+p1_noodle_dishwasher_01_e5_r1__v009	我做十个杯子。	Wǒ zuò shí ge bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r1__v009.opus
+p1_noodle_dishwasher_01_e5_r2__v000	我做一个碗。	Wǒ zuò yí ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r2__v000.opus
+p1_noodle_dishwasher_01_e5_r2__v001	我做二个碗。	Wǒ zuò èr ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r2__v001.opus
+p1_noodle_dishwasher_01_e5_r2__v002	我做三个碗。	Wǒ zuò sān ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r2__v002.opus
+p1_noodle_dishwasher_01_e5_r2__v003	我做四个碗。	Wǒ zuò sì ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r2__v003.opus
+p1_noodle_dishwasher_01_e5_r2__v004	我做五个碗。	Wǒ zuò wǔ ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r2__v004.opus
+p1_noodle_dishwasher_01_e5_r2__v005	我做六个碗。	Wǒ zuò liù ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r2__v005.opus
+p1_noodle_dishwasher_01_e5_r2__v006	我做七个碗。	Wǒ zuò qī ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r2__v006.opus
+p1_noodle_dishwasher_01_e5_r2__v007	我做八个碗。	Wǒ zuò bā ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r2__v007.opus
+p1_noodle_dishwasher_01_e5_r2__v008	我做九个碗。	Wǒ zuò jiǔ ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r2__v008.opus
+p1_noodle_dishwasher_01_e5_r2__v009	我做十个碗。	Wǒ zuò shí ge wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_e5_r2__v009.opus
+p1_noodle_dishwasher_01_wrong_e1	好。	Hǎo.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_01_wrong_e1.opus
+p1_noodle_dishwasher_01_wrong_e1_r1	好。	Hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_01_wrong_e1_r1.opus
+p1_noodle_dishwasher_02_e1	你好。你工作，我工作。这是杯子，请。	Nǐ hǎo. Nǐ gōngzuò, wǒ gōngzuò. Zhè shì bēizi, qǐng.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e1.opus
+p1_noodle_dishwasher_02_e1_h	杯子，请。	Bēizi, qǐng.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e1_h.opus
+p1_noodle_dishwasher_02_e1_r1	好。	Hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_02_e1_r1.opus
+p1_noodle_dishwasher_02_e1_r2	碗。	Wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_02_e1_r2.opus
+p1_noodle_dishwasher_02_e2	这是水，那是茶。茶，请。	Zhè shì shuǐ, nà shì chá. Chá, qǐng.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e2.opus
+p1_noodle_dishwasher_02_e2_h	茶。	Chá.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e2_h.opus
+p1_noodle_dishwasher_02_e2_r1	茶。	Chá.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_02_e2_r1.opus
+p1_noodle_dishwasher_02_e2_r2	水。	Shuǐ.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_02_e2_r2.opus
+p1_noodle_dishwasher_02_e3	这是水，你喝水。	Zhè shì shuǐ, nǐ hē shuǐ.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e3.opus
+p1_noodle_dishwasher_02_e3_h	喝水。	Hē shuǐ.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e3_h.opus
+p1_noodle_dishwasher_02_e3_r1	我喝水。	Wǒ hē shuǐ.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_02_e3_r1.opus
+p1_noodle_dishwasher_02_e3_r2	我喝茶。	Wǒ hē chá.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_02_e3_r2.opus
+p1_noodle_dishwasher_02_e4__v000	一个杯子，请。你做。	yí ge bēizi, qǐng. Nǐ zuò.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4__v000.opus
+p1_noodle_dishwasher_02_e4__v001	二个杯子，请。你做。	èr ge bēizi, qǐng. Nǐ zuò.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4__v001.opus
+p1_noodle_dishwasher_02_e4__v002	三个杯子，请。你做。	sān ge bēizi, qǐng. Nǐ zuò.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4__v002.opus
+p1_noodle_dishwasher_02_e4__v003	四个杯子，请。你做。	sì ge bēizi, qǐng. Nǐ zuò.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4__v003.opus
+p1_noodle_dishwasher_02_e4__v004	五个杯子，请。你做。	wǔ ge bēizi, qǐng. Nǐ zuò.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4__v004.opus
+p1_noodle_dishwasher_02_e4__v005	六个杯子，请。你做。	liù ge bēizi, qǐng. Nǐ zuò.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4__v005.opus
+p1_noodle_dishwasher_02_e4__v006	七个杯子，请。你做。	qī ge bēizi, qǐng. Nǐ zuò.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4__v006.opus
+p1_noodle_dishwasher_02_e4__v007	八个杯子，请。你做。	bā ge bēizi, qǐng. Nǐ zuò.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4__v007.opus
+p1_noodle_dishwasher_02_e4__v008	九个杯子，请。你做。	jiǔ ge bēizi, qǐng. Nǐ zuò.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4__v008.opus
+p1_noodle_dishwasher_02_e4__v009	十个杯子，请。你做。	shí ge bēizi, qǐng. Nǐ zuò.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4__v009.opus
+p1_noodle_dishwasher_02_e4_h__v000	一个杯子。	yí ge bēizi.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4_h__v000.opus
+p1_noodle_dishwasher_02_e4_h__v001	二个杯子。	èr ge bēizi.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4_h__v001.opus
+p1_noodle_dishwasher_02_e4_h__v002	三个杯子。	sān ge bēizi.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4_h__v002.opus
+p1_noodle_dishwasher_02_e4_h__v003	四个杯子。	sì ge bēizi.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4_h__v003.opus
+p1_noodle_dishwasher_02_e4_h__v004	五个杯子。	wǔ ge bēizi.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4_h__v004.opus
+p1_noodle_dishwasher_02_e4_h__v005	六个杯子。	liù ge bēizi.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4_h__v005.opus
+p1_noodle_dishwasher_02_e4_h__v006	七个杯子。	qī ge bēizi.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4_h__v006.opus
+p1_noodle_dishwasher_02_e4_h__v007	八个杯子。	bā ge bēizi.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4_h__v007.opus
+p1_noodle_dishwasher_02_e4_h__v008	九个杯子。	jiǔ ge bēizi.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4_h__v008.opus
+p1_noodle_dishwasher_02_e4_h__v009	十个杯子。	shí ge bēizi.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e4_h__v009.opus
+p1_noodle_dishwasher_02_e4_r1	杯子。	Bēizi.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_02_e4_r1.opus
+p1_noodle_dishwasher_02_e4_r2	碗。	Wǎn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_02_e4_r2.opus
+p1_noodle_dishwasher_02_e5	杯子六个，碗八个。杯子几个？	Bēizi liù ge, wǎn bā ge. Bēizi jǐ ge?	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e5.opus
+p1_noodle_dishwasher_02_e5_h	六个杯子。	Liù ge bēizi.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_e5_h.opus
+p1_noodle_dishwasher_02_e5_r1	六个。	Liù ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_02_e5_r1.opus
+p1_noodle_dishwasher_02_e5_r2	八个。	Bā ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_02_e5_r2.opus
+p1_noodle_dishwasher_02_wrong_e1	好。	Hǎo.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_wrong_e1.opus
+p1_noodle_dishwasher_02_wrong_e1_r1	好。	Hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_02_wrong_e1_r1.opus
+p1_noodle_dishwasher_02_wrong_e2	好。	Hǎo.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_02_wrong_e2.opus
+p1_noodle_dishwasher_02_wrong_e2_r1	好。	Hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_02_wrong_e2_r1.opus
+p1_noodle_dishwasher_03_e1	你好。你工作，我工作。米饭，有？	Nǐ hǎo. Nǐ gōngzuò, wǒ gōngzuò. Mǐfàn, yǒu?	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_03_e1.opus
+p1_noodle_dishwasher_03_e1_h	有。	Yǒu.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_03_e1_h.opus
+p1_noodle_dishwasher_03_e1_r1	有米饭。	Yǒu mǐfàn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_03_e1_r1.opus
+p1_noodle_dishwasher_03_e1_r2	有茶。	Yǒu chá.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_03_e1_r2.opus
+p1_noodle_dishwasher_03_e2	这是杯子，那是碗。菜，有？	Zhè shì bēizi, nà shì wǎn. Cài, yǒu?	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_03_e2.opus
+p1_noodle_dishwasher_03_e2_h	菜。	Cài.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_03_e2_h.opus
+p1_noodle_dishwasher_03_e2_r1	有菜。	Yǒu cài.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_03_e2_r1.opus
+p1_noodle_dishwasher_03_e2_r2	有米饭。	Yǒu mǐfàn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_03_e2_r2.opus
+p1_noodle_dishwasher_03_e3	一、二、三、四。水，有。茶，没有。	Yī, èr, sān, sì. Shuǐ, yǒu. Chá, méiyǒu.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_03_e3.opus
+p1_noodle_dishwasher_03_e3_h	没有茶。	Méiyǒu chá.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_03_e3_h.opus
+p1_noodle_dishwasher_03_e3_r1	没有茶。	Méiyǒu chá.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_03_e3_r1.opus
+p1_noodle_dishwasher_03_e3_r2	没有水。	Méiyǒu shuǐ.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_03_e3_r2.opus
+p1_noodle_dishwasher_03_e4	水，我喝。茶，我不喝。	Shuǐ, wǒ hē. Chá, wǒ bù hē.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_03_e4.opus
+p1_noodle_dishwasher_03_e4_h	不喝茶。	Bù hē chá.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_03_e4_h.opus
+p1_noodle_dishwasher_03_e4_r1	不喝茶。	Bù hē chá.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_03_e4_r1.opus
+p1_noodle_dishwasher_03_e4_r2	不喝水。	Bù hē shuǐ.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_03_e4_r2.opus
+p1_noodle_dishwasher_03_e5	有米饭，有菜。请吃米饭。你做。	Yǒu mǐfàn, yǒu cài. Qǐng chī mǐfàn. Nǐ zuò.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_03_e5.opus
+p1_noodle_dishwasher_03_e5_h	吃米饭。	Chī mǐfàn.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_03_e5_h.opus
+p1_noodle_dishwasher_03_e5_r1	我吃米饭。	Wǒ chī mǐfàn.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_03_e5_r1.opus
+p1_noodle_dishwasher_03_e5_r2	我吃菜。	Wǒ chī cài.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_03_e5_r2.opus
+p1_noodle_dishwasher_03_wrong_e1	好。	Hǎo.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_03_wrong_e1.opus
+p1_noodle_dishwasher_03_wrong_e1_r1	好。	Hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_03_wrong_e1_r1.opus
+p1_noodle_dishwasher_03_wrong_e2	好。	Hǎo.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_dishwasher_03_wrong_e2.opus
+p1_noodle_dishwasher_03_wrong_e2_r1	好。	Hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_dishwasher_03_wrong_e2_r1.opus
+p1_noodle_review_04_e1__v000	有水，你喝吗？中国茶好喝。	Yǒu shuǐ, nǐ hē ma? Zhōngguó chá hǎohē.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e1__v000.opus
+p1_noodle_review_04_e1__v001	有茶，你喝吗？中国茶好喝。	Yǒu chá, nǐ hē ma? Zhōngguó chá hǎohē.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e1__v001.opus
+p1_noodle_review_04_e1_h__v000	喝水。	Hē shuǐ.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e1_h__v000.opus
+p1_noodle_review_04_e1_h__v001	喝茶。	Hē chá.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e1_h__v001.opus
+p1_noodle_review_04_e1_r1__v000	我喝水。	Wǒ hē shuǐ.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e1_r1__v000.opus
+p1_noodle_review_04_e1_r1__v001	我喝茶。	Wǒ hē chá.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e1_r1__v001.opus
+p1_noodle_review_04_e1_r2__v000	我不喝水。	Wǒ bù hē shuǐ.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e1_r2__v000.opus
+p1_noodle_review_04_e1_r2__v001	我不喝茶。	Wǒ bù hē chá.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e1_r2__v001.opus
+p1_noodle_review_04_e2__v000	这个杯子有狗，那个有猫。都在这。	Zhè ge bēizi yǒu gǒu, nà ge yǒu māo. Dōu zài zhè.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e2__v000.opus
+p1_noodle_review_04_e2__v001	这个碗有狗，那个有猫。都在这。	Zhè ge wǎn yǒu gǒu, nà ge yǒu māo. Dōu zài zhè.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e2__v001.opus
+p1_noodle_review_04_e2_h__v000	这个杯子有狗。	Zhè ge bēizi yǒu gǒu.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e2_h__v000.opus
+p1_noodle_review_04_e2_h__v001	这个碗有狗。	Zhè ge wǎn yǒu gǒu.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e2_h__v001.opus
+p1_noodle_review_04_e2_r1__v000	这个杯子有狗。	Zhè ge bēizi yǒu gǒu.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e2_r1__v000.opus
+p1_noodle_review_04_e2_r1__v001	这个碗有狗。	Zhè ge wǎn yǒu gǒu.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e2_r1__v001.opus
+p1_noodle_review_04_e2_r2__v000	这个杯子有猫。	Zhè ge bēizi yǒu māo.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e2_r2__v000.opus
+p1_noodle_review_04_e2_r2__v001	这个碗有猫。	Zhè ge wǎn yǒu māo.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e2_r2__v001.opus
+p1_noodle_review_04_e3__v000	请做一个；饭店的杯子、碗都在这。	Qǐng zuò yí ge; fàndiàn de bēizi, wǎn dōu zài zhè.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3__v000.opus
+p1_noodle_review_04_e3__v001	请做二个；饭店的杯子、碗都在这。	Qǐng zuò èr ge; fàndiàn de bēizi, wǎn dōu zài zhè.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3__v001.opus
+p1_noodle_review_04_e3__v002	请做三个；饭店的杯子、碗都在这。	Qǐng zuò sān ge; fàndiàn de bēizi, wǎn dōu zài zhè.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3__v002.opus
+p1_noodle_review_04_e3__v003	请做四个；饭店的杯子、碗都在这。	Qǐng zuò sì ge; fàndiàn de bēizi, wǎn dōu zài zhè.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3__v003.opus
+p1_noodle_review_04_e3__v004	请做五个；饭店的杯子、碗都在这。	Qǐng zuò wǔ ge; fàndiàn de bēizi, wǎn dōu zài zhè.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3__v004.opus
+p1_noodle_review_04_e3__v005	请做六个；饭店的杯子、碗都在这。	Qǐng zuò liù ge; fàndiàn de bēizi, wǎn dōu zài zhè.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3__v005.opus
+p1_noodle_review_04_e3__v006	请做七个；饭店的杯子、碗都在这。	Qǐng zuò qī ge; fàndiàn de bēizi, wǎn dōu zài zhè.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3__v006.opus
+p1_noodle_review_04_e3__v007	请做八个；饭店的杯子、碗都在这。	Qǐng zuò bā ge; fàndiàn de bēizi, wǎn dōu zài zhè.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3__v007.opus
+p1_noodle_review_04_e3__v008	请做九个；饭店的杯子、碗都在这。	Qǐng zuò jiǔ ge; fàndiàn de bēizi, wǎn dōu zài zhè.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3__v008.opus
+p1_noodle_review_04_e3__v009	请做十个；饭店的杯子、碗都在这。	Qǐng zuò shí ge; fàndiàn de bēizi, wǎn dōu zài zhè.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3__v009.opus
+p1_noodle_review_04_e3_h__v000	做一个。	Zuò yí ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3_h__v000.opus
+p1_noodle_review_04_e3_h__v001	做二个。	Zuò èr ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3_h__v001.opus
+p1_noodle_review_04_e3_h__v002	做三个。	Zuò sān ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3_h__v002.opus
+p1_noodle_review_04_e3_h__v003	做四个。	Zuò sì ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3_h__v003.opus
+p1_noodle_review_04_e3_h__v004	做五个。	Zuò wǔ ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3_h__v004.opus
+p1_noodle_review_04_e3_h__v005	做六个。	Zuò liù ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3_h__v005.opus
+p1_noodle_review_04_e3_h__v006	做七个。	Zuò qī ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3_h__v006.opus
+p1_noodle_review_04_e3_h__v007	做八个。	Zuò bā ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3_h__v007.opus
+p1_noodle_review_04_e3_h__v008	做九个。	Zuò jiǔ ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3_h__v008.opus
+p1_noodle_review_04_e3_h__v009	做十个。	Zuò shí ge.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e3_h__v009.opus
+p1_noodle_review_04_e3_r1__v000	我做一个。	Wǒ zuò yí ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r1__v000.opus
+p1_noodle_review_04_e3_r1__v001	我做二个。	Wǒ zuò èr ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r1__v001.opus
+p1_noodle_review_04_e3_r1__v002	我做三个。	Wǒ zuò sān ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r1__v002.opus
+p1_noodle_review_04_e3_r1__v003	我做四个。	Wǒ zuò sì ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r1__v003.opus
+p1_noodle_review_04_e3_r1__v004	我做五个。	Wǒ zuò wǔ ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r1__v004.opus
+p1_noodle_review_04_e3_r1__v005	我做六个。	Wǒ zuò liù ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r1__v005.opus
+p1_noodle_review_04_e3_r1__v006	我做七个。	Wǒ zuò qī ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r1__v006.opus
+p1_noodle_review_04_e3_r1__v007	我做八个。	Wǒ zuò bā ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r1__v007.opus
+p1_noodle_review_04_e3_r1__v008	我做九个。	Wǒ zuò jiǔ ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r1__v008.opus
+p1_noodle_review_04_e3_r1__v009	我做十个。	Wǒ zuò shí ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r1__v009.opus
+p1_noodle_review_04_e3_r2__v000	他做一个。	Tā zuò yí ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r2__v000.opus
+p1_noodle_review_04_e3_r2__v001	他做二个。	Tā zuò èr ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r2__v001.opus
+p1_noodle_review_04_e3_r2__v002	他做三个。	Tā zuò sān ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r2__v002.opus
+p1_noodle_review_04_e3_r2__v003	他做四个。	Tā zuò sì ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r2__v003.opus
+p1_noodle_review_04_e3_r2__v004	他做五个。	Tā zuò wǔ ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r2__v004.opus
+p1_noodle_review_04_e3_r2__v005	他做六个。	Tā zuò liù ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r2__v005.opus
+p1_noodle_review_04_e3_r2__v006	他做七个。	Tā zuò qī ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r2__v006.opus
+p1_noodle_review_04_e3_r2__v007	他做八个。	Tā zuò bā ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r2__v007.opus
+p1_noodle_review_04_e3_r2__v008	他做九个。	Tā zuò jiǔ ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r2__v008.opus
+p1_noodle_review_04_e3_r2__v009	他做十个。	Tā zuò shí ge.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e3_r2__v009.opus
+p1_noodle_review_04_e4__v000	杯子里有茶。	Bēizi lǐ yǒu chá.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e4__v000.opus
+p1_noodle_review_04_e4__v001	杯子里没有茶。	Bēizi lǐ méiyǒu chá.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e4__v001.opus
+p1_noodle_review_04_e4_h__v000	有茶。	yǒu chá.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e4_h__v000.opus
+p1_noodle_review_04_e4_h__v001	没有茶。	méiyǒu chá.	zh-CN-YunjianNeural	audio/phase1/p1_noodle_review_04_e4_h__v001.opus
+p1_noodle_review_04_e4_r1__v000	有茶。	yǒu chá.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e4_r1__v000.opus
+p1_noodle_review_04_e4_r1__v001	没有茶。	méiyǒu chá.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e4_r1__v001.opus
+p1_noodle_review_04_e4_r2__v000	有水。	yǒu shuǐ.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e4_r2__v000.opus
+p1_noodle_review_04_e4_r2__v001	没有水。	méiyǒu shuǐ.	zh-CN-YunxiNeural	audio/phase1/p1_noodle_review_04_e4_r2__v001.opus
+p1_pay_rent_01_e1	这个月二十块钱，不是一个星期。	Zhè ge yuè èrshí kuài qián, bú shì yí ge xīngqī.	zh-CN-YunyangNeural	audio/phase1/p1_pay_rent_01_e1.opus
+p1_pay_rent_01_e1_h	上，一个月。	Shàng, yí ge yuè.	zh-CN-YunyangNeural	audio/phase1/p1_pay_rent_01_e1_h.opus
+p1_pay_rent_01_e1_r1	一个月。	Yí ge yuè.	zh-CN-YunxiNeural	audio/phase1/p1_pay_rent_01_e1_r1.opus
+p1_pay_rent_01_e1_r2	一个星期。	Yí ge xīngqī.	zh-CN-YunxiNeural	audio/phase1/p1_pay_rent_01_e1_r2.opus
+p1_pay_rent_01_e2	一年十二个月。现在十八日。	Yì nián shí'èr ge yuè. Xiànzài shíbā rì.	zh-CN-YunyangNeural	audio/phase1/p1_pay_rent_01_e2.opus
+p1_pay_rent_01_e2_h	上，一年。	Shàng, yì nián.	zh-CN-YunyangNeural	audio/phase1/p1_pay_rent_01_e2_h.opus
+p1_pay_rent_01_e2_r1	一年。	Yì nián.	zh-CN-YunxiNeural	audio/phase1/p1_pay_rent_01_e2_r1.opus
+p1_pay_rent_01_e2_r2	一个月。	Yí ge yuè.	zh-CN-YunxiNeural	audio/phase1/p1_pay_rent_01_e2_r2.opus
+p1_pay_rent_01_e3	你住这个家，这是你的。我开这个。	Nǐ zhù zhè ge jiā, zhè shì nǐ de. Wǒ kāi zhè ge.	zh-CN-YunyangNeural	audio/phase1/p1_pay_rent_01_e3.opus
+p1_pay_rent_01_e3_h	你住这个家。	Nǐ zhù zhè ge jiā.	zh-CN-YunyangNeural	audio/phase1/p1_pay_rent_01_e3_h.opus
+p1_pay_rent_01_e3_r1	我住这个家。	Wǒ zhù zhè ge jiā.	zh-CN-YunxiNeural	audio/phase1/p1_pay_rent_01_e3_r1.opus
+p1_pay_rent_01_e3_r2	先生住这个家。	Xiānsheng zhù zhè ge jiā.	zh-CN-YunxiNeural	audio/phase1/p1_pay_rent_01_e3_r2.opus
+p1_pay_rent_01_e4	今天这个时候我来。二十块钱。	Jīntiān zhè ge shíhou wǒ lái. Èrshí kuài qián.	zh-CN-YunyangNeural	audio/phase1/p1_pay_rent_01_e4.opus
+p1_pay_rent_01_e4_h	今天，二十块钱。	Jīntiān, èrshí kuài qián.	zh-CN-YunyangNeural	audio/phase1/p1_pay_rent_01_e4_h.opus
+p1_pay_rent_01_e4_r1	今天二十块钱。	Jīntiān èrshí kuài qián.	zh-CN-YunxiNeural	audio/phase1/p1_pay_rent_01_e4_r1.opus
+p1_pay_rent_01_e4_r2	一年二十块钱。	Yì nián èrshí kuài qián.	zh-CN-YunxiNeural	audio/phase1/p1_pay_rent_01_e4_r2.opus
+p1_pay_rent_01_e5	我坐飞机去北京，坐出租车回家。	Wǒ zuò fēijī qù Běijīng, zuò chūzūchē huí jiā.	zh-CN-YunyangNeural	audio/phase1/p1_pay_rent_01_e5.opus
+p1_pay_rent_01_e5_h	飞机，去北京。	Fēijī, qù Běijīng.	zh-CN-YunyangNeural	audio/phase1/p1_pay_rent_01_e5_h.opus
+p1_pay_rent_01_e5_r1	你坐飞机去北京。	Nǐ zuò fēijī qù Běijīng.	zh-CN-YunxiNeural	audio/phase1/p1_pay_rent_01_e5_r1.opus
+p1_pay_rent_01_e5_r2	你坐出租车去北京。	Nǐ zuò chūzūchē qù Běijīng.	zh-CN-YunxiNeural	audio/phase1/p1_pay_rent_01_e5_r2.opus
+p1_pay_rent_01_e6	对不起。你买些水果，我买苹果。	Duìbuqǐ. Nǐ mǎi xiē shuǐguǒ, wǒ mǎi píngguǒ.	zh-CN-YunyangNeural	audio/phase1/p1_pay_rent_01_e6.opus
+p1_pay_rent_01_e6_h	商店，买些水果。	Shāngdiàn, mǎi xiē shuǐguǒ.	zh-CN-YunyangNeural	audio/phase1/p1_pay_rent_01_e6_h.opus
+p1_pay_rent_01_e6_r1	我买些水果。	Wǒ mǎi xiē shuǐguǒ.	zh-CN-YunxiNeural	audio/phase1/p1_pay_rent_01_e6_r1.opus
+p1_pay_rent_01_e6_r2	我买些苹果。	Wǒ mǎi xiē píngguǒ.	zh-CN-YunxiNeural	audio/phase1/p1_pay_rent_01_e6_r2.opus
+p1_room_evening_01_e1	桌子在前面，椅子在后面。	Zhuōzi zài qiánmiàn, yǐzi zài hòumiàn.	zh-CN-YunyangNeural	audio/phase1/p1_room_evening_01_e1.opus
+p1_room_evening_01_e1_h	椅子，后面。	Yǐzi, hòumiàn.	zh-CN-YunyangNeural	audio/phase1/p1_room_evening_01_e1_h.opus
+p1_room_evening_01_e1_r1	椅子在后面。	Yǐzi zài hòumiàn.	zh-CN-YunxiNeural	audio/phase1/p1_room_evening_01_e1_r1.opus
+p1_room_evening_01_e1_r2	椅子在前面。	Yǐzi zài qiánmiàn.	zh-CN-YunxiNeural	audio/phase1/p1_room_evening_01_e1_r2.opus
+p1_room_evening_01_e2	这是谁的衣服？衣服很漂亮。	Zhè shì shéi de yīfu? Yīfu hěn piàoliang.	zh-CN-YunyangNeural	audio/phase1/p1_room_evening_01_e2.opus
+p1_room_evening_01_e2_h	她的衣服。	Tā de yīfu.	zh-CN-YunyangNeural	audio/phase1/p1_room_evening_01_e2_h.opus
+p1_room_evening_01_e2_r1	她的衣服。	Tā de yīfu.	zh-CN-YunxiNeural	audio/phase1/p1_room_evening_01_e2_r1.opus
+p1_room_evening_01_e2_r2	先生的衣服。	Xiānsheng de yīfu.	zh-CN-YunxiNeural	audio/phase1/p1_room_evening_01_e2_r2.opus
+p1_room_evening_01_e3	我们看电影，十点睡觉。	Wǒmen kàn diànyǐng, shí diǎn shuìjiào.	zh-CN-YunyangNeural	audio/phase1/p1_room_evening_01_e3.opus
+p1_room_evening_01_e3_h	看电影。	Kàn diànyǐng.	zh-CN-YunyangNeural	audio/phase1/p1_room_evening_01_e3_h.opus
+p1_room_evening_01_e3_r1	我们看电影。	Wǒmen kàn diànyǐng.	zh-CN-YunxiNeural	audio/phase1/p1_room_evening_01_e3_r1.opus
+p1_room_evening_01_e3_r2	我们看电视。	Wǒmen kàn diànshì.	zh-CN-YunxiNeural	audio/phase1/p1_room_evening_01_e3_r2.opus
+p1_room_evening_01_e4	昨天你在学校看什么？写字吗？	Zuótiān nǐ zài xuéxiào kàn shénme? Xiě zì ma?	zh-CN-YunyangNeural	audio/phase1/p1_room_evening_01_e4.opus
+p1_room_evening_01_e4_h	昨天，电脑。	Zuótiān, diànnǎo.	zh-CN-YunyangNeural	audio/phase1/p1_room_evening_01_e4_h.opus
+p1_room_evening_01_e4_r1	昨天看电脑。	Zuótiān kàn diànnǎo.	zh-CN-YunxiNeural	audio/phase1/p1_room_evening_01_e4_r1.opus
+p1_room_evening_01_e4_r2	今天看电脑。	Jīntiān kàn diànnǎo.	zh-CN-YunxiNeural	audio/phase1/p1_room_evening_01_e4_r2.opus
+p1_room_evening_01_e5	我说话，你听。你学习汉语。	Wǒ shuōhuà, nǐ tīng. Nǐ xuéxí Hànyǔ.	zh-CN-YunyangNeural	audio/phase1/p1_room_evening_01_e5.opus
+p1_room_evening_01_e5_h	你说话，我听。	Nǐ shuōhuà, wǒ tīng.	zh-CN-YunyangNeural	audio/phase1/p1_room_evening_01_e5_h.opus
+p1_room_evening_01_e5_r1	我听你说话。	Wǒ tīng nǐ shuōhuà.	zh-CN-YunxiNeural	audio/phase1/p1_room_evening_01_e5_r1.opus
+p1_room_evening_01_e5_r2	我看电视。	Wǒ kàn diànshì.	zh-CN-YunxiNeural	audio/phase1/p1_room_evening_01_e5_r2.opus
+p1_room_evening_01_e6	谢谢你，家很漂亮。	Xièxie nǐ, jiā hěn piàoliang.	zh-CN-YunyangNeural	audio/phase1/p1_room_evening_01_e6.opus
+p1_room_evening_01_e6_h	谢谢，不客气。	Xièxie, bú kèqi.	zh-CN-YunyangNeural	audio/phase1/p1_room_evening_01_e6_h.opus
+p1_room_evening_01_e6_r1	不客气。	Bú kèqi.	zh-CN-YunxiNeural	audio/phase1/p1_room_evening_01_e6_r1.opus
+p1_room_evening_01_e6_r2	对不起。	Duìbuqǐ.	zh-CN-YunxiNeural	audio/phase1/p1_room_evening_01_e6_r2.opus
+p1_street_labels_01_e1	这个字是狗，那个字是猫。	Zhè ge zì shì gǒu, nà ge zì shì māo.	zh-CN-YunyangNeural	audio/phase1/p1_street_labels_01_e1.opus
+p1_street_labels_01_e1_h	这个字是狗。	Zhè ge zì shì gǒu.	zh-CN-YunyangNeural	audio/phase1/p1_street_labels_01_e1_h.opus
+p1_street_labels_01_e1_r1	这个字是狗。	Zhè ge zì shì gǒu.	zh-CN-YunxiNeural	audio/phase1/p1_street_labels_01_e1_r1.opus
+p1_street_labels_01_e1_r2	这个字是猫。	Zhè ge zì shì māo.	zh-CN-YunxiNeural	audio/phase1/p1_street_labels_01_e1_r2.opus
+p1_street_labels_01_e2	中国的字，我都认识。这个字，怎么读？	Zhōngguó de zì, wǒ dōu rènshi. Zhè ge zì, zěnme dú?	zh-CN-YunyangNeural	audio/phase1/p1_street_labels_01_e2.opus
+p1_street_labels_01_e2_h	中国，我认识。	Zhōngguó, wǒ rènshi.	zh-CN-YunyangNeural	audio/phase1/p1_street_labels_01_e2_h.opus
+p1_street_labels_01_e2_r1	我都认识。	Wǒ dōu rènshi.	zh-CN-YunxiNeural	audio/phase1/p1_street_labels_01_e2_r1.opus
+p1_street_labels_01_e2_r2	我不认识。	Wǒ bú rènshi.	zh-CN-YunxiNeural	audio/phase1/p1_street_labels_01_e2_r2.opus
+p1_street_labels_01_e3	医生四十岁，他去这个饭店。怎么样？	Yīshēng sìshí suì, tā qù zhè ge fàndiàn. Zěnmeyàng?	zh-CN-YunyangNeural	audio/phase1/p1_street_labels_01_e3.opus
+p1_street_labels_01_e3_h	饭店很好。	Fàndiàn hěn hǎo.	zh-CN-YunyangNeural	audio/phase1/p1_street_labels_01_e3_h.opus
+p1_street_labels_01_e3_r1	饭店很好。	Fàndiàn hěn hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_street_labels_01_e3_r1.opus
+p1_street_labels_01_e3_r2	医院很好。	Yīyuàn hěn hǎo.	zh-CN-YunxiNeural	audio/phase1/p1_street_labels_01_e3_r2.opus
+p1_street_labels_01_e4	狗、猫，你都认识？再见。	Gǒu, māo, nǐ dōu rènshi? Zàijiàn.	zh-CN-YunyangNeural	audio/phase1/p1_street_labels_01_e4.opus
+p1_street_labels_01_e4_h	狗、猫，都认识。	Gǒu, māo, dōu rènshi.	zh-CN-YunyangNeural	audio/phase1/p1_street_labels_01_e4_h.opus
+p1_street_labels_01_e4_r1	狗、猫，我都认识。	Gǒu, māo, wǒ dōu rènshi.	zh-CN-YunxiNeural	audio/phase1/p1_street_labels_01_e4_r1.opus
+p1_street_labels_01_e4_r2	狗、猫，我不认识。	Gǒu, māo, wǒ bú rènshi.	zh-CN-YunxiNeural	audio/phase1/p1_street_labels_01_e4_r2.opus
+p1_street_labels_01_e5	这几天天气热了，没关系。	Zhè jǐ tiān tiānqì rè le, méi guānxi.	zh-CN-YunyangNeural	audio/phase1/p1_street_labels_01_e5.opus
+p1_street_labels_01_e5_h	天气热了。	Tiānqì rè le.	zh-CN-YunyangNeural	audio/phase1/p1_street_labels_01_e5_h.opus
+p1_street_labels_01_e5_r1	天气很热。	Tiānqì hěn rè.	zh-CN-YunxiNeural	audio/phase1/p1_street_labels_01_e5_r1.opus
+p1_street_labels_01_e5_r2	天气很冷。	Tiānqì hěn lěng.	zh-CN-YunxiNeural	audio/phase1/p1_street_labels_01_e5_r2.opus
+p1_study_at_home_01_e1	你学习汉语，我是老师。我们很高兴。	Nǐ xuéxí Hànyǔ, wǒ shì lǎoshī. Wǒmen hěn gāoxìng.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_study_at_home_01_e1.opus
+p1_study_at_home_01_e1_h	学习汉语。	Xuéxí Hànyǔ.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_study_at_home_01_e1_h.opus
+p1_study_at_home_01_e1_r1	我学习汉语。	Wǒ xuéxí Hànyǔ.	zh-CN-YunxiNeural	audio/phase1/p1_study_at_home_01_e1_r1.opus
+p1_study_at_home_01_e1_r2	我读书。	Wǒ dú shū.	zh-CN-YunxiNeural	audio/phase1/p1_study_at_home_01_e1_r2.opus
+p1_study_at_home_01_e2	我写字，你看。你写字？这个字是什么？	Wǒ xiě zì, nǐ kàn. Nǐ xiě zì? Zhè ge zì shì shénme?	zh-CN-XiaoxiaoNeural	audio/phase1/p1_study_at_home_01_e2.opus
+p1_study_at_home_01_e2_h	写字。	Xiě zì.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_study_at_home_01_e2_h.opus
+p1_study_at_home_01_e2_r1	我写字。	Wǒ xiě zì.	zh-CN-YunxiNeural	audio/phase1/p1_study_at_home_01_e2_r1.opus
+p1_study_at_home_01_e2_r2	我读书。	Wǒ dú shū.	zh-CN-YunxiNeural	audio/phase1/p1_study_at_home_01_e2_r2.opus
+p1_study_at_home_01_e3	学校有电脑。这个人是医生，谁看？	Xuéxiào yǒu diànnǎo. Zhè ge rén shì yīshēng, shéi kàn?	zh-CN-XiaoxiaoNeural	audio/phase1/p1_study_at_home_01_e3.opus
+p1_study_at_home_01_e3_h	医生看电脑。	Yīshēng kàn diànnǎo.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_study_at_home_01_e3_h.opus
+p1_study_at_home_01_e3_r1	医生看电脑。	Yīshēng kàn diànnǎo.	zh-CN-YunxiNeural	audio/phase1/p1_study_at_home_01_e3_r1.opus
+p1_study_at_home_01_e3_r2	学生看电脑。	Xuésheng kàn diànnǎo.	zh-CN-YunxiNeural	audio/phase1/p1_study_at_home_01_e3_r2.opus
+p1_study_at_home_01_e4	电视在下，电脑在上。	Diànshì zài xià, diànnǎo zài shàng.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_study_at_home_01_e4.opus
+p1_study_at_home_01_e4_h	电视在下。	Diànshì zài xià.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_study_at_home_01_e4_h.opus
+p1_study_at_home_01_e4_r1	我看电视。	Wǒ kàn diànshì.	zh-CN-YunxiNeural	audio/phase1/p1_study_at_home_01_e4_r1.opus
+p1_study_at_home_01_e4_r2	我看电脑。	Wǒ kàn diànnǎo.	zh-CN-YunxiNeural	audio/phase1/p1_study_at_home_01_e4_r2.opus
+p1_study_at_home_01_e5	同学说话，你听。	Tóngxué shuōhuà, nǐ tīng.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_study_at_home_01_e5.opus
+p1_study_at_home_01_e5_h	听同学说话。	Tīng tóngxué shuōhuà.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_study_at_home_01_e5_h.opus
+p1_study_at_home_01_e5_r1	我听同学说话。	Wǒ tīng tóngxué shuōhuà.	zh-CN-YunxiNeural	audio/phase1/p1_study_at_home_01_e5_r1.opus
+p1_study_at_home_01_e5_r2	我看电视。	Wǒ kàn diànshì.	zh-CN-YunxiNeural	audio/phase1/p1_study_at_home_01_e5_r2.opus
+p1_study_at_home_01_e6	谢谢你，我们认识，很高兴。	Xièxie nǐ, wǒmen rènshi, hěn gāoxìng.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_study_at_home_01_e6.opus
+p1_study_at_home_01_e6_h	谢谢，不客气。	Xièxie, bú kèqi.	zh-CN-XiaoxiaoNeural	audio/phase1/p1_study_at_home_01_e6_h.opus
+p1_study_at_home_01_e6_r1	不客气。	Bú kèqi.	zh-CN-YunxiNeural	audio/phase1/p1_study_at_home_01_e6_r1.opus
+p1_study_at_home_01_e6_r2	对不起。	Duìbuqǐ.	zh-CN-YunxiNeural	audio/phase1/p1_study_at_home_01_e6_r2.opus
+p1_warehouse_porter_01_e1	我喜欢大，不喜欢小。这个大，那个小。	Wǒ xǐhuan dà, bù xǐhuan xiǎo. Zhè ge dà, nà ge xiǎo.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_porter_01_e1.opus
+p1_warehouse_porter_01_e1_h	那个小。	Nà ge xiǎo.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_porter_01_e1_h.opus
+p1_warehouse_porter_01_e1_r1	那个小。	Nà ge xiǎo.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_porter_01_e1_r1.opus
+p1_warehouse_porter_01_e1_r2	这个小。	Zhè ge xiǎo.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_porter_01_e1_r2.opus
+p1_warehouse_porter_01_e2	我想做，我会做。这个有多少个？	Wǒ xiǎng zuò, wǒ huì zuò. Zhè ge yǒu duōshao ge?	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_porter_01_e2.opus
+p1_warehouse_porter_01_e2_h	三个。	Sān ge.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_porter_01_e2_h.opus
+p1_warehouse_porter_01_e2_r1	三个。	Sān ge.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_porter_01_e2_r1.opus
+p1_warehouse_porter_01_e2_r2	四个。	Sì ge.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_porter_01_e2_r2.opus
+p1_warehouse_porter_01_e3	这个大，有五个。那个太小，几个？	Zhè ge dà, yǒu wǔ ge. Nà ge tài xiǎo, jǐ ge?	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_porter_01_e3.opus
+p1_warehouse_porter_01_e3_h	小，七个。	Xiǎo, qī ge.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_porter_01_e3_h.opus
+p1_warehouse_porter_01_e3_r1	七个。	Qī ge.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_porter_01_e3_r1.opus
+p1_warehouse_porter_01_e3_r2	五个。	Wǔ ge.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_porter_01_e3_r2.opus
+p1_warehouse_porter_01_e4	这个很大，有九个。那个没有。	Zhè ge hěn dà, yǒu jiǔ ge. Nà ge méiyǒu.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_porter_01_e4.opus
+p1_warehouse_porter_01_e4_h	九个。	Jiǔ ge.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_porter_01_e4_h.opus
+p1_warehouse_porter_01_e4_r1	九个。	Jiǔ ge.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_porter_01_e4_r1.opus
+p1_warehouse_porter_01_e4_r2	七个。	Qī ge.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_porter_01_e4_r2.opus
+p1_warehouse_porter_01_e5	你能吃米饭，不能吃菜。	Nǐ néng chī mǐfàn, bù néng chī cài.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_porter_01_e5.opus
+p1_warehouse_porter_01_e5_h	吃米饭。	Chī mǐfàn.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_porter_01_e5_h.opus
+p1_warehouse_porter_01_e5_r1	我吃米饭。	Wǒ chī mǐfàn.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_porter_01_e5_r1.opus
+p1_warehouse_porter_01_e5_r2	我吃菜。	Wǒ chī cài.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_porter_01_e5_r2.opus
+p1_warehouse_porter_02_e1	这个大，那个小。大东西，上。	Zhè ge dà, nà ge xiǎo. Dà dōngxi, shàng.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_porter_02_e1.opus
+p1_warehouse_porter_02_e1_h	大东西，上。	Dà dōngxi, shàng.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_porter_02_e1_h.opus
+p1_warehouse_porter_02_e1_r1	大东西，上。	Dà dōngxi, shàng.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_porter_02_e1_r1.opus
+p1_warehouse_porter_02_e1_r2	小东西，上。	Xiǎo dōngxi, shàng.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_porter_02_e1_r2.opus
+p1_warehouse_porter_02_e2	里有十本书，下有九本。里有多少本？	Lǐ yǒu shí běn shū, xià yǒu jiǔ běn. Lǐ yǒu duōshao běn?	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_porter_02_e2.opus
+p1_warehouse_porter_02_e2_h	里，十本书。	Lǐ, shí běn shū.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_porter_02_e2_h.opus
+p1_warehouse_porter_02_e2_r1	里有十本书。	Lǐ yǒu shí běn shū.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_porter_02_e2_r1.opus
+p1_warehouse_porter_02_e2_r2	下有十本书。	Xià yǒu shí běn shū.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_porter_02_e2_r2.opus
+p1_warehouse_porter_02_e3	东西多，你看。书少，我看见五本。	Dōngxi duō, nǐ kàn. Shū shǎo, wǒ kànjiàn wǔ běn.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_porter_02_e3.opus
+p1_warehouse_porter_02_e3_h	看，五本书。	Kàn, wǔ běn shū.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_porter_02_e3_h.opus
+p1_warehouse_porter_02_e3_r1	我看见五本书。	Wǒ kànjiàn wǔ běn shū.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_porter_02_e3_r1.opus
+p1_warehouse_porter_02_e3_r2	我看见七本书。	Wǒ kànjiàn qī běn shū.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_porter_02_e3_r2.opus
+p1_warehouse_porter_02_e4	里有十本书。你看见多少本？	Lǐ yǒu shí běn shū. Nǐ kànjiàn duōshao běn?	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_porter_02_e4.opus
+p1_warehouse_porter_02_e4_h	里有十本书。	Lǐ yǒu shí běn shū.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_porter_02_e4_h.opus
+p1_warehouse_porter_02_e4_r1	我看见十本书。	Wǒ kànjiàn shí běn shū.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_porter_02_e4_r1.opus
+p1_warehouse_porter_02_e4_r2	我看见九本书。	Wǒ kànjiàn jiǔ běn shū.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_porter_02_e4_r2.opus
+p1_warehouse_review_03_e1__v000	这个大东西去饭店，那个去医院。	Zhè ge dà dōngxi qù fàndiàn, nà ge qù yīyuàn.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e1__v000.opus
+p1_warehouse_review_03_e1__v001	这个小东西去饭店，那个去医院。	Zhè ge xiǎo dōngxi qù fàndiàn, nà ge qù yīyuàn.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e1__v001.opus
+p1_warehouse_review_03_e1_h__v000	大的，饭店。	dà de, fàndiàn.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e1_h__v000.opus
+p1_warehouse_review_03_e1_h__v001	小的，饭店。	xiǎo de, fàndiàn.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e1_h__v001.opus
+p1_warehouse_review_03_e1_r1__v000	大的去饭店。	dà de qù fàndiàn.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e1_r1__v000.opus
+p1_warehouse_review_03_e1_r1__v001	小的去饭店。	xiǎo de qù fàndiàn.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e1_r1__v001.opus
+p1_warehouse_review_03_e1_r2__v000	大的去医院。	dà de qù yīyuàn.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e1_r2__v000.opus
+p1_warehouse_review_03_e1_r2__v001	小的去医院。	xiǎo de qù yīyuàn.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e1_r2__v001.opus
+p1_warehouse_review_03_e2__v000	医院有一个医生。多少个？	Yīyuàn yǒu yí ge yīshēng. Duōshao ge?	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2__v000.opus
+p1_warehouse_review_03_e2__v001	医院有二个医生。多少个？	Yīyuàn yǒu èr ge yīshēng. Duōshao ge?	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2__v001.opus
+p1_warehouse_review_03_e2__v002	医院有三个医生。多少个？	Yīyuàn yǒu sān ge yīshēng. Duōshao ge?	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2__v002.opus
+p1_warehouse_review_03_e2__v003	医院有四个医生。多少个？	Yīyuàn yǒu sì ge yīshēng. Duōshao ge?	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2__v003.opus
+p1_warehouse_review_03_e2__v004	医院有五个医生。多少个？	Yīyuàn yǒu wǔ ge yīshēng. Duōshao ge?	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2__v004.opus
+p1_warehouse_review_03_e2__v005	医院有六个医生。多少个？	Yīyuàn yǒu liù ge yīshēng. Duōshao ge?	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2__v005.opus
+p1_warehouse_review_03_e2__v006	医院有七个医生。多少个？	Yīyuàn yǒu qī ge yīshēng. Duōshao ge?	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2__v006.opus
+p1_warehouse_review_03_e2__v007	医院有八个医生。多少个？	Yīyuàn yǒu bā ge yīshēng. Duōshao ge?	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2__v007.opus
+p1_warehouse_review_03_e2__v008	医院有九个医生。多少个？	Yīyuàn yǒu jiǔ ge yīshēng. Duōshao ge?	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2__v008.opus
+p1_warehouse_review_03_e2__v009	医院有十个医生。多少个？	Yīyuàn yǒu shí ge yīshēng. Duōshao ge?	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2__v009.opus
+p1_warehouse_review_03_e2_h__v000	医院，一个医生。	Yīyuàn, yí ge yīshēng.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2_h__v000.opus
+p1_warehouse_review_03_e2_h__v001	医院，二个医生。	Yīyuàn, èr ge yīshēng.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2_h__v001.opus
+p1_warehouse_review_03_e2_h__v002	医院，三个医生。	Yīyuàn, sān ge yīshēng.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2_h__v002.opus
+p1_warehouse_review_03_e2_h__v003	医院，四个医生。	Yīyuàn, sì ge yīshēng.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2_h__v003.opus
+p1_warehouse_review_03_e2_h__v004	医院，五个医生。	Yīyuàn, wǔ ge yīshēng.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2_h__v004.opus
+p1_warehouse_review_03_e2_h__v005	医院，六个医生。	Yīyuàn, liù ge yīshēng.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2_h__v005.opus
+p1_warehouse_review_03_e2_h__v006	医院，七个医生。	Yīyuàn, qī ge yīshēng.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2_h__v006.opus
+p1_warehouse_review_03_e2_h__v007	医院，八个医生。	Yīyuàn, bā ge yīshēng.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2_h__v007.opus
+p1_warehouse_review_03_e2_h__v008	医院，九个医生。	Yīyuàn, jiǔ ge yīshēng.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2_h__v008.opus
+p1_warehouse_review_03_e2_h__v009	医院，十个医生。	Yīyuàn, shí ge yīshēng.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e2_h__v009.opus
+p1_warehouse_review_03_e2_r1__v000	一个医生。	yí ge yīshēng.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r1__v000.opus
+p1_warehouse_review_03_e2_r1__v001	二个医生。	èr ge yīshēng.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r1__v001.opus
+p1_warehouse_review_03_e2_r1__v002	三个医生。	sān ge yīshēng.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r1__v002.opus
+p1_warehouse_review_03_e2_r1__v003	四个医生。	sì ge yīshēng.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r1__v003.opus
+p1_warehouse_review_03_e2_r1__v004	五个医生。	wǔ ge yīshēng.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r1__v004.opus
+p1_warehouse_review_03_e2_r1__v005	六个医生。	liù ge yīshēng.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r1__v005.opus
+p1_warehouse_review_03_e2_r1__v006	七个医生。	qī ge yīshēng.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r1__v006.opus
+p1_warehouse_review_03_e2_r1__v007	八个医生。	bā ge yīshēng.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r1__v007.opus
+p1_warehouse_review_03_e2_r1__v008	九个医生。	jiǔ ge yīshēng.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r1__v008.opus
+p1_warehouse_review_03_e2_r1__v009	十个医生。	shí ge yīshēng.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r1__v009.opus
+p1_warehouse_review_03_e2_r2__v000	一个人。	yí ge rén.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r2__v000.opus
+p1_warehouse_review_03_e2_r2__v001	二个人。	èr ge rén.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r2__v001.opus
+p1_warehouse_review_03_e2_r2__v002	三个人。	sān ge rén.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r2__v002.opus
+p1_warehouse_review_03_e2_r2__v003	四个人。	sì ge rén.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r2__v003.opus
+p1_warehouse_review_03_e2_r2__v004	五个人。	wǔ ge rén.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r2__v004.opus
+p1_warehouse_review_03_e2_r2__v005	六个人。	liù ge rén.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r2__v005.opus
+p1_warehouse_review_03_e2_r2__v006	七个人。	qī ge rén.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r2__v006.opus
+p1_warehouse_review_03_e2_r2__v007	八个人。	bā ge rén.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r2__v007.opus
+p1_warehouse_review_03_e2_r2__v008	九个人。	jiǔ ge rén.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r2__v008.opus
+p1_warehouse_review_03_e2_r2__v009	十个人。	shí ge rén.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e2_r2__v009.opus
+p1_warehouse_review_03_e3__v000	狗在前面。你看见了吗？再见。	Gǒu zài qiánmiàn. Nǐ kànjiàn le ma? Zàijiàn.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e3__v000.opus
+p1_warehouse_review_03_e3__v001	狗在后面。你看见了吗？再见。	Gǒu zài hòumiàn. Nǐ kànjiàn le ma? Zàijiàn.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e3__v001.opus
+p1_warehouse_review_03_e3__v002	狗在杯子里。你看见了吗？再见。	Gǒu zài bēizi lǐ. Nǐ kànjiàn le ma? Zàijiàn.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e3__v002.opus
+p1_warehouse_review_03_e3_h__v000	狗在前面。	Gǒu zài qiánmiàn.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e3_h__v000.opus
+p1_warehouse_review_03_e3_h__v001	狗在后面。	Gǒu zài hòumiàn.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e3_h__v001.opus
+p1_warehouse_review_03_e3_h__v002	狗在杯子里。	Gǒu zài bēizi lǐ.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e3_h__v002.opus
+p1_warehouse_review_03_e3_r1__v000	狗在前面。	Gǒu zài qiánmiàn.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e3_r1__v000.opus
+p1_warehouse_review_03_e3_r1__v001	狗在后面。	Gǒu zài hòumiàn.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e3_r1__v001.opus
+p1_warehouse_review_03_e3_r1__v002	狗在杯子里。	Gǒu zài bēizi lǐ.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e3_r1__v002.opus
+p1_warehouse_review_03_e3_r2__v000	猫在前面。	Māo zài qiánmiàn.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e3_r2__v000.opus
+p1_warehouse_review_03_e3_r2__v001	猫在后面。	Māo zài hòumiàn.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e3_r2__v001.opus
+p1_warehouse_review_03_e3_r2__v002	猫在杯子里。	Māo zài bēizi lǐ.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e3_r2__v002.opus
+p1_warehouse_review_03_e4	医院的在前面。饭店的呢？怎么样？	Yīyuàn de zài qiánmiàn. Fàndiàn de ne? Zěnmeyàng?	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e4.opus
+p1_warehouse_review_03_e4_h	饭店，后面。	Fàndiàn, hòumiàn.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e4_h.opus
+p1_warehouse_review_03_e4_r1	饭店的在后面。	Fàndiàn de zài hòumiàn.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e4_r1.opus
+p1_warehouse_review_03_e4_r2	医院的在后面。	Yīyuàn de zài hòumiàn.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e4_r2.opus
+p1_warehouse_review_03_e5	这个怎么做？中国的东西都去饭店。	Zhè ge zěnme zuò? Zhōngguó de dōngxi dōu qù fàndiàn.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e5.opus
+p1_warehouse_review_03_e5_h	都去饭店。	Dōu qù fàndiàn.	zh-CN-YunyangNeural	audio/phase1/p1_warehouse_review_03_e5_h.opus
+p1_warehouse_review_03_e5_r1	中国的都去饭店。	Zhōngguó de dōu qù fàndiàn.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e5_r1.opus
+p1_warehouse_review_03_e5_r2	中国的都去医院。	Zhōngguó de dōu qù yīyuàn.	zh-CN-YunxiNeural	audio/phase1/p1_warehouse_review_03_e5_r2.opus
+p1_weather_lunch_01_e1	这几天天气好，上午下雨。	Zhè jǐ tiān tiānqì hǎo, shàngwǔ xiàyǔ.	zh-CN-YunjianNeural	audio/phase1/p1_weather_lunch_01_e1.opus
+p1_weather_lunch_01_e1_h	天不冷。上午下雨。	Tiān bù lěng. Shàngwǔ xiàyǔ.	zh-CN-YunjianNeural	audio/phase1/p1_weather_lunch_01_e1_h.opus
+p1_weather_lunch_01_e1_r1	上午下雨。	Shàngwǔ xiàyǔ.	zh-CN-YunxiNeural	audio/phase1/p1_weather_lunch_01_e1_r1.opus
+p1_weather_lunch_01_e1_r2	中午下雨。	Zhōngwǔ xiàyǔ.	zh-CN-YunxiNeural	audio/phase1/p1_weather_lunch_01_e1_r2.opus
+p1_weather_lunch_01_e2	天热了，请喝水。	Tiān rè le, qǐng hē shuǐ.	zh-CN-YunjianNeural	audio/phase1/p1_weather_lunch_01_e2.opus
+p1_weather_lunch_01_e2_h	天热了，喝水。	Tiān rè le, hē shuǐ.	zh-CN-YunjianNeural	audio/phase1/p1_weather_lunch_01_e2_h.opus
+p1_weather_lunch_01_e2_r1	我喝水。	Wǒ hē shuǐ.	zh-CN-YunxiNeural	audio/phase1/p1_weather_lunch_01_e2_r1.opus
+p1_weather_lunch_01_e2_r2	我喝茶。	Wǒ hē chá.	zh-CN-YunxiNeural	audio/phase1/p1_weather_lunch_01_e2_r2.opus
+p1_weather_lunch_01_e3	对不起，没有水了。	Duìbuqǐ, méiyǒu shuǐ le.	zh-CN-YunjianNeural	audio/phase1/p1_weather_lunch_01_e3.opus
+p1_weather_lunch_01_e3_h	没有水，没关系。	Méiyǒu shuǐ, méi guānxi.	zh-CN-YunjianNeural	audio/phase1/p1_weather_lunch_01_e3_h.opus
+p1_weather_lunch_01_e3_r1	没关系。	Méi guānxi.	zh-CN-YunxiNeural	audio/phase1/p1_weather_lunch_01_e3_r1.opus
+p1_weather_lunch_01_e3_r2	对不起。	Duìbuqǐ.	zh-CN-YunxiNeural	audio/phase1/p1_weather_lunch_01_e3_r2.opus
+p1_weather_lunch_01_e4	今天天气很热。	Jīntiān tiānqì hěn rè.	zh-CN-YunjianNeural	audio/phase1/p1_weather_lunch_01_e4.opus
+p1_weather_lunch_01_e4_h	天气热。	Tiānqì rè.	zh-CN-YunjianNeural	audio/phase1/p1_weather_lunch_01_e4_h.opus
+p1_weather_lunch_01_e4_r1	天气很热。	Tiānqì hěn rè.	zh-CN-YunxiNeural	audio/phase1/p1_weather_lunch_01_e4_r1.opus
+p1_weather_lunch_01_e4_r2	天气很冷。	Tiānqì hěn lěng.	zh-CN-YunxiNeural	audio/phase1/p1_weather_lunch_01_e4_r2.opus
+p1_weather_lunch_01_e5	昨天我在学校学习汉语，写字。	Zuótiān wǒ zài xuéxiào xuéxí Hànyǔ, xiě zì.	zh-CN-YunjianNeural	audio/phase1/p1_weather_lunch_01_e5.opus
+p1_weather_lunch_01_e5_h	昨天，学习汉语。	Zuótiān, xuéxí Hànyǔ.	zh-CN-YunjianNeural	audio/phase1/p1_weather_lunch_01_e5_h.opus
+p1_weather_lunch_01_e5_r1	你昨天学习汉语。	Nǐ zuótiān xuéxí Hànyǔ.	zh-CN-YunxiNeural	audio/phase1/p1_weather_lunch_01_e5_r1.opus
+p1_weather_lunch_01_e5_r2	你昨天看电脑。	Nǐ zuótiān kàn diànnǎo.	zh-CN-YunxiNeural	audio/phase1/p1_weather_lunch_01_e5_r2.opus
+p1_weather_lunch_01_e6	我看电视和电影，十点睡觉。	Wǒ kàn diànshì hé diànyǐng, shí diǎn shuìjiào.	zh-CN-YunjianNeural	audio/phase1/p1_weather_lunch_01_e6.opus
+p1_weather_lunch_01_e6_h	十点睡觉。	Shí diǎn shuìjiào.	zh-CN-YunjianNeural	audio/phase1/p1_weather_lunch_01_e6_h.opus
+p1_weather_lunch_01_e6_r1	我十点睡觉。	Wǒ shí diǎn shuìjiào.	zh-CN-YunxiNeural	audio/phase1/p1_weather_lunch_01_e6_r1.opus
+p1_weather_lunch_01_e6_r2	我九点睡觉。	Wǒ jiǔ diǎn shuìjiào.	zh-CN-YunxiNeural	audio/phase1/p1_weather_lunch_01_e6_r2.opus
+p1_wrong_bus_01_e1	出租车在前面，飞机在后面。	Chūzūchē zài qiánmiàn, fēijī zài hòumiàn.	zh-CN-YunxiNeural	audio/phase1/p1_wrong_bus_01_e1.opus
+p1_wrong_bus_01_e1_r1	出租车。	Chūzūchē.	zh-CN-YunxiNeural	audio/phase1/p1_wrong_bus_01_e1_r1.opus
+p1_wrong_bus_01_e1_r2	飞机。	Fēijī.	zh-CN-YunxiNeural	audio/phase1/p1_wrong_bus_01_e1_r2.opus
+p1_wrong_bus_01_e2	上午先生来北京，中午小姐回家。	Shàngwǔ xiānsheng lái Běijīng, zhōngwǔ xiǎojiě huí jiā.	zh-CN-YunxiNeural	audio/phase1/p1_wrong_bus_01_e2.opus
+p1_wrong_bus_01_e2_r1	先生来。	Xiānsheng lái.	zh-CN-YunxiNeural	audio/phase1/p1_wrong_bus_01_e2_r1.opus
+p1_wrong_bus_01_e2_r2	小姐回。	Xiǎojiě huí.	zh-CN-YunxiNeural	audio/phase1/p1_wrong_bus_01_e2_r2.opus
+p1_wrong_bus_01_e3	下午，他开出租车。五分钟，她坐飞机。	Xiàwǔ, tā kāi chūzūchē. Wǔ fēnzhōng, tā zuò fēijī.	zh-CN-YunxiNeural	audio/phase1/p1_wrong_bus_01_e3.opus
+p1_wrong_bus_01_e3_r1	他开出租车。	Tā kāi chūzūchē.	zh-CN-YunxiNeural	audio/phase1/p1_wrong_bus_01_e3_r1.opus
+p1_wrong_bus_01_e3_r2	她坐飞机。	Tā zuò fēijī.	zh-CN-YunxiNeural	audio/phase1/p1_wrong_bus_01_e3_r2.opus
+p1_wrong_bus_01_e4	名字在上。对不起，先生叫我回。	Míngzi zài shàng. Duìbuqǐ, xiānsheng jiào wǒ huí.	zh-CN-YunxiNeural	audio/phase1/p1_wrong_bus_01_e4.opus
+p1_wrong_bus_01_e4_r1	对不起，我回。	Duìbuqǐ, wǒ huí.	zh-CN-YunxiNeural	audio/phase1/p1_wrong_bus_01_e4_r1.opus
+p1_wrong_bus_01_e4_r2	对不起，我去。	Duìbuqǐ, wǒ qù.	zh-CN-YunxiNeural	audio/phase1/p1_wrong_bus_01_e4_r2.opus
+word_001	爱	ài	zh-CN-XiaoxiaoNeural	audio/phase1/word_001.opus
+word_002	八	bā	zh-CN-XiaoxiaoNeural	audio/phase1/word_002.opus
+word_003	爸爸	bàba	zh-CN-XiaoxiaoNeural	audio/phase1/word_003.opus
+word_004	杯子	bēizi	zh-CN-XiaoxiaoNeural	audio/phase1/word_004.opus
+word_005	北京	Běijīng	zh-CN-XiaoxiaoNeural	audio/phase1/word_005.opus
+word_006	本	běn	zh-CN-XiaoxiaoNeural	audio/phase1/word_006.opus
+word_007	不	bù	zh-CN-XiaoxiaoNeural	audio/phase1/word_007.opus
+word_008	不客气	bú kèqi	zh-CN-XiaoxiaoNeural	audio/phase1/word_008.opus
+word_009	菜	cài	zh-CN-XiaoxiaoNeural	audio/phase1/word_009.opus
+word_010	茶	chá	zh-CN-XiaoxiaoNeural	audio/phase1/word_010.opus
+word_011	吃	chī	zh-CN-XiaoxiaoNeural	audio/phase1/word_011.opus
+word_012	出租车	chūzūchē	zh-CN-XiaoxiaoNeural	audio/phase1/word_012.opus
+word_013	打电话	dǎ diànhuà	zh-CN-XiaoxiaoNeural	audio/phase1/word_013.opus
+word_014	大	dà	zh-CN-XiaoxiaoNeural	audio/phase1/word_014.opus
+word_015	的	de	zh-CN-XiaoxiaoNeural	audio/phase1/word_015.opus
+word_016	点	diǎn	zh-CN-XiaoxiaoNeural	audio/phase1/word_016.opus
+word_017	电脑	diànnǎo	zh-CN-XiaoxiaoNeural	audio/phase1/word_017.opus
+word_018	电视	diànshì	zh-CN-XiaoxiaoNeural	audio/phase1/word_018.opus
+word_019	电影	diànyǐng	zh-CN-XiaoxiaoNeural	audio/phase1/word_019.opus
+word_020	东西	dōngxi	zh-CN-XiaoxiaoNeural	audio/phase1/word_020.opus
+word_021	都	dōu	zh-CN-XiaoxiaoNeural	audio/phase1/word_021.opus
+word_022	读	dú	zh-CN-XiaoxiaoNeural	audio/phase1/word_022.opus
+word_023	对不起	duìbuqǐ	zh-CN-XiaoxiaoNeural	audio/phase1/word_023.opus
+word_024	多	duō	zh-CN-XiaoxiaoNeural	audio/phase1/word_024.opus
+word_025	多少	duōshao	zh-CN-XiaoxiaoNeural	audio/phase1/word_025.opus
+word_026	儿子	érzi	zh-CN-XiaoxiaoNeural	audio/phase1/word_026.opus
+word_027	二	èr	zh-CN-XiaoxiaoNeural	audio/phase1/word_027.opus
+word_028	饭店	fàndiàn	zh-CN-XiaoxiaoNeural	audio/phase1/word_028.opus
+word_029	飞机	fēijī	zh-CN-XiaoxiaoNeural	audio/phase1/word_029.opus
+word_030	分钟	fēnzhōng	zh-CN-XiaoxiaoNeural	audio/phase1/word_030.opus
+word_031	高兴	gāoxìng	zh-CN-XiaoxiaoNeural	audio/phase1/word_031.opus
+word_032	个	gè	zh-CN-XiaoxiaoNeural	audio/phase1/word_032.opus
+word_033	工作	gōngzuò	zh-CN-XiaoxiaoNeural	audio/phase1/word_033.opus
+word_034	狗	gǒu	zh-CN-XiaoxiaoNeural	audio/phase1/word_034.opus
+word_035	汉语	Hànyǔ	zh-CN-XiaoxiaoNeural	audio/phase1/word_035.opus
+word_036	好	hǎo	zh-CN-XiaoxiaoNeural	audio/phase1/word_036.opus
+word_037	喝	hē	zh-CN-XiaoxiaoNeural	audio/phase1/word_037.opus
+word_038	和	hé	zh-CN-XiaoxiaoNeural	audio/phase1/word_038.opus
+word_039	很	hěn	zh-CN-XiaoxiaoNeural	audio/phase1/word_039.opus
+word_040	后面	hòumiàn	zh-CN-XiaoxiaoNeural	audio/phase1/word_040.opus
+word_041	回	huí	zh-CN-XiaoxiaoNeural	audio/phase1/word_041.opus
+word_042	会	huì	zh-CN-XiaoxiaoNeural	audio/phase1/word_042.opus
+word_043	火车站	huǒchēzhàn	zh-CN-XiaoxiaoNeural	audio/phase1/word_043.opus
+word_044	几	jǐ	zh-CN-XiaoxiaoNeural	audio/phase1/word_044.opus
+word_045	家	jiā	zh-CN-XiaoxiaoNeural	audio/phase1/word_045.opus
+word_046	叫	jiào	zh-CN-XiaoxiaoNeural	audio/phase1/word_046.opus
+word_047	她	tā	zh-CN-XiaoxiaoNeural	audio/phase1/word_047.opus
+word_048	今天	jīntiān	zh-CN-XiaoxiaoNeural	audio/phase1/word_048.opus
+word_049	九	jiǔ	zh-CN-XiaoxiaoNeural	audio/phase1/word_049.opus
+word_050	开	kāi	zh-CN-XiaoxiaoNeural	audio/phase1/word_050.opus
+word_051	看	kàn	zh-CN-XiaoxiaoNeural	audio/phase1/word_051.opus
+word_052	看见	kànjiàn	zh-CN-XiaoxiaoNeural	audio/phase1/word_052.opus
+word_053	块	kuài	zh-CN-XiaoxiaoNeural	audio/phase1/word_053.opus
+word_054	来	lái	zh-CN-XiaoxiaoNeural	audio/phase1/word_054.opus
+word_055	老师	lǎoshī	zh-CN-XiaoxiaoNeural	audio/phase1/word_055.opus
+word_056	了	le	zh-CN-XiaoxiaoNeural	audio/phase1/word_056.opus
+word_057	冷	lěng	zh-CN-XiaoxiaoNeural	audio/phase1/word_057.opus
+word_058	里	lǐ	zh-CN-XiaoxiaoNeural	audio/phase1/word_058.opus
+word_059	六	liù	zh-CN-XiaoxiaoNeural	audio/phase1/word_059.opus
+word_060	妈妈	māma	zh-CN-XiaoxiaoNeural	audio/phase1/word_060.opus
+word_061	吗	ma	zh-CN-XiaoxiaoNeural	audio/phase1/word_061.opus
+word_062	买	mǎi	zh-CN-XiaoxiaoNeural	audio/phase1/word_062.opus
+word_063	猫	māo	zh-CN-XiaoxiaoNeural	audio/phase1/word_063.opus
+word_064	没关系	méi guānxi	zh-CN-XiaoxiaoNeural	audio/phase1/word_064.opus
+word_065	没有	méiyǒu	zh-CN-XiaoxiaoNeural	audio/phase1/word_065.opus
+word_066	米饭	mǐfàn	zh-CN-XiaoxiaoNeural	audio/phase1/word_066.opus
+word_067	明天	míngtiān	zh-CN-XiaoxiaoNeural	audio/phase1/word_067.opus
+word_068	名字	míngzi	zh-CN-XiaoxiaoNeural	audio/phase1/word_068.opus
+word_069	哪儿	nǎr	zh-CN-XiaoxiaoNeural	audio/phase1/word_069.opus
+word_070	那	nà	zh-CN-XiaoxiaoNeural	audio/phase1/word_070.opus
+word_071	呢	ne	zh-CN-XiaoxiaoNeural	audio/phase1/word_071.opus
+word_072	能	néng	zh-CN-XiaoxiaoNeural	audio/phase1/word_072.opus
+word_073	你	nǐ	zh-CN-XiaoxiaoNeural	audio/phase1/word_073.opus
+word_074	年	nián	zh-CN-XiaoxiaoNeural	audio/phase1/word_074.opus
+word_075	女儿	nǚ'ér	zh-CN-XiaoxiaoNeural	audio/phase1/word_075.opus
+word_076	朋友	péngyou	zh-CN-XiaoxiaoNeural	audio/phase1/word_076.opus
+word_077	漂亮	piàoliang	zh-CN-XiaoxiaoNeural	audio/phase1/word_077.opus
+word_078	苹果	píngguǒ	zh-CN-XiaoxiaoNeural	audio/phase1/word_078.opus
+word_079	七	qī	zh-CN-XiaoxiaoNeural	audio/phase1/word_079.opus
+word_080	前面	qiánmiàn	zh-CN-XiaoxiaoNeural	audio/phase1/word_080.opus
+word_081	钱	qián	zh-CN-XiaoxiaoNeural	audio/phase1/word_081.opus
+word_082	请	qǐng	zh-CN-XiaoxiaoNeural	audio/phase1/word_082.opus
+word_083	去	qù	zh-CN-XiaoxiaoNeural	audio/phase1/word_083.opus
+word_084	热	rè	zh-CN-XiaoxiaoNeural	audio/phase1/word_084.opus
+word_085	人	rén	zh-CN-XiaoxiaoNeural	audio/phase1/word_085.opus
+word_086	认识	rènshi	zh-CN-XiaoxiaoNeural	audio/phase1/word_086.opus
+word_087	日	rì	zh-CN-XiaoxiaoNeural	audio/phase1/word_087.opus
+word_088	三	sān	zh-CN-XiaoxiaoNeural	audio/phase1/word_088.opus
+word_089	商店	shāngdiàn	zh-CN-XiaoxiaoNeural	audio/phase1/word_089.opus
+word_090	上	shàng	zh-CN-XiaoxiaoNeural	audio/phase1/word_090.opus
+word_091	上午	shàngwǔ	zh-CN-XiaoxiaoNeural	audio/phase1/word_091.opus
+word_092	少	shǎo	zh-CN-XiaoxiaoNeural	audio/phase1/word_092.opus
+word_093	谁	shéi	zh-CN-XiaoxiaoNeural	audio/phase1/word_093.opus
+word_094	什么	shénme	zh-CN-XiaoxiaoNeural	audio/phase1/word_094.opus
+word_095	十	shí	zh-CN-XiaoxiaoNeural	audio/phase1/word_095.opus
+word_096	时候	shíhou	zh-CN-XiaoxiaoNeural	audio/phase1/word_096.opus
+word_097	是	shì	zh-CN-XiaoxiaoNeural	audio/phase1/word_097.opus
+word_098	书	shū	zh-CN-XiaoxiaoNeural	audio/phase1/word_098.opus
+word_099	水	shuǐ	zh-CN-XiaoxiaoNeural	audio/phase1/word_099.opus
+word_100	水果	shuǐguǒ	zh-CN-XiaoxiaoNeural	audio/phase1/word_100.opus
+word_101	睡觉	shuìjiào	zh-CN-XiaoxiaoNeural	audio/phase1/word_101.opus
+word_102	说话	shuōhuà	zh-CN-XiaoxiaoNeural	audio/phase1/word_102.opus
+word_103	四	sì	zh-CN-XiaoxiaoNeural	audio/phase1/word_103.opus
+word_104	岁	suì	zh-CN-XiaoxiaoNeural	audio/phase1/word_104.opus
+word_105	他	tā	zh-CN-XiaoxiaoNeural	audio/phase1/word_105.opus
+word_106	太	tài	zh-CN-XiaoxiaoNeural	audio/phase1/word_106.opus
+word_107	天	tiān	zh-CN-XiaoxiaoNeural	audio/phase1/word_107.opus
+word_108	天气	tiānqì	zh-CN-XiaoxiaoNeural	audio/phase1/word_108.opus
+word_109	听	tīng	zh-CN-XiaoxiaoNeural	audio/phase1/word_109.opus
+word_110	同学	tóngxué	zh-CN-XiaoxiaoNeural	audio/phase1/word_110.opus
+word_111	喂	wèi	zh-CN-XiaoxiaoNeural	audio/phase1/word_111.opus
+word_112	我	wǒ	zh-CN-XiaoxiaoNeural	audio/phase1/word_112.opus
+word_113	我们	wǒmen	zh-CN-XiaoxiaoNeural	audio/phase1/word_113.opus
+word_114	五	wǔ	zh-CN-XiaoxiaoNeural	audio/phase1/word_114.opus
+word_115	喜欢	xǐhuan	zh-CN-XiaoxiaoNeural	audio/phase1/word_115.opus
+word_116	下	xià	zh-CN-XiaoxiaoNeural	audio/phase1/word_116.opus
+word_117	下午	xiàwǔ	zh-CN-XiaoxiaoNeural	audio/phase1/word_117.opus
+word_118	下雨	xiàyǔ	zh-CN-XiaoxiaoNeural	audio/phase1/word_118.opus
+word_119	先生	xiānsheng	zh-CN-XiaoxiaoNeural	audio/phase1/word_119.opus
+word_120	现在	xiànzài	zh-CN-XiaoxiaoNeural	audio/phase1/word_120.opus
+word_121	想	xiǎng	zh-CN-XiaoxiaoNeural	audio/phase1/word_121.opus
+word_122	小	xiǎo	zh-CN-XiaoxiaoNeural	audio/phase1/word_122.opus
+word_123	小姐	xiǎojiě	zh-CN-XiaoxiaoNeural	audio/phase1/word_123.opus
+word_124	些	xiē	zh-CN-XiaoxiaoNeural	audio/phase1/word_124.opus
+word_125	写	xiě	zh-CN-XiaoxiaoNeural	audio/phase1/word_125.opus
+word_126	谢谢	xièxie	zh-CN-XiaoxiaoNeural	audio/phase1/word_126.opus
+word_127	星期	xīngqī	zh-CN-XiaoxiaoNeural	audio/phase1/word_127.opus
+word_128	学生	xuésheng	zh-CN-XiaoxiaoNeural	audio/phase1/word_128.opus
+word_129	学习	xuéxí	zh-CN-XiaoxiaoNeural	audio/phase1/word_129.opus
+word_130	学校	xuéxiào	zh-CN-XiaoxiaoNeural	audio/phase1/word_130.opus
+word_131	一	yī	zh-CN-XiaoxiaoNeural	audio/phase1/word_131.opus
+word_132	衣服	yīfu	zh-CN-XiaoxiaoNeural	audio/phase1/word_132.opus
+word_133	医生	yīshēng	zh-CN-XiaoxiaoNeural	audio/phase1/word_133.opus
+word_134	医院	yīyuàn	zh-CN-XiaoxiaoNeural	audio/phase1/word_134.opus
+word_135	椅子	yǐzi	zh-CN-XiaoxiaoNeural	audio/phase1/word_135.opus
+word_136	有	yǒu	zh-CN-XiaoxiaoNeural	audio/phase1/word_136.opus
+word_137	月	yuè	zh-CN-XiaoxiaoNeural	audio/phase1/word_137.opus
+word_138	再见	zàijiàn	zh-CN-XiaoxiaoNeural	audio/phase1/word_138.opus
+word_139	在	zài	zh-CN-XiaoxiaoNeural	audio/phase1/word_139.opus
+word_140	怎么	zěnme	zh-CN-XiaoxiaoNeural	audio/phase1/word_140.opus
+word_141	怎么样	zěnmeyàng	zh-CN-XiaoxiaoNeural	audio/phase1/word_141.opus
+word_142	这	zhè	zh-CN-XiaoxiaoNeural	audio/phase1/word_142.opus
+word_143	中国	Zhōngguó	zh-CN-XiaoxiaoNeural	audio/phase1/word_143.opus
+word_144	中午	zhōngwǔ	zh-CN-XiaoxiaoNeural	audio/phase1/word_144.opus
+word_145	住	zhù	zh-CN-XiaoxiaoNeural	audio/phase1/word_145.opus
+word_146	桌子	zhuōzi	zh-CN-XiaoxiaoNeural	audio/phase1/word_146.opus
+word_147	字	zì	zh-CN-XiaoxiaoNeural	audio/phase1/word_147.opus
+word_148	昨天	zuótiān	zh-CN-XiaoxiaoNeural	audio/phase1/word_148.opus
+word_149	坐	zuò	zh-CN-XiaoxiaoNeural	audio/phase1/word_149.opus
+word_150	做	zuò	zh-CN-XiaoxiaoNeural	audio/phase1/word_150.opus
+word_151	碗	wǎn	zh-CN-XiaoxiaoNeural	audio/phase1/word_151.opus

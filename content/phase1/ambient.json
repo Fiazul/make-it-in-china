@@ -1,0 +1,301 @@
+[
+  {
+    "id": "amb_001",
+    "location": "rented_room",
+    "speaker": "landlord",
+    "hanzi": "你好。",
+    "pinyin": "Nǐ hǎo.",
+    "en": "Hello.",
+    "words": [
+      "你",
+      "好"
+    ],
+    "audio": "amb_001"
+  },
+  {
+    "id": "amb_002",
+    "location": "rented_room",
+    "speaker": "landlord",
+    "hanzi": "你回家吗？",
+    "pinyin": "Nǐ huí jiā ma?",
+    "en": "Are you going home?",
+    "words": [
+      "你",
+      "回",
+      "家",
+      "吗"
+    ],
+    "audio": "amb_002"
+  },
+  {
+    "id": "amb_003",
+    "location": "rented_room",
+    "speaker": "landlord",
+    "hanzi": "明天你来吗？",
+    "pinyin": "Míngtiān nǐ lái ma?",
+    "en": "Are you coming tomorrow?",
+    "words": [
+      "明天",
+      "你",
+      "来",
+      "吗"
+    ],
+    "audio": "amb_003"
+  },
+  {
+    "id": "amb_004",
+    "location": "tea_house",
+    "speaker": "mentor",
+    "hanzi": "请坐。",
+    "pinyin": "Qǐng zuò.",
+    "en": "Please sit.",
+    "words": [
+      "请",
+      "坐"
+    ],
+    "audio": "amb_004"
+  },
+  {
+    "id": "amb_005",
+    "location": "tea_house",
+    "speaker": "mentor",
+    "hanzi": "你喝茶吗？",
+    "pinyin": "Nǐ hē chá ma?",
+    "en": "Do you drink tea?",
+    "words": [
+      "你",
+      "喝",
+      "茶",
+      "吗"
+    ],
+    "audio": "amb_005"
+  },
+  {
+    "id": "amb_006",
+    "location": "tea_house",
+    "speaker": "mentor",
+    "hanzi": "我喜欢汉语。",
+    "pinyin": "Wǒ xǐhuan Hànyǔ.",
+    "en": "I like Chinese.",
+    "words": [
+      "我",
+      "喜欢",
+      "汉语"
+    ],
+    "audio": "amb_006"
+  },
+  {
+    "id": "amb_007",
+    "location": "noodle_shop",
+    "speaker": "cook",
+    "hanzi": "有米饭，有八个碗。",
+    "pinyin": "Yǒu mǐfàn, yǒu bā ge wǎn.",
+    "en": "There is rice, and eight bowls.",
+    "words": [
+      "有",
+      "米饭",
+      "有",
+      "八",
+      "个",
+      "碗"
+    ],
+    "audio": "amb_007"
+  },
+  {
+    "id": "amb_008",
+    "location": "noodle_shop",
+    "speaker": "cook",
+    "hanzi": "六个杯子在桌子上。",
+    "pinyin": "Liù ge bēizi zài zhuōzi shàng.",
+    "en": "Six cups are on the table.",
+    "words": [
+      "六",
+      "个",
+      "杯子",
+      "在",
+      "桌子",
+      "上"
+    ],
+    "audio": "amb_008"
+  },
+  {
+    "id": "amb_009",
+    "location": "noodle_shop",
+    "speaker": "cook",
+    "hanzi": "几个人？请坐椅子。",
+    "pinyin": "Jǐ ge rén? Qǐng zuò yǐzi.",
+    "en": "How many people? Please take a chair.",
+    "words": [
+      "几",
+      "个",
+      "人",
+      "请",
+      "坐",
+      "椅子"
+    ],
+    "audio": "amb_009"
+  },
+  {
+    "id": "amb_010",
+    "location": "noodle_shop",
+    "speaker": "customer",
+    "hanzi": "你的衣服很漂亮。",
+    "pinyin": "Nǐ de yīfu hěn piàoliang.",
+    "en": "Your clothes are lovely.",
+    "words": [
+      "你",
+      "的",
+      "衣服",
+      "很",
+      "漂亮"
+    ],
+    "audio": "amb_010"
+  },
+  {
+    "id": "amb_011",
+    "location": "noodle_shop",
+    "speaker": "customer",
+    "hanzi": "我爱吃米饭。",
+    "pinyin": "Wǒ ài chī mǐfàn.",
+    "en": "I love eating rice.",
+    "words": [
+      "我",
+      "爱",
+      "吃",
+      "米饭"
+    ],
+    "audio": "amb_011"
+  },
+  {
+    "id": "amb_012",
+    "location": "warehouse",
+    "speaker": "warehouse_boss",
+    "hanzi": "这本书，我读。",
+    "pinyin": "Zhè běn shū, wǒ dú.",
+    "en": "This book — I read it.",
+    "words": [
+      "这",
+      "本",
+      "书",
+      "我",
+      "读"
+    ],
+    "audio": "amb_012"
+  },
+  {
+    "id": "amb_013",
+    "location": "warehouse",
+    "speaker": "warehouse_boss",
+    "hanzi": "我四十岁。",
+    "pinyin": "Wǒ sìshí suì.",
+    "en": "I am forty.",
+    "words": [
+      "我",
+      "四",
+      "十",
+      "岁"
+    ],
+    "audio": "amb_013"
+  },
+  {
+    "id": "amb_014",
+    "location": "supermarket",
+    "speaker": "delivery_boss",
+    "hanzi": "我去商店。",
+    "pinyin": "Wǒ qù shāngdiàn.",
+    "en": "I am going to the shop.",
+    "words": [
+      "我",
+      "去",
+      "商店"
+    ],
+    "audio": "amb_014"
+  },
+  {
+    "id": "amb_015",
+    "location": "supermarket",
+    "speaker": "delivery_boss",
+    "hanzi": "他在前面。",
+    "pinyin": "Tā zài qiánmiàn.",
+    "en": "He is in front.",
+    "words": [
+      "他",
+      "在",
+      "前面"
+    ],
+    "audio": "amb_015"
+  },
+  {
+    "id": "amb_016",
+    "location": "supermarket",
+    "speaker": "shopkeeper",
+    "hanzi": "谢谢你。",
+    "pinyin": "Xièxie nǐ.",
+    "en": "Thank you.",
+    "words": [
+      "谢谢",
+      "你"
+    ],
+    "audio": "amb_016"
+  },
+  {
+    "id": "amb_017",
+    "location": "fruit_stall",
+    "speaker": "fruit_seller",
+    "hanzi": "苹果，三块。",
+    "pinyin": "Píngguǒ, sān kuài.",
+    "en": "Apples, three yuan.",
+    "words": [
+      "苹果",
+      "三",
+      "块"
+    ],
+    "audio": "amb_017"
+  },
+  {
+    "id": "amb_018",
+    "location": "fruit_stall",
+    "speaker": "customer",
+    "hanzi": "五分钟，飞机去北京。",
+    "pinyin": "Wǔ fēnzhōng, fēijī qù Běijīng.",
+    "en": "Five minutes — the plane leaves for Beijing.",
+    "words": [
+      "五",
+      "分钟",
+      "飞机",
+      "去",
+      "北京"
+    ],
+    "audio": "amb_018"
+  },
+  {
+    "id": "amb_019",
+    "location": "bus_stop",
+    "speaker": "customer",
+    "hanzi": "现在几点？",
+    "pinyin": "Xiànzài jǐ diǎn?",
+    "en": "What time is it now?",
+    "words": [
+      "现在",
+      "几",
+      "点"
+    ],
+    "audio": "amb_019"
+  },
+  {
+    "id": "amb_020",
+    "location": "phase2_gate",
+    "speaker": "delivery_boss",
+    "hanzi": "医生的衣服很漂亮。",
+    "pinyin": "Yīshēng de yīfu hěn piàoliang.",
+    "en": "The doctor's coat is lovely.",
+    "words": [
+      "医生",
+      "的",
+      "衣服",
+      "很",
+      "漂亮"
+    ],
+    "audio": "amb_020"
+  }
+]

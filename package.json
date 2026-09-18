@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "test": "vitest run",
-    "check:content": "node scripts/check-level.mjs content/phase1"
+    "check:content": "node scripts/check-level.mjs content/phase1",
+    "check:content:strict": "node scripts/check-level.mjs content/phase1 --strict",
+    "tts": "node scripts/tts.mjs",
+    "tts:dry": "node scripts/tts.mjs --dry-run",
+    "tts:validate": "node scripts/tts.mjs --validate"
   },
   "dependencies": {
     "three": "^0.180.0"

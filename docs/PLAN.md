@@ -9,9 +9,9 @@ what the doc leaves to the implementer: layout, contracts, assumptions, tonight'
 ## Assumptions (owner can overturn any — each is a one-line change)
 - Open questions from the doc answered with defaults: adult self-learners; English-only glosses;
   blank featureless head is acceptable; fictional generic city; fixed protagonist; private test
-  release; animals left out of Phase 1; TTS deferred (M1 ships without audio files, UI degrades:
-  replay button disabled, "audio pending" tooltip).
+  release; animals left out of Phase 1.
 - One repo, static Vite site, no backend, no accounts. Node 20, npm.
+- Stage 6 speech uses checked-in Opus clips and native Web Audio; it adds no runtime dependency.
 - Grey boxes first. Toon + outline exists as a toggle from day one because it is cheap in three.js,
   but no time is spent on art until M4 feedback.
 
@@ -29,6 +29,7 @@ scripts/check-level.mjs     level checker (node, zero deps) — runs in `npm run
 src/main.ts                 boot: load content, build world, start dialogue runner
 src/content/types.ts        THE CONTRACT (below). All workers import from here.
 src/engine/                 pure TS, no DOM/three: dialogue.ts learner.ts economy.ts store.ts save.ts slots.ts
+src/audio/                  browser-only manifest resolution, playback, cache, and volume settings
 src/render/                 three.js: scene.ts camera.ts toon.ts character.ts world.ts input.ts
 src/ui/                     DOM over canvas: bubble.ts hud.ts notebook.ts
 tests/                      vitest, engine + checker only
@@ -42,10 +43,16 @@ export interface Word { hanzi: WordId; pinyin: string; en: string; hsk: 1|2|3|4;
 export type WordState = 'unseen'|'met'|'shaky'|'known';
 export interface Line { hanzi: string; pinyin: string; en: string; audio: string; words: WordId[] }
 export interface Reply { hanzi: string; pinyin?: string; en?: string; words?: WordId[]; audio?: string;
-  action: string; check?: string; correct?: boolean; next?: string }
-export interface Exchange { id: string; line: Line; slots?: Record<string,string>; replies: Reply[]; onWrong?: string }
+  id?: string; action: string; check?: string; correct?: boolean; next?: string }
+export interface Exchange { id: string; line: Line; slots?: Record<string,string>; replies: Reply[]; onWrong?: string;
+  introduces?: WordId[]; tests?: WordId[]; hint?: Line;
+  taskAfterCorrect?: { taskId: string; targetTriggerId: string; propId: string };
+  guidedConsequence?: string }
 export interface Scene { id: string; phase: 1|2|3|4; location: string; npc: string; kind: 'story'|'job'|'errand'|'mentor'|'consequence';
-  requires: WordId[]; introduces: WordId[]; reward?: number; cost?: number; exchanges: Exchange[] }
+  requires: WordId[]; introduces: WordId[]; reward?: number; cost?: number; exchanges: Exchange[];
+  curriculumIndex?: number; minDay?: number; afterScenes?: string[];
+  allowedSlots?: ('M'|'A1'|'A2'|'A3'|'A4'|'E')[]; repeatable?: boolean;
+  purchase?: { itemId: string; price: number; mode: 'optional-entry'|'withhold-first-reward' } }
 export interface SlotPool { id: string; values: { hanzi: string; pinyin: string; en: string; words: WordId[] }[] }
 export interface Location { id: string; name: string; position: [number,number]; signs: string[] }
 export interface Npc { id: string; name: string; label: string; location: string; color: string; headwear?: string; prop?: string }
@@ -91,3 +98,28 @@ content. Pinyin with tone marks only.
 - `tapWord` on any word present in the current exchange (line or replies) is legal: meet-then-down.
 - Engine must never softlock: `sleep()` abandons an active dialogue (no reward), and the scene pre-scan
   checks slot-pool eligibility and cross-scene `next` availability for every reachable exchange.
+
+## Engine decisions (2026-09-18, stage-7 progression: TDD 1.1, tickets 7.1/7.2/7.5/7.6)
+- Save envelope is `v: 2`. `loadJSON`/`decodeSave` accept v2 only; v1 enters through the named
+  `migrateV1` adapter, which `importString` calls after an `UnsupportedSaveVersionError` for v1.
+  Migration preserves wallet, day, slots, rules, RNG, word states and any open dialogue/return stack,
+  adds empty durable maps, pays nothing, and is idempotent on re-import.
+- `state().progress` (completedOn, completedCount, inventory, mentorTopics, gateReachedDay,
+  onboardingWaived) is durable and authoritative; completion is never reconstructed from the event ring.
+- The day's slot label derives from spent action slots: `M` before the first action, `A1…A4` for the
+  action about to be spent, `E` once all slots are gone. An activity freezes its label on entry.
+- `Scene.repeatable === false` blocks a second successful run; repeatable scenes may repeat within the
+  same day while slots remain (GDD 5.4 "three S01 shifts"). Undeclared metadata leaves v1 content free.
+- Wrong-reply penalties charge the first miss of each exchange only, capped at ¥5 per parent activity
+  (`state().activity.penaltyTotal`); further misses only replay the reaction.
+- `Scene.purchase`: `optional-entry` charges atomically at `start`, rejecting an unaffordable buy so the
+  UI can re-enter with `{ purchase: 'look' }`; `withhold-first-reward` withholds the price from the first
+  successful reward once and grants the item then. Abandoning charges nothing and grants nothing.
+- `Exchange.guidedConsequence` enters its scene once per activity with no penalty and no extra slot, then
+  resumes the parent's next exchange through `DialogueFrame.returnMode = 'advance'`.
+- `Exchange.taskAfterCorrect` parks a durable `pendingWorldTask`; `reply()` is rejected until
+  `completeWorldTask(taskId)` presents the next exchange. Wrong or duplicate task IDs are rejected.
+- Events keep the nine original names and add `transaction`, `assisted`, `gate`, `activityEnd`; every
+  event carries `day` and the monotonic `commandSeq` of its command.
+- Gate: `queryGate()` is pure (`met`/150 non-bonus HSK1 words, wallet/150); `claimGate()` records
+  `gateReachedDay` once after rent settlement and never debits savings.

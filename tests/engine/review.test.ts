@@ -126,18 +126,18 @@ describe('R1 engine regressions', () => {
     const game = createGame(content()); game.start('job'); const saved = loadJSON(game.saveJSON());
     expect(saved.dialogue!.newWords).toEqual(['杯子']); expect(saved.events).toEqual(game.events());
   });
-  it('distinct fill: stops after 20 seeded attempts when every draw collides', () => {
+  it('distinct fill: refuses without a draw when no permitted tuple is distinct', () => {
     const job = slotted(); job.exchanges[0].replies = ['{n}', '一', '二', '三'].map((hanzi, index) => ({ hanzi, action: 'choose', correct: index === 0 }));
     const data = content(job), game = createGame(data, { initialWords: { 一: 'met', 二: 'met', 三: 'met' } });
     const state = loadJSON(game.saveJSON());
-    expect(() => fillExchange(state, job, job.exchanges[0], {}, data)).toThrow(/e1.*20/);
-    expect(state.rng).toBe(2282599509);
+    expect(() => fillExchange(state, job, job.exchanges[0], {}, data)).toThrow(/No distinct slot values for e1/);
+    expect(state.rng).toBe(1);
     expect(game.availableScenes()).toEqual([]); expect(() => game.start('job')).toThrow(ContentError);
   });
-  it('N introduction: introduced unseen values get a turn before already-known values', () => {
-    const job = slotted(); job.introduces.push('三');
+  it('N introduction: values introduced by the exchange get a turn before already-known values', () => {
+    const job = slotted(); job.exchanges[0].introduces = ['二', '三'];
     const game = createGame(content(job), { initialWords: { 一: 'known' } }); game.start('job');
-    expect(game.state().dialogue!.bindings.n.hanzi).toBe('三');
+    expect(['二', '三']).toContain(game.state().dialogue!.bindings.n.hanzi);
   });
   it('N nesting: caps consequence chains and sleep remains an escape', () => {
     const data = withConsequence(); data.scenes[1].exchanges[0].onWrong = 'wrong';

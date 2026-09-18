@@ -2,8 +2,10 @@
 
 This M0 curriculum has exactly 25 scenes. `S00`–`S24` are shorthand for the full IDs below.
 S01–S03 are the implemented vertical slice; their consequence branches are implementation
-scenes rather than additional curriculum scenes. Planned scenes have 4–6 exchanges. The
-`New words by exchange` column keeps every exchange at no more than two new words.
+scenes rather than additional curriculum scenes. Planned scenes have 4–6 exchanges, jobs 4
+or 5. The `New words by exchange` column keeps every exchange at no more than two new words;
+exchanges past the ones listed there are review beats that introduce nothing and exist so
+each recontextualised word gets its own short line instead of being packed into one.
 
 Scene 00 teaches the ten words required by S01: 你, 好, 我, 是, 这, 那, 一, 二, 三, 四.
 Every later `Requires` cell is a subset of words introduced in earlier rows.
@@ -21,7 +23,7 @@ Every later `Requires` cell is a subset of words introduced in earlier rows.
 | S08 `p1_delivery_directions_01` | Delivery: finding an address / street | delivery boss | job | 这, 那, 上, 下, 里 | 12 | e1 在, 哪儿; e2 前面, 后面; e3 去, 回; e4 火车站 |
 | S09 `p1_delivery_names_02` | Delivery: names at the door / street | customer | job | 你, 我, 是, 哪儿, 在 | 13 | e1 家, 名字; e2 叫, 先生; e3 小姐, 她; e4 他 |
 | S10 `p1_ask_time_01` | Asking the time / bus stop | customer | errand | 一, 二, 三, 四, 几 | 14 | e1 现在, 点; e2 上午, 中午; e3 下午, 分钟; e4 时候 |
-| S11 `p1_wrong_bus_01` | Wrong-bus mix-up / bus stop | customer | consequence | 火车站, 哪儿, 去, 回, 现在 | 14 | e1 出租车, 飞机; e2 北京, 来; e3 开, 坐; e4 对不起 |
+| S11 `p1_wrong_bus_01` | Wrong-bus mix-up / bus stop | customer | consequence | 火车站, 哪儿, 去, 回, 现在 | 14 | e1 出租车, 飞机; e2 北京, 来; e3 开, 坐; e4 对不起<br>时候 coverage moved to S13 e4. |
 | S12 `p1_buy_fruit_01` | Buying food / fruit stall | fruit seller | errand | 多少, 个, 水, 米饭, 菜 | 14 | e1 苹果, 水果; e2 买, 钱; e3 块, 商店; e4 些 |
 | S13 `p1_pay_rent_01` | Paying rent / rented room | landlord | story | 钱, 块, 家 | 14 | e1 月, 星期; e2 年, 日; e3 住, 的; e4 今天 |
 | S14 `p1_landlord_phone_01` | Landlord phone message / rented room | landlord | story | 你, 我, 今天, 现在, 家 | 14 | e1 喂, 打电话; e2 明天, 吗; e3 呢, 冷; e4 下雨 |
@@ -39,7 +41,8 @@ Every later `Requires` cell is a subset of words introduced in earlier rows.
 The S17 mentor explanation discusses when familiar `你` is appropriate and how respectful
 address works; the off-list form `您` is explanation-only and is not introduced or used in
 Chinese dialogue. `狗` and `猫` occur on labels and in speech only; no animal characters are
-added. All scenes stay within the Phase 1 economy and theme limits.
+added. S13 e4 supplies the replacement extra placement for `时候` after its S11 placement was
+dropped. All scenes stay within the Phase 1 economy and theme limits.
 
 ## Coverage
 
@@ -59,7 +62,8 @@ planned scene appearances.
 | 东西, 上, 下, 里, 看, 看见 | S07, S08, S09 | 3 |
 | 在, 哪儿, 前面, 后面, 去, 回, 火车站 | S08, S09, S10 | 3 |
 | 家, 名字, 叫, 先生, 小姐, 她, 他 | S09, S10, S11 | 3 |
-| 现在, 点, 上午, 中午, 下午, 分钟, 时候 | S10, S11, S12 | 3 |
+| 现在, 点, 上午, 中午, 下午, 分钟 | S10, S11, S12 | 3 |
+| 时候 | S10, S12, S13 | 3 |
 | 出租车, 飞机, 北京, 来, 开, 坐, 对不起 | S11, S12, S13 | 3 |
 | 苹果, 水果, 买, 钱, 块, 商店, 些 | S12, S13, S14 | 3 |
 | 月, 星期, 年, 日, 住, 的, 今天 | S13, S14, S15 | 3 |
